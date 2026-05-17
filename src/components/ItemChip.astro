@@ -1,6 +1,6 @@
 ---
 import { findItem, itemNameToSlug } from '@/lib/lookups';
-import { itemSpriteUrl } from '@/data/pokemon-index';
+import { itemSpriteUrl, itemSpriteFallbackUrl } from '@/data/pokemon-index';
 
 export interface Props {
   name: string;
@@ -10,6 +10,7 @@ const { name } = Astro.props;
 const item = findItem(name);
 const slug = item?.slug ?? itemNameToSlug(name);
 const sprite = itemSpriteUrl(slug);
+const fallback = itemSpriteFallbackUrl(slug);
 
 // Detect banned/unavailable items in Champions (note in description)
 const isBanned = /banned|not available|absent/i.test(item?.description ?? '');
@@ -22,7 +23,8 @@ const isBanned = /banned|not available|absent/i.test(item?.description ?? '');
       alt={name}
       loading="lazy"
       class="max-w-full max-h-full object-contain"
-      onerror="this.style.display='none'; this.parentElement.textContent='🎒';"
+      data-fallback={fallback ?? ''}
+      onerror="if(this.dataset.fallback && this.src !== this.dataset.fallback){this.src=this.dataset.fallback;}else{this.style.display='none'; this.parentElement.textContent='🎒';}"
     />
   </span>
   <div class="min-w-0 flex-1">

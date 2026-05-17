@@ -2,14 +2,30 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { items, itemCategories } from '@/data/items';
 import { ui } from '@/data/translations';
+import { itemSpriteUrl, itemSpriteFallbackUrl } from '@/data/pokemon-index';
 
 const grouped = itemCategories.map((cat) => ({
   ...cat,
   items: items.filter((i) => i.category === cat.id),
 }));
+
+// Category badge colors
+const catColors: Record<string, string> = {
+  choice: '#e63946',
+  berry: '#ee99ac',
+  utility: '#78c850',
+  damage: '#ff6b35',
+  recovery: '#4cc9f0',
+  tera: '#ffd166',
+};
+
+// Detect items unavailable in Champions
+function isBanned(desc: string): boolean {
+  return /ไม่มีใน|not available|absent/i.test(desc);
+}
 ---
 
-<BaseLayout title="ไอเทม" description="ไอเทมยอดนิยมในการแข่งขัน Pokemon">
+<BaseLayout title="ไอเทม" description="ไอเทมยอดนิยมในการแข่งขัน Pokémon Champions">
   <section class="container-page py-10">
     <div class="mb-10">
       <h1 class="font-display text-4xl tracking-wide mb-2">
@@ -17,7 +33,7 @@ const grouped = itemCategories.map((cat) => ({
         <span class="text-champ-muted text-base ml-3 font-sans normal-case">{ui.nav.items}</span>
       </h1>
       <p class="text-champ-muted">
-        ไอเทมและของถือใน Pokémon Champions Reg M-A — รวม {items.length} ชิ้น
+        ไอเทมและของถือใน Pokémon Champions Reg M-A — รวม {items.length} ชิ้น พร้อมรูปและคำอธิบาย
       </p>
     </div>
 
@@ -44,34 +60,87 @@ const grouped = itemCategories.map((cat) => ({
     </div>
 
     <div class="space-y-10">
-      {grouped.map((cat) => (
-        <div>
-          <h2 class="font-display text-2xl tracking-wide mb-4 flex items-center gap-3">
-            <span class="w-1 h-6 bg-gold-shine rounded-full"></span>
-            {cat.label}
-          </h2>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {cat.items.map((item) => (
-              <div class="card p-4 hover:border-champ-gold/40 transition-colors">
-                <div class="flex items-start justify-between mb-1">
-                  <h3 class="font-semibold">{item.nameEn}</h3>
-                </div>
-                <p class="text-xs text-champ-muted mb-2">{item.nameTh}</p>
-                <p class="text-sm text-champ-text leading-relaxed">{item.description}</p>
-                {item.notableUsers && item.notableUsers.length > 0 && (
-                  <div class="mt-3 flex flex-wrap gap-1">
-                    {item.notableUsers.slice(0, 3).map((u) => (
-                      <span class="text-[10px] bg-champ-card border border-champ-border rounded px-1.5 py-0.5">
-                        {u}
+      {grouped.map((cat) => {
+        const catColor = catColors[cat.id] ?? '#ffd166';
+        return (
+          <div>
+            <h2 class="font-display text-2xl tracking-wide mb-4 flex items-center gap-3">
+              <span class="w-1 h-6 rounded-full" style={`background: ${catColor}`}></span>
+              {cat.label}
+              <span class="text-xs text-champ-muted font-sans normal-case ml-auto">
+                {cat.items.length} ชิ้น
+              </span>
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {cat.items.map((item) => {
+                const banned = isBanned(item.description);
+                const fallback = itemSpriteFallbackUrl(item.slug);
+                return (
+                  <div
+                    class:list={[
+                      'card p-4 transition-all duration-200 hover:-translate-y-0.5',
+                      banned ? 'hover:border-red-400/40 opacity-80' : 'hover:border-champ-gold/40',
+                    ]}
+                    style={`border-left: 3px solid ${banned ? '#e63946' : catColor}`}
+                  >
+                    <div class="flex items-start gap-3">
+                      <!-- Item sprite -->
+                      <span
+                        class="item-sprite-box flex items-center justify-center w-14 h-14 bg-champ-bg/60 rounded-lg border border-champ-border flex-none relative overflow-hidden"
+                      >
+                        <img
+                          src={itemSpriteUrl(item.slug)}
+                          alt={item.nameEn}
+                          loading="lazy"
+                          width="48"
+                          height="48"
+                          class="max-w-[80%] max-h-[80%] object-contain"
+                          style="image-rendering: pixelated;"
+                          data-fallback={fallback ?? ''}
+                          onerror="if(this.dataset.fallback && this.src !== this.dataset.fallback){this.src=this.dataset.fallback;}else{this.style.display='none'; this.parentElement.querySelector('.item-fallback').style.display='inline';}"
+                        />
+                        <span class="item-fallback text-2xl" style="display:none;">🎒</span>
                       </span>
-                    ))}
+
+                      <!-- Item info -->
+                      <div class="min-w-0 flex-1">
+                        <div class="flex items-start justify-between gap-2 mb-0.5">
+                          <h3 class="font-semibold text-sm leading-tight">{item.nameEn}</h3>
+                          {banned && (
+                            <span class="badge text-[9px] bg-red-500/20 text-red-300 flex-none mt-0.5">
+                              NOT IN GAME
+                            </span>
+                          )}
+                        </div>
+                        <p class="text-[11px] text-champ-muted mb-2">{item.nameTh}</p>
+                      </div>
+                    </div>
+
+                    <p class="text-xs text-champ-text/90 leading-relaxed mt-2">
+                      {item.description}
+                    </p>
+
+                    {item.notableUsers && item.notableUsers.length > 0 && (
+                      <div class="mt-3 pt-2 border-t border-champ-border/50">
+                        <div class="text-[10px] text-champ-muted uppercase tracking-wider mb-1">
+                          ผู้ใช้ที่นิยม
+                        </div>
+                        <div class="flex flex-wrap gap-1">
+                          {item.notableUsers.slice(0, 4).map((u) => (
+                            <span class="text-[10px] bg-champ-card border border-champ-border rounded px-1.5 py-0.5">
+                              {u}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            ))}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </section>
 </BaseLayout>

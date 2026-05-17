@@ -204,3 +204,31 @@ export function pokemonSpriteUrl(id: number, size: 'small' | 'large' = 'small'):
 export function itemSpriteUrl(slug: string): string {
   return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${slug}.png`;
 }
+
+/**
+ * Fallback sprite URL for items not in PokéAPI sprites repo (mostly Gen 8-9 items).
+ * Maps our kebab-case slug → Serebii's condensed slug (no hyphens, lowercase).
+ * Returns null if no fallback known (browser will show 🎒 emoji).
+ */
+const SEREBII_FALLBACKS: Record<string, string> = {
+  'booster-energy': 'boosterenergy',
+  'wellspring-mask': 'wellspringmask',
+  'hearthflame-mask': 'hearthflamemask',
+  'cornerstone-mask': 'cornerstonemask',
+  'covert-cloak': 'covertcloak',
+  'loaded-dice': 'loadeddice',
+  'clear-amulet': 'clearamulet',
+  'punching-glove': 'punchingglove',
+  // PokéAPI has these too but Serebii is a backup
+  'mystic-water': 'mysticwater',
+  'soft-sand': 'softsand',
+  'spell-tag': 'spelltag',
+  'pixie-plate': 'pixieplate',
+  'grip-claw': 'gripclaw',
+};
+
+export function itemSpriteFallbackUrl(slug: string): string | null {
+  const serebii = SEREBII_FALLBACKS[slug];
+  if (!serebii) return null;
+  return `https://www.serebii.net/itemdex/sprites/${serebii}.png`;
+}
