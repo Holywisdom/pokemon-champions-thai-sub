@@ -2,6 +2,31 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { abilities, abilityCategories } from '@/data/abilities';
 import { ui } from '@/data/translations';
+import { findPokemon, pokemonSpriteUrl } from '@/data/pokemon-index';
+import { url } from '@/lib/utils';
+
+// Pre-resolve every notable user to { name, sprite, slug, link }
+// Every chip is linkable: detail page if available, otherwise Pokédex pre-filtered by name
+function chipHref(rawName: string, ref: ReturnType<typeof findPokemon>): string {
+  if (ref?.hasDetailPage) return url(`/pokemon/${ref.slug}`);
+  // Fallback: pokedex with search query (strip parentheticals + form suffixes for cleaner search)
+  const q = rawName.replace(/\s*\(.*?\)\s*/g, '').trim();
+  return url(`/pokedex?q=${encodeURIComponent(q)}`);
+}
+
+const resolved = abilities.map((a) => ({
+  ...a,
+  resolvedUsers: a.notableUsers.slice(0, 4).map((rawName) => {
+    const ref = findPokemon(rawName);
+    return {
+      raw: rawName,
+      ref,
+      sprite: ref ? pokemonSpriteUrl(ref.id, 'small') : null,
+      href: chipHref(rawName, ref),
+      isInternal: !!ref?.hasDetailPage,
+    };
+  }),
+}));
 ---
 
 <BaseLayout title="ความสามารถ" description="ความสามารถยอดนิยมในการแข่งขัน Pokemon">
@@ -45,7 +70,7 @@ import { ui } from '@/data/translations';
 
     <!-- Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {abilities.map((a) => (
+      {resolved.map((a) => (
         <div
           data-ability
           data-name={a.nameEn.toLowerCase()}
@@ -62,13 +87,38 @@ import { ui } from '@/data/translations';
               {a.category}
             </span>
           </div>
-          <p class="text-sm text-champ-text leading-relaxed mb-3">{a.description}</p>
-          {a.notableUsers.length > 0 && (
-            <div>
-              <div class="text-xs text-champ-muted uppercase tracking-wider mb-1">ผู้ใช้</div>
-              <div class="flex flex-wrap gap-1">
-                {a.notableUsers.slice(0, 4).map((u) => (
-                  <span class="text-[10px] bg-champ-card border border-champ-border rounded px-1.5 py-0.5">{u}</span>
+          <p class="text-sm text-champ-text leading-relaxed mb-4">{a.description}</p>
+          {a.resolvedUsers.length > 0 && (
+            <div class="pt-3 border-t border-champ-border/50">
+              <div class="text-[10px] text-champ-muted uppercase tracking-wider mb-2">ผู้ใช้ที่นิยม</div>
+              <div class="grid grid-cols-2 gap-1.5">
+                {a.resolvedUsers.map((u) => (
+                  <a
+                    href={u.href}
+                    class="group flex items-center gap-1.5 rounded-lg bg-champ-card border border-champ-border px-1.5 py-1 hover:border-champ-gold/50 transition-all min-w-0"
+                    title={u.isInternal ? `ดูรายละเอียด ${u.raw}` : `ค้นหา ${u.raw} ใน Pokédex`}
+                  >
+                    {u.sprite ? (
+                      <span class="flex items-center justify-center w-9 h-9 bg-champ-bg/40 rounded-full flex-none">
+                        <img
+                          src={u.sprite}
+                          alt={u.raw}
+                          loading="lazy"
+                          class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
+                        />
+                      </span>
+                    ) : (
+                      <span class="flex items-center justify-center w-9 h-9 bg-champ-border rounded-full flex-none text-champ-muted text-xs">
+                        ?
+                      </span>
+                    )}
+                    <span class="text-[10px] font-medium truncate flex-1">{u.raw}</span>
+                    {!u.isInternal && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-champ-muted flex-none">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                      </svg>
+                    )}
+                  </a>
                 ))}
               </div>
             </div>

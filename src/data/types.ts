@@ -84,78 +84,80 @@ export interface TypeInfo {
   signaturePokemon: string[];
 }
 
+// signaturePokemon below = curated picks IN the Pokémon Champions roster
+// (matches names in pokemon-index.ts / META_POKEMON so the chips can show sprites + link)
 export const typeInfo: Record<TypeId, Omit<TypeInfo, 'id' | 'nameTh'>> = {
   normal: {
     description: 'ธาตุพื้นฐาน ไม่มีจุดเด่นพิเศษ แต่หาท่าครอบคลุมหลายธาตุได้ง่าย',
-    signaturePokemon: ['Snorlax', 'Slaking', 'Porygon-Z'],
+    signaturePokemon: ['Snorlax', 'Mega Kangaskhan', 'Farigiraf', 'Maushold'],
   },
   fire: {
     description: 'พลังโจมตีสูง เผาให้ติดสถานะไหม้ได้ ทนต่อน้ำแข็ง/แมลง/พิษ',
-    signaturePokemon: ['Charizard', 'Volcarona', 'Heatran'],
+    signaturePokemon: ['Charizard', 'Incineroar', 'Skeledirge', 'Torkoal'],
   },
   water: {
     description: 'ครอบคลุมหลายธาตุดี ทนต่อเหล็ก น้ำแข็ง ไฟ',
-    signaturePokemon: ['Greninja', 'Urshifu (Rapid Strike)', 'Pelipper'],
+    signaturePokemon: ['Basculegion', 'Pelipper', 'Mega Blastoise', 'Primarina'],
   },
   electric: {
     description: 'ความเร็วสูง ใช้สู้บินและน้ำได้ดี ไม่ติดสถานะอัมพาต',
-    signaturePokemon: ['Miraidon', 'Iron Hands', 'Pincurchin'],
+    signaturePokemon: ['Rotom-Wash', 'Mega Manectric', 'Jolteon'],
   },
   grass: {
     description: 'ทนต่อน้ำ/ไฟฟ้า/ดิน เก่งเรื่องท่าสนับสนุนทีม',
-    signaturePokemon: ['Rillaboom', 'Amoonguss', 'Ogerpon'],
+    signaturePokemon: ['Sinistcha', 'Meowscarada', 'Serperior', 'Leafeon'],
   },
   ice: {
     description: 'พลังโจมตีดีต่อมังกร/บิน/หญ้า แต่ป้องกันอ่อนแอ',
-    signaturePokemon: ['Chien-Pao', 'Baxcalibur', 'Weavile'],
+    signaturePokemon: ['Weavile', 'Mamoswine', 'Glaceon', 'Froslass'],
   },
   fighting: {
     description: 'พลังโจมตีกายภาพสูง ครอบคลุมหิน/เหล็ก/ปกติ',
-    signaturePokemon: ['Urshifu', 'Iron Hands', 'Annihilape'],
+    signaturePokemon: ['Sneasler', 'Mega Lucario', 'Mega Gallade', 'Quaquaval'],
   },
   poison: {
     description: 'ใช้สู้นางฟ้าและหญ้าได้ดี วางพิษทำลายค่อย ๆ',
-    signaturePokemon: ['Gholdengo (partial)', 'Glimmora', 'Toxapex'],
+    signaturePokemon: ['Glimmora', 'Toxapex', 'Salazzle', 'Slowking-Galar'],
   },
   ground: {
     description: 'พลังโจมตีดีต่อเหล็ก/ไฟฟ้า/หิน/พิษ/ไฟ ไม่ติดอัมพาตจากไฟฟ้า',
-    signaturePokemon: ['Garchomp', 'Landorus-Therian', 'Ting-Lu'],
+    signaturePokemon: ['Garchomp', 'Hippowdon', 'Excadrill', 'Gliscor'],
   },
   flying: {
     description: 'ความเร็วสูง ไม่โดนท่าดิน ครอบคลุมหญ้า/แมลง/ต่อสู้',
-    signaturePokemon: ['Talonflame', 'Corviknight', 'Tornadus'],
+    signaturePokemon: ['Mega Aerodactyl', 'Dragonite', 'Talonflame', 'Mega Pidgeot'],
   },
   psychic: {
     description: 'พลังโจมตีพิเศษสูง ใช้สู้พิษ/ต่อสู้ได้ดี',
-    signaturePokemon: ['Flutter Mane', 'Hatterene', 'Tapu Lele'],
+    signaturePokemon: ['Hatterene', 'Mega Gardevoir', 'Mega Alakazam', 'Espeon'],
   },
   bug: {
     description: 'ใช้สู้จิต/หญ้า/ดำได้ดี แต่กายภาพอ่อนแอกว่าค่าเฉลี่ย',
-    signaturePokemon: ['Volcarona', 'Scizor', 'Galvantula'],
+    signaturePokemon: ['Volcarona', 'Mega Scizor'],
   },
   rock: {
     description: 'ทนต่อไฟ/บิน/ปกติ ใช้สู้บินและไฟได้ดี',
-    signaturePokemon: ['Tyranitar', 'Garganacl', 'Diancie'],
+    signaturePokemon: ['Tyranitar', 'Garganacl', 'Mega Aerodactyl', 'Glimmora'],
   },
   ghost: {
     description: 'ภูตผีไม่โดนท่าปกติ/ต่อสู้ ใช้สู้จิตและภูตผีด้วยกันได้ดี',
-    signaturePokemon: ['Gholdengo', 'Dragapult', 'Gengar'],
+    signaturePokemon: ['Sinistcha', 'Mimikyu', 'Dragapult', 'Mega Gengar'],
   },
   dragon: {
     description: 'พลังโจมตีสูง ใช้สู้มังกรด้วยกันได้แต่อ่อนแอต่อนางฟ้า/น้ำแข็ง',
-    signaturePokemon: ['Dragapult', 'Garchomp', 'Roaring Moon'],
+    signaturePokemon: ['Garchomp', 'Dragonite', 'Dragapult', 'Hydreigon'],
   },
   dark: {
     description: 'ใช้สู้จิต/ภูตผีได้ดี ไม่โดนท่าจิต ทนต่อความมืดเอง',
-    signaturePokemon: ['Chien-Pao', 'Kingambit', 'Roaring Moon'],
+    signaturePokemon: ['Kingambit', 'Tyranitar', 'Incineroar', 'Mega Houndoom'],
   },
   steel: {
     description: 'ทนทานที่สุดในเกม ทนต่อ 10 ธาตุ ใช้สู้น้ำแข็ง/หิน/นางฟ้าได้ดี',
-    signaturePokemon: ['Gholdengo', 'Corviknight', 'Heatran'],
+    signaturePokemon: ['Kingambit', 'Aegislash', 'Mega Scizor', 'Corviknight'],
   },
   fairy: {
     description: 'นางฟ้าเก่งต่อมังกร/ต่อสู้/ความมืด ไม่โดนท่ามังกร',
-    signaturePokemon: ['Flutter Mane', 'Iron Valiant', 'Tapu Fini'],
+    signaturePokemon: ['Sylveon', 'Floette-Eternal', 'Whimsicott', 'Mega Gardevoir'],
   },
 };
 

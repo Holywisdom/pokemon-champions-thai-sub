@@ -169,6 +169,17 @@ const sorted = [...META_POKEMON].sort((a, b) => {
     apply();
   });
 
+  // Pre-fill from ?q= URL param (so external chips can link here with a search)
+  const params = new URLSearchParams(window.location.search);
+  const initial = params.get('q');
+  if (initial) {
+    search.value = initial;
+    query = initial.toLowerCase().trim();
+    apply();
+    // Scroll grid into view on mobile
+    document.querySelector('[data-grid]')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   tierBtns.forEach((b) => {
     b.addEventListener('click', () => {
       activeTier = b.dataset.tierFilter ?? 'all';
