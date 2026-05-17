@@ -43,6 +43,22 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
       />
 
       <div>
+        <div class="text-xs text-champ-muted uppercase tracking-wider mb-2">ประเภทท่า (Damage Class)</div>
+        <div class="flex flex-wrap gap-2">
+          <button data-class-filter="all" class="chip data-active">ทั้งหมด</button>
+          <button data-class-filter="physical" class="chip" style="color: #fca5a5; border-color: rgba(252,165,165,0.4)">
+            <span>💢</span> กายภาพ (Physical)
+          </button>
+          <button data-class-filter="special" class="chip" style="color: #93c5fd; border-color: rgba(147,197,253,0.4)">
+            <span>✨</span> พิเศษ (Special)
+          </button>
+          <button data-class-filter="status" class="chip" style="color: #fde68a; border-color: rgba(253,230,138,0.4)">
+            <span>🌀</span> สถานะ (Status)
+          </button>
+        </div>
+      </div>
+
+      <div>
         <div class="text-xs text-champ-muted uppercase tracking-wider mb-2">หมวด</div>
         <div class="flex flex-wrap gap-2">
           <button data-cat-filter="all" class="chip data-active">ทั้งหมด</button>
@@ -55,7 +71,10 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
       </div>
 
       <div>
-        <div class="text-xs text-champ-muted uppercase tracking-wider mb-2">{ui.common.type}</div>
+        <div class="flex items-baseline justify-between mb-2">
+          <div class="text-xs text-champ-muted uppercase tracking-wider">{ui.common.type}</div>
+          <div class="text-[10px] text-champ-muted">เลือกได้หลายธาตุ</div>
+        </div>
         <div class="flex flex-wrap gap-2">
           <button data-type-filter="all" class="chip data-active">ทั้งหมด</button>
           {TYPES.map((t) => (
@@ -93,13 +112,27 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
       <table class="w-full text-sm min-w-[640px] md:min-w-0">
         <thead class="text-xs text-champ-muted uppercase tracking-wider">
           <tr class="border-b border-champ-border">
-            <th class="text-left p-2 sm:p-3">ชื่อ</th>
-            <th class="text-left p-2 sm:p-3">{ui.common.type}</th>
-            <th class="text-left p-2 sm:p-3">หมวด</th>
-            <th class="text-right p-2 sm:p-3">{ui.common.power}</th>
-            <th class="text-right p-2 sm:p-3">Acc</th>
-            <th class="text-right p-2 sm:p-3">PP</th>
-            <th class="text-right p-2 sm:p-3">Prio</th>
+            <th class="text-left p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold transition-colors" data-sort="name">
+              <span class="inline-flex items-center gap-1">ชื่อ<span class="sort-arrow opacity-30">↕</span></span>
+            </th>
+            <th class="text-left p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold transition-colors" data-sort="type">
+              <span class="inline-flex items-center gap-1">{ui.common.type}<span class="sort-arrow opacity-30">↕</span></span>
+            </th>
+            <th class="text-left p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold transition-colors" data-sort="damageClass">
+              <span class="inline-flex items-center gap-1">หมวด<span class="sort-arrow opacity-30">↕</span></span>
+            </th>
+            <th class="text-right p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold transition-colors" data-sort="power">
+              <span class="inline-flex items-center justify-end gap-1">{ui.common.power}<span class="sort-arrow opacity-30">↕</span></span>
+            </th>
+            <th class="text-right p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold transition-colors" data-sort="accuracy">
+              <span class="inline-flex items-center justify-end gap-1">Acc<span class="sort-arrow opacity-30">↕</span></span>
+            </th>
+            <th class="text-right p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold transition-colors" data-sort="pp">
+              <span class="inline-flex items-center justify-end gap-1">PP<span class="sort-arrow opacity-30">↕</span></span>
+            </th>
+            <th class="text-right p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold transition-colors" data-sort="priority">
+              <span class="inline-flex items-center justify-end gap-1">Prio<span class="sort-arrow opacity-30">↕</span></span>
+            </th>
             <th class="text-left p-3 hidden md:table-cell">{ui.common.effect}</th>
           </tr>
         </thead>
@@ -112,6 +145,11 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
                 data-name-th={m.nameTh ?? ''}
                 data-type={m.type}
                 data-cat={m.category}
+                data-class={m.damageClass}
+                data-power={m.power ?? -1}
+                data-accuracy={m.accuracy ?? -1}
+                data-pp={m.pp}
+                data-priority={m.priority}
                 class="border-b border-champ-border/50 hover:bg-champ-card/50 transition-colors cursor-pointer md:cursor-default"
                 aria-expanded="false"
               >
@@ -180,8 +218,8 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
                 </td>
               </tr>
               <tr data-expand class="hidden md:hidden bg-champ-bg/40 border-b border-champ-border/50">
-                <td colspan="7" class="px-3 py-3 text-xs">
-                  <div class="space-y-3">
+                <td colspan="7" class="p-0 expand-cell">
+                  <div class="expand-content px-3 py-3 text-xs space-y-3">
                     <!-- Quick info pills: type, damage class, category -->
                     <div class="flex flex-wrap gap-1.5">
                       <span
@@ -274,6 +312,18 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
   .chip.data-active {
     @apply bg-champ-gold/15 border-champ-gold/50 text-champ-gold;
   }
+
+  /* Mobile expand panel: stick to left edge of scroll container so content
+     stays in the viewport even when the table is scrolled horizontally. */
+  @media (max-width: 767px) {
+    .expand-content {
+      position: sticky;
+      left: 0;
+      width: 100vw;
+      max-width: calc(100vw - 2rem); /* container-page px-4 = 1rem each side */
+      box-sizing: border-box;
+    }
+  }
 </style>
 
 <script>
@@ -281,12 +331,18 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
   const items = document.querySelectorAll<HTMLTableRowElement>('[data-move]');
   const catBtns = document.querySelectorAll<HTMLButtonElement>('[data-cat-filter]');
   const typeBtns = document.querySelectorAll<HTMLButtonElement>('[data-type-filter]');
+  const classBtns = document.querySelectorAll<HTMLButtonElement>('[data-class-filter]');
+  const sortHeaders = document.querySelectorAll<HTMLTableCellElement>('.sort-col');
+  const tbody = document.querySelector<HTMLTableSectionElement>('tbody')!;
   const countEl = document.querySelector<HTMLSpanElement>('[data-count]')!;
   const emptyEl = document.querySelector<HTMLDivElement>('[data-empty]')!;
 
   let activeCat = 'all';
-  let activeType = 'all';
+  const activeTypes = new Set<string>();        // empty = all
+  let activeClass = 'all';
   let query = '';
+  let sortKey: string | null = null;
+  let sortDir: 'asc' | 'desc' = 'asc';
 
   function setActive(buttons: NodeListOf<HTMLButtonElement>, value: string, attr: string) {
     buttons.forEach((b) => {
@@ -302,12 +358,14 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
       const nameTh = el.dataset.nameTh ?? '';
       const type = el.dataset.type ?? '';
       const cat = el.dataset.cat ?? '';
+      const damageClass = el.dataset.class ?? '';
 
       const matchSearch = !query || name.includes(query) || nameTh.includes(query);
       const matchCat = activeCat === 'all' || cat === activeCat;
-      const matchType = activeType === 'all' || type === activeType;
+      const matchType = activeTypes.size === 0 || activeTypes.has(type);
+      const matchClass = activeClass === 'all' || damageClass === activeClass;
 
-      const show = matchSearch && matchCat && matchType;
+      const show = matchSearch && matchCat && matchType && matchClass;
       el.style.display = show ? '' : 'none';
       // Sync expand row visibility — only show if main row is visible AND already expanded
       const expand = el.nextElementSibling as HTMLElement | null;
@@ -321,6 +379,55 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
     emptyEl.classList.toggle('hidden', count !== 0);
   }
 
+  function applySort() {
+    if (!sortKey) return;
+    const rowPairs: Array<[HTMLTableRowElement, HTMLTableRowElement | null]> = [];
+    items.forEach((row) => {
+      const expand = row.nextElementSibling as HTMLTableRowElement | null;
+      const isExpand = expand?.dataset.expand !== undefined ? expand : null;
+      rowPairs.push([row, isExpand]);
+    });
+
+    const dirMul = sortDir === 'asc' ? 1 : -1;
+    rowPairs.sort(([a], [b]) => {
+      const getVal = (el: HTMLTableRowElement) => {
+        const v = el.dataset[sortKey!] ?? '';
+        const num = Number(v);
+        return isNaN(num) ? v : num;
+      };
+      const va = getVal(a);
+      const vb = getVal(b);
+      if (typeof va === 'number' && typeof vb === 'number') {
+        return (va - vb) * dirMul;
+      }
+      return String(va).localeCompare(String(vb)) * dirMul;
+    });
+
+    // Re-append rows in sorted order
+    for (const [row, expand] of rowPairs) {
+      tbody.appendChild(row);
+      if (expand) tbody.appendChild(expand);
+    }
+  }
+
+  function updateSortArrows() {
+    sortHeaders.forEach((th) => {
+      const arrow = th.querySelector('.sort-arrow');
+      if (!arrow) return;
+      if (th.dataset.sort === sortKey) {
+        arrow.textContent = sortDir === 'asc' ? '↑' : '↓';
+        arrow.classList.remove('opacity-30');
+        arrow.classList.add('text-champ-gold');
+        th.classList.add('text-champ-gold');
+      } else {
+        arrow.textContent = '↕';
+        arrow.classList.add('opacity-30');
+        arrow.classList.remove('text-champ-gold');
+        th.classList.remove('text-champ-gold');
+      }
+    });
+  }
+
   search.addEventListener('input', (e) => {
     query = (e.target as HTMLInputElement).value.toLowerCase().trim();
     apply();
@@ -330,13 +437,53 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
     setActive(catBtns, activeCat, 'data-cat-filter');
     apply();
   }));
+  // Multi-select type filter
   typeBtns.forEach((b) => b.addEventListener('click', () => {
-    activeType = b.dataset.typeFilter ?? 'all';
-    setActive(typeBtns, activeType, 'data-type-filter');
+    const value = b.dataset.typeFilter ?? 'all';
+    if (value === 'all') {
+      activeTypes.clear();
+    } else {
+      if (activeTypes.has(value)) {
+        activeTypes.delete(value);
+      } else {
+        activeTypes.add(value);
+      }
+    }
+    // Visual state
+    typeBtns.forEach((btn) => {
+      const v = btn.dataset.typeFilter ?? 'all';
+      const on = v === 'all' ? activeTypes.size === 0 : activeTypes.has(v);
+      btn.classList.toggle('data-active', on);
+    });
+    apply();
+  }));
+  classBtns.forEach((b) => b.addEventListener('click', () => {
+    activeClass = b.dataset.classFilter ?? 'all';
+    setActive(classBtns, activeClass, 'data-class-filter');
     apply();
   }));
 
+  // Sortable column headers
+  sortHeaders.forEach((th) => th.addEventListener('click', () => {
+    const key = th.dataset.sort ?? '';
+    if (sortKey === key) {
+      // Toggle direction, then unset on third click
+      if (sortDir === 'asc') {
+        sortDir = 'desc';
+      } else {
+        sortKey = null;
+        sortDir = 'asc';
+      }
+    } else {
+      sortKey = key;
+      sortDir = 'asc';
+    }
+    updateSortArrows();
+    applySort();
+  }));
+
   // Row expand toggle (mobile only - on desktop all data shows inline)
+  const tableScroll = document.querySelector<HTMLElement>('.overflow-x-auto');
   items.forEach((row) => {
     row.addEventListener('click', () => {
       // Skip if user is selecting text or clicking a link
@@ -353,6 +500,11 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
       const chevron = row.querySelector('.chevron') as SVGElement | null;
       if (chevron) {
         chevron.style.transform = currentlyHidden ? 'rotate(180deg)' : '';
+      }
+      // When opening on mobile, scroll the table back to the left so the
+      // sticky expand content is visible.
+      if (currentlyHidden && tableScroll && window.innerWidth < 768) {
+        tableScroll.scrollTo({ left: 0, behavior: 'smooth' });
       }
     });
   });
