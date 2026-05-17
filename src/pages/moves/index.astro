@@ -80,8 +80,12 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
       </div>
     </div>
 
-    <div class="text-sm text-champ-muted mb-4">
-      <span data-count>{moves.length}</span> ท่า
+    <div class="flex items-center justify-between mb-4 text-sm text-champ-muted">
+      <span><span data-count>{moves.length}</span> ท่า</span>
+      <span class="md:hidden text-xs flex items-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        แตะแถวเพื่อดูคำอธิบายเต็ม
+      </span>
     </div>
 
     <!-- Moves Table -->
@@ -101,60 +105,107 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
         </thead>
         <tbody>
           {sorted.map((m) => (
-            <tr
-              data-move
-              data-name={m.nameEn.toLowerCase()}
-              data-name-th={m.nameTh ?? ''}
-              data-type={m.type}
-              data-cat={m.category}
-              class="border-b border-champ-border/50 hover:bg-champ-card/50 transition-colors"
-            >
-              <td class="p-2 sm:p-3">
-                <div class="font-semibold">{m.nameEn}</div>
-                {m.nameTh && <div class="text-xs text-champ-muted">{m.nameTh}</div>}
-              </td>
-              <td class="p-2 sm:p-3">
-                <span
-                  class="inline-flex items-center gap-1 rounded-full pl-0.5 pr-0 sm:pr-2 py-0.5 text-[10px] uppercase tracking-wider font-bold"
-                  style={`background-color: ${typeColors[m.type]}25; color: ${typeColors[m.type]}; border: 1px solid ${typeColors[m.type]}40;`}
-                  title={m.type}
-                >
-                  <img
-                    src={typeIconUrl(m.type)}
-                    alt={m.type}
-                    loading="lazy"
-                    width="20"
-                    height="20"
-                    class="object-contain flex-none"
-                    onerror="this.style.display='none'"
-                  />
-                  <span class="hidden sm:inline">{translateType(m.type)}</span>
-                </span>
-              </td>
-              <td class="p-2 sm:p-3 text-xs">
-                <span class:list={[
-                  'badge text-[10px]',
-                  m.damageClass === 'physical' && 'bg-red-500/20 text-red-300',
-                  m.damageClass === 'special' && 'bg-blue-500/20 text-blue-300',
-                  m.damageClass === 'status' && 'bg-yellow-500/20 text-yellow-300',
-                ]}>
-                  {translateDamageClass(m.damageClass)}
-                </span>
-              </td>
-              <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
-                {m.power ?? '—'}
-              </td>
-              <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
-                {m.accuracy != null ? `${m.accuracy}%` : '—'}
-              </td>
-              <td class="p-2 sm:p-3 text-right font-mono tabular-nums">{m.pp}</td>
-              <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
-                {m.priority !== 0 ? (m.priority > 0 ? `+${m.priority}` : m.priority) : '—'}
-              </td>
-              <td class="p-2 sm:p-3 text-xs text-champ-muted hidden md:table-cell">
-                <div class="line-clamp-2">{m.effect}</div>
-              </td>
-            </tr>
+            <>
+              <tr
+                data-move
+                data-name={m.nameEn.toLowerCase()}
+                data-name-th={m.nameTh ?? ''}
+                data-type={m.type}
+                data-cat={m.category}
+                class="border-b border-champ-border/50 hover:bg-champ-card/50 transition-colors cursor-pointer md:cursor-default"
+                aria-expanded="false"
+              >
+                <td class="p-2 sm:p-3">
+                  <div class="flex items-center gap-1.5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="md:hidden text-champ-muted flex-none chevron transition-transform"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                    <div class="min-w-0">
+                      <div class="font-semibold truncate">{m.nameEn}</div>
+                      {m.nameTh && <div class="text-xs text-champ-muted truncate">{m.nameTh}</div>}
+                    </div>
+                  </div>
+                </td>
+                <td class="p-2 sm:p-3">
+                  <span
+                    class="inline-flex items-center gap-1 rounded-full pl-0.5 pr-0 sm:pr-2 py-0.5 text-[10px] uppercase tracking-wider font-bold"
+                    style={`background-color: ${typeColors[m.type]}25; color: ${typeColors[m.type]}; border: 1px solid ${typeColors[m.type]}40;`}
+                    title={m.type}
+                  >
+                    <img
+                      src={typeIconUrl(m.type)}
+                      alt={m.type}
+                      loading="lazy"
+                      width="20"
+                      height="20"
+                      class="object-contain flex-none"
+                      onerror="this.style.display='none'"
+                    />
+                    <span class="hidden sm:inline">{translateType(m.type)}</span>
+                  </span>
+                </td>
+                <td class="p-2 sm:p-3 text-xs">
+                  <span class:list={[
+                    'badge text-[10px]',
+                    m.damageClass === 'physical' && 'bg-red-500/20 text-red-300',
+                    m.damageClass === 'special' && 'bg-blue-500/20 text-blue-300',
+                    m.damageClass === 'status' && 'bg-yellow-500/20 text-yellow-300',
+                  ]}>
+                    {translateDamageClass(m.damageClass)}
+                  </span>
+                </td>
+                <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
+                  {m.power ?? '—'}
+                </td>
+                <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
+                  {m.accuracy != null ? `${m.accuracy}%` : '—'}
+                </td>
+                <td class="p-2 sm:p-3 text-right font-mono tabular-nums">{m.pp}</td>
+                <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
+                  {m.priority !== 0 ? (m.priority > 0 ? `+${m.priority}` : m.priority) : '—'}
+                </td>
+                <td class="p-2 sm:p-3 text-xs text-champ-muted hidden md:table-cell">
+                  <div class="line-clamp-2">{m.effect}</div>
+                </td>
+              </tr>
+              <tr data-expand class="hidden md:hidden bg-champ-bg/40 border-b border-champ-border/50">
+                <td colspan="7" class="px-3 py-3 text-xs">
+                  <div class="space-y-2">
+                    <div>
+                      <div class="text-[10px] text-champ-muted uppercase tracking-wider mb-0.5">
+                        คำอธิบาย
+                      </div>
+                      <p class="text-champ-text leading-relaxed">{m.description}</p>
+                    </div>
+                    {m.effect && m.effect !== '-' && (
+                      <div>
+                        <div class="text-[10px] text-champ-muted uppercase tracking-wider mb-0.5">
+                          เอฟเฟกต์
+                        </div>
+                        <p class="text-champ-gold/90 leading-relaxed">{m.effect}</p>
+                      </div>
+                    )}
+                    <div class="flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-champ-muted font-mono pt-1">
+                      <span>หมวด: <span class="text-champ-text">{m.category}</span></span>
+                      {m.priority !== 0 && (
+                        <span>Priority: <span class="text-champ-gold">{m.priority > 0 ? `+${m.priority}` : m.priority}</span></span>
+                      )}
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </>
           ))}
         </tbody>
       </table>
@@ -205,6 +256,12 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
 
       const show = matchSearch && matchCat && matchType;
       el.style.display = show ? '' : 'none';
+      // Sync expand row visibility — only show if main row is visible AND already expanded
+      const expand = el.nextElementSibling as HTMLElement | null;
+      if (expand?.dataset.expand !== undefined) {
+        const isExpanded = el.getAttribute('aria-expanded') === 'true';
+        expand.style.display = show && isExpanded ? '' : 'none';
+      }
       if (show) count++;
     });
     countEl.textContent = String(count);
@@ -225,4 +282,25 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
     setActive(typeBtns, activeType, 'data-type-filter');
     apply();
   }));
+
+  // Row expand toggle (mobile only - on desktop all data shows inline)
+  items.forEach((row) => {
+    row.addEventListener('click', () => {
+      // Skip if user is selecting text or clicking a link
+      const sel = window.getSelection();
+      if (sel && sel.toString().length > 0) return;
+
+      const expand = row.nextElementSibling as HTMLElement | null;
+      if (!expand || expand.dataset.expand === undefined) return;
+      const currentlyHidden = expand.classList.contains('hidden');
+      // Toggle
+      expand.classList.toggle('hidden');
+      row.setAttribute('aria-expanded', String(currentlyHidden));
+      // Rotate chevron
+      const chevron = row.querySelector('.chevron') as SVGElement | null;
+      if (chevron) {
+        chevron.style.transform = currentlyHidden ? 'rotate(180deg)' : '';
+      }
+    });
+  });
 </script>
