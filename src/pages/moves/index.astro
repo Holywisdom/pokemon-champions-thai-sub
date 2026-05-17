@@ -367,11 +367,17 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
 
       const show = matchSearch && matchCat && matchType && matchClass;
       el.style.display = show ? '' : 'none';
-      // Sync expand row visibility — only show if main row is visible AND already expanded
+      // Sync expand row visibility:
+      // - When the main row is filtered OUT we hide its expand row via inline style.
+      // - When the main row is back IN we clear the inline style so the 'hidden'
+      //   class (controlled by user clicks) decides visibility again.
       const expand = el.nextElementSibling as HTMLElement | null;
       if (expand?.dataset.expand !== undefined) {
-        const isExpanded = el.getAttribute('aria-expanded') === 'true';
-        expand.style.display = show && isExpanded ? '' : 'none';
+        if (show) {
+          expand.style.removeProperty('display');
+        } else {
+          expand.style.display = 'none';
+        }
       }
       if (show) count++;
     });
