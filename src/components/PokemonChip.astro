@@ -1,0 +1,48 @@
+---
+import { findPokemon, pokemonSpriteUrl } from '@/data/pokemon-index';
+import { url } from '@/lib/utils';
+
+export interface Props {
+  name: string;
+  size?: 'sm' | 'md';
+}
+
+const { name, size = 'sm' } = Astro.props;
+const ref = findPokemon(name);
+const sprite = ref ? pokemonSpriteUrl(ref.id, 'small') : null;
+const linkable = ref?.hasDetailPage;
+
+const sizeClass = size === 'md' ? 'w-12 h-12' : 'w-9 h-9';
+---
+
+{linkable && ref ? (
+  <a
+    href={url(`/pokemon/${ref.slug}`)}
+    class="group flex items-center gap-2 rounded-lg bg-champ-card border border-champ-border px-2 py-1.5 hover:border-champ-gold/50 transition-all"
+  >
+    {sprite && (
+      <span class:list={['flex items-center justify-center bg-champ-bg/40 rounded-full flex-none', sizeClass]}>
+        <img
+          src={sprite}
+          alt={name}
+          loading="lazy"
+          class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
+        />
+      </span>
+    )}
+    <span class="text-xs font-medium pr-1 truncate">{name}</span>
+  </a>
+) : (
+  <span class="flex items-center gap-2 rounded-lg bg-champ-card border border-champ-border px-2 py-1.5">
+    {sprite ? (
+      <span class:list={['flex items-center justify-center bg-champ-bg/40 rounded-full flex-none', sizeClass]}>
+        <img src={sprite} alt={name} loading="lazy" class="max-w-full max-h-full object-contain" />
+      </span>
+    ) : (
+      <span class:list={['flex items-center justify-center bg-champ-border rounded-full flex-none text-champ-muted', sizeClass]}>
+        ?
+      </span>
+    )}
+    <span class="text-xs font-medium pr-1 truncate">{name}</span>
+  </span>
+)}

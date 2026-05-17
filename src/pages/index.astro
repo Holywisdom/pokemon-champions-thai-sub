@@ -1,0 +1,255 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PokemonCard from '@/components/PokemonCard.astro';
+import { META_POKEMON, TIERS_LIST } from '@/data/meta';
+import { ui } from '@/data/translations';
+import { url } from '@/lib/utils';
+
+// Sort by usage % (where available), then by tier
+const featured = [...META_POKEMON]
+  .filter((p) => p.tier === 'S' || p.tier === 'A')
+  .sort((a, b) => (b.usagePercent ?? 0) - (a.usagePercent ?? 0))
+  .slice(0, 8);
+
+const tierCounts = TIERS_LIST.filter((t) => t.id !== 'Restricted').map((t) => ({
+  ...t,
+  count: META_POKEMON.filter((p) => p.tier === t.id).length,
+}));
+
+const cards = [
+  {
+    href: '/pokedex',
+    title: ui.nav.pokedex,
+    desc: `รายชื่อโปเกมอน meta Reg M-A ${META_POKEMON.length} ตัว พร้อม sets และ counters`,
+    icon: '📖',
+    color: 'from-amber-500/20 to-orange-500/20',
+  },
+  {
+    href: '/moves',
+    title: ui.nav.moves,
+    desc: 'ท่าโจมตียอดนิยมพร้อมพลัง ความแม่นยำ และเอฟเฟกต์',
+    icon: '⚔️',
+    color: 'from-red-500/20 to-pink-500/20',
+  },
+  {
+    href: '/abilities',
+    title: ui.nav.abilities,
+    desc: 'ความสามารถสำคัญในการแข่งขัน',
+    icon: '⭐',
+    color: 'from-purple-500/20 to-indigo-500/20',
+  },
+  {
+    href: '/items',
+    title: ui.nav.items,
+    desc: 'ไอเทมที่ใช้ได้ใน Champions (ไม่มี Life Orb / Choice)',
+    icon: '🎒',
+    color: 'from-green-500/20 to-emerald-500/20',
+  },
+  {
+    href: '/types',
+    title: ui.nav.types,
+    desc: 'ตารางความสัมพันธ์ระหว่างธาตุทั้ง 18',
+    icon: '🔥',
+    color: 'from-blue-500/20 to-cyan-500/20',
+  },
+  {
+    href: '/status',
+    title: ui.nav.status,
+    desc: 'สถานะผิดปกติ สภาพอากาศ ภูมิประเทศ และกับดัก',
+    icon: '☠️',
+    color: 'from-violet-500/20 to-fuchsia-500/20',
+  },
+  {
+    href: '/mechanics',
+    title: ui.nav.mechanics,
+    desc: 'กลไกการคำนวณดาเมจ, EV/IV, Mega Evolution, Tera',
+    icon: '🎯',
+    color: 'from-teal-500/20 to-cyan-500/20',
+  },
+];
+---
+
+<BaseLayout>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-champ-radial pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-30 pointer-events-none">
+      <div class="absolute -top-32 -right-20 w-96 h-96 rounded-full bg-champ-ember blur-3xl"></div>
+      <div class="absolute -bottom-32 -left-20 w-96 h-96 rounded-full bg-champ-gold blur-3xl"></div>
+    </div>
+
+    <div class="container-page relative py-20 md:py-28">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-champ-card border border-champ-border mb-6 animate-fade-in">
+          <span class="w-1.5 h-1.5 rounded-full bg-champ-gold animate-pulse-glow"></span>
+          <span class="text-xs font-medium text-champ-muted">
+            Pokémon Champions · Switch + Switch 2 · <span class="text-champ-gold">Regulation M-A</span>
+          </span>
+        </div>
+
+        <h1 class="font-display text-5xl md:text-7xl tracking-wider leading-none mb-6 animate-slide-up">
+          <span class="block text-champ-text">BECOME A</span>
+          <span class="block gradient-text">CHAMPION</span>
+        </h1>
+
+        <p class="text-lg text-champ-muted leading-relaxed mb-8 max-w-xl animate-slide-up">
+          คัมภีร์การแข่งขัน <strong class="text-champ-text">Pokémon Champions</strong> ฉบับภาษาไทย
+          เกมที่เปิดตัว 8 เมษายน 2026 บน Nintendo Switch / Switch 2 (มือถือตามมา)
+          รวม meta Reg M-A, Mega Evolution + Tera, ท่า ความสามารถ ไอเทม และกลไกทั้งหมด
+        </p>
+
+        <div class="flex flex-wrap gap-3 animate-slide-up">
+          <a href={url('/pokedex')} class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            เริ่มสำรวจ Pokédex
+          </a>
+          <a href={url('/mechanics')} class="btn-ghost">
+            เรียนรู้กลไกการต่อสู้
+          </a>
+        </div>
+
+        <!-- Tier counts -->
+        <div class="mt-12 flex flex-wrap gap-4 animate-fade-in">
+          {tierCounts.map((t) => (
+            <div class="flex items-baseline gap-2">
+              <span class="font-display text-2xl tabular-nums" style={`color: ${t.color}`}>
+                {t.count}
+              </span>
+              <span class="text-xs text-champ-muted uppercase tracking-wider">
+                {t.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- META ALERTS -->
+  <section class="container-page pt-6">
+    <div class="card p-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="flex gap-3">
+        <span class="text-2xl">🏆</span>
+        <div class="text-sm">
+          <div class="font-semibold text-champ-text mb-0.5">Reg M-A คือ format ปัจจุบัน</div>
+          <p class="text-champ-muted text-xs leading-relaxed">
+            แบน Paradox, Treasures of Ruin, Koraidon, Miraidon — meta เปลี่ยนเป็น Mega-centric
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <span class="text-2xl">✦</span>
+        <div class="text-sm">
+          <div class="font-semibold text-champ-text mb-0.5">Mega Evolution กลับมาแล้ว!</div>
+          <p class="text-champ-muted text-xs leading-relaxed">
+            Mega Y, Mega Aerodactyl, Mega Scizor, Mega Kangaskhan ทุกตัวเล่นได้
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <span class="text-2xl">📊</span>
+        <div class="text-sm">
+          <div class="font-semibold text-champ-text mb-0.5">ระบบ SP (ไม่ใช่ EV)</div>
+          <p class="text-champ-muted text-xs leading-relaxed">
+            66 SP กระจาย (cap 32) + IV ล็อก 31 + Stat Alignment (Nature) — ปรับฟรีได้ตลอด
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <span class="text-2xl">🎒</span>
+        <div class="text-sm">
+          <div class="font-semibold text-champ-text mb-0.5">ไม่มี Life Orb / Choice items</div>
+          <p class="text-champ-muted text-xs leading-relaxed">
+            ไอเทม unique (โปเกมอน 2 ตัวห้ามถือเหมือนกัน) ใช้ Booster Energy/Mystic Water แทน
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="container-page py-16">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <h2 class="font-display text-3xl tracking-wide mb-2">
+          <span class="gradient-text">META TITANS</span>
+        </h2>
+        <p class="text-champ-muted text-sm">โปเกมอนที่ใช้สูงสุดในการแข่งขัน Reg M-A (อ้างอิงข้อมูล tournament)</p>
+      </div>
+      <a href={url('/pokedex')} class="text-sm text-champ-gold hover:underline">
+        ดูทั้งหมด →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      {featured.map((p) => <PokemonCard pokemon={p} />)}
+    </div>
+  </section>
+
+  <!-- SECTIONS GRID -->
+  <section class="container-page py-12">
+    <h2 class="font-display text-3xl tracking-wide mb-8">
+      <span class="text-champ-text">สำรวจ </span>
+      <span class="gradient-text">WIKI</span>
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {cards.map((card) => (
+        <a
+          href={url(card.href)}
+          class="card p-6 group relative overflow-hidden transition-all hover:-translate-y-1 hover:shadow-glow-gold"
+        >
+          <div class:list={['absolute inset-0 bg-gradient-to-br opacity-30 transition-opacity group-hover:opacity-50 pointer-events-none', card.color]}></div>
+          <div class="relative">
+            <div class="text-4xl mb-4">{card.icon}</div>
+            <h3 class="font-display text-xl tracking-wide mb-2">{card.title}</h3>
+            <p class="text-sm text-champ-muted">{card.desc}</p>
+            <div class="mt-4 text-xs text-champ-gold font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              เริ่มอ่าน →
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ABOUT POKEMON CHAMPIONS -->
+  <section class="container-page py-16">
+    <div class="card p-8 md:p-12 relative overflow-hidden">
+      <div class="absolute inset-0 bg-champ-radial opacity-50 pointer-events-none"></div>
+      <div class="relative grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="font-display text-3xl md:text-4xl tracking-wide mb-4">
+            <span class="gradient-text">เกี่ยวกับ</span>
+            <span class="text-champ-text">Pokémon Champions</span>
+          </h2>
+          <p class="text-champ-muted mb-4 leading-relaxed">
+            <strong class="text-champ-text">Pokémon Champions</strong> เปิดตัว 8 เมษายน 2026
+            บน Nintendo Switch และ Switch 2 พร้อมกัน (เวอร์ชั่นมือถือ iOS/Android ตามมาภายในปี 2026)
+            เป็นเกมแข่งขันโดยเฉพาะที่ใช้ในการแข่ง VGC อย่างเป็นทางการ — รวมถึง
+            <strong class="text-champ-gold">Pokémon Worlds 2026</strong> ที่ San Francisco
+            (28-30 สิงหาคม 2026) ซึ่งจะใช้ Pokémon Champions เป็นครั้งแรก
+          </p>
+          <p class="text-champ-muted leading-relaxed">
+            Wiki นี้รวบรวมข้อมูล meta Reg M-A ปัจจุบัน — โปเกมอนยอดนิยม, sets, counters,
+            กลไก Mega Evolution + Tera และทุกอย่างที่ผู้เล่นไทยต้องรู้
+          </p>
+          <ul class="mt-6 space-y-1.5 text-sm">
+            <li class="flex gap-2"><span class="text-champ-gold">▸</span> ฟรีเล่นได้ (Free-to-start) ผ่าน Pokémon HOME</li>
+            <li class="flex gap-2"><span class="text-champ-gold">▸</span> Singles + Doubles formats</li>
+            <li class="flex gap-2"><span class="text-champ-gold">▸</span> Cross-platform: Switch ↔ Switch 2 ↔ Mobile</li>
+            <li class="flex gap-2"><span class="text-champ-gold">▸</span> Mega Evolution + Terastallization (1 กิมมิคต่อแมตช์)</li>
+          </ul>
+        </div>
+        <div class="flex justify-center">
+          <div class="relative w-48 h-48">
+            <div class="absolute inset-0 rounded-full bg-gold-shine animate-pulse-glow"></div>
+            <div class="absolute inset-2 rounded-full bg-champ-bg flex items-center justify-center">
+              <span class="font-display text-7xl gradient-text">★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

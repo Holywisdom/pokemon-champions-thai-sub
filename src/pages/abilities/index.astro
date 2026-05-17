@@ -1,0 +1,121 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { abilities, abilityCategories } from '@/data/abilities';
+import { ui } from '@/data/translations';
+---
+
+<BaseLayout title="ความสามารถ" description="ความสามารถยอดนิยมในการแข่งขัน Pokemon">
+  <section class="container-page py-10">
+    <div class="mb-8">
+      <h1 class="font-display text-4xl tracking-wide mb-2">
+        <span class="gradient-text">ABILITIES</span>
+        <span class="text-champ-muted text-base ml-3 font-sans normal-case">{ui.nav.abilities}</span>
+      </h1>
+      <p class="text-champ-muted">
+        ความสามารถใน Pokémon Champions Reg M-A — รวม {abilities.length} ความสามารถ
+        ครอบคลุม offense / defense / weather / terrain / speed / utility
+      </p>
+    </div>
+
+    <div class="card p-4 mb-6 flex gap-3 items-start text-sm">
+      <span class="text-2xl flex-none">✦</span>
+      <div>
+        <div class="font-semibold text-champ-text mb-1">Mega Abilities ใน Champions</div>
+        <p class="text-champ-muted text-xs leading-relaxed">
+          ความสามารถจาก Mega Evolution (Pixilate, Tough Claws, Parental Bond, Technician, Mega Launcher ฯลฯ)
+          กลับมาใน Champions เพราะ Mega Evolution เปิดใช้ใน Reg M-A — แตกต่างจาก Scarlet/Violet ที่ไม่มี
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="card p-4 mb-6 space-y-3">
+      <input type="search" data-search placeholder="ค้นหาความสามารถ..." class="input" />
+      <div class="flex flex-wrap gap-2">
+        <button data-cat-filter="all" class="chip data-active">ทั้งหมด</button>
+        {abilityCategories.map((c) => (
+          <button data-cat-filter={c.id} class="chip">{c.label}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="text-sm text-champ-muted mb-4">
+      <span data-count>{abilities.length}</span> ความสามารถ
+    </div>
+
+    <!-- Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {abilities.map((a) => (
+        <div
+          data-ability
+          data-name={a.nameEn.toLowerCase()}
+          data-name-th={a.nameTh}
+          data-cat={a.category}
+          class="card p-5 hover:border-champ-gold/40 transition-colors"
+        >
+          <div class="flex items-start justify-between gap-2 mb-2">
+            <div>
+              <h3 class="font-display text-lg tracking-wide">{a.nameEn}</h3>
+              <p class="text-xs text-champ-muted">{a.nameTh}</p>
+            </div>
+            <span class="badge text-[10px] bg-champ-card border border-champ-border">
+              {a.category}
+            </span>
+          </div>
+          <p class="text-sm text-champ-text leading-relaxed mb-3">{a.description}</p>
+          {a.notableUsers.length > 0 && (
+            <div>
+              <div class="text-xs text-champ-muted uppercase tracking-wider mb-1">ผู้ใช้</div>
+              <div class="flex flex-wrap gap-1">
+                {a.notableUsers.slice(0, 4).map((u) => (
+                  <span class="text-[10px] bg-champ-card border border-champ-border rounded px-1.5 py-0.5">{u}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .chip.data-active {
+    @apply bg-champ-gold/15 border-champ-gold/50 text-champ-gold;
+  }
+</style>
+
+<script>
+  const search = document.querySelector<HTMLInputElement>('[data-search]')!;
+  const items = document.querySelectorAll<HTMLDivElement>('[data-ability]');
+  const catBtns = document.querySelectorAll<HTMLButtonElement>('[data-cat-filter]');
+  const countEl = document.querySelector<HTMLSpanElement>('[data-count]')!;
+
+  let activeCat = 'all';
+  let query = '';
+
+  function apply() {
+    let count = 0;
+    items.forEach((el) => {
+      const name = el.dataset.name ?? '';
+      const nameTh = el.dataset.nameTh ?? '';
+      const cat = el.dataset.cat ?? '';
+      const matchSearch = !query || name.includes(query) || nameTh.includes(query);
+      const matchCat = activeCat === 'all' || cat === activeCat;
+      const show = matchSearch && matchCat;
+      el.style.display = show ? '' : 'none';
+      if (show) count++;
+    });
+    countEl.textContent = String(count);
+  }
+
+  search.addEventListener('input', (e) => {
+    query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    apply();
+  });
+  catBtns.forEach((b) => b.addEventListener('click', () => {
+    activeCat = b.dataset.catFilter ?? 'all';
+    catBtns.forEach((x) => x.classList.toggle('data-active', x === b));
+    apply();
+  }));
+</script>

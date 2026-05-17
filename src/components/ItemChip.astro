@@ -1,0 +1,42 @@
+---
+import { findItem, itemNameToSlug } from '@/lib/lookups';
+import { itemSpriteUrl } from '@/data/pokemon-index';
+
+export interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+const item = findItem(name);
+const slug = item?.slug ?? itemNameToSlug(name);
+const sprite = itemSpriteUrl(slug);
+
+// Detect banned/unavailable items in Champions (note in description)
+const isBanned = /banned|not available|absent/i.test(item?.description ?? '');
+---
+
+<div class="flex items-start gap-2.5 rounded-lg bg-champ-card border border-champ-border px-2.5 py-2 hover:border-champ-gold/40 transition-colors">
+  <span class="flex items-center justify-center w-9 h-9 bg-champ-bg/60 rounded-md border border-champ-border flex-none">
+    <img
+      src={sprite}
+      alt={name}
+      loading="lazy"
+      class="max-w-full max-h-full object-contain"
+      onerror="this.style.display='none'; this.parentElement.textContent='🎒';"
+    />
+  </span>
+  <div class="min-w-0 flex-1">
+    <div class="flex items-center gap-1 flex-wrap">
+      <div class="text-xs font-semibold truncate">{name}</div>
+      {isBanned && (
+        <span class="text-[9px] bg-red-500/20 text-red-300 rounded px-1">Reg M-A: NO</span>
+      )}
+    </div>
+    {item?.nameTh && <div class="text-[10px] text-champ-muted truncate">{item.nameTh}</div>}
+    {item?.description && (
+      <div class="text-[11px] text-champ-text/80 leading-snug mt-0.5 line-clamp-2">
+        {item.description}
+      </div>
+    )}
+  </div>
+</div>

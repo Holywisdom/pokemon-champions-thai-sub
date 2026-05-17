@@ -1,0 +1,25 @@
+{
+  "name": "pokemon-champions-thai-wiki",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "fetch": "node scripts/fetch-data.mjs",
+    "fetch:full": "node scripts/fetch-data.mjs --full"
+  },
+  "dependencies": {
+    "astro": "^5.1.0",
+    "@astrojs/sitemap": "^3.2.0",
+    "@astrojs/tailwind": "^5.1.4",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0"
+  }
+}

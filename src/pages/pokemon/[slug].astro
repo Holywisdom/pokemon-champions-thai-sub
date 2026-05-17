@@ -1,0 +1,283 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import TypeBadge from '@/components/TypeBadge.astro';
+import StatBar from '@/components/StatBar.astro';
+import PokemonChip from '@/components/PokemonChip.astro';
+import ItemChip from '@/components/ItemChip.astro';
+import MoveChip from '@/components/MoveChip.astro';
+import AbilityChip from '@/components/AbilityChip.astro';
+import { META_POKEMON, TIERS_LIST, spriteUrl } from '@/data/meta';
+import { typeColors, getTypeWeaknesses } from '@/data/types';
+import { ui, translateType } from '@/data/translations';
+import { url, effectivenessColor, totalBaseStats } from '@/lib/utils';
+
+export async function getStaticPaths() {
+  return META_POKEMON.map((pokemon) => ({
+    params: { slug: pokemon.slug },
+    props: { pokemon },
+  }));
+}
+
+const { pokemon } = Astro.props;
+const sprite = spriteUrl(pokemon.id);
+const total = totalBaseStats(pokemon.baseStats);
+const primaryColor = typeColors[pokemon.types[0]];
+const secondaryColor = pokemon.types[1] ? typeColors[pokemon.types[1]] : primaryColor;
+const weaknesses = getTypeWeaknesses(pokemon.types);
+const tier = TIERS_LIST.find((t) => t.id === pokemon.tier)!;
+---
+
+<BaseLayout
+  title={`${pokemon.nameEn} ${pokemon.nameTh ? '(' + pokemon.nameTh + ')' : ''}`}
+  description={pokemon.description}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-champ-border">
+    <div
+      class="absolute inset-0 opacity-20 pointer-events-none"
+      style={`background: linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`}
+    ></div>
+    <div class="absolute inset-0 bg-champ-radial opacity-50 pointer-events-none"></div>
+
+    <div class="container-page py-12 relative">
+      <a href={url('/pokedex')} class="inline-flex items-center gap-1 text-sm text-champ-muted hover:text-champ-gold mb-6 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        {ui.common.backTo} Pokédex
+      </a>
+
+      <div class="grid md:grid-cols-[1fr_320px] gap-8 items-start">
+        <div>
+          <div class="flex items-center gap-3 mb-3 flex-wrap">
+            <span class="font-mono text-champ-muted">#{String(pokemon.id).padStart(4, '0')}</span>
+            <span
+              class="badge text-xs"
+              style={`background-color: ${tier.color}25; color: ${tier.color}; border: 1px solid ${tier.color}40;`}
+            >
+              {tier.label}
+            </span>
+            {pokemon.usagePercent != null && (
+              <span class="badge text-xs bg-champ-card border border-champ-border">
+                Usage: <span class="text-champ-gold ml-1">{pokemon.usagePercent}%</span>
+              </span>
+            )}
+            {pokemon.winRate != null && (
+              <span class="badge text-xs bg-champ-card border border-champ-border">
+                Win: <span class="text-champ-gold ml-1">{pokemon.winRate}%</span>
+              </span>
+            )}
+            {pokemon.hasMega && (
+              <span class="badge text-xs bg-champ-ember/20 text-champ-ember border border-champ-ember/40">
+                ✦ MEGA
+              </span>
+            )}
+          </div>
+
+          <h1 class="font-display text-5xl md:text-6xl tracking-wide mb-2">{pokemon.nameEn}</h1>
+          {pokemon.nameTh && (
+            <p class="text-champ-muted text-lg mb-4">{pokemon.nameTh}</p>
+          )}
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            {pokemon.types.map((t) => <TypeBadge type={t} size="lg" showBoth />)}
+          </div>
+
+          <div class="card p-4 inline-flex items-center gap-6">
+            <div>
+              <div class="text-xs text-champ-muted uppercase tracking-wider">{ui.common.role}</div>
+              <div class="font-semibold text-champ-gold">{pokemon.role}</div>
+              <div class="text-xs text-champ-muted">{pokemon.roleTh}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center md:justify-end">
+          <div class="relative">
+            <div
+              class="absolute -inset-6 rounded-full opacity-50 blur-3xl"
+              style={`background: radial-gradient(circle, ${primaryColor}, transparent 70%)`}
+            ></div>
+            <img
+              src={sprite}
+              alt={pokemon.nameEn}
+              class="relative w-64 h-64 object-contain drop-shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <section class="container-page py-10 grid lg:grid-cols-3 gap-6">
+    <!-- Left: Stats + Abilities -->
+    <div class="space-y-6">
+      <!-- Stats -->
+      <div class="card p-6">
+        <h2 class="font-display text-xl tracking-wide mb-4">
+          {ui.common.stats}
+          <span class="ml-2 text-xs text-champ-muted normal-case font-sans">
+            BST {total}
+          </span>
+        </h2>
+        <div class="space-y-2.5">
+          <StatBar statKey="hp" value={pokemon.baseStats.hp} />
+          <StatBar statKey="attack" value={pokemon.baseStats.atk} />
+          <StatBar statKey="defense" value={pokemon.baseStats.def} />
+          <StatBar statKey="special-attack" value={pokemon.baseStats.spa} />
+          <StatBar statKey="special-defense" value={pokemon.baseStats.spd} />
+          <StatBar statKey="speed" value={pokemon.baseStats.spe} />
+        </div>
+        <p class="text-[10px] text-champ-muted mt-3 leading-relaxed">
+          ค่าที่แสดงคือ Base Stats (เหมือนเกมหลัก) — สเตตัสจริงในแบทเทิลคำนวณรวมกับ
+          <span class="text-champ-gold">SP (66 max)</span> + <span class="text-champ-gold">Stat Alignment</span>
+          + <span class="text-champ-gold">IV 31</span> ที่ Level 50
+        </p>
+      </div>
+
+      <!-- Abilities -->
+      <div class="card p-6">
+        <h2 class="font-display text-xl tracking-wide mb-4">{ui.common.abilities}</h2>
+        <div class="space-y-2">
+          {pokemon.abilities.map((a) => (
+            <AbilityChip name={a} />
+          ))}
+          {pokemon.hiddenAbility && (
+            <AbilityChip name={pokemon.hiddenAbility} isHidden />
+          )}
+        </div>
+      </div>
+
+      <!-- Mega stone -->
+      {pokemon.hasMega && pokemon.megaForm && (
+        <div class="card p-6 border-champ-ember/40">
+          <h2 class="font-display text-xl tracking-wide mb-2 text-champ-ember">
+            ✦ Mega Evolution
+          </h2>
+          <p class="text-sm text-champ-muted mb-2">ใช้ {pokemon.megaForm} เพื่อ Mega Evolve</p>
+          <p class="text-xs text-champ-text/80 leading-relaxed">
+            ใน Pokémon Champions Reg M-A กิมมิค Mega Evolution กลับมาแล้ว
+            สามารถใช้พร้อม Terastallization ในการแข่งขัน
+            (จำกัด 1 กิมมิค ต่อ 1 ทีมต่อแมตช์)
+          </p>
+        </div>
+      )}
+    </div>
+
+    <!-- Right: Description + Strengths + Counters -->
+    <div class="lg:col-span-2 space-y-6">
+      <!-- Description -->
+      <div class="card p-6">
+        <h2 class="font-display text-xl tracking-wide mb-3">{ui.common.competitiveUsage}</h2>
+        <p class="text-champ-text leading-relaxed">{pokemon.description}</p>
+      </div>
+
+      <!-- Strengths / Weaknesses -->
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <h3 class="font-display text-lg tracking-wide mb-3 text-green-400">จุดแข็ง</h3>
+          <ul class="space-y-2 text-sm">
+            {pokemon.strengths.map((s) => (
+              <li class="flex gap-2">
+                <span class="text-green-400 flex-none">▸</span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="card p-6">
+          <h3 class="font-display text-lg tracking-wide mb-3 text-red-400">จุดอ่อน</h3>
+          <ul class="space-y-2 text-sm">
+            {pokemon.weaknesses.map((w) => (
+              <li class="flex gap-2">
+                <span class="text-red-400 flex-none">▸</span>
+                <span>{w}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Type weakness chart -->
+      <div class="card p-6">
+        <h3 class="font-display text-lg tracking-wide mb-3">ค่าความเสียหายจากธาตุ</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {Object.entries(weaknesses).map(([t, mult]) => (
+            <div class={`flex items-center justify-between rounded-md px-3 py-1.5 text-xs ${effectivenessColor(mult)}`}>
+              <span class="uppercase tracking-wider">{translateType(t)}</span>
+              <span class="font-mono">{mult}×</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Common items -->
+      <div class="card p-6">
+        <h3 class="font-display text-lg tracking-wide mb-3">ไอเทมยอดนิยม</h3>
+        <div class="grid sm:grid-cols-2 gap-2">
+          {pokemon.commonItems.map((i) => <ItemChip name={i} />)}
+        </div>
+      </div>
+
+      <!-- Common moves -->
+      <div class="card p-6">
+        <h3 class="font-display text-lg tracking-wide mb-3">ท่ายอดนิยม</h3>
+        <div class="grid sm:grid-cols-2 gap-2">
+          {pokemon.commonMoves.map((m) => <MoveChip name={m} />)}
+        </div>
+      </div>
+
+      <!-- Sets -->
+      {pokemon.sets && pokemon.sets.length > 0 && (
+        <div class="card p-6">
+          <h3 class="font-display text-lg tracking-wide mb-4">ชุดท่ายอดนิยม (Sets)</h3>
+          <div class="space-y-4">
+            {pokemon.sets.map((set) => (
+              <div class="surface p-4 font-mono text-sm">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-display font-bold tracking-wide text-champ-gold">{set.name}</span>
+                  {set.teraType && (
+                    <span class="text-xs text-champ-muted">Tera: <span class="text-champ-gold">{set.teraType}</span></span>
+                  )}
+                </div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                  <div><span class="text-champ-muted">Item:</span> {set.item}</div>
+                  <div><span class="text-champ-muted">Ability:</span> {set.ability}</div>
+                  <div><span class="text-champ-muted">Stat Alignment:</span> {set.alignment}</div>
+                  <div><span class="text-champ-muted">SP (66 max):</span> {set.sp}</div>
+                </div>
+                <div class="mt-3 grid sm:grid-cols-2 gap-1 text-xs">
+                  {set.moves.map((m) => (
+                    <div class="flex items-center gap-1">
+                      <span class="text-champ-gold">-</span>
+                      <span>{m}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Counters / Teammates with sprites -->
+      <div class="grid sm:grid-cols-2 gap-6">
+        {pokemon.counters && pokemon.counters.length > 0 && (
+          <div class="card p-6">
+            <h3 class="font-display text-lg tracking-wide mb-3 text-red-400">{ui.common.counters}</h3>
+            <div class="grid grid-cols-1 gap-2">
+              {pokemon.counters.map((c) => <PokemonChip name={c} />)}
+            </div>
+          </div>
+        )}
+        {pokemon.teammates && pokemon.teammates.length > 0 && (
+          <div class="card p-6">
+            <h3 class="font-display text-lg tracking-wide mb-3 text-green-400">{ui.common.teammates}</h3>
+            <div class="grid grid-cols-1 gap-2">
+              {pokemon.teammates.map((t) => <PokemonChip name={t} />)}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

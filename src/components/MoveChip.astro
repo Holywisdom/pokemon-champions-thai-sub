@@ -1,0 +1,76 @@
+---
+import { findMove } from '@/lib/lookups';
+import { typeColors } from '@/data/types';
+import { translateType, translateDamageClass } from '@/data/translations';
+
+export interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+const move = findMove(name);
+const color = move ? typeColors[move.type] : '#3a3a48';
+---
+
+<div
+  class="rounded-lg bg-champ-card border border-champ-border p-3 hover:border-champ-gold/40 transition-colors"
+  style={move ? `border-left: 3px solid ${color}` : ''}
+>
+  <div class="flex items-baseline justify-between gap-2 mb-1.5">
+    <div class="min-w-0 flex-1">
+      <div class="font-semibold text-sm truncate">{name}</div>
+      {move?.nameTh && <div class="text-[10px] text-champ-muted truncate">{move.nameTh}</div>}
+    </div>
+    {move && (
+      <div class="flex items-center gap-1 flex-none">
+        <span
+          class="badge text-[9px] uppercase tracking-wider"
+          style={`background: ${color}25; color: ${color}; border: 1px solid ${color}40;`}
+        >
+          {translateType(move.type)}
+        </span>
+      </div>
+    )}
+  </div>
+
+  {move && (
+    <>
+      <div class="flex flex-wrap gap-x-3 gap-y-0.5 text-[10px] text-champ-muted mb-1.5 font-mono">
+        <span>
+          <span class="opacity-60">PWR</span> {move.power ?? '—'}
+        </span>
+        <span>
+          <span class="opacity-60">ACC</span> {move.accuracy != null ? `${move.accuracy}%` : '—'}
+        </span>
+        <span>
+          <span class="opacity-60">PP</span> {move.pp}
+        </span>
+        {move.priority !== 0 && (
+          <span class="text-champ-gold">
+            <span class="opacity-80">PRIO</span> {move.priority > 0 ? `+${move.priority}` : move.priority}
+          </span>
+        )}
+        <span class:list={[
+          'badge text-[9px]',
+          move.damageClass === 'physical' && 'bg-red-500/20 text-red-300',
+          move.damageClass === 'special' && 'bg-blue-500/20 text-blue-300',
+          move.damageClass === 'status' && 'bg-yellow-500/20 text-yellow-300',
+        ]}>
+          {translateDamageClass(move.damageClass)}
+        </span>
+      </div>
+      <p class="text-[11px] text-champ-text/85 leading-snug">
+        {move.description}
+      </p>
+      {move.effect && move.effect !== '-' && (
+        <p class="text-[11px] text-champ-gold/90 leading-snug mt-1">
+          <span class="font-bold">เอฟเฟกต์:</span> {move.effect}
+        </p>
+      )}
+    </>
+  )}
+
+  {!move && (
+    <p class="text-[11px] text-champ-muted italic">ยังไม่มีรายละเอียดท่านี้ในฐานข้อมูล</p>
+  )}
+</div>

@@ -1,0 +1,202 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import TypeBadge from '@/components/TypeBadge.astro';
+import { moves, moveCategories } from '@/data/moves';
+import { TYPES, typeColors } from '@/data/types';
+import { ui, translateType, translateDamageClass } from '@/data/translations';
+import { url } from '@/lib/utils';
+
+const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
+---
+
+<BaseLayout title="ท่าโจมตี" description="ท่าโจมตียอดนิยมในการแข่งขัน Pokemon">
+  <section class="container-page py-10">
+    <div class="mb-8">
+      <h1 class="font-display text-4xl tracking-wide mb-2">
+        <span class="gradient-text">MOVES</span>
+        <span class="text-champ-muted text-base ml-3 font-sans normal-case">{ui.nav.moves}</span>
+      </h1>
+      <p class="text-champ-muted">
+        ท่าโจมตีที่ใช้ในการแข่งขัน Pokémon Champions Reg M-A — รวม {moves.length} ท่า พร้อมพลัง ความแม่นยำ PP priority และเอฟเฟกต์
+      </p>
+    </div>
+
+    <div class="card p-4 mb-6 flex gap-3 items-start text-sm">
+      <span class="text-2xl flex-none">💡</span>
+      <div>
+        <div class="font-semibold text-champ-text mb-1">หมายเหตุสำหรับ Pokémon Champions</div>
+        <p class="text-champ-muted text-xs leading-relaxed">
+          ท่าทุกท่ามีสูตรคำนวณตามเกมหลัก แต่ใน Champions ไม่มี Choice Specs/Band/Scarf
+          ทำให้ Damage modifier ของท่าที่เคยพึ่งไอเทมเหล่านั้นมีขนาดเล็กลง — ใช้ Plate item (x1.2)
+          หรือ Throat Spray (sound moves) แทน
+        </p>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="card p-4 mb-6 space-y-4" data-filters>
+      <input
+        type="search"
+        data-search
+        placeholder="ค้นหาท่า..."
+        class="input"
+      />
+
+      <div>
+        <div class="text-xs text-champ-muted uppercase tracking-wider mb-2">หมวด</div>
+        <div class="flex flex-wrap gap-2">
+          <button data-cat-filter="all" class="chip data-active">ทั้งหมด</button>
+          {moveCategories.map((c) => (
+            <button data-cat-filter={c.id} class="chip">
+              <span>{c.icon}</span> {c.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <div class="text-xs text-champ-muted uppercase tracking-wider mb-2">{ui.common.type}</div>
+        <div class="flex flex-wrap gap-2">
+          <button data-type-filter="all" class="chip data-active">ทั้งหมด</button>
+          {TYPES.map((t) => (
+            <button
+              data-type-filter={t}
+              class="chip uppercase tracking-wider"
+              style={`color: ${typeColors[t]}; border-color: ${typeColors[t]}40`}
+            >
+              {translateType(t)}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="text-sm text-champ-muted mb-4">
+      <span data-count>{moves.length}</span> ท่า
+    </div>
+
+    <!-- Moves Table -->
+    <div class="overflow-x-auto card">
+      <table class="w-full text-sm">
+        <thead class="text-xs text-champ-muted uppercase tracking-wider">
+          <tr class="border-b border-champ-border">
+            <th class="text-left p-3">ชื่อ</th>
+            <th class="text-left p-3">{ui.common.type}</th>
+            <th class="text-left p-3">หมวด</th>
+            <th class="text-right p-3">{ui.common.power}</th>
+            <th class="text-right p-3">Acc</th>
+            <th class="text-right p-3">PP</th>
+            <th class="text-right p-3">Prio</th>
+            <th class="text-left p-3 hidden md:table-cell">{ui.common.effect}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map((m) => (
+            <tr
+              data-move
+              data-name={m.nameEn.toLowerCase()}
+              data-name-th={m.nameTh ?? ''}
+              data-type={m.type}
+              data-cat={m.category}
+              class="border-b border-champ-border/50 hover:bg-champ-card/50 transition-colors"
+            >
+              <td class="p-3">
+                <div class="font-semibold">{m.nameEn}</div>
+                {m.nameTh && <div class="text-xs text-champ-muted">{m.nameTh}</div>}
+              </td>
+              <td class="p-3"><TypeBadge type={m.type} size="sm" /></td>
+              <td class="p-3 text-xs">
+                <span class:list={[
+                  'badge text-[10px]',
+                  m.damageClass === 'physical' && 'bg-red-500/20 text-red-300',
+                  m.damageClass === 'special' && 'bg-blue-500/20 text-blue-300',
+                  m.damageClass === 'status' && 'bg-yellow-500/20 text-yellow-300',
+                ]}>
+                  {translateDamageClass(m.damageClass)}
+                </span>
+              </td>
+              <td class="p-3 text-right font-mono tabular-nums">
+                {m.power ?? '—'}
+              </td>
+              <td class="p-3 text-right font-mono tabular-nums">
+                {m.accuracy != null ? `${m.accuracy}%` : '—'}
+              </td>
+              <td class="p-3 text-right font-mono tabular-nums">{m.pp}</td>
+              <td class="p-3 text-right font-mono tabular-nums">
+                {m.priority !== 0 ? (m.priority > 0 ? `+${m.priority}` : m.priority) : '—'}
+              </td>
+              <td class="p-3 text-xs text-champ-muted hidden md:table-cell">
+                <div class="line-clamp-2">{m.effect}</div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div data-empty class="hidden text-center py-20 text-champ-muted">
+      <p class="font-display text-2xl mb-2">ไม่พบท่า</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .chip.data-active {
+    @apply bg-champ-gold/15 border-champ-gold/50 text-champ-gold;
+  }
+</style>
+
+<script>
+  const search = document.querySelector<HTMLInputElement>('[data-search]')!;
+  const items = document.querySelectorAll<HTMLTableRowElement>('[data-move]');
+  const catBtns = document.querySelectorAll<HTMLButtonElement>('[data-cat-filter]');
+  const typeBtns = document.querySelectorAll<HTMLButtonElement>('[data-type-filter]');
+  const countEl = document.querySelector<HTMLSpanElement>('[data-count]')!;
+  const emptyEl = document.querySelector<HTMLDivElement>('[data-empty]')!;
+
+  let activeCat = 'all';
+  let activeType = 'all';
+  let query = '';
+
+  function setActive(buttons: NodeListOf<HTMLButtonElement>, value: string, attr: string) {
+    buttons.forEach((b) => {
+      if (b.getAttribute(attr) === value) b.classList.add('data-active');
+      else b.classList.remove('data-active');
+    });
+  }
+
+  function apply() {
+    let count = 0;
+    items.forEach((el) => {
+      const name = el.dataset.name ?? '';
+      const nameTh = el.dataset.nameTh ?? '';
+      const type = el.dataset.type ?? '';
+      const cat = el.dataset.cat ?? '';
+
+      const matchSearch = !query || name.includes(query) || nameTh.includes(query);
+      const matchCat = activeCat === 'all' || cat === activeCat;
+      const matchType = activeType === 'all' || type === activeType;
+
+      const show = matchSearch && matchCat && matchType;
+      el.style.display = show ? '' : 'none';
+      if (show) count++;
+    });
+    countEl.textContent = String(count);
+    emptyEl.classList.toggle('hidden', count !== 0);
+  }
+
+  search.addEventListener('input', (e) => {
+    query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    apply();
+  });
+  catBtns.forEach((b) => b.addEventListener('click', () => {
+    activeCat = b.dataset.catFilter ?? 'all';
+    setActive(catBtns, activeCat, 'data-cat-filter');
+    apply();
+  }));
+  typeBtns.forEach((b) => b.addEventListener('click', () => {
+    activeType = b.dataset.typeFilter ?? 'all';
+    setActive(typeBtns, activeType, 'data-type-filter');
+    apply();
+  }));
+</script>

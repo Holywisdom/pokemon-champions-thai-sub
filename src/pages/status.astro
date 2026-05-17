@@ -1,0 +1,118 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { statusList, statusCategories } from '@/data/status';
+import { ui } from '@/data/translations';
+
+const grouped = statusCategories.map((cat) => ({
+  ...cat,
+  entries: statusList.filter((s) => s.category === cat.id),
+}));
+---
+
+<BaseLayout title="สถานะผิดปกติ" description="คู่มือสถานะ สภาพอากาศ ภูมิประเทศ และกับดักใน Pokemon">
+  <section class="container-page py-10">
+    <div class="mb-10">
+      <h1 class="font-display text-4xl tracking-wide mb-2">
+        <span class="gradient-text">STATUS GUIDE</span>
+        <span class="text-champ-muted text-base ml-3 font-sans normal-case">{ui.nav.status}</span>
+      </h1>
+      <p class="text-champ-muted">
+        คู่มือสถานะ สภาพอากาศ ภูมิประเทศ และกับดักสนาม สำหรับ Pokémon Champions Reg M-A
+        — กลไกทั้งหมดอ้างอิงจากเกมหลัก Scarlet/Violet
+      </p>
+    </div>
+
+    <div class="card p-4 mb-6 flex gap-3 items-start text-sm">
+      <span class="text-2xl flex-none">🌤️</span>
+      <div>
+        <div class="font-semibold text-champ-text mb-1">สภาพอากาศใน Champions</div>
+        <p class="text-champ-muted text-xs leading-relaxed">
+          ใน Champions Mega Charizard Y (Drought), Torkoal (Drought), Pelipper (Drizzle),
+          Politoed (Drizzle), Tyranitar/Hippowdon (Sand Stream), Ninetales-Alola (Snow Warning)
+          เป็นตัวสร้างอากาศหลัก — Heat Rock/Damp Rock/Smooth Rock/Icy Rock ขยายเวลาเป็น 8 เทิร์น
+        </p>
+      </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="card p-4 mb-8">
+      <div class="text-xs text-champ-muted uppercase tracking-wider mb-2">สารบัญ</div>
+      <div class="flex flex-wrap gap-2">
+        {statusCategories.map((cat) => (
+          <a href={`#${cat.id}`} class="chip hover:border-champ-gold/50">
+            {cat.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="space-y-12">
+      {grouped.map((cat) => (
+        <section id={cat.id}>
+          <div class="mb-6">
+            <h2 class="font-display text-2xl tracking-wide flex items-center gap-3 mb-1">
+              <span class="w-1 h-6 bg-gold-shine rounded-full"></span>
+              {cat.label}
+            </h2>
+            <p class="text-sm text-champ-muted pl-4">{cat.desc}</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            {cat.entries.map((s) => (
+              <div
+                class="card p-5 transition-all hover:-translate-y-1"
+                style={`border-left: 4px solid ${s.color}`}
+              >
+                <div class="flex items-baseline gap-3 mb-3">
+                  <span class="text-3xl">{s.icon}</span>
+                  <div>
+                    <h3 class="font-display text-xl tracking-wide" style={`color: ${s.color}`}>
+                      {s.name}
+                    </h3>
+                    <span class="text-xs text-champ-muted">{s.nameEn}</span>
+                  </div>
+                </div>
+
+                <p class="text-sm text-champ-text mb-4 leading-relaxed">{s.shortDesc}</p>
+
+                {s.details.length > 0 && (
+                  <ul class="space-y-1.5 text-sm mb-4">
+                    {s.details.map((d) => (
+                      <li class="flex gap-2 text-champ-text/90">
+                        <span class="text-champ-gold flex-none">▸</span>
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                  {s.causedBy.length > 0 && (
+                    <div>
+                      <div class="text-champ-muted uppercase tracking-wider mb-1">เกิดจาก</div>
+                      <div class="space-y-1">
+                        {s.causedBy.map((c) => (
+                          <div class="bg-champ-card border border-champ-border rounded px-2 py-0.5 inline-block mr-1">{c}</div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {s.curedBy.length > 0 && (
+                    <div>
+                      <div class="text-champ-muted uppercase tracking-wider mb-1">รักษาด้วย</div>
+                      <div class="space-y-1">
+                        {s.curedBy.map((c) => (
+                          <div class="bg-champ-card border border-champ-border rounded px-2 py-0.5 inline-block mr-1">{c}</div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

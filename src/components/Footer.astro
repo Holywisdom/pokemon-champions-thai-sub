@@ -1,0 +1,41 @@
+---
+import { ui } from '@/data/translations';
+import { url } from '@/lib/utils';
+---
+
+<footer class="mt-24 border-t border-champ-border bg-champ-surface/40 relative z-10">
+  <div class="container-page py-10 grid gap-8 md:grid-cols-3">
+    <!-- Brand -->
+    <div>
+      <div class="flex items-center gap-2.5 mb-3">
+        <span class="relative flex items-center justify-center w-7 h-7 rounded-full bg-gold-shine">
+          <span class="block w-2 h-2 rounded-full bg-champ-bg"></span>
+        </span>
+        <span class="font-display text-lg tracking-wider gradient-text">CHAMPIONS TH</span>
+      </div>
+      <p class="text-sm text-champ-muted">{ui.tagline}</p>
+    </div>
+
+    <!-- Links -->
+    <div class="grid grid-cols-2 gap-3 text-sm">
+      <a href={url('/pokedex')} class="text-champ-muted hover:text-champ-gold transition-colors">{ui.nav.pokedex}</a>
+      <a href={url('/moves')} class="text-champ-muted hover:text-champ-gold transition-colors">{ui.nav.moves}</a>
+      <a href={url('/abilities')} class="text-champ-muted hover:text-champ-gold transition-colors">{ui.nav.abilities}</a>
+      <a href={url('/items')} class="text-champ-muted hover:text-champ-gold transition-colors">{ui.nav.items}</a>
+      <a href={url('/types')} class="text-champ-muted hover:text-champ-gold transition-colors">{ui.nav.types}</a>
+      <a href={url('/status')} class="text-champ-muted hover:text-champ-gold transition-colors">{ui.nav.status}</a>
+      <a href={url('/mechanics')} class="text-champ-muted hover:text-champ-gold transition-colors">{ui.nav.mechanics}</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="text-xs text-champ-muted space-y-2">
+      <p>{ui.footer.disclaimer}</p>
+      <p>{ui.footer.dataSource} · {ui.footer.builtWith}</p>
+    </div>
+  </div>
+  <div class="border-t border-champ-border">
+    <div class="container-page py-4 text-center text-xs text-champ-muted">
+      &copy; {new Date().getFullYear()} {ui.siteName}
+    </div>
+  </div>
+</footer>

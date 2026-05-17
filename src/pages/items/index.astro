@@ -1,0 +1,77 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { items, itemCategories } from '@/data/items';
+import { ui } from '@/data/translations';
+
+const grouped = itemCategories.map((cat) => ({
+  ...cat,
+  items: items.filter((i) => i.category === cat.id),
+}));
+---
+
+<BaseLayout title="ไอเทม" description="ไอเทมยอดนิยมในการแข่งขัน Pokemon">
+  <section class="container-page py-10">
+    <div class="mb-10">
+      <h1 class="font-display text-4xl tracking-wide mb-2">
+        <span class="gradient-text">ITEMS</span>
+        <span class="text-champ-muted text-base ml-3 font-sans normal-case">{ui.nav.items}</span>
+      </h1>
+      <p class="text-champ-muted">
+        ไอเทมและของถือใน Pokémon Champions Reg M-A — รวม {items.length} ชิ้น
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-3 mb-8">
+      <div class="card p-4 flex gap-3 items-start text-sm border-l-4 border-champ-crimson">
+        <span class="text-2xl flex-none">⚠️</span>
+        <div>
+          <div class="font-semibold text-champ-text mb-1">กฎ Unique Item</div>
+          <p class="text-champ-muted text-xs leading-relaxed">
+            ใน Champions โปเกมอน 2 ตัวห้ามถือไอเทมเหมือนกัน ต้องวางแผนกระจายไอเทม
+          </p>
+        </div>
+      </div>
+      <div class="card p-4 flex gap-3 items-start text-sm border-l-4 border-champ-ember">
+        <span class="text-2xl flex-none">🚫</span>
+        <div>
+          <div class="font-semibold text-champ-text mb-1">ไอเทมที่ "ไม่มี" ในเกม</div>
+          <p class="text-champ-muted text-xs leading-relaxed">
+            Life Orb, Choice Band, Choice Specs, Choice Scarf
+            — ใช้ Plate (x1.2) หรือ Throat Spray, Booster Energy แทน
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-10">
+      {grouped.map((cat) => (
+        <div>
+          <h2 class="font-display text-2xl tracking-wide mb-4 flex items-center gap-3">
+            <span class="w-1 h-6 bg-gold-shine rounded-full"></span>
+            {cat.label}
+          </h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {cat.items.map((item) => (
+              <div class="card p-4 hover:border-champ-gold/40 transition-colors">
+                <div class="flex items-start justify-between mb-1">
+                  <h3 class="font-semibold">{item.nameEn}</h3>
+                </div>
+                <p class="text-xs text-champ-muted mb-2">{item.nameTh}</p>
+                <p class="text-sm text-champ-text leading-relaxed">{item.description}</p>
+                {item.notableUsers && item.notableUsers.length > 0 && (
+                  <div class="mt-3 flex flex-wrap gap-1">
+                    {item.notableUsers.slice(0, 3).map((u) => (
+                      <span class="text-[10px] bg-champ-card border border-champ-border rounded px-1.5 py-0.5">
+                        {u}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

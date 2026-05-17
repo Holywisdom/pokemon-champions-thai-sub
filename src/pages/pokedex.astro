@@ -1,0 +1,178 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PokemonCard from '@/components/PokemonCard.astro';
+import { META_POKEMON, TIERS_LIST } from '@/data/meta';
+import { TYPES, typeColors } from '@/data/types';
+import { ui, translateType } from '@/data/translations';
+
+const sorted = [...META_POKEMON].sort((a, b) => {
+  const tierOrder = { S: 0, A: 1, B: 2, C: 3, Restricted: 4 };
+  return tierOrder[a.tier] - tierOrder[b.tier] || a.nameEn.localeCompare(b.nameEn);
+});
+---
+
+<BaseLayout title="Pokédex" description="รายชื่อโปเกมอน meta ทั้งหมดในรูปแบบการแข่งขัน">
+  <section class="container-page py-10">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="font-display text-4xl tracking-wide mb-2">
+        <span class="gradient-text">POKéDEX</span>
+        <span class="text-champ-muted text-base ml-3 font-sans normal-case">โปเกเด็กซ์</span>
+      </h1>
+      <p class="text-champ-muted">
+        รวบรวม {META_POKEMON.length} โปเกมอน meta จาก Pokémon Champions Reg M-A —
+        รวม Mega Evolution, Eeveelutions, Starters และตัวที่ใช้แข่งจริง
+        <span class="block mt-1 text-xs">
+          Roster เต็มของเกม ~269 ตัว (210 base + 59 Megas) — เรานำเสนอเฉพาะที่ใช้แข่งหรือเป็นที่นิยม
+        </span>
+      </p>
+    </div>
+
+    <!-- Filters -->
+    <div class="card p-4 mb-6 space-y-4" data-pokedex-filters>
+      <!-- Search -->
+      <div class="relative">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-champ-muted pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input
+          type="search"
+          data-search
+          placeholder="ค้นหาด้วยชื่ออังกฤษหรือไทย เช่น Gholdengo, การ์ชอมป์..."
+          class="input pl-10"
+        />
+      </div>
+
+      <!-- Tier filter -->
+      <div>
+        <div class="text-xs text-champ-muted uppercase tracking-wider mb-2">{ui.common.tier}</div>
+        <div class="flex flex-wrap gap-2">
+          <button data-tier-filter="all" class="chip data-active hover:border-champ-gold/50">
+            ทั้งหมด
+          </button>
+          {TIERS_LIST.map((t) => (
+            <button
+              data-tier-filter={t.id}
+              class="chip hover:border-champ-gold/50"
+              style={`--tier-color: ${t.color}`}
+            >
+              <span class="inline-block w-2 h-2 rounded-full" style={`background: ${t.color}`}></span>
+              {t.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Type filter -->
+      <div>
+        <div class="text-xs text-champ-muted uppercase tracking-wider mb-2">{ui.common.type}</div>
+        <div class="flex flex-wrap gap-2">
+          <button data-type-filter="all" class="chip data-active">ทั้งหมด</button>
+          {TYPES.map((t) => (
+            <button
+              data-type-filter={t}
+              class="chip uppercase tracking-wider"
+              style={`color: ${typeColors[t]}; border-color: ${typeColors[t]}40`}
+            >
+              {translateType(t)}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="text-sm text-champ-muted mb-4">
+      <span data-count>{sorted.length}</span> ตัว
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" data-grid>
+      {sorted.map((p) => (
+        <div
+          data-pokemon
+          data-name={p.nameEn.toLowerCase()}
+          data-name-th={p.nameTh ?? ''}
+          data-tier={p.tier}
+          data-types={p.types.join(',')}
+        >
+          <PokemonCard pokemon={p} />
+        </div>
+      ))}
+    </div>
+
+    <div data-empty class="hidden text-center py-20 text-champ-muted">
+      <p class="font-display text-2xl mb-2">ไม่พบโปเกมอน</p>
+      <p class="text-sm">ลองค้นหาด้วยคำอื่นหรือล้างตัวกรอง</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .chip.data-active {
+    @apply bg-champ-gold/15 border-champ-gold/50 text-champ-gold;
+  }
+</style>
+
+<script>
+  const search = document.querySelector<HTMLInputElement>('[data-search]')!;
+  const items = document.querySelectorAll<HTMLDivElement>('[data-pokemon]');
+  const tierBtns = document.querySelectorAll<HTMLButtonElement>('[data-tier-filter]');
+  const typeBtns = document.querySelectorAll<HTMLButtonElement>('[data-type-filter]');
+  const countEl = document.querySelector<HTMLSpanElement>('[data-count]')!;
+  const emptyEl = document.querySelector<HTMLDivElement>('[data-empty]')!;
+  const gridEl = document.querySelector<HTMLDivElement>('[data-grid]')!;
+
+  let activeTier = 'all';
+  let activeType = 'all';
+  let query = '';
+
+  function setActive(buttons: NodeListOf<HTMLButtonElement>, value: string, attr: string) {
+    buttons.forEach((b) => {
+      if (b.getAttribute(attr) === value) b.classList.add('data-active');
+      else b.classList.remove('data-active');
+    });
+  }
+
+  function apply() {
+    let count = 0;
+    items.forEach((el) => {
+      const name = el.dataset.name ?? '';
+      const nameTh = el.dataset.nameTh ?? '';
+      const tier = el.dataset.tier ?? '';
+      const types = (el.dataset.types ?? '').split(',');
+
+      const matchSearch = !query
+        || name.includes(query)
+        || nameTh.includes(query);
+      const matchTier = activeTier === 'all' || tier === activeTier;
+      const matchType = activeType === 'all' || types.includes(activeType);
+
+      const show = matchSearch && matchTier && matchType;
+      el.style.display = show ? '' : 'none';
+      if (show) count++;
+    });
+    countEl.textContent = String(count);
+    emptyEl.classList.toggle('hidden', count !== 0);
+    gridEl.classList.toggle('hidden', count === 0);
+  }
+
+  search.addEventListener('input', (e) => {
+    query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    apply();
+  });
+
+  tierBtns.forEach((b) => {
+    b.addEventListener('click', () => {
+      activeTier = b.dataset.tierFilter ?? 'all';
+      setActive(tierBtns, activeTier, 'data-tier-filter');
+      apply();
+    });
+  });
+
+  typeBtns.forEach((b) => {
+    b.addEventListener('click', () => {
+      activeType = b.dataset.typeFilter ?? 'all';
+      setActive(typeBtns, activeType, 'data-type-filter');
+      apply();
+    });
+  });
+</script>

@@ -1,0 +1,87 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { mechanics } from '@/data/mechanics';
+import { ui } from '@/data/translations';
+---
+
+<BaseLayout title="กลไกการต่อสู้" description="คู่มือกลไกการต่อสู้ Pokemon ฉบับสมบูรณ์">
+  <section class="container-page py-10">
+    <div class="mb-10">
+      <h1 class="font-display text-4xl tracking-wide mb-2">
+        <span class="gradient-text">BATTLE MECHANICS</span>
+        <span class="text-champ-muted text-base ml-3 font-sans normal-case">{ui.nav.mechanics}</span>
+      </h1>
+      <p class="text-champ-muted">
+        คู่มือกลไกการต่อสู้ Pokémon Champions — ตั้งแต่การคำนวณดาเมจ ระบบ Stat Points (SP)
+        Stat Alignment ไปจนถึงการสร้างทีม Mega Evolution + Tera ตาม Reg M-A
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-[240px_1fr] gap-8">
+      <!-- TOC sidebar -->
+      <aside class="lg:sticky lg:top-20 lg:self-start">
+        <div class="card p-4">
+          <div class="text-xs text-champ-muted uppercase tracking-wider mb-3">สารบัญ</div>
+          <nav class="space-y-1">
+            {mechanics.map((sec) => (
+              <a
+                href={`#${sec.id}`}
+                class="flex items-center gap-2 px-2 py-1.5 rounded text-sm text-champ-muted hover:text-champ-gold hover:bg-champ-bg transition-colors"
+              >
+                <span>{sec.icon}</span>
+                <span>{sec.title}</span>
+              </a>
+            ))}
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <article class="space-y-12">
+        {mechanics.map((sec) => (
+          <section id={sec.id} class="scroll-mt-20">
+            <div class="card p-6 md:p-8">
+              <header class="mb-6">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="text-3xl">{sec.icon}</span>
+                  <h2 class="font-display text-2xl md:text-3xl tracking-wide">{sec.title}</h2>
+                </div>
+                <p class="text-champ-muted">{sec.summary}</p>
+              </header>
+
+              <div class="space-y-6">
+                {sec.content.map((block) => (
+                  <div>
+                    {block.heading && (
+                      <h3 class="font-display text-lg tracking-wide mb-2 text-champ-gold">
+                        {block.heading}
+                      </h3>
+                    )}
+                    {block.body && (
+                      <p class="text-champ-text leading-relaxed mb-3">{block.body}</p>
+                    )}
+                    {block.formula && (
+                      <div class="surface p-4 font-mono text-sm text-champ-electric overflow-x-auto">
+                        {block.formula}
+                      </div>
+                    )}
+                    {block.list && (
+                      <ul class="space-y-1.5 text-sm mt-3">
+                        {block.list.map((item) => (
+                          <li class="flex gap-2">
+                            <span class="text-champ-gold flex-none mt-0.5">▸</span>
+                            <span class="text-champ-text">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
+      </article>
+    </div>
+  </section>
+</BaseLayout>

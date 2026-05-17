@@ -1,0 +1,102 @@
+---
+import { ui } from '@/data/translations';
+import { url } from '@/lib/utils';
+
+const navItems = [
+  { href: '/', label: ui.nav.home },
+  { href: '/pokedex', label: ui.nav.pokedex },
+  { href: '/moves', label: ui.nav.moves },
+  { href: '/abilities', label: ui.nav.abilities },
+  { href: '/items', label: ui.nav.items },
+  { href: '/types', label: ui.nav.types },
+  { href: '/status', label: ui.nav.status },
+  { href: '/mechanics', label: ui.nav.mechanics },
+];
+
+const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function isActive(href: string) {
+  const full = base + href;
+  if (href === '/') return currentPath === full || currentPath === full + '/';
+  return currentPath.startsWith(full);
+}
+---
+
+<header class="sticky top-0 z-50 backdrop-blur-xl bg-champ-bg/80 border-b border-champ-border">
+  <div class="container-page flex items-center gap-6 h-16">
+    <!-- Logo -->
+    <a href={url('/')} class="flex items-center gap-2.5 group">
+      <span class="relative flex items-center justify-center w-8 h-8 rounded-full bg-gold-shine shadow-glow-gold transition-transform group-hover:scale-110">
+        <span class="absolute inset-0 rounded-full border-2 border-champ-bg/30"></span>
+        <span class="block w-2.5 h-2.5 rounded-full bg-champ-bg"></span>
+      </span>
+      <span class="font-display text-xl tracking-wider">
+        <span class="gradient-text">CHAMPIONS</span>
+        <span class="text-champ-muted text-xs ml-1">TH</span>
+      </span>
+    </a>
+
+    <!-- Nav -->
+    <nav class="hidden lg:flex items-center gap-1 ml-4 overflow-x-auto mask-fade-r">
+      {navItems.map((item) => (
+        <a
+          href={url(item.href)}
+          class:list={[
+            'px-3 py-1.5 rounded-md text-sm font-medium whitespace-nowrap transition-colors',
+            isActive(item.href)
+              ? 'text-champ-gold bg-champ-card'
+              : 'text-champ-muted hover:text-champ-text hover:bg-champ-card',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="ml-auto flex items-center gap-2">
+      <a
+        href={url('/pokedex')}
+        class="hidden md:inline-flex btn btn-ghost text-xs"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        {ui.nav.search}
+      </a>
+      <!-- Mobile nav toggle -->
+      <button
+        id="mobile-nav-toggle"
+        class="lg:hidden p-2 rounded-md hover:bg-champ-card transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav id="mobile-nav" class="lg:hidden hidden border-t border-champ-border bg-champ-bg">
+    <div class="container-page py-3 flex flex-col gap-1">
+      {navItems.map((item) => (
+        <a
+          href={url(item.href)}
+          class:list={[
+            'px-3 py-2 rounded-md text-sm font-medium',
+            isActive(item.href)
+              ? 'text-champ-gold bg-champ-card'
+              : 'text-champ-muted hover:text-champ-text hover:bg-champ-card',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-nav-toggle');
+  const nav = document.getElementById('mobile-nav');
+  toggle?.addEventListener('click', () => {
+    nav?.classList.toggle('hidden');
+  });
+</script>

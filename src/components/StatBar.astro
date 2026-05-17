@@ -1,0 +1,26 @@
+---
+import { statBarColor, statBarPercent } from '@/lib/utils';
+import { statShort, translateStat } from '@/data/translations';
+
+export interface Props {
+  statKey: string;
+  value: number;
+  maxRefValue?: number;
+}
+
+const { statKey, value, maxRefValue = 255 } = Astro.props;
+const percent = Math.min(100, Math.round((value / maxRefValue) * 100));
+const color = statBarColor(value);
+const shortLabel = statShort[statKey] ?? statKey;
+const thaiLabel = translateStat(statKey);
+---
+
+<div class="grid grid-cols-[80px_44px_1fr] gap-3 items-center text-sm">
+  <span class="text-champ-muted text-xs">{thaiLabel}</span>
+  <span class="font-mono text-right tabular-nums" style={`color: ${color}`}>
+    {value}
+  </span>
+  <div class="stat-bar">
+    <span style={`width: ${percent}%; background: ${color}`}></span>
+  </div>
+</div>

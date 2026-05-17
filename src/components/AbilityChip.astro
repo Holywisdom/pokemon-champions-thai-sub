@@ -1,0 +1,55 @@
+---
+import { findAbility } from '@/lib/lookups';
+
+export interface Props {
+  name: string;
+  isHidden?: boolean;
+}
+
+const { name, isHidden = false } = Astro.props;
+const ability = findAbility(name);
+
+// Category color mapping
+const catColors: Record<string, string> = {
+  offense: '#e63946',
+  defense: '#4cc9f0',
+  weather: '#ffb347',
+  terrain: '#a890f0',
+  speed: '#ffd166',
+  utility: '#78c850',
+};
+const catColor = ability ? catColors[ability.category] ?? '#3a3a48' : '#3a3a48';
+---
+
+<div
+  class="rounded-lg bg-champ-card border border-champ-border p-3 hover:border-champ-gold/40 transition-colors"
+  style={`border-left: 3px solid ${catColor}`}
+>
+  <div class="flex items-baseline justify-between gap-2 mb-1">
+    <div class="min-w-0 flex-1">
+      <div class="font-semibold text-sm truncate flex items-center gap-1.5">
+        {name}
+        {isHidden && (
+          <span class="badge text-[9px] bg-champ-gold/20 text-champ-gold">HA</span>
+        )}
+      </div>
+      {ability?.nameTh && <div class="text-[10px] text-champ-muted truncate">{ability.nameTh}</div>}
+    </div>
+    {ability && (
+      <span
+        class="badge text-[9px] uppercase tracking-wider flex-none"
+        style={`background: ${catColor}25; color: ${catColor}; border: 1px solid ${catColor}40;`}
+      >
+        {ability.category}
+      </span>
+    )}
+  </div>
+
+  {ability ? (
+    <p class="text-[11px] text-champ-text/85 leading-snug">
+      {ability.description}
+    </p>
+  ) : (
+    <p class="text-[11px] text-champ-muted italic">ยังไม่มีรายละเอียดความสามารถนี้ในฐานข้อมูล</p>
+  )}
+</div>

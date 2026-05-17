@@ -1,0 +1,158 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import TypeBadge from '@/components/TypeBadge.astro';
+import { TYPES, typeColors, typeChart, typeInfo, getEffectiveness } from '@/data/types';
+import type { TypeId } from '@/data/types';
+import { ui, translateType } from '@/data/translations';
+
+function getColor(mult: number) {
+  if (mult === 0) return 'bg-champ-bg text-champ-muted border-champ-border';
+  if (mult === 0.5) return 'bg-red-500/15 text-red-300';
+  if (mult === 1) return 'bg-champ-surface text-champ-muted';
+  if (mult === 2) return 'bg-green-500/20 text-green-300';
+  return 'bg-champ-surface';
+}
+
+function getLabel(mult: number) {
+  if (mult === 0) return '0';
+  if (mult === 0.5) return '½';
+  if (mult === 1) return '';
+  if (mult === 2) return '2';
+  return String(mult);
+}
+---
+
+<BaseLayout title="ระบบธาตุ" description="ตารางความสัมพันธ์ระหว่าง 18 ธาตุของ Pokemon">
+  <section class="container-page py-10">
+    <div class="mb-8">
+      <h1 class="font-display text-4xl tracking-wide mb-2">
+        <span class="gradient-text">TYPE CHART</span>
+        <span class="text-champ-muted text-base ml-3 font-sans normal-case">{ui.nav.types}</span>
+      </h1>
+      <p class="text-champ-muted">
+        ระบบความสัมพันธ์ระหว่าง 18 ธาตุของ Pokémon — ใช้ใน Champions เหมือนเกมหลัก
+        — Terastallization สามารถเปลี่ยนธาตุของโปเกมอนได้ในแมตช์
+      </p>
+    </div>
+
+    <div class="card p-4 mb-6 flex gap-3 items-start text-sm">
+      <span class="text-2xl flex-none">✦</span>
+      <div>
+        <div class="font-semibold text-champ-text mb-1">Tera Type ใน Pokémon Champions</div>
+        <p class="text-champ-muted text-xs leading-relaxed">
+          ผู้เล่นสามารถ Terastallize 1 ตัวต่อแมตช์เพื่อเปลี่ยนธาตุ (และเพิ่ม STAB) —
+          แต่ใน Reg M-A จำกัด 1 กิมมิคต่อแมตช์ (เลือกใช้ Mega Evolution หรือ Tera อย่างใดอย่างหนึ่ง)
+        </p>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="card p-4 mb-6 flex flex-wrap gap-3 text-xs">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-6 h-6 bg-green-500/20 text-green-300 rounded flex items-center justify-center font-mono">2</span>
+        <span>Super Effective (2×)</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-6 h-6 bg-red-500/15 text-red-300 rounded flex items-center justify-center font-mono">½</span>
+        <span>Not Very Effective (½×)</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-6 h-6 bg-champ-bg text-champ-muted rounded flex items-center justify-center font-mono border border-champ-border">0</span>
+        <span>No Effect (0×)</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-6 h-6 bg-champ-surface text-champ-muted rounded"></span>
+        <span>Normal (1×)</span>
+      </div>
+    </div>
+
+    <!-- Type Chart -->
+    <div class="overflow-x-auto card p-2">
+      <table class="w-full text-xs">
+        <thead>
+          <tr>
+            <th class="text-left p-1.5 sticky left-0 bg-champ-card">
+              <div class="text-[10px] text-champ-muted uppercase">ผู้โจมตี ↓ / ผู้รับ →</div>
+            </th>
+            {TYPES.map((d) => (
+              <th class="p-1" title={d}>
+                <div
+                  class="rounded font-bold uppercase text-[9px] tracking-wider py-1.5 px-1"
+                  style={`background: ${typeColors[d]}30; color: ${typeColors[d]}; border: 1px solid ${typeColors[d]}40;`}
+                >
+                  {translateType(d)}
+                </div>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {TYPES.map((a: TypeId) => (
+            <tr>
+              <td class="p-1 sticky left-0 bg-champ-card border-r border-champ-border">
+                <div
+                  class="rounded font-bold uppercase text-[10px] tracking-wider py-1.5 px-2 whitespace-nowrap"
+                  style={`background: ${typeColors[a]}30; color: ${typeColors[a]}; border: 1px solid ${typeColors[a]}40;`}
+                >
+                  {translateType(a)}
+                </div>
+              </td>
+              {TYPES.map((d: TypeId) => {
+                const mult = getEffectiveness(a, d);
+                return (
+                  <td class="p-0.5">
+                    <div
+                      class:list={[
+                        'rounded text-center font-mono py-1.5 text-xs',
+                        getColor(mult),
+                      ]}
+                      title={`${a} → ${d}: ${mult}×`}
+                    >
+                      {getLabel(mult)}
+                    </div>
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Type details -->
+    <div class="mt-12">
+      <h2 class="font-display text-2xl tracking-wide mb-6">
+        <span class="gradient-text">TYPE PROFILES</span>
+        <span class="text-champ-muted text-sm font-sans normal-case ml-2">รายละเอียดแต่ละธาตุ</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {TYPES.map((t) => {
+          const info = typeInfo[t];
+          return (
+            <div
+              class="card p-5 transition-all hover:-translate-y-1 hover:shadow-glow-gold"
+              style={`border-left: 4px solid ${typeColors[t]}`}
+            >
+              <div class="flex items-baseline gap-3 mb-3">
+                <span class="font-display text-2xl tracking-wide uppercase" style={`color: ${typeColors[t]}`}>
+                  {translateType(t)}
+                </span>
+                <span class="text-xs text-champ-muted uppercase">{t}</span>
+              </div>
+              <p class="text-sm text-champ-text leading-relaxed mb-3">{info.description}</p>
+              <div>
+                <div class="text-xs text-champ-muted uppercase tracking-wider mb-1">โปเกมอนเด่น</div>
+                <div class="flex flex-wrap gap-1">
+                  {info.signaturePokemon.map((p) => (
+                    <span class="text-[10px] bg-champ-card border border-champ-border rounded px-1.5 py-0.5">{p}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

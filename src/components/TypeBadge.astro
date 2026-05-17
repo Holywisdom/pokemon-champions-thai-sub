@@ -1,0 +1,38 @@
+---
+import type { TypeId } from '@/data/types';
+import { typeColors } from '@/data/types';
+import { translateType } from '@/data/translations';
+
+export interface Props {
+  type: TypeId;
+  size?: 'sm' | 'md' | 'lg';
+  showBoth?: boolean;
+}
+
+const { type, size = 'md', showBoth = false } = Astro.props;
+const color = typeColors[type];
+const thai = translateType(type);
+const en = type.charAt(0).toUpperCase() + type.slice(1);
+
+const sizeClass = {
+  sm: 'text-[10px] px-2 py-0.5',
+  md: 'text-xs px-2.5 py-1',
+  lg: 'text-sm px-3.5 py-1.5',
+}[size];
+---
+
+<span
+  class:list={['badge inline-flex items-center gap-1 rounded-md uppercase tracking-wider font-bold', sizeClass]}
+  style={`background-color: ${color}25; color: ${color}; border: 1px solid ${color}40;`}
+  title={en}
+>
+  {showBoth ? (
+    <>
+      <span>{thai}</span>
+      <span class="opacity-60 normal-case font-normal">·</span>
+      <span class="opacity-80">{en}</span>
+    </>
+  ) : (
+    <span>{thai}</span>
+  )}
+</span>

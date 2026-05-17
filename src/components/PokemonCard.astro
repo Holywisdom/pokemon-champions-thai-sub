@@ -1,0 +1,73 @@
+---
+import type { MetaPokemon } from '@/data/meta';
+import { spriteUrl } from '@/data/meta';
+import { typeColors } from '@/data/types';
+import TypeBadge from './TypeBadge.astro';
+import { url } from '@/lib/utils';
+
+export interface Props {
+  pokemon: MetaPokemon;
+}
+
+const { pokemon } = Astro.props;
+const primaryColor = typeColors[pokemon.types[0]];
+const secondaryColor = pokemon.types[1] ? typeColors[pokemon.types[1]] : primaryColor;
+const sprite = pokemon.sprite ?? spriteUrl(pokemon.id);
+
+const tierColors: Record<string, string> = {
+  S: 'bg-champ-ember text-white',
+  A: 'bg-champ-gold text-champ-bg',
+  B: 'bg-champ-ocean/30 text-champ-ocean',
+  C: 'bg-champ-poison/30 text-purple-300',
+  Restricted: 'bg-champ-crimson/30 text-red-300',
+};
+---
+
+<a
+  href={url(`/pokemon/${pokemon.slug}`)}
+  class="group relative card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-gold hover:border-champ-gold/40 animate-fade-in"
+>
+  <!-- Background gradient -->
+  <div
+    class="absolute inset-0 opacity-15 group-hover:opacity-30 transition-opacity"
+    style={`background: linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`}
+  ></div>
+
+  <!-- Tier badge -->
+  <span
+    class:list={[
+      'absolute top-2.5 right-2.5 z-10 badge text-[10px]',
+      tierColors[pokemon.tier],
+    ]}
+  >
+    {pokemon.tier === 'Restricted' ? 'RES' : pokemon.tier}
+  </span>
+
+  <!-- ID -->
+  <span class="absolute top-2.5 left-2.5 z-10 text-[10px] font-mono text-champ-muted">
+    #{String(pokemon.id).padStart(4, '0')}
+  </span>
+
+  <!-- Image -->
+  <div class="relative flex items-center justify-center h-32 p-4">
+    <img
+      src={sprite}
+      alt={pokemon.nameEn}
+      loading="lazy"
+      class="relative max-h-28 max-w-full object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-2xl"
+    />
+  </div>
+
+  <!-- Info -->
+  <div class="relative p-3 pt-1 border-t border-champ-border/50">
+    <h3 class="font-display tracking-wide text-base text-champ-text truncate">
+      {pokemon.nameEn}
+    </h3>
+    {pokemon.nameTh && (
+      <p class="text-xs text-champ-muted truncate -mt-0.5">{pokemon.nameTh}</p>
+    )}
+    <div class="mt-2 flex flex-wrap gap-1">
+      {pokemon.types.map((t) => <TypeBadge type={t} size="sm" />)}
+    </div>
+  </div>
+</a>
