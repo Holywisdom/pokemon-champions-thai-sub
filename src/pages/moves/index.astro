@@ -181,27 +181,80 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
               </tr>
               <tr data-expand class="hidden md:hidden bg-champ-bg/40 border-b border-champ-border/50">
                 <td colspan="7" class="px-3 py-3 text-xs">
-                  <div class="space-y-2">
+                  <div class="space-y-3">
+                    <!-- Quick info pills: type, damage class, category -->
+                    <div class="flex flex-wrap gap-1.5">
+                      <span
+                        class="inline-flex items-center gap-1 rounded-full pl-0.5 pr-2 py-0.5 text-[10px] uppercase tracking-wider font-bold"
+                        style={`background-color: ${typeColors[m.type]}25; color: ${typeColors[m.type]}; border: 1px solid ${typeColors[m.type]}40;`}
+                      >
+                        <img
+                          src={typeIconUrl(m.type)}
+                          alt={m.type}
+                          loading="lazy"
+                          width="16"
+                          height="16"
+                          class="object-contain flex-none"
+                          onerror="this.style.display='none'"
+                        />
+                        {translateType(m.type)}
+                      </span>
+                      <span class:list={[
+                        'badge text-[10px] rounded-full px-2 py-0.5',
+                        m.damageClass === 'physical' && 'bg-red-500/20 text-red-300',
+                        m.damageClass === 'special' && 'bg-blue-500/20 text-blue-300',
+                        m.damageClass === 'status' && 'bg-yellow-500/20 text-yellow-300',
+                      ]}>
+                        {translateDamageClass(m.damageClass)}
+                      </span>
+                      <span class="badge text-[10px] rounded-full px-2 py-0.5 bg-champ-card border border-champ-border text-champ-muted">
+                        {m.category}
+                      </span>
+                    </div>
+
+                    <!-- Stat grid: PWR / ACC / PP / Priority -->
+                    <div class="grid grid-cols-4 gap-2 text-center">
+                      <div class="bg-champ-card border border-champ-border rounded-md py-1.5">
+                        <div class="text-[9px] text-champ-muted uppercase tracking-wider leading-none mb-0.5">Power</div>
+                        <div class="font-mono font-bold text-sm tabular-nums" style={`color: ${m.power && m.power >= 100 ? '#ffd166' : '#e8e8f0'}`}>
+                          {m.power ?? '—'}
+                        </div>
+                      </div>
+                      <div class="bg-champ-card border border-champ-border rounded-md py-1.5">
+                        <div class="text-[9px] text-champ-muted uppercase tracking-wider leading-none mb-0.5">Accuracy</div>
+                        <div class="font-mono font-bold text-sm tabular-nums">
+                          {m.accuracy != null ? `${m.accuracy}%` : '—'}
+                        </div>
+                      </div>
+                      <div class="bg-champ-card border border-champ-border rounded-md py-1.5">
+                        <div class="text-[9px] text-champ-muted uppercase tracking-wider leading-none mb-0.5">PP</div>
+                        <div class="font-mono font-bold text-sm tabular-nums">{m.pp}</div>
+                      </div>
+                      <div class="bg-champ-card border border-champ-border rounded-md py-1.5">
+                        <div class="text-[9px] text-champ-muted uppercase tracking-wider leading-none mb-0.5">Priority</div>
+                        <div class:list={['font-mono font-bold text-sm tabular-nums', m.priority !== 0 && 'text-champ-gold']}>
+                          {m.priority !== 0 ? (m.priority > 0 ? `+${m.priority}` : m.priority) : '0'}
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Description -->
                     <div>
                       <div class="text-[10px] text-champ-muted uppercase tracking-wider mb-0.5">
                         คำอธิบาย
                       </div>
                       <p class="text-champ-text leading-relaxed">{m.description}</p>
                     </div>
+
+                    <!-- Effect (only when meaningful) -->
                     {m.effect && m.effect !== '-' && (
-                      <div>
-                        <div class="text-[10px] text-champ-muted uppercase tracking-wider mb-0.5">
-                          เอฟเฟกต์
+                      <div class="border-l-2 border-champ-gold/40 pl-3">
+                        <div class="text-[10px] text-champ-gold uppercase tracking-wider mb-0.5">
+                          เอฟเฟกต์ (Effect)
                         </div>
-                        <p class="text-champ-gold/90 leading-relaxed">{m.effect}</p>
+                        <p class="text-champ-text/90 leading-relaxed">{m.effect}</p>
                       </div>
                     )}
-                    <div class="flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-champ-muted font-mono pt-1">
-                      <span>หมวด: <span class="text-champ-text">{m.category}</span></span>
-                      {m.priority !== 0 && (
-                        <span>Priority: <span class="text-champ-gold">{m.priority > 0 ? `+${m.priority}` : m.priority}</span></span>
-                      )}
-                    </div>
                   </div>
                 </td>
               </tr>
