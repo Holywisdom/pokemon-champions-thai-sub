@@ -86,16 +86,16 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
 
     <!-- Moves Table -->
     <div class="overflow-x-auto card">
-      <table class="w-full text-sm">
+      <table class="w-full text-sm min-w-[640px] md:min-w-0">
         <thead class="text-xs text-champ-muted uppercase tracking-wider">
           <tr class="border-b border-champ-border">
-            <th class="text-left p-3">ชื่อ</th>
-            <th class="text-left p-3">{ui.common.type}</th>
-            <th class="text-left p-3">หมวด</th>
-            <th class="text-right p-3">{ui.common.power}</th>
-            <th class="text-right p-3">Acc</th>
-            <th class="text-right p-3">PP</th>
-            <th class="text-right p-3">Prio</th>
+            <th class="text-left p-2 sm:p-3">ชื่อ</th>
+            <th class="text-left p-2 sm:p-3">{ui.common.type}</th>
+            <th class="text-left p-2 sm:p-3">หมวด</th>
+            <th class="text-right p-2 sm:p-3">{ui.common.power}</th>
+            <th class="text-right p-2 sm:p-3">Acc</th>
+            <th class="text-right p-2 sm:p-3">PP</th>
+            <th class="text-right p-2 sm:p-3">Prio</th>
             <th class="text-left p-3 hidden md:table-cell">{ui.common.effect}</th>
           </tr>
         </thead>
@@ -109,12 +109,29 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
               data-cat={m.category}
               class="border-b border-champ-border/50 hover:bg-champ-card/50 transition-colors"
             >
-              <td class="p-3">
+              <td class="p-2 sm:p-3">
                 <div class="font-semibold">{m.nameEn}</div>
                 {m.nameTh && <div class="text-xs text-champ-muted">{m.nameTh}</div>}
               </td>
-              <td class="p-3"><TypeBadge type={m.type} size="sm" /></td>
-              <td class="p-3 text-xs">
+              <td class="p-2 sm:p-3">
+                <span
+                  class="inline-flex items-center gap-1 rounded-full pl-0.5 pr-0 sm:pr-2 py-0.5 text-[10px] uppercase tracking-wider font-bold"
+                  style={`background-color: ${typeColors[m.type]}25; color: ${typeColors[m.type]}; border: 1px solid ${typeColors[m.type]}40;`}
+                  title={m.type}
+                >
+                  <img
+                    src={typeIconUrl(m.type)}
+                    alt={m.type}
+                    loading="lazy"
+                    width="20"
+                    height="20"
+                    class="object-contain flex-none"
+                    onerror="this.style.display='none'"
+                  />
+                  <span class="hidden sm:inline">{translateType(m.type)}</span>
+                </span>
+              </td>
+              <td class="p-2 sm:p-3 text-xs">
                 <span class:list={[
                   'badge text-[10px]',
                   m.damageClass === 'physical' && 'bg-red-500/20 text-red-300',
@@ -124,17 +141,17 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
                   {translateDamageClass(m.damageClass)}
                 </span>
               </td>
-              <td class="p-3 text-right font-mono tabular-nums">
+              <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
                 {m.power ?? '—'}
               </td>
-              <td class="p-3 text-right font-mono tabular-nums">
+              <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
                 {m.accuracy != null ? `${m.accuracy}%` : '—'}
               </td>
-              <td class="p-3 text-right font-mono tabular-nums">{m.pp}</td>
-              <td class="p-3 text-right font-mono tabular-nums">
+              <td class="p-2 sm:p-3 text-right font-mono tabular-nums">{m.pp}</td>
+              <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
                 {m.priority !== 0 ? (m.priority > 0 ? `+${m.priority}` : m.priority) : '—'}
               </td>
-              <td class="p-3 text-xs text-champ-muted hidden md:table-cell">
+              <td class="p-2 sm:p-3 text-xs text-champ-muted hidden md:table-cell">
                 <div class="line-clamp-2">{m.effect}</div>
               </td>
             </tr>
