@@ -45,7 +45,7 @@ const Wrapper = linkable && ref ? 'a' : 'span';
         <div class="flex flex-wrap gap-1 mt-0.5">
           {types.map((t) => (
             <span
-              class="inline-flex items-center gap-0.5 rounded text-[9px] uppercase tracking-wider font-bold px-1 py-0.5"
+              class="inline-flex items-center gap-1 rounded-full text-[10px] uppercase tracking-wider font-bold pl-0.5 pr-1.5 py-0.5"
               style={`background: ${typeColors[t]}25; color: ${typeColors[t]}; border: 1px solid ${typeColors[t]}40;`}
               title={t}
             >
@@ -53,8 +53,8 @@ const Wrapper = linkable && ref ? 'a' : 'span';
                 src={typeIconUrl(t)}
                 alt=""
                 loading="lazy"
-                width="10"
-                height="10"
+                width="16"
+                height="16"
                 class="object-contain"
                 onerror="this.style.display='none'"
               />
@@ -82,15 +82,15 @@ const Wrapper = linkable && ref ? 'a' : 'span';
         <div class="flex flex-wrap gap-1 mt-0.5">
           {types.map((t) => (
             <span
-              class="inline-flex items-center gap-0.5 rounded text-[9px] uppercase tracking-wider font-bold px-1 py-0.5"
+              class="inline-flex items-center gap-1 rounded-full text-[10px] uppercase tracking-wider font-bold pl-0.5 pr-1.5 py-0.5"
               style={`background: ${typeColors[t]}25; color: ${typeColors[t]}; border: 1px solid ${typeColors[t]}40;`}
             >
               <img
                 src={typeIconUrl(t)}
                 alt=""
                 loading="lazy"
-                width="10"
-                height="10"
+                width="16"
+                height="16"
                 class="object-contain"
                 onerror="this.style.display='none'"
               />

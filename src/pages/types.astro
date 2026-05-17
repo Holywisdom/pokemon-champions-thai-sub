@@ -83,21 +83,21 @@ function getLabel(mult: number) {
             {TYPES.map((d) => (
               <th class="type-cell">
                 <div
-                  class="rounded-md flex flex-col items-center justify-center gap-0.5 py-1 px-0.5 h-full"
-                  style={`background: ${typeColors[d]}30; border: 1px solid ${typeColors[d]}40;`}
+                  class="rounded-lg flex flex-col items-center justify-center gap-0.5 py-1.5 px-0.5 h-full"
+                  style={`background: ${typeColors[d]}20; border: 1px solid ${typeColors[d]}40;`}
                   title={d}
                 >
                   <img
                     src={typeIconUrl(d)}
                     alt={d}
                     loading="lazy"
-                    width="28"
-                    height="28"
+                    width="40"
+                    height="40"
                     class="object-contain"
                     onerror="this.style.display='none'"
                   />
                   <span
-                    class="text-[8px] font-bold uppercase tracking-wider leading-none"
+                    class="text-[9px] font-bold uppercase tracking-wider leading-none"
                     style={`color: ${typeColors[d]}`}
                   >
                     {translateType(d)}
@@ -119,8 +119,8 @@ function getLabel(mult: number) {
                     src={typeIconUrl(a)}
                     alt={a}
                     loading="lazy"
-                    width="22"
-                    height="22"
+                    width="32"
+                    height="32"
                     class="object-contain flex-none"
                     onerror="this.style.display='none'"
                   />
@@ -171,15 +171,15 @@ function getLabel(mult: number) {
             >
               <div class="flex items-center gap-3 mb-3">
                 <span
-                  class="flex-none rounded-lg flex items-center justify-center w-12 h-12"
-                  style={`background: ${typeColors[t]}20; border: 1px solid ${typeColors[t]}40;`}
+                  class="flex-none rounded-xl flex items-center justify-center w-16 h-16"
+                  style={`background: ${typeColors[t]}15; border: 2px solid ${typeColors[t]}40;`}
                 >
                   <img
                     src={typeIconUrl(t)}
                     alt={t}
                     loading="lazy"
-                    width="36"
-                    height="36"
+                    width="52"
+                    height="52"
                     class="object-contain"
                     onerror="this.style.display='none'"
                   />
@@ -216,16 +216,16 @@ function getLabel(mult: number) {
     table-layout: fixed;
   }
   .type-chart .header-col {
-    width: 80px;
+    width: 110px;
   }
   .type-chart .type-col {
-    width: 56px;
+    width: 64px;
   }
   .type-chart .type-cell {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
     padding: 0;
-    min-width: 56px;
+    min-width: 64px;
   }
   .type-chart .sticky-corner {
     background: #13131a;
@@ -233,9 +233,9 @@ function getLabel(mult: number) {
     position: sticky;
     left: 0;
     z-index: 1;
-    width: 80px;
-    min-width: 80px;
-    height: 56px;
+    width: 110px;
+    min-width: 110px;
+    height: 64px;
   }
   .type-chart thead th.sticky-corner {
     z-index: 2;

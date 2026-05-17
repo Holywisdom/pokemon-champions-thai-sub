@@ -24,11 +24,12 @@ export const typeIdMap: Record<TypeId, number> = {
 };
 
 /**
- * Returns the URL for the official type icon (Scarlet/Violet style).
- * Source: PokéAPI sprites repo.
+ * Returns URL for the official Sword/Shield-style type icon
+ * (128x128 PNG with colored circle background + white symbol).
+ * Source: msikma/pokesprite repo — covers all 18 types.
  */
 export function typeIconUrl(type: TypeId): string {
-  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/${typeIdMap[type]}.png`;
+  return `https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${type}.png`;
 }
 
 export const typeColors: Record<TypeId, string> = {

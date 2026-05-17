@@ -16,20 +16,20 @@ const thai = translateType(type);
 const en = type.charAt(0).toUpperCase() + type.slice(1);
 
 const sizeClass = {
-  sm: 'text-[10px] px-2 py-0.5',
-  md: 'text-xs px-2.5 py-1',
-  lg: 'text-sm px-3.5 py-1.5',
+  sm: 'text-[10px] pl-1 pr-2 py-0.5 gap-1',
+  md: 'text-xs pl-1 pr-2.5 py-0.5 gap-1.5',
+  lg: 'text-sm pl-1.5 pr-3.5 py-1 gap-2',
 }[size];
 
 const iconSize = {
-  sm: 14,
-  md: 16,
-  lg: 20,
+  sm: 20,
+  md: 24,
+  lg: 32,
 }[size];
 ---
 
 <span
-  class:list={['badge inline-flex items-center gap-1 rounded-md uppercase tracking-wider font-bold', sizeClass]}
+  class:list={['badge inline-flex items-center rounded-full uppercase tracking-wider font-bold', sizeClass]}
   style={`background-color: ${color}25; color: ${color}; border: 1px solid ${color}40;`}
   title={en}
 >
