@@ -5,6 +5,36 @@ import { META_POKEMON, TIERS_LIST } from '@/data/meta';
 import { ui } from '@/data/translations';
 import { url } from '@/lib/utils';
 
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? '';
+
+const homeJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: ui.siteName,
+    alternateName: 'Pokemon Champions Wiki TH',
+    description: ui.tagline,
+    url: siteBase + (import.meta.env.BASE_URL ?? '/'),
+    inLanguage: 'th',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteBase}${import.meta.env.BASE_URL}pokedex?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    name: 'Pokémon Champions',
+    inLanguage: 'th',
+    gamePlatform: ['Nintendo Switch', 'Nintendo Switch 2', 'iOS', 'Android'],
+    publisher: { '@type': 'Organization', name: 'The Pokémon Company' },
+    datePublished: '2026-04-08',
+    genre: 'Strategy / Competitive battler',
+    description: 'เกมโปเกมอนแข่งขันโดยเฉพาะ เปิดตัว 8 เม.ย. 2026 ใช้แข่ง VGC ทางการ',
+  },
+];
+
 // Sort by usage % (where available), then by tier
 const featured = [...META_POKEMON]
   .filter((p) => p.tier === 'S' || p.tier === 'A')
@@ -69,7 +99,27 @@ const cards = [
 ];
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Pokémon Champions Wiki ภาษาไทย — Reg M-A meta, ท่า, ความสามารถ, ไอเทม"
+  description="คัมภีร์การแข่งขัน Pokémon Champions ฉบับสมบูรณ์ภาษาไทย — meta Reg M-A, 80 โปเกมอน, 179 ท่าโจมตี, 120+ ความสามารถ, ไอเทม, ระบบธาตุ, Stat Points (SP), Mega Evolution + Tera"
+  keywords={[
+    'Pokemon Champions',
+    'โปเกมอนแชมเปียนส์',
+    'Pokemon Champions ภาษาไทย',
+    'VGC 2026',
+    'Reg M-A',
+    'Regulation M-A',
+    'Mega Evolution',
+    'Terastallization',
+    'meta tier list',
+    'Pokemon Switch',
+    'Pokemon Switch 2',
+    'Pokemon HOME',
+    'Stat Points SP',
+    'Pokemon Worlds 2026',
+  ]}
+  jsonLd={homeJsonLd}
+>
   <!-- HERO -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-champ-radial pointer-events-none"></div>

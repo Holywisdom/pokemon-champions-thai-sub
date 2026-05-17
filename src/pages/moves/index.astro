@@ -9,7 +9,22 @@ import { url } from '@/lib/utils';
 const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
 ---
 
-<BaseLayout title="ท่าโจมตี" description="ท่าโจมตียอดนิยมในการแข่งขัน Pokemon">
+<BaseLayout
+  title="ท่าโจมตี Pokémon Champions — Power, Accuracy, PP, Priority + คำอธิบายไทย"
+  description={`รวมท่าโจมตี ${moves.length} ท่าที่ใช้ในการแข่งขัน Pokémon Champions Reg M-A — พลัง ความแม่นยำ PP priority หมวด ธาตุ และเอฟเฟกต์เต็มเป็นภาษาไทย กรอง+เรียงลำดับได้`}
+  keywords={[
+    'Pokemon moves ภาษาไทย',
+    'ท่าโจมตี Pokemon',
+    'Pokemon move list',
+    'Pokemon Power Accuracy PP',
+    'damage class',
+    'Wave Crash',
+    'Last Respects',
+    'Make It Rain',
+    'Tera Blast',
+    'Pokemon Champions moves',
+  ]}
+>
   <section class="container-page py-10">
     <div class="mb-8">
       <h1 class="font-display text-4xl tracking-wide mb-2">

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="50%" stop-color="#1a0a14"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </linearGradient>
+    <radialGradient id="ember" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ff6b35" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gold" cx="15%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#ffd166" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#ffd166" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="text-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="50%" stop-color="#ff9a3c"/>
+      <stop offset="100%" stop-color="#ff6b35"/>
+    </linearGradient>
+    <linearGradient id="ball-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ff6b35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Backgrounds -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#ember)"/>
+  <rect width="1200" height="630" fill="url(#gold)"/>
+
+  <!-- Pokeball circle (top right decorative) -->
+  <g transform="translate(1000, 130)" opacity="0.9">
+    <circle r="80" fill="url(#ball-gold)"/>
+    <path d="M -80 0 A 80 80 0 0 0 80 0 L 60 0 A 60 60 0 0 1 -60 0 Z" fill="#0a0a0f"/>
+    <rect x="-80" y="-3" width="160" height="6" fill="#0a0a0f"/>
+    <circle r="22" fill="#0a0a0f"/>
+    <circle r="14" fill="#ffd166"/>
+    <circle r="6" fill="#0a0a0f"/>
+  </g>
+
+  <!-- Tagline -->
+  <text x="80" y="180" font-family="'Inter', sans-serif" font-size="22" font-weight="500" fill="#9090a0" letter-spacing="3">
+    POKÉMON CHAMPIONS · WIKI ภาษาไทย
+  </text>
+
+  <!-- Main title -->
+  <text x="80" y="290" font-family="'Bebas Neue', 'Arial Narrow', sans-serif" font-size="120" font-weight="900" fill="#e8e8f0" letter-spacing="4">
+    BECOME A
+  </text>
+  <text x="80" y="410" font-family="'Bebas Neue', 'Arial Narrow', sans-serif" font-size="120" font-weight="900" fill="url(#text-gold)" letter-spacing="4">
+    CHAMPION
+  </text>
+
+  <!-- Thai subtitle -->
+  <text x="80" y="490" font-family="'Noto Sans Thai', 'Tahoma', sans-serif" font-size="28" font-weight="500" fill="#e8e8f0">
+    คัมภีร์การแข่งขัน Pokémon Champions ฉบับสมบูรณ์ในภาษาไทย
+  </text>
+
+  <!-- Stats badges -->
+  <g transform="translate(80, 530)" font-family="'Inter', sans-serif" font-size="18">
+    <rect x="0" y="0" width="120" height="40" rx="20" fill="#1a1a24" stroke="#262633"/>
+    <text x="60" y="26" text-anchor="middle" fill="#ffd166" font-weight="700">80 Pokémon</text>
+
+    <rect x="135" y="0" width="120" height="40" rx="20" fill="#1a1a24" stroke="#262633"/>
+    <text x="195" y="26" text-anchor="middle" fill="#ffd166" font-weight="700">179 ท่า</text>
+
+    <rect x="270" y="0" width="120" height="40" rx="20" fill="#1a1a24" stroke="#262633"/>
+    <text x="330" y="26" text-anchor="middle" fill="#ffd166" font-weight="700">120 ความสามารถ</text>
+
+    <rect x="405" y="0" width="120" height="40" rx="20" fill="#1a1a24" stroke="#262633"/>
+    <text x="465" y="26" text-anchor="middle" fill="#ffd166" font-weight="700">Reg M-A</text>
+  </g>
+
+  <!-- Bottom border accent -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#text-gold)"/>
+</svg>

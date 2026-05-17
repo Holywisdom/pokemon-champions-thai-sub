@@ -11,7 +11,21 @@ const sorted = [...META_POKEMON].sort((a, b) => {
 });
 ---
 
-<BaseLayout title="Pokédex" description="รายชื่อโปเกมอน meta ทั้งหมดในรูปแบบการแข่งขัน">
+<BaseLayout
+  title="Pokédex โปเกเด็กซ์ Champions Reg M-A — 80 ตัว meta พร้อม sets, counters"
+  description={`รวบรวมโปเกมอน meta ${META_POKEMON.length} ตัวใน Pokémon Champions Reg M-A — ทุกตัวมี base stats, sets ยอดนิยม, counters, teammates, type matchup และคำแปลไทย ค้นหา/กรองด้วย tier และธาตุได้`}
+  keywords={[
+    'Pokédex Pokemon Champions',
+    'โปเกเด็กซ์',
+    'Pokemon meta Reg M-A',
+    'tier list',
+    'Pokemon รายชื่อ',
+    'Mega Evolution roster',
+    'VGC team',
+    'Pokemon ภาษาไทย',
+    'competitive Pokemon list',
+  ]}
+>
   <section class="container-page py-10">
     <!-- Header -->
     <div class="mb-8">

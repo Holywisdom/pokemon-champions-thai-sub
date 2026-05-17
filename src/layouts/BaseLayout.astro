@@ -7,18 +7,54 @@ import { ui } from '@/data/translations';
 export interface Props {
   title?: string;
   description?: string;
+  keywords?: string[];
   ogImage?: string;
+  ogType?: 'website' | 'article';
   noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
   title = ui.siteName,
   description = ui.tagline,
+  keywords = [],
   ogImage,
+  ogType = 'website',
   noindex = false,
+  jsonLd,
 } = Astro.props;
 
 const fullTitle = title === ui.siteName ? title : `${title} · ${ui.siteName}`;
+
+// Resolve canonical/OG URL — match sitemap (always trailing slash, root = base/)
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const rawPath = Astro.url.pathname;
+const pathname = rawPath.endsWith('/') ? rawPath : rawPath + '/';
+const canonical = siteBase + pathname;
+
+// Resolve OG image URL — ensure single slash join between base and file
+const base = (import.meta.env.BASE_URL ?? '/').replace(/\/?$/, '/');
+const fallbackOg = `${base}og-default.svg`;
+const resolvedOgImage = ogImage ?? fallbackOg;
+const absoluteOgImage = resolvedOgImage.startsWith('http')
+  ? resolvedOgImage
+  : siteBase + (resolvedOgImage.startsWith('/') ? resolvedOgImage : '/' + resolvedOgImage);
+
+// Default keywords for the whole site
+const baseKeywords = [
+  'Pokemon Champions',
+  'โปเกมอน',
+  'wiki',
+  'ภาษาไทย',
+  'VGC',
+  'Regulation M-A',
+  'Pokemon Wiki ไทย',
+  'Pokemon competitive',
+];
+const allKeywords = [...new Set([...keywords, ...baseKeywords])].join(', ');
+
+// Normalize jsonLd to array for cleaner template
+const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!DOCTYPE html>
@@ -27,19 +63,41 @@ const fullTitle = title === ui.siteName ? title : `${title} · ${ui.siteName}`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="canonical" href={canonical} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary SEO -->
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="keywords" content={allKeywords} />
+    <meta name="author" content="Holywisdom" />
+    <meta name="language" content="Thai" />
+    {noindex
+      ? <meta name="robots" content="noindex, nofollow" />
+      : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    }
 
-    <!-- OG -->
-    <meta property="og:type" content="website" />
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="th_TH" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content={ui.siteName} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
 
     <!-- Theme -->
     <meta name="theme-color" content="#0a0a0f" />
+    <meta name="apple-mobile-web-app-title" content={ui.siteName} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,6 +106,11 @@ const fullTitle = title === ui.siteName ? title : `${title} · ${ui.siteName}`;
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- JSON-LD Structured Data -->
+    {jsonLdArray.map((data) => (
+      <script type="application/ld+json" set:html={JSON.stringify(data)} />
+    ))}
   </head>
   <body class="min-h-screen flex flex-col">
     <Header />

@@ -22,6 +22,37 @@ export async function getStaticPaths() {
 const { pokemon } = Astro.props;
 const sprite = spriteUrl(pokemon.id);
 const total = totalBaseStats(pokemon.baseStats);
+
+// SEO description and keywords
+const typesTh = pokemon.types.map((t) => {
+  const map: Record<string, string> = { normal: 'ปกติ', fire: 'ไฟ', water: 'น้ำ', electric: 'ไฟฟ้า', grass: 'หญ้า', ice: 'น้ำแข็ง', fighting: 'ต่อสู้', poison: 'พิษ', ground: 'ดิน', flying: 'บิน', psychic: 'พลังจิต', bug: 'แมลง', rock: 'หิน', ghost: 'ภูตผี', dragon: 'มังกร', dark: 'ความมืด', steel: 'เหล็กกล้า', fairy: 'นางฟ้า' };
+  return map[t] ?? t;
+}).join('/');
+const seoTitle = `${pokemon.nameEn}${pokemon.nameTh ? ' (' + pokemon.nameTh + ')' : ''} — Pokémon Champions Wiki`;
+const seoDesc = `${pokemon.nameEn} โปเกมอนธาตุ${typesTh} ใช้ในการแข่งขัน Pokémon Champions Reg M-A — ${pokemon.role}: ${pokemon.description.slice(0, 110)}`;
+
+const pokemonJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: seoTitle,
+  description: seoDesc,
+  image: sprite,
+  inLanguage: 'th',
+  keywords: [
+    pokemon.nameEn,
+    pokemon.nameTh,
+    ...pokemon.types,
+    'Pokemon Champions',
+    'VGC',
+    'Reg M-A',
+    pokemon.tier + '-tier',
+  ].filter(Boolean).join(', '),
+  about: {
+    '@type': 'Thing',
+    name: pokemon.nameEn,
+    description: pokemon.description,
+  },
+};
 const primaryColor = typeColors[pokemon.types[0]];
 const secondaryColor = pokemon.types[1] ? typeColors[pokemon.types[1]] : primaryColor;
 const weaknesses = getTypeWeaknesses(pokemon.types);
@@ -29,8 +60,23 @@ const tier = TIERS_LIST.find((t) => t.id === pokemon.tier)!;
 ---
 
 <BaseLayout
-  title={`${pokemon.nameEn} ${pokemon.nameTh ? '(' + pokemon.nameTh + ')' : ''}`}
-  description={pokemon.description}
+  title={seoTitle}
+  description={seoDesc}
+  ogImage={sprite}
+  ogType="article"
+  keywords={[
+    pokemon.nameEn,
+    pokemon.nameTh,
+    `${pokemon.nameEn} Pokemon Champions`,
+    `${pokemon.nameEn} VGC`,
+    `${pokemon.nameEn} ภาษาไทย`,
+    `${pokemon.nameEn} build`,
+    `${pokemon.nameEn} counter`,
+    `${pokemon.nameEn} moveset`,
+    pokemon.role,
+    ...pokemon.types.map((t) => `${t} type`),
+  ].filter(Boolean) as string[]}
+  jsonLd={pokemonJsonLd}
 >
   <!-- Hero -->
   <section class="relative overflow-hidden border-b border-champ-border">
