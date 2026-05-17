@@ -1,16 +1,16 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import TypeBadge from '@/components/TypeBadge.astro';
-import { TYPES, typeColors, typeChart, typeInfo, getEffectiveness } from '@/data/types';
+import PokemonChip from '@/components/PokemonChip.astro';
+import { TYPES, typeColors, typeInfo, getEffectiveness, typeIconUrl } from '@/data/types';
 import type { TypeId } from '@/data/types';
 import { ui, translateType } from '@/data/translations';
 
 function getColor(mult: number) {
-  if (mult === 0) return 'bg-champ-bg text-champ-muted border-champ-border';
+  if (mult === 0) return 'bg-champ-bg text-champ-muted border border-champ-border';
   if (mult === 0.5) return 'bg-red-500/15 text-red-300';
-  if (mult === 1) return 'bg-champ-surface text-champ-muted';
+  if (mult === 1) return 'bg-champ-surface/40 text-champ-muted';
   if (mult === 2) return 'bg-green-500/20 text-green-300';
-  return 'bg-champ-surface';
+  return 'bg-champ-surface/40';
 }
 
 function getLabel(mult: number) {
@@ -49,38 +49,59 @@ function getLabel(mult: number) {
     <!-- Legend -->
     <div class="card p-4 mb-6 flex flex-wrap gap-3 text-xs">
       <div class="flex items-center gap-2">
-        <span class="inline-block w-6 h-6 bg-green-500/20 text-green-300 rounded flex items-center justify-center font-mono">2</span>
+        <span class="inline-flex w-7 h-7 bg-green-500/20 text-green-300 rounded items-center justify-center font-mono">2</span>
         <span>Super Effective (2×)</span>
       </div>
       <div class="flex items-center gap-2">
-        <span class="inline-block w-6 h-6 bg-red-500/15 text-red-300 rounded flex items-center justify-center font-mono">½</span>
+        <span class="inline-flex w-7 h-7 bg-red-500/15 text-red-300 rounded items-center justify-center font-mono">½</span>
         <span>Not Very Effective (½×)</span>
       </div>
       <div class="flex items-center gap-2">
-        <span class="inline-block w-6 h-6 bg-champ-bg text-champ-muted rounded flex items-center justify-center font-mono border border-champ-border">0</span>
+        <span class="inline-flex w-7 h-7 bg-champ-bg text-champ-muted rounded items-center justify-center font-mono border border-champ-border">0</span>
         <span>No Effect (0×)</span>
       </div>
       <div class="flex items-center gap-2">
-        <span class="inline-block w-6 h-6 bg-champ-surface text-champ-muted rounded"></span>
+        <span class="inline-flex w-7 h-7 bg-champ-surface/40 text-champ-muted rounded"></span>
         <span>Normal (1×)</span>
       </div>
     </div>
 
-    <!-- Type Chart -->
-    <div class="overflow-x-auto card p-2">
-      <table class="w-full text-xs">
+    <!-- Type Chart (equal-size cells via table-fixed) -->
+    <div class="card p-2 overflow-x-auto">
+      <table class="type-chart">
+        <colgroup>
+          <col class="header-col" />
+          {TYPES.map(() => <col class="type-col" />)}
+        </colgroup>
         <thead>
           <tr>
-            <th class="text-left p-1.5 sticky left-0 bg-champ-card">
-              <div class="text-[10px] text-champ-muted uppercase">ผู้โจมตี ↓ / ผู้รับ →</div>
+            <th class="sticky-corner">
+              <div class="text-[9px] text-champ-muted uppercase leading-tight px-1">
+                ATK ↓<br/>DEF →
+              </div>
             </th>
             {TYPES.map((d) => (
-              <th class="p-1" title={d}>
+              <th class="type-cell">
                 <div
-                  class="rounded font-bold uppercase text-[9px] tracking-wider py-1.5 px-1"
-                  style={`background: ${typeColors[d]}30; color: ${typeColors[d]}; border: 1px solid ${typeColors[d]}40;`}
+                  class="rounded-md flex flex-col items-center justify-center gap-0.5 py-1 px-0.5 h-full"
+                  style={`background: ${typeColors[d]}30; border: 1px solid ${typeColors[d]}40;`}
+                  title={d}
                 >
-                  {translateType(d)}
+                  <img
+                    src={typeIconUrl(d)}
+                    alt={d}
+                    loading="lazy"
+                    width="28"
+                    height="28"
+                    class="object-contain"
+                    onerror="this.style.display='none'"
+                  />
+                  <span
+                    class="text-[8px] font-bold uppercase tracking-wider leading-none"
+                    style={`color: ${typeColors[d]}`}
+                  >
+                    {translateType(d)}
+                  </span>
                 </div>
               </th>
             ))}
@@ -89,21 +110,35 @@ function getLabel(mult: number) {
         <tbody>
           {TYPES.map((a: TypeId) => (
             <tr>
-              <td class="p-1 sticky left-0 bg-champ-card border-r border-champ-border">
+              <td class="sticky-corner">
                 <div
-                  class="rounded font-bold uppercase text-[10px] tracking-wider py-1.5 px-2 whitespace-nowrap"
-                  style={`background: ${typeColors[a]}30; color: ${typeColors[a]}; border: 1px solid ${typeColors[a]}40;`}
+                  class="rounded-md flex items-center gap-1.5 py-1.5 px-1.5 h-full"
+                  style={`background: ${typeColors[a]}30; border: 1px solid ${typeColors[a]}40;`}
                 >
-                  {translateType(a)}
+                  <img
+                    src={typeIconUrl(a)}
+                    alt={a}
+                    loading="lazy"
+                    width="22"
+                    height="22"
+                    class="object-contain flex-none"
+                    onerror="this.style.display='none'"
+                  />
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider leading-none truncate"
+                    style={`color: ${typeColors[a]}`}
+                  >
+                    {translateType(a)}
+                  </span>
                 </div>
               </td>
               {TYPES.map((d: TypeId) => {
                 const mult = getEffectiveness(a, d);
                 return (
-                  <td class="p-0.5">
+                  <td class="type-cell p-0.5">
                     <div
                       class:list={[
-                        'rounded text-center font-mono py-1.5 text-xs',
+                        'rounded text-center font-mono font-bold text-sm flex items-center justify-center h-full w-full',
                         getColor(mult),
                       ]}
                       title={`${a} → ${d}: ${mult}×`}
@@ -119,7 +154,7 @@ function getLabel(mult: number) {
       </table>
     </div>
 
-    <!-- Type details -->
+    <!-- Type details with icons + Pokemon chips -->
     <div class="mt-12">
       <h2 class="font-display text-2xl tracking-wide mb-6">
         <span class="gradient-text">TYPE PROFILES</span>
@@ -134,18 +169,34 @@ function getLabel(mult: number) {
               class="card p-5 transition-all hover:-translate-y-1 hover:shadow-glow-gold"
               style={`border-left: 4px solid ${typeColors[t]}`}
             >
-              <div class="flex items-baseline gap-3 mb-3">
-                <span class="font-display text-2xl tracking-wide uppercase" style={`color: ${typeColors[t]}`}>
-                  {translateType(t)}
+              <div class="flex items-center gap-3 mb-3">
+                <span
+                  class="flex-none rounded-lg flex items-center justify-center w-12 h-12"
+                  style={`background: ${typeColors[t]}20; border: 1px solid ${typeColors[t]}40;`}
+                >
+                  <img
+                    src={typeIconUrl(t)}
+                    alt={t}
+                    loading="lazy"
+                    width="36"
+                    height="36"
+                    class="object-contain"
+                    onerror="this.style.display='none'"
+                  />
                 </span>
-                <span class="text-xs text-champ-muted uppercase">{t}</span>
+                <div class="min-w-0">
+                  <div class="font-display text-2xl tracking-wide uppercase leading-tight" style={`color: ${typeColors[t]}`}>
+                    {translateType(t)}
+                  </div>
+                  <div class="text-[10px] text-champ-muted uppercase tracking-wider">{t}</div>
+                </div>
               </div>
-              <p class="text-sm text-champ-text leading-relaxed mb-3">{info.description}</p>
+              <p class="text-sm text-champ-text leading-relaxed mb-4">{info.description}</p>
               <div>
-                <div class="text-xs text-champ-muted uppercase tracking-wider mb-1">โปเกมอนเด่น</div>
-                <div class="flex flex-wrap gap-1">
+                <div class="text-xs text-champ-muted uppercase tracking-wider mb-2">โปเกมอนเด่น</div>
+                <div class="flex flex-col gap-1.5">
                   {info.signaturePokemon.map((p) => (
-                    <span class="text-[10px] bg-champ-card border border-champ-border rounded px-1.5 py-0.5">{p}</span>
+                    <PokemonChip name={p} />
                   ))}
                 </div>
               </div>
@@ -156,3 +207,40 @@ function getLabel(mult: number) {
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .type-chart {
+    width: 100%;
+    border-spacing: 2px;
+    border-collapse: separate;
+    table-layout: fixed;
+  }
+  .type-chart .header-col {
+    width: 80px;
+  }
+  .type-chart .type-col {
+    width: 56px;
+  }
+  .type-chart .type-cell {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    min-width: 56px;
+  }
+  .type-chart .sticky-corner {
+    background: #13131a;
+    padding: 2px;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    width: 80px;
+    min-width: 80px;
+    height: 56px;
+  }
+  .type-chart thead th.sticky-corner {
+    z-index: 2;
+  }
+  .type-chart tbody td.sticky-corner {
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+</style>

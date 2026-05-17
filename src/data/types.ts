@@ -15,6 +15,22 @@ export const TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy',
 ];
 
+// PokéAPI type ID mapping (matches sprite numbering 1-18)
+export const typeIdMap: Record<TypeId, number> = {
+  normal: 1, fighting: 2, flying: 3, poison: 4, ground: 5,
+  rock: 6, bug: 7, ghost: 8, steel: 9, fire: 10,
+  water: 11, grass: 12, electric: 13, psychic: 14, ice: 15,
+  dragon: 16, dark: 17, fairy: 18,
+};
+
+/**
+ * Returns the URL for the official type icon (Scarlet/Violet style).
+ * Source: PokéAPI sprites repo.
+ */
+export function typeIconUrl(type: TypeId): string {
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/${typeIdMap[type]}.png`;
+}
+
 export const typeColors: Record<TypeId, string> = {
   normal: '#a8a878', fire: '#f08030', water: '#6890f0',
   electric: '#f8d030', grass: '#78c850', ice: '#98d8d8',

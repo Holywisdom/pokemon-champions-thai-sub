@@ -2,7 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import TypeBadge from '@/components/TypeBadge.astro';
 import { moves, moveCategories } from '@/data/moves';
-import { TYPES, typeColors } from '@/data/types';
+import { TYPES, typeColors, typeIconUrl } from '@/data/types';
 import { ui, translateType, translateDamageClass } from '@/data/translations';
 import { url } from '@/lib/utils';
 
@@ -64,6 +64,15 @@ const sorted = [...moves].sort((a, b) => a.nameEn.localeCompare(b.nameEn));
               class="chip uppercase tracking-wider"
               style={`color: ${typeColors[t]}; border-color: ${typeColors[t]}40`}
             >
+              <img
+                src={typeIconUrl(t)}
+                alt=""
+                loading="lazy"
+                width="14"
+                height="14"
+                class="object-contain"
+                onerror="this.style.display='none'"
+              />
               {translateType(t)}
             </button>
           ))}

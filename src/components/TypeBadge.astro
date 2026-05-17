@@ -1,15 +1,16 @@
 ---
 import type { TypeId } from '@/data/types';
-import { typeColors } from '@/data/types';
+import { typeColors, typeIconUrl } from '@/data/types';
 import { translateType } from '@/data/translations';
 
 export interface Props {
   type: TypeId;
   size?: 'sm' | 'md' | 'lg';
   showBoth?: boolean;
+  showIcon?: boolean;
 }
 
-const { type, size = 'md', showBoth = false } = Astro.props;
+const { type, size = 'md', showBoth = false, showIcon = true } = Astro.props;
 const color = typeColors[type];
 const thai = translateType(type);
 const en = type.charAt(0).toUpperCase() + type.slice(1);
@@ -19,6 +20,12 @@ const sizeClass = {
   md: 'text-xs px-2.5 py-1',
   lg: 'text-sm px-3.5 py-1.5',
 }[size];
+
+const iconSize = {
+  sm: 14,
+  md: 16,
+  lg: 20,
+}[size];
 ---
 
 <span
@@ -26,6 +33,18 @@ const sizeClass = {
   style={`background-color: ${color}25; color: ${color}; border: 1px solid ${color}40;`}
   title={en}
 >
+  {showIcon && (
+    <img
+      src={typeIconUrl(type)}
+      alt=""
+      loading="lazy"
+      width={iconSize}
+      height={iconSize}
+      class="object-contain flex-none"
+      style={`width: ${iconSize}px; height: ${iconSize}px;`}
+      onerror="this.style.display='none'"
+    />
+  )}
   {showBoth ? (
     <>
       <span>{thai}</span>

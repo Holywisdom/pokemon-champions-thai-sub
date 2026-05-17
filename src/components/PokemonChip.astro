@@ -1,5 +1,9 @@
 ---
 import { findPokemon, pokemonSpriteUrl } from '@/data/pokemon-index';
+import { META_POKEMON } from '@/data/meta';
+import { typeColors, typeIconUrl } from '@/data/types';
+import type { TypeId } from '@/data/types';
+import { translateType } from '@/data/translations';
 import { url } from '@/lib/utils';
 
 export interface Props {
@@ -12,7 +16,12 @@ const ref = findPokemon(name);
 const sprite = ref ? pokemonSpriteUrl(ref.id, 'small') : null;
 const linkable = ref?.hasDetailPage;
 
+// Look up types from META_POKEMON by slug (graceful: empty array if not found)
+const metaEntry = ref ? META_POKEMON.find((p) => p.slug === ref.slug) : null;
+const types: TypeId[] = metaEntry?.types ?? [];
+
 const sizeClass = size === 'md' ? 'w-12 h-12' : 'w-9 h-9';
+const Wrapper = linkable && ref ? 'a' : 'span';
 ---
 
 {linkable && ref ? (
@@ -30,7 +39,31 @@ const sizeClass = size === 'md' ? 'w-12 h-12' : 'w-9 h-9';
         />
       </span>
     )}
-    <span class="text-xs font-medium pr-1 truncate">{name}</span>
+    <div class="min-w-0 flex-1">
+      <div class="text-xs font-medium truncate">{name}</div>
+      {types.length > 0 && (
+        <div class="flex flex-wrap gap-1 mt-0.5">
+          {types.map((t) => (
+            <span
+              class="inline-flex items-center gap-0.5 rounded text-[9px] uppercase tracking-wider font-bold px-1 py-0.5"
+              style={`background: ${typeColors[t]}25; color: ${typeColors[t]}; border: 1px solid ${typeColors[t]}40;`}
+              title={t}
+            >
+              <img
+                src={typeIconUrl(t)}
+                alt=""
+                loading="lazy"
+                width="10"
+                height="10"
+                class="object-contain"
+                onerror="this.style.display='none'"
+              />
+              {translateType(t)}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
   </a>
 ) : (
   <span class="flex items-center gap-2 rounded-lg bg-champ-card border border-champ-border px-2 py-1.5">
@@ -43,6 +76,29 @@ const sizeClass = size === 'md' ? 'w-12 h-12' : 'w-9 h-9';
         ?
       </span>
     )}
-    <span class="text-xs font-medium pr-1 truncate">{name}</span>
+    <div class="min-w-0 flex-1">
+      <div class="text-xs font-medium truncate">{name}</div>
+      {types.length > 0 && (
+        <div class="flex flex-wrap gap-1 mt-0.5">
+          {types.map((t) => (
+            <span
+              class="inline-flex items-center gap-0.5 rounded text-[9px] uppercase tracking-wider font-bold px-1 py-0.5"
+              style={`background: ${typeColors[t]}25; color: ${typeColors[t]}; border: 1px solid ${typeColors[t]}40;`}
+            >
+              <img
+                src={typeIconUrl(t)}
+                alt=""
+                loading="lazy"
+                width="10"
+                height="10"
+                class="object-contain"
+                onerror="this.style.display='none'"
+              />
+              {translateType(t)}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
   </span>
 )}

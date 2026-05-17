@@ -7,7 +7,8 @@ import ItemChip from '@/components/ItemChip.astro';
 import MoveChip from '@/components/MoveChip.astro';
 import AbilityChip from '@/components/AbilityChip.astro';
 import { META_POKEMON, TIERS_LIST, spriteUrl } from '@/data/meta';
-import { typeColors, getTypeWeaknesses } from '@/data/types';
+import { typeColors, getTypeWeaknesses, typeIconUrl } from '@/data/types';
+import type { TypeId } from '@/data/types';
 import { ui, translateType } from '@/data/translations';
 import { url, effectivenessColor, totalBaseStats } from '@/lib/utils';
 
@@ -202,8 +203,17 @@ const tier = TIERS_LIST.find((t) => t.id === pokemon.tier)!;
         <h3 class="font-display text-lg tracking-wide mb-3">ค่าความเสียหายจากธาตุ</h3>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
           {Object.entries(weaknesses).map(([t, mult]) => (
-            <div class={`flex items-center justify-between rounded-md px-3 py-1.5 text-xs ${effectivenessColor(mult)}`}>
-              <span class="uppercase tracking-wider">{translateType(t)}</span>
+            <div class={`flex items-center gap-2 rounded-md px-3 py-1.5 text-xs ${effectivenessColor(mult)}`}>
+              <img
+                src={typeIconUrl(t as TypeId)}
+                alt=""
+                loading="lazy"
+                width="18"
+                height="18"
+                class="object-contain flex-none"
+                onerror="this.style.display='none'"
+              />
+              <span class="uppercase tracking-wider flex-1">{translateType(t)}</span>
               <span class="font-mono">{mult}×</span>
             </div>
           ))}
