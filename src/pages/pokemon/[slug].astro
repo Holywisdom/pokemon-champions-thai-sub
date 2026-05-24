@@ -6,6 +6,7 @@ import PokemonChip from '@/components/PokemonChip.astro';
 import ItemChip from '@/components/ItemChip.astro';
 import MoveChip from '@/components/MoveChip.astro';
 import AbilityChip from '@/components/AbilityChip.astro';
+import LearnsetTable from '@/components/LearnsetTable.astro';
 import { META_POKEMON, TIERS_LIST, spriteUrl } from '@/data/meta';
 import { typeColors, getTypeWeaknesses, typeIconUrl } from '@/data/types';
 import type { TypeId } from '@/data/types';
@@ -276,11 +277,14 @@ const tier = TIERS_LIST.find((t) => t.id === pokemon.tier)!;
 
       <!-- Common moves -->
       <div class="card p-6">
-        <h3 class="font-display text-lg tracking-wide mb-3">ท่ายอดนิยม</h3>
+        <h3 class="font-display text-lg tracking-wide mb-3">ท่ายอดนิยม (Competitive)</h3>
         <div class="grid sm:grid-cols-2 gap-2">
           {pokemon.commonMoves.map((m) => <MoveChip name={m} />)}
         </div>
       </div>
+
+      <!-- Full learnset -->
+      <LearnsetTable pokemonSlug={pokemon.slug} />
 
       <!-- Sets -->
       {pokemon.sets && pokemon.sets.length > 0 && (

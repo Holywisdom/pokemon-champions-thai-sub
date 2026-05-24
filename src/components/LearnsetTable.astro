@@ -1,0 +1,392 @@
+---
+import type { TypeId } from '@/data/types';
+import { typeColors, typeIconUrl } from '@/data/types';
+import { translateType, translateDamageClass } from '@/data/translations';
+import { getLearnset, methodInfo, type LearnsetEntry } from '@/lib/learnsets';
+
+export interface Props {
+  pokemonSlug: string;
+}
+
+const { pokemonSlug } = Astro.props;
+const entries = getLearnset(pokemonSlug);
+
+// Count per method for filter chips
+const methodCounts = entries.reduce<Record<string, number>>((acc, e) => {
+  acc[e.primaryMethod] = (acc[e.primaryMethod] ?? 0) + 1;
+  return acc;
+}, {});
+---
+
+{entries.length > 0 ? (
+  <div class="card p-6">
+    <div class="flex items-start justify-between mb-4 gap-2 flex-wrap">
+      <div>
+        <h2 class="font-display text-xl tracking-wide">ท่าที่เรียนได้ทั้งหมด</h2>
+        <p class="text-xs text-champ-muted mt-0.5">
+          รวม <span class="text-champ-text font-semibold">{entries.length}</span> ท่า
+          จาก Scarlet/Violet · Sword/Shield (เรียงตามวิธีเรียน)
+        </p>
+      </div>
+      <div class="md:hidden text-xs text-champ-muted flex items-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        แตะแถวเพื่อดูรายละเอียด
+      </div>
+    </div>
+
+    <!-- Method filter -->
+    <div class="flex flex-wrap gap-2 mb-4 ls-filters">
+      <button data-ls-method="all" class="chip ls-chip data-active">
+        ทั้งหมด ({entries.length})
+      </button>
+      {Object.entries(methodCounts).map(([method, count]) => {
+        const info = methodInfo(method);
+        return (
+          <button
+            data-ls-method={method}
+            class="chip ls-chip"
+            style={`color: ${info.color}; border-color: ${info.color}40`}
+          >
+            <span>{info.icon}</span>
+            {info.th} ({count})
+          </button>
+        );
+      })}
+    </div>
+
+    <!-- Search -->
+    <input
+      type="search"
+      data-ls-search
+      placeholder="ค้นหาท่า (อังกฤษ/ไทย)..."
+      class="input mb-4"
+    />
+
+    <!-- Table -->
+    <div class="overflow-x-auto -mx-6 px-6">
+      <table class="w-full text-xs min-w-[560px] md:min-w-0 ls-table">
+        <thead class="text-[10px] text-champ-muted uppercase tracking-wider">
+          <tr class="border-b border-champ-border">
+            <th class="text-left p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold" data-sort="method">
+              วิธีเรียน <span class="sort-arrow opacity-30">↕</span>
+            </th>
+            <th class="text-left p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold" data-sort="name">
+              ท่า <span class="sort-arrow opacity-30">↕</span>
+            </th>
+            <th class="text-left p-2 sm:p-3">ธาตุ</th>
+            <th class="text-right p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold" data-sort="power">
+              PWR <span class="sort-arrow opacity-30">↕</span>
+            </th>
+            <th class="text-right p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold" data-sort="accuracy">
+              ACC <span class="sort-arrow opacity-30">↕</span>
+            </th>
+            <th class="text-right p-2 sm:p-3 sort-col cursor-pointer select-none hover:text-champ-gold" data-sort="pp">
+              PP <span class="sort-arrow opacity-30">↕</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody data-ls-body>
+          {entries.map((entry: LearnsetEntry) => {
+            const info = methodInfo(entry.primaryMethod);
+            const type = entry.move.type as TypeId;
+            return (
+              <>
+                <tr
+                  data-ls-row
+                  data-name={entry.move.name.toLowerCase()}
+                  data-name-th={entry.move.nameTh ?? ''}
+                  data-name-display={entry.move.displayName.toLowerCase()}
+                  data-method={entry.primaryMethod}
+                  data-level={entry.primaryLevel}
+                  data-power={entry.move.power ?? -1}
+                  data-accuracy={entry.move.accuracy ?? -1}
+                  data-pp={entry.move.pp}
+                  class="border-b border-champ-border/30 hover:bg-champ-card/50 transition-colors cursor-pointer md:cursor-default"
+                  aria-expanded="false"
+                >
+                  <td class="p-2 sm:p-3 whitespace-nowrap">
+                    <span
+                      class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                      style={`background: ${info.color}20; color: ${info.color}; border: 1px solid ${info.color}40;`}
+                    >
+                      <span>{info.icon}</span>
+                      {entry.primaryMethod === 'level-up' && entry.primaryLevel > 0
+                        ? `Lv.${entry.primaryLevel}`
+                        : info.th}
+                    </span>
+                  </td>
+                  <td class="p-2 sm:p-3">
+                    <div class="flex items-center gap-1.5">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        class="md:hidden text-champ-muted flex-none ls-chevron transition-transform"
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                      <div class="min-w-0">
+                        <div class="font-semibold">{entry.move.displayName}</div>
+                        {entry.move.nameTh && (
+                          <div class="text-[10px] text-champ-muted">{entry.move.nameTh}</div>
+                        )}
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-2 sm:p-3">
+                    <span
+                      class="inline-flex items-center gap-0.5 rounded-full pl-0.5 pr-0 sm:pr-2 py-0.5 text-[10px] uppercase tracking-wider font-bold"
+                      style={`background: ${typeColors[type] ?? '#3a3a48'}25; color: ${typeColors[type] ?? '#9090a0'}; border: 1px solid ${typeColors[type] ?? '#262633'}40;`}
+                      title={type}
+                    >
+                      <img
+                        src={typeIconUrl(type)}
+                        alt=""
+                        loading="lazy"
+                        width="18"
+                        height="18"
+                        class="object-contain flex-none"
+                        onerror="this.style.display='none'"
+                      />
+                      <span class="hidden sm:inline">{translateType(type)}</span>
+                    </span>
+                  </td>
+                  <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
+                    {entry.move.power ?? '—'}
+                  </td>
+                  <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
+                    {entry.move.accuracy != null ? `${entry.move.accuracy}%` : '—'}
+                  </td>
+                  <td class="p-2 sm:p-3 text-right font-mono tabular-nums">
+                    {entry.move.pp}
+                  </td>
+                </tr>
+                <tr data-ls-expand class="hidden bg-champ-bg/40 border-b border-champ-border/30">
+                  <td colspan="6" class="p-0">
+                    <div class="ls-expand-content px-3 py-3 space-y-3">
+                      <!-- Pills -->
+                      <div class="flex flex-wrap gap-1.5">
+                        <span class:list={[
+                          'badge text-[10px] rounded-full px-2 py-0.5',
+                          entry.move.damageClass === 'physical' && 'bg-red-500/20 text-red-300',
+                          entry.move.damageClass === 'special' && 'bg-blue-500/20 text-blue-300',
+                          entry.move.damageClass === 'status' && 'bg-yellow-500/20 text-yellow-300',
+                        ]}>
+                          {translateDamageClass(entry.move.damageClass)}
+                        </span>
+                        {entry.move.priority !== 0 && (
+                          <span class="badge text-[10px] rounded-full px-2 py-0.5 bg-champ-gold/20 text-champ-gold">
+                            Priority {entry.move.priority > 0 ? `+${entry.move.priority}` : entry.move.priority}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Description (Thai if curated, else English effect) */}
+                      {entry.move.descriptionTh ? (
+                        <div>
+                          <div class="text-[10px] text-champ-muted uppercase tracking-wider mb-0.5">
+                            คำอธิบาย
+                          </div>
+                          <p class="text-champ-text leading-relaxed">{entry.move.descriptionTh}</p>
+                        </div>
+                      ) : entry.move.effect ? (
+                        <div>
+                          <div class="text-[10px] text-champ-muted uppercase tracking-wider mb-0.5">
+                            Effect (EN)
+                          </div>
+                          <p class="text-champ-text/90 leading-relaxed">{entry.move.effect}</p>
+                        </div>
+                      ) : null}
+
+                      {entry.move.effectTh && (
+                        <div class="border-l-2 border-champ-gold/40 pl-3">
+                          <div class="text-[10px] text-champ-gold uppercase tracking-wider mb-0.5">
+                            เอฟเฟกต์
+                          </div>
+                          <p class="text-champ-text/90 leading-relaxed">{entry.move.effectTh}</p>
+                        </div>
+                      )}
+
+                      {/* All learn methods */}
+                      {entry.methods.length > 1 && (
+                        <div>
+                          <div class="text-[10px] text-champ-muted uppercase tracking-wider mb-1">
+                            เรียนได้หลายวิธี
+                          </div>
+                          <div class="flex flex-wrap gap-1">
+                            {entry.methods.map((mm) => {
+                              const mi = methodInfo(mm.method);
+                              return (
+                                <span
+                                  class="text-[10px] rounded px-1.5 py-0.5"
+                                  style={`background: ${mi.color}15; color: ${mi.color}; border: 1px solid ${mi.color}30;`}
+                                >
+                                  {mi.icon} {mi.th}
+                                  {mm.method === 'level-up' && mm.level > 0 ? ` Lv.${mm.level}` : ''}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              </>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="hidden ls-empty text-center py-8 text-champ-muted text-sm">ไม่พบท่าที่ตรงกับเงื่อนไข</p>
+  </div>
+) : (
+  <div class="card p-6 text-center text-sm text-champ-muted">
+    ยังไม่มีข้อมูล learnset สำหรับโปเกมอนนี้
+  </div>
+)}
+
+<style>
+  .ls-chip.data-active {
+    @apply bg-champ-gold/15 border-champ-gold/50 text-champ-gold;
+  }
+  @media (max-width: 767px) {
+    .ls-expand-content {
+      position: sticky;
+      left: 0;
+      width: 100vw;
+      max-width: calc(100vw - 2rem);
+      box-sizing: border-box;
+    }
+  }
+</style>
+
+<script>
+  // Scope to nearest learnset container (multiple tables could theoretically coexist)
+  document.querySelectorAll<HTMLTableSectionElement>('[data-ls-body]').forEach((tbody) => {
+    const card = tbody.closest('.card')!;
+    const rows = tbody.querySelectorAll<HTMLTableRowElement>('[data-ls-row]');
+    const searchEl = card.querySelector<HTMLInputElement>('[data-ls-search]')!;
+    const chips = card.querySelectorAll<HTMLButtonElement>('.ls-chip');
+    const sortHeaders = card.querySelectorAll<HTMLTableCellElement>('.sort-col');
+    const emptyEl = card.querySelector<HTMLParagraphElement>('.ls-empty')!;
+    const scrollWrap = card.querySelector<HTMLElement>('.overflow-x-auto');
+
+    let activeMethod = 'all';
+    let query = '';
+    let sortKey: string | null = null;
+    let sortDir: 'asc' | 'desc' = 'asc';
+
+    function apply() {
+      let count = 0;
+      rows.forEach((row) => {
+        const name = row.dataset.name ?? '';
+        const nameTh = row.dataset.nameTh ?? '';
+        const display = row.dataset.nameDisplay ?? '';
+        const method = row.dataset.method ?? '';
+        const matchSearch = !query || name.includes(query) || nameTh.includes(query) || display.includes(query);
+        const matchMethod = activeMethod === 'all' || method === activeMethod;
+        const show = matchSearch && matchMethod;
+        row.style.display = show ? '' : 'none';
+        const expand = row.nextElementSibling as HTMLElement | null;
+        if (expand?.dataset.lsExpand !== undefined) {
+          if (show) expand.style.removeProperty('display');
+          else expand.style.display = 'none';
+        }
+        if (show) count++;
+      });
+      emptyEl.classList.toggle('hidden', count !== 0);
+    }
+
+    function applySort() {
+      if (!sortKey) return;
+      const pairs: Array<[HTMLTableRowElement, HTMLTableRowElement | null]> = [];
+      rows.forEach((row) => {
+        const expand = row.nextElementSibling as HTMLTableRowElement | null;
+        pairs.push([row, expand?.dataset.lsExpand !== undefined ? expand : null]);
+      });
+      const dirMul = sortDir === 'asc' ? 1 : -1;
+      pairs.sort(([a], [b]) => {
+        const getVal = (el: HTMLTableRowElement) => {
+          if (sortKey === 'method') {
+            const order: Record<string, number> = { 'level-up': 0, 'machine': 1, 'egg': 2, 'tutor': 3 };
+            const m = el.dataset.method ?? '';
+            const lvl = Number(el.dataset.level) || 0;
+            return (order[m] ?? 99) * 1000 + lvl;
+          }
+          if (sortKey === 'name') return el.dataset.nameDisplay ?? '';
+          const v = el.dataset[sortKey!] ?? '';
+          const n = Number(v);
+          return isNaN(n) ? v : n;
+        };
+        const va = getVal(a);
+        const vb = getVal(b);
+        if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * dirMul;
+        return String(va).localeCompare(String(vb)) * dirMul;
+      });
+      for (const [row, expand] of pairs) {
+        tbody.appendChild(row);
+        if (expand) tbody.appendChild(expand);
+      }
+    }
+
+    function updateArrows() {
+      sortHeaders.forEach((th) => {
+        const arrow = th.querySelector('.sort-arrow');
+        if (!arrow) return;
+        if (th.dataset.sort === sortKey) {
+          arrow.textContent = sortDir === 'asc' ? '↑' : '↓';
+          arrow.classList.remove('opacity-30');
+          arrow.classList.add('text-champ-gold');
+        } else {
+          arrow.textContent = '↕';
+          arrow.classList.add('opacity-30');
+          arrow.classList.remove('text-champ-gold');
+        }
+      });
+    }
+
+    searchEl.addEventListener('input', (e) => {
+      query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+      apply();
+    });
+
+    chips.forEach((c) => c.addEventListener('click', () => {
+      activeMethod = c.dataset.lsMethod ?? 'all';
+      chips.forEach((x) => x.classList.toggle('data-active', x === c));
+      apply();
+    }));
+
+    sortHeaders.forEach((th) => th.addEventListener('click', () => {
+      const key = th.dataset.sort ?? '';
+      if (sortKey === key) {
+        if (sortDir === 'asc') sortDir = 'desc';
+        else { sortKey = null; sortDir = 'asc'; }
+      } else { sortKey = key; sortDir = 'asc'; }
+      updateArrows();
+      applySort();
+    }));
+
+    rows.forEach((row) => {
+      row.addEventListener('click', () => {
+        const sel = window.getSelection();
+        if (sel && sel.toString().length > 0) return;
+        const expand = row.nextElementSibling as HTMLElement | null;
+        if (!expand || expand.dataset.lsExpand === undefined) return;
+        const wasHidden = expand.classList.contains('hidden');
+        expand.classList.toggle('hidden');
+        row.setAttribute('aria-expanded', String(wasHidden));
+        const chev = row.querySelector('.ls-chevron') as SVGElement | null;
+        if (chev) chev.style.transform = wasHidden ? 'rotate(180deg)' : '';
+        if (wasHidden && scrollWrap && window.innerWidth < 768) {
+          scrollWrap.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+      });
+    });
+  });
+</script>

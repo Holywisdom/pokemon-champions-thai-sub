@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 /**
- * Optional: fetch extended PokéAPI data and merge into generated JSON.
- * Run with: npm run fetch
+ * Fetch PokéAPI data for the meta Pokemon list:
+ *   - Each Pokemon's full learnset (filtered to recent gens)
+ *   - Each referenced move's stats (type, power, accuracy, pp, priority, damage_class, effect)
  *
- * This script enriches the curated meta list with additional details
- * from PokéAPI (sprites, additional moves, abilities, etc.) and writes
- * them to src/data/generated/.
+ * Output: src/data/generated/learnsets.json
+ *
+ * Usage: npm run fetch
  */
 
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -19,7 +20,14 @@ const OUT_DIR = resolve(ROOT, 'src/data/generated');
 
 const API = 'https://pokeapi.co/api/v2';
 
-/** ---- helpers ---- */
+// PokéAPI version groups to include (most recent first)
+const PREFERRED_VERSION_GROUPS = [
+  'scarlet-violet',
+  'sword-shield',
+  'sun-moon',
+  'ultra-sun-ultra-moon',
+];
+
 async function fetchJSON(url) {
   const r = await fetch(url);
   if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
@@ -30,94 +38,132 @@ async function ensureDir(p) {
   if (!existsSync(p)) await mkdir(p, { recursive: true });
 }
 
-/** Sleep to be nice to the API */
-function sleep(ms) {
-  return new Promise((r) => setTimeout(r, ms));
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** Parse meta.ts to extract slugs (works without TypeScript runtime). */
+async function getMetaSlugs() {
+  const src = await readFile(resolve(ROOT, 'src/data/meta.ts'), 'utf-8');
+  const slugs = [...src.matchAll(/^\s+slug:\s*'([a-z0-9-]+)',?$/gm)].map((m) => m[1]);
+  return [...new Set(slugs)];
 }
 
-/** ---- main ---- */
-async function main() {
-  console.log('→ Fetching PokéAPI data...');
-  await ensureDir(OUT_DIR);
+/** Extract learnset filtered to most recent generation, deduplicated. */
+function extractLearnset(pokemonData) {
+  const result = new Map(); // moveName -> { methods: [{method, level, group}] }
 
-  const args = process.argv.slice(2);
-  const full = args.includes('--full');
-
-  // Read curated meta list slugs
-  const metaModule = await import(resolve(ROOT, 'src/data/meta.ts')).catch(async () => {
-    // ts cannot be loaded directly, parse it instead
-    const fs = await import('node:fs/promises');
-    const src = await fs.readFile(resolve(ROOT, 'src/data/meta.ts'), 'utf-8');
-    const slugMatches = [...src.matchAll(/slug:\s*'([a-z0-9-]+)'/g)];
-    return { META_POKEMON: slugMatches.map((m) => ({ slug: m[1] })) };
-  });
-
-  const slugs = (metaModule.META_POKEMON || []).map((p) => p.slug);
-  console.log(`→ Found ${slugs.length} curated Pokemon`);
-
-  const enriched = [];
-  for (const slug of slugs) {
-    try {
-      const pokemon = await fetchJSON(`${API}/pokemon/${slug}`);
-      const species = await fetchJSON(pokemon.species.url);
-      enriched.push({
-        slug,
-        sprite_default: pokemon.sprites?.other?.['official-artwork']?.front_default,
-        sprite_shiny: pokemon.sprites?.other?.['official-artwork']?.front_shiny,
-        height: pokemon.height,
-        weight: pokemon.weight,
-        genus: species.genera?.find((g) => g.language.name === 'en')?.genus,
-        flavorText: species.flavor_text_entries
-          ?.filter((f) => f.language.name === 'en')
-          ?.slice(0, 3)
-          ?.map((f) => f.flavor_text.replace(/[\f\n]/g, ' ')),
-      });
-      console.log(`  ✓ ${slug}`);
-      await sleep(120); // be polite
-    } catch (e) {
-      console.error(`  ✗ ${slug}: ${e.message}`);
-    }
-  }
-
-  await writeFile(
-    resolve(OUT_DIR, 'pokemon-enriched.json'),
-    JSON.stringify(enriched, null, 2),
-    'utf-8'
-  );
-  console.log(`→ Wrote ${enriched.length} enriched entries`);
-
-  if (full) {
-    console.log('→ Fetching all moves (this takes a while)...');
-    const moveList = await fetchJSON(`${API}/move?limit=1000`);
-    const moves = [];
-    for (const m of moveList.results) {
-      try {
-        const data = await fetchJSON(m.url);
-        moves.push({
-          slug: data.name,
-          name: data.names.find((n) => n.language.name === 'en')?.name,
-          type: data.type?.name,
-          power: data.power,
-          accuracy: data.accuracy,
-          pp: data.pp,
-          priority: data.priority,
-          damageClass: data.damage_class?.name,
-          effect: data.effect_entries?.find((e) => e.language.name === 'en')?.short_effect,
-        });
-        await sleep(80);
-      } catch (e) {
-        // skip
+  for (const moveEntry of pokemonData.moves) {
+    const name = moveEntry.move.name;
+    // Pick the most recent version_group's learn details
+    let chosen = null;
+    let chosenIdx = Infinity;
+    for (const vgd of moveEntry.version_group_details) {
+      const idx = PREFERRED_VERSION_GROUPS.indexOf(vgd.version_group.name);
+      if (idx !== -1 && idx < chosenIdx) {
+        chosenIdx = idx;
+        chosen = vgd;
       }
     }
-    await writeFile(
-      resolve(OUT_DIR, 'moves-full.json'),
-      JSON.stringify(moves, null, 2),
-      'utf-8'
-    );
-    console.log(`→ Wrote ${moves.length} moves`);
+    if (!chosen) continue;
+
+    if (!result.has(name)) {
+      result.set(name, { methods: [] });
+    }
+    result.get(name).methods.push({
+      method: chosen.move_learn_method.name,
+      level: chosen.level_learned_at,
+      versionGroup: chosen.version_group.name,
+    });
   }
 
-  console.log('\n✓ Done!');
+  return [...result.entries()].map(([name, data]) => ({ name, ...data }));
+}
+
+/** Fetch full move data with caching. */
+const moveCache = new Map();
+async function fetchMove(name) {
+  if (moveCache.has(name)) return moveCache.get(name);
+  const data = await fetchJSON(`${API}/move/${name}`);
+  const compact = {
+    name: data.name,
+    type: data.type?.name,
+    damageClass: data.damage_class?.name,
+    power: data.power,
+    accuracy: data.accuracy,
+    pp: data.pp,
+    priority: data.priority,
+    target: data.target?.name,
+    effect: data.effect_entries?.find((e) => e.language.name === 'en')?.short_effect ?? '',
+    flavorText:
+      data.flavor_text_entries
+        ?.filter((f) => f.language.name === 'en')
+        ?.sort((a, b) =>
+          PREFERRED_VERSION_GROUPS.indexOf(a.version_group.name) -
+          PREFERRED_VERSION_GROUPS.indexOf(b.version_group.name)
+        )?.[0]?.flavor_text?.replace(/[\f\n]/g, ' ') ?? '',
+  };
+  moveCache.set(name, compact);
+  return compact;
+}
+
+async function main() {
+  console.log('→ Fetching learnsets from PokéAPI...');
+  await ensureDir(OUT_DIR);
+
+  const slugs = await getMetaSlugs();
+  console.log(`→ ${slugs.length} Pokemon in meta list`);
+
+  const learnsets = {};
+  const allMoveNames = new Set();
+
+  // 1. Pull each Pokemon's learnset
+  for (let i = 0; i < slugs.length; i++) {
+    const slug = slugs[i];
+    try {
+      const data = await fetchJSON(`${API}/pokemon/${slug}`);
+      const learnset = extractLearnset(data);
+      learnsets[slug] = learnset;
+      learnset.forEach((m) => allMoveNames.add(m.name));
+      console.log(`  [${i + 1}/${slugs.length}] ${slug} → ${learnset.length} moves`);
+      await sleep(80); // polite
+    } catch (e) {
+      console.error(`  ✗ ${slug}: ${e.message}`);
+      learnsets[slug] = [];
+    }
+  }
+
+  // 2. Pull each unique move's data
+  console.log(`\n→ Fetching ${allMoveNames.size} unique moves...`);
+  const moves = {};
+  const moveList = [...allMoveNames];
+  for (let i = 0; i < moveList.length; i++) {
+    const name = moveList[i];
+    try {
+      const data = await fetchMove(name);
+      moves[name] = data;
+      if ((i + 1) % 25 === 0) {
+        console.log(`  ${i + 1}/${moveList.length} fetched...`);
+      }
+      await sleep(50);
+    } catch (e) {
+      console.error(`  ✗ ${name}: ${e.message}`);
+    }
+  }
+
+  // 3. Write output
+  const output = {
+    generated: new Date().toISOString(),
+    versionGroups: PREFERRED_VERSION_GROUPS,
+    pokemonCount: slugs.length,
+    moveCount: Object.keys(moves).length,
+    learnsets,
+    moves,
+  };
+  await writeFile(
+    resolve(OUT_DIR, 'learnsets.json'),
+    JSON.stringify(output, null, 2),
+    'utf-8'
+  );
+  console.log(`\n✓ Wrote learnsets.json — ${slugs.length} Pokemon, ${Object.keys(moves).length} moves`);
 }
 
 main().catch((e) => {
