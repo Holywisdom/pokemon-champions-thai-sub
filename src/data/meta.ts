@@ -665,7 +665,7 @@ export const META_POKEMON: MetaPokemon[] = [
     teammates: ['Garchomp', 'Basculegion', 'Sneasler'],
   },
   {
-    id: 479,
+    id: 10009,
     slug: 'rotom-wash',
     nameEn: 'Rotom-Wash',
     nameTh: 'โรตอม-วอช',
@@ -839,7 +839,7 @@ export const META_POKEMON: MetaPokemon[] = [
     teammates: ['Garchomp', 'Incineroar', 'Whimsicott'],
   },
   {
-    id: 115,
+    id: 10039,
     slug: 'kangaskhan-mega',
     nameEn: 'Mega Kangaskhan',
     nameTh: 'การูระเมก้า',
@@ -883,7 +883,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Kangaskhanite',
   },
   {
-    id: 212,
+    id: 10046,
     slug: 'scizor-mega',
     nameEn: 'Mega Scizor',
     nameTh: 'ฮัสซัมเมก้า',
@@ -1265,7 +1265,7 @@ export const META_POKEMON: MetaPokemon[] = [
 
   // ---------- MEGAS ----------
   {
-    id: 3,
+    id: 10033,
     slug: 'venusaur-mega',
     nameEn: 'Mega Venusaur',
     nameTh: 'ฟุชิงิบานะเมก้า',
@@ -1286,7 +1286,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Venusaurite',
   },
   {
-    id: 94,
+    id: 10038,
     slug: 'gengar-mega',
     nameEn: 'Mega Gengar',
     nameTh: 'เกนการ์เมก้า',
@@ -1307,7 +1307,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Gengarite',
   },
   {
-    id: 282,
+    id: 10051,
     slug: 'gardevoir-mega',
     nameEn: 'Mega Gardevoir',
     nameTh: 'ซาเนครอสเมก้า',
@@ -1328,7 +1328,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Gardevoirite',
   },
   {
-    id: 448,
+    id: 10059,
     slug: 'lucario-mega',
     nameEn: 'Mega Lucario',
     nameTh: 'ลูคาริโอเมก้า',
@@ -1349,7 +1349,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Lucarionite',
   },
   {
-    id: 310,
+    id: 10055,
     slug: 'manectric-mega',
     nameEn: 'Mega Manectric',
     nameTh: 'ลิวนาสเมก้า',
@@ -1370,7 +1370,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Manectite',
   },
   {
-    id: 65,
+    id: 10037,
     slug: 'alakazam-mega',
     nameEn: 'Mega Alakazam',
     nameTh: 'ฟูดินเมก้า',
@@ -1391,7 +1391,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Alakazite',
   },
   {
-    id: 130,
+    id: 10041,
     slug: 'gyarados-mega',
     nameEn: 'Mega Gyarados',
     nameTh: 'กยาลาดอสเมก้า',
@@ -1412,7 +1412,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Gyaradosite',
   },
   {
-    id: 428,
+    id: 10088,
     slug: 'lopunny-mega',
     nameEn: 'Mega Lopunny',
     nameTh: 'มิมิรอปเมก้า',
@@ -1433,7 +1433,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Lopunnite',
   },
   {
-    id: 229,
+    id: 10048,
     slug: 'houndoom-mega',
     nameEn: 'Mega Houndoom',
     nameTh: 'เฮลการ์เมก้า',
@@ -1454,7 +1454,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Houndoominite',
   },
   {
-    id: 302,
+    id: 10066,
     slug: 'sableye-mega',
     nameEn: 'Mega Sableye',
     nameTh: 'ยามิราเมเมก้า',
@@ -1475,7 +1475,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Sablenite',
   },
   {
-    id: 334,
+    id: 10067,
     slug: 'altaria-mega',
     nameEn: 'Mega Altaria',
     nameTh: 'ทิยาลทิอาเมก้า',
@@ -1496,7 +1496,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Altarianite',
   },
   {
-    id: 208,
+    id: 10072,
     slug: 'steelix-mega',
     nameEn: 'Mega Steelix',
     nameTh: 'ฮากาเนียสเมก้า',
@@ -1517,7 +1517,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Steelixite',
   },
   {
-    id: 80,
+    id: 10071,
     slug: 'slowbro-mega',
     nameEn: 'Mega Slowbro',
     nameTh: 'ยาดอร่านเมก้า',
@@ -1538,7 +1538,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Slowbronite',
   },
   {
-    id: 475,
+    id: 10068,
     slug: 'gallade-mega',
     nameEn: 'Mega Gallade',
     nameTh: 'เอรเลดเมก้า',
@@ -1559,7 +1559,7 @@ export const META_POKEMON: MetaPokemon[] = [
     megaForm: 'Galladite',
   },
   {
-    id: 18,
+    id: 10073,
     slug: 'pidgeot-mega',
     nameEn: 'Mega Pidgeot',
     nameTh: 'พิจ๊อตเมก้า',
@@ -1717,7 +1717,7 @@ export const META_POKEMON: MetaPokemon[] = [
 
   // ---------- STARTERS ----------
   {
-    id: 935,
+    id: 911,
     slug: 'skeledirge',
     nameEn: 'Skeledirge',
     nameTh: 'สเกเลอเดิร์จ',
@@ -1755,7 +1755,7 @@ export const META_POKEMON: MetaPokemon[] = [
     teammates: ['Garchomp', 'Incineroar', 'Pelipper'],
   },
   {
-    id: 912,
+    id: 914,
     slug: 'quaquaval',
     nameEn: 'Quaquaval',
     nameTh: 'แควแกล',
@@ -1909,7 +1909,7 @@ export const META_POKEMON: MetaPokemon[] = [
     teammates: ['Hippowdon', 'Sinistcha', 'Garchomp'],
   },
   {
-    id: 968,
+    id: 934,
     slug: 'garganacl',
     nameEn: 'Garganacl',
     nameTh: 'การ์กาแนคล',
@@ -2023,7 +2023,7 @@ export const META_POKEMON: MetaPokemon[] = [
     teammates: ['Sinistcha', 'Garchomp', 'Whimsicott'],
   },
   {
-    id: 38,
+    id: 10104,
     slug: 'ninetales-alola',
     nameEn: 'Ninetales-Alola',
     nameTh: 'คิวคอนอโรลา',
@@ -2194,7 +2194,7 @@ export const META_POKEMON: MetaPokemon[] = [
     teammates: ['Garchomp', 'Whimsicott', 'Mega Charizard Y'],
   },
   {
-    id: 199,
+    id: 10172,
     slug: 'slowking-galar',
     nameEn: 'Slowking-Galar',
     nameTh: 'ยาดอคิงกาลาร์',
