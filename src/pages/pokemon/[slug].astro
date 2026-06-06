@@ -30,7 +30,9 @@ const typesTh = pokemon.types.map((t) => {
   return map[t] ?? t;
 }).join('/');
 const seoTitle = `${pokemon.nameEn}${pokemon.nameTh ? ' (' + pokemon.nameTh + ')' : ''} — Pokémon Champions Wiki`;
-const seoDesc = `${pokemon.nameEn} โปเกมอนธาตุ${typesTh} ใช้ในการแข่งขัน Pokémon Champions Reg M-A — ${pokemon.role}: ${pokemon.description.slice(0, 110)}`;
+const roleSummary = pokemon.role ?? 'ข้อมูล competitive ยังไม่ครบ';
+const descSnippet = pokemon.description ? `: ${pokemon.description.slice(0, 110)}` : '';
+const seoDesc = `${pokemon.nameEn} โปเกมอนธาตุ${typesTh} ใช้ในการแข่งขัน Pokémon Champions Reg M-A — ${roleSummary}${descSnippet}`;
 
 const pokemonJsonLd = {
   '@context': 'https://schema.org',
@@ -129,13 +131,15 @@ const tier = TIERS_LIST.find((t) => t.id === pokemon.tier)!;
             {pokemon.types.map((t) => <TypeBadge type={t} size="lg" showBoth />)}
           </div>
 
-          <div class="card p-4 inline-flex items-center gap-6">
-            <div>
-              <div class="text-xs text-champ-muted uppercase tracking-wider">{ui.common.role}</div>
-              <div class="font-semibold text-champ-gold">{pokemon.role}</div>
-              <div class="text-xs text-champ-muted">{pokemon.roleTh}</div>
+          {(pokemon.role || pokemon.roleTh) && (
+            <div class="card p-4 inline-flex items-center gap-6">
+              <div>
+                <div class="text-xs text-champ-muted uppercase tracking-wider">{ui.common.role}</div>
+                {pokemon.role && <div class="font-semibold text-champ-gold">{pokemon.role}</div>}
+                {pokemon.roleTh && <div class="text-xs text-champ-muted">{pokemon.roleTh}</div>}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div class="flex justify-center md:justify-end">
@@ -214,36 +218,44 @@ const tier = TIERS_LIST.find((t) => t.id === pokemon.tier)!;
     <!-- Right: Description + Strengths + Counters -->
     <div class="lg:col-span-2 space-y-6">
       <!-- Description -->
-      <div class="card p-6">
-        <h2 class="font-display text-xl tracking-wide mb-3">{ui.common.competitiveUsage}</h2>
-        <p class="text-champ-text leading-relaxed">{pokemon.description}</p>
-      </div>
+      {pokemon.description && (
+        <div class="card p-6">
+          <h2 class="font-display text-xl tracking-wide mb-3">{ui.common.competitiveUsage}</h2>
+          <p class="text-champ-text leading-relaxed">{pokemon.description}</p>
+        </div>
+      )}
 
       <!-- Strengths / Weaknesses -->
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div class="card p-6">
-          <h3 class="font-display text-lg tracking-wide mb-3 text-green-400">จุดแข็ง</h3>
-          <ul class="space-y-2 text-sm">
-            {pokemon.strengths.map((s) => (
-              <li class="flex gap-2">
-                <span class="text-green-400 flex-none">▸</span>
-                <span>{s}</span>
-              </li>
-            ))}
-          </ul>
+      {((pokemon.strengths && pokemon.strengths.length > 0) || (pokemon.weaknesses && pokemon.weaknesses.length > 0)) && (
+        <div class="grid sm:grid-cols-2 gap-6">
+          {pokemon.strengths && pokemon.strengths.length > 0 && (
+            <div class="card p-6">
+              <h3 class="font-display text-lg tracking-wide mb-3 text-green-400">จุดแข็ง</h3>
+              <ul class="space-y-2 text-sm">
+                {pokemon.strengths.map((s) => (
+                  <li class="flex gap-2">
+                    <span class="text-green-400 flex-none">▸</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {pokemon.weaknesses && pokemon.weaknesses.length > 0 && (
+            <div class="card p-6">
+              <h3 class="font-display text-lg tracking-wide mb-3 text-red-400">จุดอ่อน</h3>
+              <ul class="space-y-2 text-sm">
+                {pokemon.weaknesses.map((w) => (
+                  <li class="flex gap-2">
+                    <span class="text-red-400 flex-none">▸</span>
+                    <span>{w}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
-        <div class="card p-6">
-          <h3 class="font-display text-lg tracking-wide mb-3 text-red-400">จุดอ่อน</h3>
-          <ul class="space-y-2 text-sm">
-            {pokemon.weaknesses.map((w) => (
-              <li class="flex gap-2">
-                <span class="text-red-400 flex-none">▸</span>
-                <span>{w}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      )}
 
       <!-- Type weakness chart -->
       <div class="card p-6">
@@ -268,20 +280,24 @@ const tier = TIERS_LIST.find((t) => t.id === pokemon.tier)!;
       </div>
 
       <!-- Common items -->
-      <div class="card p-6">
-        <h3 class="font-display text-lg tracking-wide mb-3">ไอเทมยอดนิยม</h3>
-        <div class="grid sm:grid-cols-2 gap-2">
-          {pokemon.commonItems.map((i) => <ItemChip name={i} />)}
+      {pokemon.commonItems && pokemon.commonItems.length > 0 && (
+        <div class="card p-6">
+          <h3 class="font-display text-lg tracking-wide mb-3">ไอเทมยอดนิยม</h3>
+          <div class="grid sm:grid-cols-2 gap-2">
+            {pokemon.commonItems.map((i) => <ItemChip name={i} />)}
+          </div>
         </div>
-      </div>
+      )}
 
       <!-- Common moves -->
-      <div class="card p-6">
-        <h3 class="font-display text-lg tracking-wide mb-3">ท่ายอดนิยม (Competitive)</h3>
-        <div class="grid sm:grid-cols-2 gap-2">
-          {pokemon.commonMoves.map((m) => <MoveChip name={m} />)}
+      {pokemon.commonMoves && pokemon.commonMoves.length > 0 && (
+        <div class="card p-6">
+          <h3 class="font-display text-lg tracking-wide mb-3">ท่ายอดนิยม (Competitive)</h3>
+          <div class="grid sm:grid-cols-2 gap-2">
+            {pokemon.commonMoves.map((m) => <MoveChip name={m} />)}
+          </div>
         </div>
-      </div>
+      )}
 
       <!-- Full learnset -->
       <LearnsetTable pokemonSlug={pokemon.slug} />
