@@ -152,6 +152,27 @@ async function main() {
     }
   }
 
+  // 1b. Fallback: Pokémon Champions adds non-canonical Mega forms (e.g. greninja-mega,
+  //     delphox-mega) that PokéAPI returns with an empty `moves[]` because in-game,
+  //     Megas inherit their base species' learnset. Copy from the base species when
+  //     a `-mega` / `-mega-x` / `-mega-y` slug has 0 moves.
+  let megaFallbackCount = 0;
+  for (const { slug } of metaList) {
+    if (learnsets[slug]?.length) continue;
+    if (!/-mega(-[xy])?$/.test(slug)) continue;
+    const baseSlug = slug.replace(/-mega(-[xy])?$/, '');
+    const baseLearnset = learnsets[baseSlug];
+    if (!baseLearnset || baseLearnset.length === 0) {
+      console.warn(`  ⚠ ${slug}: no fallback (base "${baseSlug}" missing or empty)`);
+      continue;
+    }
+    learnsets[slug] = baseLearnset;
+    baseLearnset.forEach((m) => allMoveNames.add(m.name));
+    megaFallbackCount++;
+    console.log(`  ↳ ${slug} ← ${baseSlug} (${baseLearnset.length} moves)`);
+  }
+  console.log(`→ Applied base-species fallback to ${megaFallbackCount} Mega form(s)`);
+
   // 2. Pull each unique move's data
   console.log(`\n→ Fetching ${allMoveNames.size} unique moves...`);
   const moves = {};
