@@ -18,7 +18,7 @@
 
 import type { TypeId } from './types';
 
-export type Tier = 'S' | 'A' | 'B' | 'C' | 'Restricted';
+export type Tier = 'S' | 'A' | 'B' | 'C' | 'Restricted' | 'Untiered';
 
 /**
  * Pokémon Champions uses a NEW stat system (not EV/IV/Nature):
@@ -49,7 +49,7 @@ export interface MetaPokemon {
   nameEn: string;
   nameTh?: string;
 
-  // Battle data
+  // Battle data (required — always available from PokéAPI)
   types: TypeId[];
   baseStats: {
     hp: number;
@@ -62,17 +62,19 @@ export interface MetaPokemon {
   abilities: string[];
   hiddenAbility?: string;
 
-  // Champions-specific
+  // Tier (required — curated for old 80, "Untiered" default for new 186)
   tier: Tier;
+
+  // Champions-specific curation (OPTIONAL — present for curated mons only)
   usagePercent?: number;
   winRate?: number;
-  role: string;
-  roleTh: string;
-  description: string;
-  strengths: string[];
-  weaknesses: string[];
-  commonItems: string[];
-  commonMoves: string[];
+  role?: string;
+  roleTh?: string;
+  description?: string;
+  strengths?: string[];
+  weaknesses?: string[];
+  commonItems?: string[];
+  commonMoves?: string[];
   sets?: CompetitiveSet[];
   counters?: string[];
   teammates?: string[];
@@ -2256,4 +2258,5 @@ export const TIERS_LIST: { id: Tier; label: string; desc: string; color: string 
   { id: 'B', label: 'B-Tier', desc: 'ใช้ในทีมที่เหมาะสม', color: '#4cc9f0' },
   { id: 'C', label: 'C-Tier', desc: 'เฉพาะทีมหรือ niche pick', color: '#a890f0' },
   { id: 'Restricted', label: 'Restricted', desc: 'แบนใน Reg M-A', color: '#e63946' },
+  { id: 'Untiered', label: 'Untiered', desc: 'ยังไม่จัด tier — ข้อมูลพื้นฐานเท่านั้น', color: '#6b7280' },
 ];
