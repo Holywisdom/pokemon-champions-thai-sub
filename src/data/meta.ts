@@ -2258,7 +2258,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['rock', 'flying'],
     baseStats: { hp: 80, atk: 135, def: 85, spa: 70, spd: 95, spe: 150 },
     abilities: ['Tough Claws'],
-    tier: 'Untiered',
+    tier: 'S',
   },
   {
     id: 10090,
@@ -2278,7 +2278,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['water', 'dark'],
     baseStats: { hp: 72, atk: 125, def: 77, spa: 133, spd: 81, spe: 142 },
     abilities: ['Protean'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10293,
@@ -2288,7 +2288,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['fire', 'psychic'],
     baseStats: { hp: 75, atk: 69, def: 72, spa: 159, spd: 125, spe: 134 },
     abilities: ['Levitate'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 26,
@@ -2299,7 +2299,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 60, atk: 90, def: 55, spa: 90, spd: 80, spe: 110 },
     abilities: ['Static'],
     hiddenAbility: 'Lightning Rod',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10314,
@@ -2309,7 +2309,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['psychic'],
     baseStats: { hp: 74, atk: 48, def: 76, spa: 143, spd: 101, spe: 124 },
     abilities: ['Trace'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 715,
@@ -2320,7 +2320,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 85, atk: 70, def: 80, spa: 97, spd: 80, spe: 123 },
     abilities: ['Frisk', 'Infiltrator'],
     hiddenAbility: 'Telepathy',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 658,
@@ -2331,7 +2331,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 72, atk: 95, def: 67, spa: 103, spd: 71, spe: 122 },
     abilities: ['Torrent'],
     hiddenAbility: 'Protean',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 65,
@@ -2342,7 +2342,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 55, atk: 50, def: 45, spa: 135, spd: 95, spe: 120 },
     abilities: ['Synchronize', 'Inner Focus'],
     hiddenAbility: 'Magic Guard',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10285,
@@ -2352,7 +2352,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['ice', 'ghost'],
     baseStats: { hp: 70, atk: 80, def: 70, spa: 140, spd: 100, spe: 120 },
     abilities: ['Snow Warning'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10280,
@@ -2362,7 +2362,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['water', 'psychic'],
     baseStats: { hp: 60, atk: 100, def: 105, spa: 130, spd: 105, spe: 120 },
     abilities: ['Huge Power'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 701,
@@ -2373,7 +2373,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 78, atk: 92, def: 75, spa: 74, spd: 63, spe: 118 },
     abilities: ['Limber', 'Unburden'],
     hiddenAbility: 'Mold Breaker',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10300,
@@ -2383,7 +2383,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['fighting', 'flying'],
     baseStats: { hp: 78, atk: 137, def: 100, spa: 74, spd: 93, spe: 118 },
     abilities: ['No Guard'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10057,
@@ -2393,7 +2393,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['dark'],
     baseStats: { hp: 65, atk: 150, def: 60, spa: 115, spd: 60, spe: 115 },
     abilities: ['Magic Bounce'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 121,
@@ -2404,7 +2404,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 60, atk: 75, def: 85, spa: 100, spd: 85, spe: 115 },
     abilities: ['Illuminate', 'Natural Cure'],
     hiddenAbility: 'Analytic',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 745,
@@ -2415,7 +2415,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 115, def: 65, spa: 55, spd: 65, spe: 112 },
     abilities: ['Keen Eye', 'Sand Rush'],
     hiddenAbility: 'Steadfast',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 745,
@@ -2426,7 +2426,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 115, def: 65, spa: 55, spd: 65, spe: 112 },
     abilities: ['Keen Eye', 'Sand Rush'],
     hiddenAbility: 'Steadfast',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10100,
@@ -2436,7 +2436,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['electric', 'psychic'],
     baseStats: { hp: 60, atk: 85, def: 50, spa: 95, spd: 85, spe: 110 },
     abilities: ['Surge Surfer'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 94,
@@ -2446,7 +2446,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['ghost', 'poison'],
     baseStats: { hp: 60, atk: 65, def: 60, spa: 130, spd: 75, spe: 110 },
     abilities: ['Cursed Body'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10239,
@@ -2456,7 +2456,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['normal', 'ghost'],
     baseStats: { hp: 55, atk: 100, def: 60, spa: 125, spd: 60, spe: 110 },
     abilities: ['Illusion'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10152,
@@ -2466,7 +2466,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['rock'],
     baseStats: { hp: 75, atk: 117, def: 65, spa: 55, spd: 65, spe: 110 },
     abilities: ['Tough Claws'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10284,
@@ -2476,7 +2476,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['steel', 'flying'],
     baseStats: { hp: 65, atk: 140, def: 110, spa: 40, spd: 100, spe: 110 },
     abilities: ['Stalwart'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 128,
@@ -2487,7 +2487,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 100, def: 95, spa: 40, spd: 70, spe: 110 },
     abilities: ['Intimidate', 'Anger Point'],
     hiddenAbility: 'Sheer Force',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 695,
@@ -2498,7 +2498,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 62, atk: 55, def: 52, spa: 109, spd: 94, spe: 109 },
     abilities: ['Dry Skin', 'Sand Veil'],
     hiddenAbility: 'Solar Power',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 510,
@@ -2509,7 +2509,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 64, atk: 88, def: 50, spa: 88, spd: 50, spe: 106 },
     abilities: ['Limber', 'Unburden'],
     hiddenAbility: 'Prankster',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 956,
@@ -2520,7 +2520,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 60, def: 60, spa: 101, spd: 60, spe: 105 },
     abilities: ['Opportunist', 'Frisk'],
     hiddenAbility: 'Speed Boost',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 428,
@@ -2531,7 +2531,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 65, atk: 76, def: 84, spa: 54, spd: 96, spe: 105 },
     abilities: ['Cute Charm', 'Klutz'],
     hiddenAbility: 'Limber',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 310,
@@ -2542,7 +2542,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 70, atk: 75, def: 60, spa: 105, spd: 60, spe: 105 },
     abilities: ['Static', 'Lightning Rod'],
     hiddenAbility: 'Minus',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10040,
@@ -2552,7 +2552,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['bug', 'flying'],
     baseStats: { hp: 65, atk: 155, def: 120, spa: 65, spd: 90, spe: 105 },
     abilities: ['Aerilate'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10070,
@@ -2562,7 +2562,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['water', 'dark'],
     baseStats: { hp: 70, atk: 140, def: 70, spa: 110, spd: 65, spe: 105 },
     abilities: ['Strong Jaw'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 571,
@@ -2572,7 +2572,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['dark'],
     baseStats: { hp: 60, atk: 105, def: 60, spa: 120, spd: 60, spe: 105 },
     abilities: ['Illusion'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 655,
@@ -2583,7 +2583,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 69, def: 72, spa: 114, spd: 100, spe: 104 },
     abilities: ['Blaze'],
     hiddenAbility: 'Magician',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 678,
@@ -2594,7 +2594,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 74, atk: 48, def: 76, spa: 83, spd: 81, spe: 104 },
     abilities: ['Keen Eye', 'Infiltrator'],
     hiddenAbility: 'Prankster',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10025,
@@ -2605,7 +2605,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 74, atk: 48, def: 76, spa: 83, spd: 81, spe: 104 },
     abilities: ['Keen Eye', 'Infiltrator'],
     hiddenAbility: 'Competitive',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 587,
@@ -2626,7 +2626,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['ground', 'steel'],
     baseStats: { hp: 110, atk: 165, def: 100, spa: 65, spd: 65, spe: 103 },
     abilities: ['Piercing Drill'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 676,
@@ -2667,7 +2667,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['rock', 'poison'],
     baseStats: { hp: 83, atk: 90, def: 105, spa: 150, spd: 96, spe: 101 },
     abilities: ['Adaptability'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 18,
@@ -2678,7 +2678,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 83, atk: 80, def: 75, spa: 70, spd: 70, spe: 101 },
     abilities: ['Keen Eye', 'Tangled Feet'],
     hiddenAbility: 'Big Pecks',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 516,
@@ -2721,7 +2721,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['fire', 'dragon'],
     baseStats: { hp: 78, atk: 130, def: 111, spa: 130, spd: 85, spe: 100 },
     abilities: ['Tough Claws'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10035,
@@ -2731,7 +2731,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['fire', 'flying'],
     baseStats: { hp: 78, atk: 104, def: 78, spa: 159, spd: 115, spe: 100 },
     abilities: ['Drought'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10281,
@@ -2741,7 +2741,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['dragon', 'flying'],
     baseStats: { hp: 91, atk: 124, def: 115, spa: 145, spd: 125, spe: 100 },
     abilities: ['Multiscale'],
-    tier: 'Untiered',
+    tier: 'S',
   },
   {
     id: 10074,
@@ -2761,7 +2761,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['fighting', 'psychic'],
     baseStats: { hp: 60, atk: 100, def: 85, spa: 80, spd: 85, spe: 100 },
     abilities: ['Pure Power'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 38,
@@ -2772,7 +2772,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 73, atk: 76, def: 75, spa: 81, spd: 100, spe: 100 },
     abilities: ['Flash Fire'],
     hiddenAbility: 'Drought',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 964,
@@ -2782,7 +2782,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['water'],
     baseStats: { hp: 100, atk: 70, def: 72, spa: 53, spd: 62, spe: 100 },
     abilities: ['Zero To Hero'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10250,
@@ -2793,7 +2793,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 110, def: 105, spa: 30, spd: 70, spe: 100 },
     abilities: ['Intimidate', 'Anger Point'],
     hiddenAbility: 'Cud Chew',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10252,
@@ -2804,7 +2804,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 110, def: 105, spa: 30, spd: 70, spe: 100 },
     abilities: ['Intimidate', 'Anger Point'],
     hiddenAbility: 'Cud Chew',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10251,
@@ -2815,7 +2815,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 110, def: 105, spa: 30, spd: 70, spe: 100 },
     abilities: ['Intimidate', 'Anger Point'],
     hiddenAbility: 'Cud Chew',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 877,
@@ -2825,7 +2825,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['electric', 'dark'],
     baseStats: { hp: 58, atk: 95, def: 58, spa: 70, spd: 58, spe: 97 },
     abilities: ['Hunger Switch'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 59,
@@ -2836,7 +2836,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 90, atk: 110, def: 80, spa: 100, spd: 80, spe: 95 },
     abilities: ['Intimidate', 'Flash Fire'],
     hiddenAbility: 'Justified',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10233,
@@ -2847,7 +2847,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 73, atk: 84, def: 78, spa: 119, spd: 85, spe: 95 },
     abilities: ['Blaze'],
     hiddenAbility: 'Frisk',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 229,
@@ -2858,7 +2858,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 90, def: 50, spa: 110, spd: 80, spe: 95 },
     abilities: ['Early Bird', 'Flash Fire'],
     hiddenAbility: 'Unnerve',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 319,
@@ -2869,7 +2869,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 70, atk: 120, def: 40, spa: 95, spd: 40, spe: 95 },
     abilities: ['Rough Skin'],
     hiddenAbility: 'Speed Boost',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 553,
@@ -2880,7 +2880,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 117, def: 80, spa: 65, spd: 70, spe: 92 },
     abilities: ['Intimidate', 'Moxie'],
     hiddenAbility: 'Anger Point',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10058,
@@ -2890,7 +2890,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['dragon', 'ground'],
     baseStats: { hp: 108, atk: 170, def: 115, spa: 120, spd: 95, spe: 92 },
     abilities: ['Sand Force'],
-    tier: 'Untiered',
+    tier: 'S',
   },
   {
     id: 479,
@@ -2900,7 +2900,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['electric', 'ghost'],
     baseStats: { hp: 50, atk: 50, def: 77, spa: 95, spd: 77, spe: 91 },
     abilities: ['Levitate'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10230,
@@ -2911,7 +2911,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 115, def: 80, spa: 95, spd: 80, spe: 90 },
     abilities: ['Intimidate', 'Flash Fire'],
     hiddenAbility: 'Rock Head',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 115,
@@ -2922,7 +2922,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 105, atk: 95, def: 80, spa: 40, spd: 80, spe: 90 },
     abilities: ['Early Bird', 'Scrappy'],
     hiddenAbility: 'Inner Focus',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 448,
@@ -2933,7 +2933,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 70, atk: 110, def: 70, spa: 115, spd: 70, spe: 90 },
     abilities: ['Steadfast', 'Inner Focus'],
     hiddenAbility: 'Justified',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10291,
@@ -2943,7 +2943,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['ghost', 'fire'],
     baseStats: { hp: 60, atk: 75, def: 110, spa: 175, spd: 110, spe: 90 },
     abilities: ['Infiltrator'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 25,
@@ -2954,7 +2954,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 35, atk: 55, def: 40, spa: 50, spd: 50, spe: 90 },
     abilities: ['Static'],
     hiddenAbility: 'Lightning Rod',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 407,
@@ -2965,7 +2965,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 60, atk: 70, def: 65, spa: 125, spd: 105, spe: 90 },
     abilities: ['Natural Cure', 'Poison Point'],
     hiddenAbility: 'Technician',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 666,
@@ -2976,7 +2976,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 80, atk: 52, def: 50, spa: 90, spd: 50, spe: 89 },
     abilities: ['Shield Dust', 'Compound Eyes'],
     hiddenAbility: 'Friend Guard',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10011,
@@ -2986,7 +2986,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['electric', 'flying'],
     baseStats: { hp: 50, atk: 65, def: 107, spa: 105, spd: 107, spe: 86 },
     abilities: ['Levitate'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10010,
@@ -2996,7 +2996,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['electric', 'ice'],
     baseStats: { hp: 50, atk: 65, def: 107, spa: 105, spd: 107, spe: 86 },
     abilities: ['Levitate'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10008,
@@ -3006,7 +3006,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['electric', 'fire'],
     baseStats: { hp: 50, atk: 65, def: 107, spa: 105, spd: 107, spe: 86 },
     abilities: ['Levitate'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10012,
@@ -3016,7 +3016,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['electric', 'grass'],
     baseStats: { hp: 50, atk: 65, def: 107, spa: 105, spd: 107, spe: 86 },
     abilities: ['Levitate'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 214,
@@ -3027,7 +3027,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 80, atk: 125, def: 75, spa: 40, spd: 95, spe: 85 },
     abilities: ['Swarm', 'Guts'],
     hiddenAbility: 'Moxie',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10236,
@@ -3038,7 +3038,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 90, atk: 108, def: 80, spa: 100, spd: 65, spe: 85 },
     abilities: ['Torrent'],
     hiddenAbility: 'Sharpness',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 900,
@@ -3049,7 +3049,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 70, atk: 135, def: 95, spa: 45, spd: 70, spe: 85 },
     abilities: ['Swarm', 'Sheer Force'],
     hiddenAbility: 'Sharpness',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 784,
@@ -3060,7 +3060,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 110, def: 125, spa: 100, spd: 105, spe: 85 },
     abilities: ['Bulletproof', 'Soundproof'],
     hiddenAbility: 'Overcoat',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 127,
@@ -3082,7 +3082,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 83, atk: 106, def: 65, spa: 86, spd: 65, spe: 85 },
     abilities: ['Anticipation', 'Dry Skin'],
     hiddenAbility: 'Poison Touch',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 711,
@@ -3093,7 +3093,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 65, atk: 90, def: 122, spa: 58, spd: 75, spe: 84 },
     abilities: ['Pickup', 'Frisk'],
     hiddenAbility: 'Insomnia',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10126,
@@ -3104,7 +3104,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 85, atk: 115, def: 75, spa: 55, spd: 75, spe: 82 },
     abilities: ['Keen Eye', 'Vital Spirit'],
     hiddenAbility: 'No Guard',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 130,
@@ -3115,7 +3115,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 125, def: 79, spa: 60, spd: 100, spe: 81 },
     abilities: ['Intimidate'],
     hiddenAbility: 'Moxie',
-    tier: 'Untiered',
+    tier: 'S',
   },
   {
     id: 334,
@@ -3126,7 +3126,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 70, def: 90, spa: 70, spd: 105, spe: 80 },
     abilities: ['Natural Cure'],
     hiddenAbility: 'Cloud Nine',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 24,
@@ -3148,7 +3148,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 60, atk: 55, def: 90, spa: 145, spd: 90, spe: 80 },
     abilities: ['Flash Fire', 'Flame Body'],
     hiddenAbility: 'Infiltrator',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 475,
@@ -3159,7 +3159,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 68, atk: 125, def: 65, spa: 65, spd: 115, spe: 80 },
     abilities: ['Steadfast', 'Sharpness'],
     hiddenAbility: 'Justified',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 282,
@@ -3170,7 +3170,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 68, atk: 65, def: 65, spa: 125, spd: 115, spe: 80 },
     abilities: ['Synchronize', 'Trace'],
     hiddenAbility: 'Telepathy',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 362,
@@ -3192,7 +3192,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 90, atk: 100, def: 70, spa: 110, spd: 150, spe: 80 },
     abilities: ['Sap Sipper', 'Hydration'],
     hiddenAbility: 'Gooey',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 308,
@@ -3203,7 +3203,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 60, atk: 60, def: 75, spa: 60, spd: 75, spe: 80 },
     abilities: ['Pure Power'],
     hiddenAbility: 'Telepathy',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10282,
@@ -3235,7 +3235,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 100, atk: 120, def: 90, spa: 40, spd: 60, spe: 80 },
     abilities: ['Receiver'],
     hiddenAbility: 'Defiant',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 3,
@@ -3246,7 +3246,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 80, atk: 82, def: 83, spa: 100, spd: 100, spe: 80 },
     abilities: ['Overgrow'],
     hiddenAbility: 'Chlorophyll',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 584,
@@ -3279,7 +3279,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 85, atk: 56, def: 77, spa: 50, spd: 77, spe: 78 },
     abilities: ['Pickup', 'Cheek Pouch'],
     hiddenAbility: 'Huge Power',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 160,
@@ -3290,7 +3290,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 85, atk: 105, def: 100, spa: 79, spd: 83, spe: 78 },
     abilities: ['Torrent'],
     hiddenAbility: 'Sheer Force',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10036,
@@ -3300,7 +3300,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['water'],
     baseStats: { hp: 79, atk: 103, def: 120, spa: 135, spd: 115, spe: 78 },
     abilities: ['Mega Launcher'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10283,
@@ -3310,7 +3310,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['water', 'dragon'],
     baseStats: { hp: 85, atk: 160, def: 125, spa: 89, spd: 93, spe: 78 },
     abilities: ['Dragonize'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 505,
@@ -3354,7 +3354,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 78, atk: 65, def: 68, spa: 112, spd: 154, spe: 75 },
     abilities: ['Flower Veil'],
     hiddenAbility: 'Symbiosis',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 569,
@@ -3365,7 +3365,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 80, atk: 95, def: 82, spa: 60, spd: 82, spe: 75 },
     abilities: ['Stench', 'Weak Armor'],
     hiddenAbility: 'Aftermath',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10056,
@@ -3375,7 +3375,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['ghost'],
     baseStats: { hp: 64, atk: 165, def: 75, spa: 93, spd: 83, spe: 75 },
     abilities: ['Prankster'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10286,
@@ -3395,7 +3395,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['bug', 'fighting'],
     baseStats: { hp: 80, atk: 185, def: 115, spa: 40, spd: 105, spe: 75 },
     abilities: ['Skill Link'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10320,
@@ -3405,7 +3405,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['grass', 'fire'],
     baseStats: { hp: 65, atk: 138, def: 85, spa: 138, spd: 85, spe: 75 },
     abilities: ['Spicy Spray'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 685,
@@ -3416,7 +3416,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 82, atk: 80, def: 86, spa: 85, spd: 75, spe: 72 },
     abilities: ['Sweet Veil'],
     hiddenAbility: 'Unburden',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 763,
@@ -3427,7 +3427,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 72, atk: 120, def: 98, spa: 50, spd: 98, spe: 72 },
     abilities: ['Leaf Guard', 'Queenly Majesty'],
     hiddenAbility: 'Sweet Veil',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10049,
@@ -3437,7 +3437,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['rock', 'dark'],
     baseStats: { hp: 100, atk: 164, def: 150, spa: 95, spd: 120, spe: 71 },
     abilities: ['Sand Stream'],
-    tier: 'Untiered',
+    tier: 'S',
   },
   {
     id: 844,
@@ -3459,7 +3459,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 82, atk: 121, def: 119, spa: 69, spd: 59, spe: 71 },
     abilities: ['Strong Jaw'],
     hiddenAbility: 'Rock Head',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 351,
@@ -3491,7 +3491,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 80, atk: 120, def: 79, spa: 95, spd: 79, spe: 70 },
     abilities: ['Rivalry', 'Intimidate'],
     hiddenAbility: 'Guts',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10278,
@@ -3501,7 +3501,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['fairy', 'flying'],
     baseStats: { hp: 95, atk: 80, def: 93, spa: 135, spd: 110, spe: 70 },
     abilities: ['Magic Bounce'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10279,
@@ -3511,7 +3511,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['grass', 'poison'],
     baseStats: { hp: 80, atk: 125, def: 85, spa: 135, spd: 95, spe: 70 },
     abilities: ['Innards Out'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 866,
@@ -3533,7 +3533,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 60, atk: 65, def: 65, spa: 134, spd: 114, spe: 70 },
     abilities: ['Weak Armor'],
     hiddenAbility: 'Cursed Body',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 503,
@@ -3544,7 +3544,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 100, def: 85, spa: 108, spd: 70, spe: 70 },
     abilities: ['Torrent'],
     hiddenAbility: 'Shell Armor',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 227,
@@ -3555,7 +3555,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 65, atk: 80, def: 140, spa: 40, spd: 70, spe: 70 },
     abilities: ['Keen Eye', 'Sturdy'],
     hiddenAbility: 'Weak Armor',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 71,
@@ -3566,7 +3566,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 80, atk: 105, def: 65, spa: 100, spd: 70, spe: 70 },
     abilities: ['Chlorophyll'],
     hiddenAbility: 'Gluttony',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 354,
@@ -3630,7 +3630,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 70, atk: 130, def: 100, spa: 55, spd: 80, spe: 65 },
     abilities: ['Swarm', 'Technician'],
     hiddenAbility: 'Light Metal',
-    tier: 'Untiered',
+    tier: 'S',
   },
   {
     id: 899,
@@ -3674,7 +3674,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 90, atk: 92, def: 75, spa: 92, spd: 85, spe: 60 },
     abilities: ['Snow Warning'],
     hiddenAbility: 'Soundproof',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10026,
@@ -3684,7 +3684,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['steel', 'ghost'],
     baseStats: { hp: 60, atk: 140, def: 50, spa: 140, spd: 50, spe: 60 },
     abilities: ['Stance Change'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 681,
@@ -3694,7 +3694,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['steel', 'ghost'],
     baseStats: { hp: 60, atk: 50, def: 140, spa: 50, spd: 140, spe: 60 },
     abilities: ['Stance Change'],
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 36,
@@ -3705,7 +3705,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 70, def: 73, spa: 95, spd: 90, spe: 60 },
     abilities: ['Cute Charm', 'Magic Guard'],
     hiddenAbility: 'Unaware',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 395,
@@ -3716,7 +3716,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 84, atk: 86, def: 88, spa: 111, spd: 101, spe: 60 },
     abilities: ['Torrent'],
     hiddenAbility: 'Competitive',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10244,
@@ -3727,7 +3727,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 88, atk: 112, def: 80, spa: 95, spd: 95, spe: 60 },
     abilities: ['Overgrow'],
     hiddenAbility: 'Scrappy',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10242,
@@ -3738,7 +3738,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 80, atk: 100, def: 100, spa: 110, spd: 150, spe: 60 },
     abilities: ['Sap Sipper', 'Shell Armor'],
     hiddenAbility: 'Gooey',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 765,
@@ -3814,7 +3814,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 109, def: 105, spa: 75, spd: 85, spe: 56 },
     abilities: ['Overgrow'],
     hiddenAbility: 'Shell Armor',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 709,
@@ -3825,7 +3825,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 85, atk: 110, def: 76, spa: 65, spd: 82, spe: 56 },
     abilities: ['Natural Cure', 'Frisk'],
     hiddenAbility: 'Harvest',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 181,
@@ -3836,7 +3836,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 90, atk: 75, def: 85, spa: 115, spd: 90, spe: 55 },
     abilities: ['Static'],
     hiddenAbility: 'Plus',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 623,
@@ -3847,7 +3847,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 89, atk: 124, def: 80, spa: 55, spd: 80, spe: 55 },
     abilities: ['Iron Fist', 'Klutz'],
     hiddenAbility: 'No Guard',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 68,
@@ -3858,7 +3858,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 90, atk: 130, def: 80, spa: 65, spd: 85, spe: 55 },
     abilities: ['Guts', 'No Guard'],
     hiddenAbility: 'Steadfast',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10313,
@@ -3868,7 +3868,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['ground', 'ghost'],
     baseStats: { hp: 89, atk: 159, def: 105, spa: 70, spd: 105, spe: 55 },
     abilities: ['Unseen Fist'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 670,
@@ -3890,7 +3890,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 70, atk: 110, def: 180, spa: 60, spd: 60, spe: 50 },
     abilities: ['Sturdy', 'Rock Head'],
     hiddenAbility: 'Heavy Metal',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 531,
@@ -3912,7 +3912,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 100, atk: 50, def: 80, spa: 60, spd: 80, spe: 50 },
     abilities: ['Thick Fat', 'Huge Power'],
     hiddenAbility: 'Sap Sipper',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 614,
@@ -3933,7 +3933,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['steel'],
     baseStats: { hp: 70, atk: 140, def: 230, spa: 60, spd: 80, spe: 50 },
     abilities: ['Filter'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10069,
@@ -3943,7 +3943,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['normal', 'fairy'],
     baseStats: { hp: 103, atk: 60, def: 126, spa: 80, spd: 126, spe: 50 },
     abilities: ['Healer'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 302,
@@ -3954,7 +3954,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 50, atk: 75, def: 75, spa: 65, spd: 65, spe: 50 },
     abilities: ['Keen Eye', 'Stall'],
     hiddenAbility: 'Prankster',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 132,
@@ -3976,7 +3976,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 109, atk: 64, def: 91, spa: 103, spd: 83, spe: 45 },
     abilities: ['Electromorphosis', 'Static'],
     hiddenAbility: 'Damp',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 534,
@@ -3987,7 +3987,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 105, atk: 140, def: 95, spa: 55, spd: 65, spe: 45 },
     abilities: ['Guts', 'Sheer Force'],
     hiddenAbility: 'Iron Fist',
-    tier: 'Untiered',
+    tier: 'B',
   },
   {
     id: 10045,
@@ -3997,7 +3997,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['electric', 'dragon'],
     baseStats: { hp: 90, atk: 95, def: 105, spa: 165, spd: 110, spe: 45 },
     abilities: ['Mold Breaker'],
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 1019,
@@ -4008,7 +4008,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 106, atk: 80, def: 110, spa: 120, spd: 80, spe: 44 },
     abilities: ['Supersweet Syrup', 'Regenerator'],
     hiddenAbility: 'Sticky Hold',
-    tier: 'Untiered',
+    tier: 'A',
   },
   {
     id: 10292,
@@ -4084,7 +4084,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 115, atk: 140, def: 130, spa: 55, spd: 55, spe: 40 },
     abilities: ['Lightning Rod', 'Solid Rock'],
     hiddenAbility: 'Reckless',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10243,
@@ -4138,7 +4138,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 50, atk: 92, def: 108, spa: 92, spd: 108, spe: 35 },
     abilities: ['Pressure'],
     hiddenAbility: 'Infiltrator',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10315,
@@ -4201,7 +4201,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['ghost'],
     baseStats: { hp: 58, atk: 50, def: 145, spa: 95, spd: 105, spe: 30 },
     abilities: ['Mummy'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10165,
@@ -4212,7 +4212,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 100, def: 95, spa: 100, spd: 70, spe: 30 },
     abilities: ['Quick Draw', 'Own Tempo'],
     hiddenAbility: 'Regenerator',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 10060,
@@ -4222,7 +4222,7 @@ export const META_POKEMON: MetaPokemon[] = [
     types: ['grass', 'ice'],
     baseStats: { hp: 90, atk: 132, def: 105, spa: 132, spd: 105, spe: 30 },
     abilities: ['Snow Warning'],
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 579,
@@ -4233,7 +4233,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 110, atk: 65, def: 75, spa: 125, spd: 85, spe: 30 },
     abilities: ['Overcoat', 'Magic Guard'],
     hiddenAbility: 'Regenerator',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 867,
@@ -4254,7 +4254,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 75, def: 110, spa: 100, spd: 80, spe: 30 },
     abilities: ['Oblivious', 'Own Tempo'],
     hiddenAbility: 'Regenerator',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 199,
@@ -4265,7 +4265,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 95, atk: 75, def: 80, spa: 100, spd: 110, spe: 30 },
     abilities: ['Oblivious', 'Own Tempo'],
     hiddenAbility: 'Regenerator',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 208,
@@ -4276,7 +4276,7 @@ export const META_POKEMON: MetaPokemon[] = [
     baseStats: { hp: 75, atk: 85, def: 200, spa: 55, spd: 65, spe: 30 },
     abilities: ['Rock Head', 'Sturdy'],
     hiddenAbility: 'Sheer Force',
-    tier: 'Untiered',
+    tier: 'C',
   },
   {
     id: 683,
