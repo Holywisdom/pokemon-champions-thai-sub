@@ -1,0 +1,270 @@
+{
+  "summary": {
+    "totalMegaForms": 59,
+    "alreadyInItemsTs": 59,
+    "missingFromItemsTs": 0,
+    "pcOnlyMegas": 23,
+    "missingNameRefsFromMeta": 0
+  },
+  "missingFromItemsTs": [],
+  "pcOnlyMegas": [
+    {
+      "megaSlug": "greninja-mega",
+      "stoneSlug": "greninjite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "delphox-mega",
+      "stoneSlug": "delphoxite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "meowstic-mega",
+      "stoneSlug": "meowsticite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "froslass-mega",
+      "stoneSlug": "froslassite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "starmie-mega",
+      "stoneSlug": "starmite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "hawlucha-mega",
+      "stoneSlug": "hawluchite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "skarmory-mega",
+      "stoneSlug": "skarmorite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "excadrill-mega",
+      "stoneSlug": "excadrillite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "floette-mega",
+      "stoneSlug": "floettite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "glimmora-mega",
+      "stoneSlug": "glimmorite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "dragonite-mega",
+      "stoneSlug": "dragonitite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "chandelure-mega",
+      "stoneSlug": "chandelurite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "meganium-mega",
+      "stoneSlug": "meganiumite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "feraligatr-mega",
+      "stoneSlug": "feraligatrite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "emboar-mega",
+      "stoneSlug": "emboarite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "scovillain-mega",
+      "stoneSlug": "scovillainite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "clefable-mega",
+      "stoneSlug": "clefabite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "victreebel-mega",
+      "stoneSlug": "victreebelite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "chimecho-mega",
+      "stoneSlug": "chimechite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "golurk-mega",
+      "stoneSlug": "golurkite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "chesnaught-mega",
+      "stoneSlug": "chesnaughtite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "drampa-mega",
+      "stoneSlug": "drampite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    },
+    {
+      "megaSlug": "crabominable-mega",
+      "stoneSlug": "crabominite",
+      "inPokeApi": false,
+      "inItemsTs": true
+    }
+  ],
+  "missingNameRefs": [],
+  "existing": [
+    "abomasite",
+    "absolite",
+    "aerodactylite",
+    "aggronite",
+    "air-balloon",
+    "alakazite",
+    "altarianite",
+    "ampharosite",
+    "assault-vest",
+    "audinite",
+    "banettite",
+    "beedrillite",
+    "black-glasses",
+    "black-sludge",
+    "blastoisinite",
+    "booster-energy",
+    "cameruptite",
+    "chandelurite",
+    "charcoal",
+    "charizardite-x",
+    "charizardite-y",
+    "chesnaughtite",
+    "chesto-berry",
+    "chimechite",
+    "choice-band",
+    "choice-scarf",
+    "choice-specs",
+    "chople-berry",
+    "clear-amulet",
+    "clefabite",
+    "cornerstone-mask",
+    "covert-cloak",
+    "crabominite",
+    "damp-rock",
+    "delphoxite",
+    "dragon-fang",
+    "dragonitite",
+    "drampite",
+    "eject-button",
+    "emboarite",
+    "excadrillite",
+    "expert-belt",
+    "feraligatrite",
+    "flame-orb",
+    "floettite",
+    "focus-sash",
+    "froslassite",
+    "galladite",
+    "garchompite",
+    "gardevoirite",
+    "gengarite",
+    "glalitite",
+    "glimmorite",
+    "golurkite",
+    "greninjite",
+    "grip-claw",
+    "gyaradosite",
+    "hawluchite",
+    "hearthflame-mask",
+    "heat-rock",
+    "heavy-duty-boots",
+    "heracronite",
+    "houndoominite",
+    "icy-rock",
+    "kangaskhanite",
+    "leftovers",
+    "liechi-berry",
+    "life-orb",
+    "light-clay",
+    "loaded-dice",
+    "lopunnite",
+    "lucarionite",
+    "lum-berry",
+    "magnet",
+    "manectite",
+    "medichamite",
+    "meganiumite",
+    "mental-herb",
+    "meowsticite",
+    "miracle-seed",
+    "mystic-water",
+    "never-melt-ice",
+    "pidgeotite",
+    "pinsirite",
+    "pixie-plate",
+    "power-herb",
+    "punching-glove",
+    "red-card",
+    "rocky-helmet",
+    "roseli-berry",
+    "sablenite",
+    "safety-goggles",
+    "scizorite",
+    "scovillainite",
+    "sharp-beak",
+    "sharpedonite",
+    "silk-scarf",
+    "sitrus-berry",
+    "skarmorite",
+    "slowbronite",
+    "smooth-rock",
+    "soft-sand",
+    "spell-tag",
+    "spooky-plate",
+    "starmite",
+    "steelixite",
+    "tera-shard",
+    "throat-spray",
+    "toxic-orb",
+    "twisted-spoon",
+    "tyranitarite",
+    "venusaurite",
+    "victreebelite",
+    "weakness-policy",
+    "wellspring-mask",
+    "wide-lens",
+    "yache-berry"
+  ]
+}
