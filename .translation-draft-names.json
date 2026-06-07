@@ -1,0 +1,1704 @@
+{
+  "metadata": {
+    "totalCount": 273,
+    "highConfidence": 227,
+    "needsReview": 23,
+    "edgeCases": 23
+  },
+  "highConfidence": {
+    "basculegion": {
+      "suggested": "อิดาเรดดอน",
+      "jp": "イダイトウ",
+      "current": "อิดาเรดดอน",
+      "action": "keep"
+    },
+    "incineroar": {
+      "suggested": "เกาการ์",
+      "jp": "ガオガエン",
+      "current": "เกาการ์",
+      "action": "keep"
+    },
+    "charizard": {
+      "suggested": "ลิซาร์ดอน (เมก้า Y)",
+      "jp": "リザードン",
+      "current": "ลิซาร์ดอน (เมก้า Y)",
+      "action": "keep",
+      "reason": "Existing nameTh contains canonical base — keeping established styling"
+    },
+    "aerodactyl": {
+      "suggested": "พเทร่า (เมก้า)",
+      "jp": "プテラ",
+      "current": "พเทร่า (เมก้า)",
+      "action": "keep",
+      "reason": "Existing nameTh contains canonical base — keeping established styling"
+    },
+    "pelipper": {
+      "suggested": "เพลลิปเปอร์",
+      "jp": "ペリッパー",
+      "current": "เพลลิปเปอร์",
+      "action": "keep"
+    },
+    "sylveon": {
+      "suggested": "นิมเฟีย",
+      "jp": "ニンフィア",
+      "current": "นิมเฟีย",
+      "action": "keep"
+    },
+    "whimsicott": {
+      "suggested": "อิลฟูน",
+      "jp": "エルフーン",
+      "current": "อิลฟูน",
+      "action": "keep"
+    },
+    "rotom-wash": {
+      "suggested": "โรตอม-วอช",
+      "jp": "ロトム",
+      "current": "โรตอม-วอช",
+      "action": "keep"
+    },
+    "floette-eternal": {
+      "suggested": "ฟลาเอ็ตเตอ-เอเทอร์นัล",
+      "jp": "フラエッテ",
+      "current": "ฟลาเอ็ตเตอ-เอเทอร์นัล",
+      "reason": "Unknown form qualifier \"eternal\" — using literal parenthetical; Existing nameTh contains canonical base — keeping established styling",
+      "action": "keep"
+    },
+    "tyranitar": {
+      "suggested": "บังกิรัส",
+      "jp": "バンギラス",
+      "current": "บังกิรัส",
+      "action": "keep"
+    },
+    "dragonite": {
+      "suggested": "ไคริว",
+      "jp": "カイリュー",
+      "current": "ไคริว",
+      "action": "keep"
+    },
+    "kangaskhan-mega": {
+      "suggested": "การูระเมก้า",
+      "jp": "ガルーラ",
+      "current": "การูระเมก้า",
+      "action": "keep"
+    },
+    "scizor-mega": {
+      "suggested": "ฮัสซัมเมก้า",
+      "jp": "ハッサム",
+      "current": "ฮัสซัมเมก้า",
+      "action": "keep"
+    },
+    "blastoise": {
+      "suggested": "คาเม็กซ์เมก้า",
+      "jp": "カメックス",
+      "current": "คาเม็กซ์เมก้า",
+      "action": "keep",
+      "reason": "Existing nameTh contains canonical base — keeping established styling"
+    },
+    "scovillain": {
+      "suggested": "สโคบิลเลน",
+      "jp": "スコヴィラン",
+      "current": "สโคบิลเลน",
+      "action": "keep"
+    },
+    "excadrill": {
+      "suggested": "โดริว์สึ",
+      "jp": "ドリュウズ",
+      "current": "โดริว์สึ",
+      "action": "keep"
+    },
+    "hippowdon": {
+      "suggested": "คาบาลดอน",
+      "jp": "カバルドン",
+      "current": "คาบาลดอน",
+      "action": "keep"
+    },
+    "primarina": {
+      "suggested": "อะชิเรนุ",
+      "jp": "アシレーヌ",
+      "current": "อะชิเรนุ",
+      "action": "keep"
+    },
+    "mimikyu": {
+      "suggested": "มิมิจู",
+      "jp": "ミミッキュ",
+      "current": "มิมิจู",
+      "action": "keep"
+    },
+    "dragapult": {
+      "suggested": "ดราปาร์ลต์",
+      "jp": "ドラパルト",
+      "current": "ดราปาร์ลต์",
+      "action": "keep"
+    },
+    "aegislash": {
+      "suggested": "กิลกาลด์",
+      "jp": "ギルガルド",
+      "current": "กิลกาลด์",
+      "action": "keep"
+    },
+    "venusaur-mega": {
+      "suggested": "ฟุชิงิบานะเมก้า",
+      "jp": "フシギバナ",
+      "current": "ฟุชิงิบานะเมก้า",
+      "action": "keep"
+    },
+    "gengar-mega": {
+      "suggested": "เกนการ์เมก้า",
+      "jp": "ゲンガー",
+      "current": "เกนการ์เมก้า",
+      "action": "keep"
+    },
+    "gardevoir-mega": {
+      "suggested": "ซาเนครอสเมก้า",
+      "jp": "サーナイト",
+      "current": "ซาเนครอสเมก้า",
+      "action": "keep"
+    },
+    "lucario-mega": {
+      "suggested": "ลูคาริโอเมก้า",
+      "jp": "ルカリオ",
+      "current": "ลูคาริโอเมก้า",
+      "action": "keep"
+    },
+    "manectric-mega": {
+      "suggested": "ลิวนาสเมก้า",
+      "jp": "ライボルト",
+      "current": "ลิวนาสเมก้า",
+      "action": "keep"
+    },
+    "alakazam-mega": {
+      "suggested": "ฟูดินเมก้า",
+      "jp": "フーディン",
+      "current": "ฟูดินเมก้า",
+      "action": "keep"
+    },
+    "gyarados-mega": {
+      "suggested": "กยาลาดอสเมก้า",
+      "jp": "ギャラドス",
+      "current": "กยาลาดอสเมก้า",
+      "action": "keep"
+    },
+    "lopunny-mega": {
+      "suggested": "มิมิรอปเมก้า",
+      "jp": "ミミロップ",
+      "current": "มิมิรอปเมก้า",
+      "action": "keep"
+    },
+    "houndoom-mega": {
+      "suggested": "เฮลการ์เมก้า",
+      "jp": "ヘルガー",
+      "current": "เฮลการ์เมก้า",
+      "action": "keep"
+    },
+    "sableye-mega": {
+      "suggested": "ยามิราเมเมก้า",
+      "jp": "ヤミラミ",
+      "current": "ยามิราเมเมก้า",
+      "action": "keep"
+    },
+    "altaria-mega": {
+      "suggested": "ทิยาลทิอาเมก้า",
+      "jp": "チルタリス",
+      "current": "ทิยาลทิอาเมก้า",
+      "action": "keep"
+    },
+    "steelix-mega": {
+      "suggested": "ฮากาเนียสเมก้า",
+      "jp": "ハガネール",
+      "current": "ฮากาเนียสเมก้า",
+      "action": "keep"
+    },
+    "slowbro-mega": {
+      "suggested": "ยาดอร่านเมก้า",
+      "jp": "ヤドラン",
+      "current": "ยาดอร่านเมก้า",
+      "action": "keep"
+    },
+    "gallade-mega": {
+      "suggested": "เอรเลดเมก้า",
+      "jp": "エルレイド",
+      "current": "เอรเลดเมก้า",
+      "action": "keep"
+    },
+    "pidgeot-mega": {
+      "suggested": "พิจ๊อตเมก้า",
+      "jp": "ピジョット",
+      "current": "พิจ๊อตเมก้า",
+      "action": "keep"
+    },
+    "espeon": {
+      "suggested": "เอเฟี่ยน",
+      "jp": "エーフィ",
+      "current": "เอเฟี่ยน",
+      "action": "keep"
+    },
+    "umbreon": {
+      "suggested": "เบลคกี้",
+      "jp": "ブラッキー",
+      "current": "เบลคกี้",
+      "action": "keep"
+    },
+    "vaporeon": {
+      "suggested": "ชาวเวอร์ส",
+      "jp": "シャワーズ",
+      "current": "ชาวเวอร์ส",
+      "action": "keep"
+    },
+    "jolteon": {
+      "suggested": "ทันเดอร์ส",
+      "jp": "サンダース",
+      "current": "ทันเดอร์ส",
+      "action": "keep"
+    },
+    "flareon": {
+      "suggested": "บูสเตอร์",
+      "jp": "ブースター",
+      "current": "บูสเตอร์",
+      "action": "keep"
+    },
+    "leafeon": {
+      "suggested": "ลีฟเฟี่ยน",
+      "jp": "リーフィア",
+      "current": "ลีฟเฟี่ยน",
+      "action": "keep"
+    },
+    "glaceon": {
+      "suggested": "กลาเซีย",
+      "jp": "グレイシア",
+      "current": "กลาเซีย",
+      "action": "keep"
+    },
+    "meowscarada": {
+      "suggested": "มาสคาญา",
+      "jp": "マスカーニャ",
+      "current": "มาสคาญา",
+      "action": "keep"
+    },
+    "decidueye": {
+      "suggested": "จูไนเปอร์",
+      "jp": "ジュナイパー",
+      "current": "จูไนเปอร์",
+      "action": "keep"
+    },
+    "typhlosion": {
+      "suggested": "บาคูฟูน",
+      "jp": "バクフーン",
+      "current": "บาคูฟูน",
+      "action": "keep"
+    },
+    "serperior": {
+      "suggested": "จะลังกัน",
+      "jp": "ジャローダ",
+      "current": "จะลังกัน",
+      "action": "keep"
+    },
+    "volcarona": {
+      "suggested": "อูร์การ์โมส",
+      "jp": "ウルガモス",
+      "current": "อูร์การ์โมส",
+      "action": "keep"
+    },
+    "weavile": {
+      "suggested": "มันยูล่า",
+      "jp": "マニューラ",
+      "current": "มันยูล่า",
+      "action": "keep"
+    },
+    "hydreigon": {
+      "suggested": "ซาซานดร่า",
+      "jp": "サザンドラ",
+      "current": "ซาซานดร่า",
+      "action": "keep"
+    },
+    "ninetales-alola": {
+      "suggested": "คิวคอนอโรลา",
+      "jp": "キュウコン",
+      "current": "คิวคอนอโรลา",
+      "action": "keep",
+      "reason": "Existing nameTh contains canonical base — keeping established styling"
+    },
+    "torkoal": {
+      "suggested": "คอตเทอจ้า",
+      "jp": "コータス",
+      "current": "คอตเทอจ้า",
+      "action": "keep"
+    },
+    "politoed": {
+      "suggested": "นโยโรโทโน่",
+      "jp": "ニョロトノ",
+      "current": "นโยโรโทโน่",
+      "action": "keep"
+    },
+    "snorlax": {
+      "suggested": "คาบิกอน",
+      "jp": "カビゴン",
+      "current": "คาบิกอน",
+      "action": "keep"
+    },
+    "talonflame": {
+      "suggested": "ฟาเอโรส",
+      "jp": "ファイアロー",
+      "current": "ฟาเอโรส",
+      "action": "keep"
+    },
+    "klefki": {
+      "suggested": "คลีฟกี้",
+      "jp": "クレッフィ",
+      "current": "คลีฟกี้",
+      "action": "keep"
+    },
+    "ceruledge": {
+      "suggested": "โซวล์เบลซ",
+      "jp": "ソウブレイズ",
+      "current": "โซวล์เบลซ",
+      "action": "keep"
+    },
+    "slowking-galar": {
+      "suggested": "ยาดอคิงกาลาร์",
+      "jp": "ヤドキング",
+      "current": "ยาดอคิงกาลาร์",
+      "action": "keep",
+      "reason": "Existing nameTh contains canonical base — keeping established styling"
+    },
+    "milotic": {
+      "suggested": "มิโลคารอส",
+      "jp": "ミロカロス",
+      "current": "มิโลคารอส",
+      "action": "keep"
+    },
+    "salazzle": {
+      "suggested": "เอ็นนิวด์",
+      "jp": "エンニュート",
+      "current": "เอ็นนิวด์",
+      "action": "keep"
+    },
+    "aerodactyl-mega": {
+      "suggested": "พเทร่าเมก้า",
+      "jp": "プテラ",
+      "current": null,
+      "action": "add"
+    },
+    "beedrill-mega": {
+      "suggested": "สเปียร์เมก้า",
+      "jp": "スピアー",
+      "current": null,
+      "action": "add"
+    },
+    "raichu": {
+      "suggested": "ไรจู",
+      "jp": "ライチュウ",
+      "current": null,
+      "action": "add"
+    },
+    "noivern": {
+      "suggested": "อนบาร์น",
+      "jp": "オンバーン",
+      "current": null,
+      "action": "add"
+    },
+    "greninja": {
+      "suggested": "เกคโคงะ",
+      "jp": "ゲッコウガ",
+      "current": null,
+      "action": "add"
+    },
+    "alakazam": {
+      "suggested": "ฟูดิน",
+      "jp": "フーディン",
+      "current": null,
+      "action": "add"
+    },
+    "hawlucha": {
+      "suggested": "ลูชะบุรุ",
+      "jp": "ルチャブル",
+      "current": null,
+      "action": "add"
+    },
+    "absol-mega": {
+      "suggested": "อับโซลเมก้า",
+      "jp": "アブソル",
+      "current": null,
+      "action": "add"
+    },
+    "starmie": {
+      "suggested": "สตาร์มี่",
+      "jp": "スターミー",
+      "current": null,
+      "action": "add"
+    },
+    "lycanroc": {
+      "suggested": "ลูการ์ลูกัน",
+      "jp": "ルガルガン",
+      "current": null,
+      "action": "add"
+    },
+    "lycanroc-midday": {
+      "suggested": "ลูการ์ลูกัน-กลางวัน",
+      "jp": "ルガルガン",
+      "current": null,
+      "action": "add"
+    },
+    "raichu-alola": {
+      "suggested": "ไรจู (อโลล่า)",
+      "jp": "ライチュウ",
+      "current": null,
+      "action": "add"
+    },
+    "gengar": {
+      "suggested": "เกนการ์",
+      "jp": "ゲンガー",
+      "current": null,
+      "action": "add"
+    },
+    "zoroark-hisui": {
+      "suggested": "โซโรอาร์ค (ฮิซุย)",
+      "jp": "ゾロアーク",
+      "current": null,
+      "action": "add"
+    },
+    "lycanroc-dusk": {
+      "suggested": "ลูการ์ลูกัน-พลบค่ำ",
+      "jp": "ルガルガン",
+      "current": null,
+      "action": "add"
+    },
+    "tauros": {
+      "suggested": "เคนทาโรส",
+      "jp": "ケンタロス",
+      "current": null,
+      "action": "add"
+    },
+    "heliolisk": {
+      "suggested": "เอเลซาร์ด",
+      "jp": "エレザード",
+      "current": null,
+      "action": "add"
+    },
+    "liepard": {
+      "suggested": "เลปาร์ดัส",
+      "jp": "レパルダス",
+      "current": null,
+      "action": "add"
+    },
+    "espathra": {
+      "suggested": "เควสปาทรา",
+      "jp": "クエスパトラ",
+      "current": null,
+      "action": "add"
+    },
+    "lopunny": {
+      "suggested": "มิมิรอป",
+      "jp": "ミミロップ",
+      "current": null,
+      "action": "add"
+    },
+    "manectric": {
+      "suggested": "ลิวนาส",
+      "jp": "ライボルト",
+      "current": null,
+      "action": "add"
+    },
+    "pinsir-mega": {
+      "suggested": "ไคโรสเมก้า",
+      "jp": "カイロス",
+      "current": null,
+      "action": "add"
+    },
+    "sharpedo-mega": {
+      "suggested": "ซาเมฮาดะเมก้า",
+      "jp": "サメハダー",
+      "current": null,
+      "action": "add"
+    },
+    "zoroark": {
+      "suggested": "โซโรอาร์ค",
+      "jp": "ゾロアーク",
+      "current": null,
+      "action": "add"
+    },
+    "meowstic": {
+      "suggested": "เนียวนิคุสุ",
+      "jp": "ニャオニクス",
+      "current": null,
+      "action": "add"
+    },
+    "meowstic-female": {
+      "suggested": "เนียวนิคุสุ-เพศเมีย",
+      "jp": "ニャオニクス",
+      "current": null,
+      "action": "add"
+    },
+    "emolga": {
+      "suggested": "เอ็มอนกะ",
+      "jp": "エモンガ",
+      "current": null,
+      "action": "add"
+    },
+    "furfrou": {
+      "suggested": "ทริมเมียน",
+      "jp": "トリミアン",
+      "current": null,
+      "action": "add"
+    },
+    "dedenne": {
+      "suggested": "เดเดนเน่",
+      "jp": "デデンネ",
+      "current": null,
+      "action": "add"
+    },
+    "pidgeot": {
+      "suggested": "พิจ๊อต",
+      "jp": "ピジョット",
+      "current": null,
+      "action": "add"
+    },
+    "simipour": {
+      "suggested": "ฮิยักกี้",
+      "jp": "ヒヤッキー",
+      "current": null,
+      "action": "add"
+    },
+    "simisage": {
+      "suggested": "ยานักกี้",
+      "jp": "ヤナッキー",
+      "current": null,
+      "action": "add"
+    },
+    "simisear": {
+      "suggested": "บาโอ้กกี้",
+      "jp": "バオッキー",
+      "current": null,
+      "action": "add"
+    },
+    "charizard-mega-x": {
+      "suggested": "ลิซาร์ดอนเมก้า X",
+      "jp": "リザードン",
+      "current": null,
+      "action": "add"
+    },
+    "charizard-mega-y": {
+      "suggested": "ลิซาร์ดอนเมก้า Y",
+      "jp": "リザードン",
+      "current": null,
+      "action": "add"
+    },
+    "glalie-mega": {
+      "suggested": "โอนิโกริเมก้า",
+      "jp": "オニゴーリ",
+      "current": null,
+      "action": "add"
+    },
+    "medicham-mega": {
+      "suggested": "ชาร์เลมเมก้า",
+      "jp": "チャーレム",
+      "current": null,
+      "action": "add"
+    },
+    "ninetales": {
+      "suggested": "คิวคอน",
+      "jp": "キュウコン",
+      "current": null,
+      "action": "add"
+    },
+    "palafin": {
+      "suggested": "อิรุคามัง",
+      "jp": "イルカマン",
+      "current": null,
+      "action": "add"
+    },
+    "tauros-paldea": {
+      "suggested": "เคนทาโรส (ปาลเด)",
+      "jp": "ケンタロス",
+      "current": null,
+      "action": "add"
+    },
+    "tauros-paldea-aqua-breed": {
+      "suggested": "เคนทาโรส (ปาลเด) (สายน้ำ)",
+      "jp": "ケンタロス",
+      "current": null,
+      "action": "add"
+    },
+    "tauros-paldea-blaze-breed": {
+      "suggested": "เคนทาโรส (ปาลเด) (สายเพลิง)",
+      "jp": "ケンタロス",
+      "current": null,
+      "action": "add"
+    },
+    "morpeko": {
+      "suggested": "มอร์เปโกะ",
+      "jp": "モルペコ",
+      "current": null,
+      "action": "add"
+    },
+    "arcanine": {
+      "suggested": "วินดี้",
+      "jp": "ウインディ",
+      "current": null,
+      "action": "add"
+    },
+    "typhlosion-hisui": {
+      "suggested": "บาคูฟูน (ฮิซุย)",
+      "jp": "バクフーン",
+      "current": null,
+      "action": "add"
+    },
+    "houndoom": {
+      "suggested": "เฮลการ์",
+      "jp": "ヘルガー",
+      "current": null,
+      "action": "add"
+    },
+    "sharpedo": {
+      "suggested": "ซาเมฮาดะ",
+      "jp": "サメハダー",
+      "current": null,
+      "action": "add"
+    },
+    "krookodile": {
+      "suggested": "วารุเบียล",
+      "jp": "ワルビアル",
+      "current": null,
+      "action": "add"
+    },
+    "garchomp-mega": {
+      "suggested": "การ์บูเลียสเมก้า",
+      "jp": "ガブリアス",
+      "current": null,
+      "action": "add"
+    },
+    "rotom": {
+      "suggested": "โรตอม",
+      "jp": "ロトム",
+      "current": null,
+      "action": "add"
+    },
+    "arcanine-hisui": {
+      "suggested": "วินดี้ (ฮิซุย)",
+      "jp": "ウインディ",
+      "current": null,
+      "action": "add"
+    },
+    "kangaskhan": {
+      "suggested": "การูระ",
+      "jp": "ガルーラ",
+      "current": null,
+      "action": "add"
+    },
+    "lucario": {
+      "suggested": "ลูคาริโอ",
+      "jp": "ルカリオ",
+      "current": null,
+      "action": "add"
+    },
+    "pikachu": {
+      "suggested": "ปิกาจู",
+      "jp": "ピカチュウ",
+      "current": null,
+      "action": "add"
+    },
+    "roserade": {
+      "suggested": "โรซเลด",
+      "jp": "ロズレイド",
+      "current": null,
+      "action": "add"
+    },
+    "vivillon": {
+      "suggested": "บีวิยอน",
+      "jp": "ビビヨン",
+      "current": null,
+      "action": "add"
+    },
+    "rotom-fan": {
+      "suggested": "โรตอม-แฟน",
+      "jp": "ロトム",
+      "current": null,
+      "action": "add"
+    },
+    "rotom-frost": {
+      "suggested": "โรตอม-ฟรอสต์",
+      "jp": "ロトム",
+      "current": null,
+      "action": "add"
+    },
+    "rotom-heat": {
+      "suggested": "โรตอม-ฮีท",
+      "jp": "ロトム",
+      "current": null,
+      "action": "add"
+    },
+    "rotom-mow": {
+      "suggested": "โรตอม-มาว",
+      "jp": "ロトム",
+      "current": null,
+      "action": "add"
+    },
+    "heracross": {
+      "suggested": "เฮราคลอส",
+      "jp": "ヘラクロス",
+      "current": null,
+      "action": "add"
+    },
+    "samurott-hisui": {
+      "suggested": "ไดเค็นกิ (ฮิซุย)",
+      "jp": "ダイケンキ",
+      "current": null,
+      "action": "add"
+    },
+    "kleavor": {
+      "suggested": "บาซากิริ",
+      "jp": "バサギリ",
+      "current": null,
+      "action": "add"
+    },
+    "kommo-o": {
+      "suggested": "จาราลังก้า",
+      "jp": "ジャラランガ",
+      "current": null,
+      "action": "add"
+    },
+    "pinsir": {
+      "suggested": "ไคโรส",
+      "jp": "カイロス",
+      "current": null,
+      "action": "add"
+    },
+    "toxicroak": {
+      "suggested": "โดคุร็อก",
+      "jp": "ドクロッグ",
+      "current": null,
+      "action": "add"
+    },
+    "gourgeist": {
+      "suggested": "พัมพ์จิน",
+      "jp": "パンプジン",
+      "current": null,
+      "action": "add"
+    },
+    "lycanroc-midnight": {
+      "suggested": "ลูการ์ลูกัน-กลางคืน",
+      "jp": "ルガルガン",
+      "current": null,
+      "action": "add"
+    },
+    "gyarados": {
+      "suggested": "กยาลาดอส",
+      "jp": "ギャラドス",
+      "current": null,
+      "action": "add"
+    },
+    "altaria": {
+      "suggested": "ทิยาลทิอา",
+      "jp": "チルタリス",
+      "current": null,
+      "action": "add"
+    },
+    "chandelure": {
+      "suggested": "ชานเดลร่า",
+      "jp": "シャンデラ",
+      "current": null,
+      "action": "add"
+    },
+    "gallade": {
+      "suggested": "เอรเลด",
+      "jp": "エルレイド",
+      "current": null,
+      "action": "add"
+    },
+    "gardevoir": {
+      "suggested": "ซาเนครอส",
+      "jp": "サーナイト",
+      "current": null,
+      "action": "add"
+    },
+    "glalie": {
+      "suggested": "โอนิโกริ",
+      "jp": "オニゴーリ",
+      "current": null,
+      "action": "add"
+    },
+    "goodra": {
+      "suggested": "นุเมรุกอน",
+      "jp": "ヌメルゴン",
+      "current": null,
+      "action": "add"
+    },
+    "medicham": {
+      "suggested": "ชาร์เลม",
+      "jp": "チャーレム",
+      "current": null,
+      "action": "add"
+    },
+    "meganium": {
+      "suggested": "เมกะเนียม",
+      "jp": "メガニウム",
+      "current": null,
+      "action": "add"
+    },
+    "passimian": {
+      "suggested": "นาเกะสึเคะซารุ",
+      "jp": "ナゲツケサル",
+      "current": null,
+      "action": "add"
+    },
+    "venusaur": {
+      "suggested": "ฟุชิงิบานะ",
+      "jp": "フシギバナ",
+      "current": null,
+      "action": "add"
+    },
+    "vanilluxe": {
+      "suggested": "ไบบานิลลา",
+      "jp": "バイバニラ",
+      "current": null,
+      "action": "add"
+    },
+    "basculegion-female": {
+      "suggested": "อิดาเรดดอน-เพศเมีย",
+      "jp": "イダイトウ",
+      "current": null,
+      "action": "add"
+    },
+    "diggersby": {
+      "suggested": "โฮรูโดะ",
+      "jp": "ホルード",
+      "current": null,
+      "action": "add"
+    },
+    "feraligatr": {
+      "suggested": "โอไดล์",
+      "jp": "オーダイル",
+      "current": null,
+      "action": "add"
+    },
+    "blastoise-mega": {
+      "suggested": "คาเม็กซ์เมก้า",
+      "jp": "カメックス",
+      "current": null,
+      "action": "add"
+    },
+    "watchog": {
+      "suggested": "มิรุฮ็อก",
+      "jp": "ミルホッグ",
+      "current": null,
+      "action": "add"
+    },
+    "absol": {
+      "suggested": "อับโซล",
+      "jp": "アブソル",
+      "current": null,
+      "action": "add"
+    },
+    "beedrill": {
+      "suggested": "สเปียร์",
+      "jp": "スピアー",
+      "current": null,
+      "action": "add"
+    },
+    "florges": {
+      "suggested": "ฟลาเจส",
+      "jp": "フラージェス",
+      "current": null,
+      "action": "add"
+    },
+    "garbodor": {
+      "suggested": "ดัสต์ดาส",
+      "jp": "ダストダス",
+      "current": null,
+      "action": "add"
+    },
+    "banette-mega": {
+      "suggested": "จูเปตต้าเมก้า",
+      "jp": "ジュペッタ",
+      "current": null,
+      "action": "add"
+    },
+    "heracross-mega": {
+      "suggested": "เฮราคลอสเมก้า",
+      "jp": "ヘラクロス",
+      "current": null,
+      "action": "add"
+    },
+    "slurpuff": {
+      "suggested": "เปโรรีม",
+      "jp": "ペロリーム",
+      "current": null,
+      "action": "add"
+    },
+    "tsareena": {
+      "suggested": "อามาโจ",
+      "jp": "アマージョ",
+      "current": null,
+      "action": "add"
+    },
+    "tyranitar-mega": {
+      "suggested": "บังกิรัสเมก้า",
+      "jp": "バンギラス",
+      "current": null,
+      "action": "add"
+    },
+    "sandaconda": {
+      "suggested": "ซาไดจะ",
+      "jp": "サダイジャ",
+      "current": null,
+      "action": "add"
+    },
+    "tyrantrum": {
+      "suggested": "กาจิโกราส",
+      "jp": "ガチゴラス",
+      "current": null,
+      "action": "add"
+    },
+    "castform": {
+      "suggested": "โพวาลุน",
+      "jp": "ポワルン",
+      "current": null,
+      "action": "add"
+    },
+    "flapple": {
+      "suggested": "อัปปุริว",
+      "jp": "アップリュー",
+      "current": null,
+      "action": "add"
+    },
+    "luxray": {
+      "suggested": "เร็นโทรา",
+      "jp": "レントラー",
+      "current": null,
+      "action": "add"
+    },
+    "mr-rime": {
+      "suggested": "บาริโคโอรุ",
+      "jp": "バリコオル",
+      "current": null,
+      "action": "add"
+    },
+    "polteageist": {
+      "suggested": "พอตเดส",
+      "jp": "ポットデス",
+      "current": null,
+      "action": "add"
+    },
+    "samurott": {
+      "suggested": "ไดเค็นกิ",
+      "jp": "ダイケンキ",
+      "current": null,
+      "action": "add"
+    },
+    "victreebel": {
+      "suggested": "อุสึโบ๊ต",
+      "jp": "ウツボット",
+      "current": null,
+      "action": "add"
+    },
+    "banette": {
+      "suggested": "จูเปตต้า",
+      "jp": "ジュペッタ",
+      "current": null,
+      "action": "add"
+    },
+    "chimecho": {
+      "suggested": "ชิรีน",
+      "jp": "チリーン",
+      "current": null,
+      "action": "add"
+    },
+    "emboar": {
+      "suggested": "เอนบุโอ้",
+      "jp": "エンブオー",
+      "current": null,
+      "action": "add"
+    },
+    "orthworm": {
+      "suggested": "มิมิซึซึ",
+      "jp": "ミミズズ",
+      "current": null,
+      "action": "add"
+    },
+    "scizor": {
+      "suggested": "ฮัสซัม",
+      "jp": "ハッサム",
+      "current": null,
+      "action": "add"
+    },
+    "wyrdeer": {
+      "suggested": "อายาชิชิ",
+      "jp": "アヤシシ",
+      "current": null,
+      "action": "add"
+    },
+    "alcremie": {
+      "suggested": "มาฮอยปปุ",
+      "jp": "マホイップ",
+      "current": null,
+      "action": "add"
+    },
+    "chesnaught": {
+      "suggested": "บริกะร่อน",
+      "jp": "ブリガロン",
+      "current": null,
+      "action": "add"
+    },
+    "abomasnow": {
+      "suggested": "ยูคิโนะโอ",
+      "jp": "ユキノオー",
+      "current": null,
+      "action": "add"
+    },
+    "aegislash-blade": {
+      "suggested": "กิลกาลด์-รูปดาบ",
+      "jp": "ギルガルド",
+      "current": null,
+      "action": "add"
+    },
+    "aegislash-shield": {
+      "suggested": "กิลกาลด์-รูปโล่",
+      "jp": "ギルガルド",
+      "current": null,
+      "action": "add"
+    },
+    "clefable": {
+      "suggested": "พิคซี่",
+      "jp": "ピクシー",
+      "current": null,
+      "action": "add"
+    },
+    "empoleon": {
+      "suggested": "เอ็มเปอร์โต",
+      "jp": "エンペルト",
+      "current": null,
+      "action": "add"
+    },
+    "decidueye-hisui": {
+      "suggested": "จูไนเปอร์ (ฮิซุย)",
+      "jp": "ジュナイパー",
+      "current": null,
+      "action": "add"
+    },
+    "goodra-hisui": {
+      "suggested": "นุเมรุกอน (ฮิซุย)",
+      "jp": "ヌメルゴン",
+      "current": null,
+      "action": "add"
+    },
+    "oranguru": {
+      "suggested": "ยาเรยูทัน",
+      "jp": "ヤレユータン",
+      "current": null,
+      "action": "add"
+    },
+    "toucannon": {
+      "suggested": "โดเดกะบาชิ",
+      "jp": "ドデカバシ",
+      "current": null,
+      "action": "add"
+    },
+    "clawitzer": {
+      "suggested": "บรอสเตอร์",
+      "jp": "ブロスター",
+      "current": null,
+      "action": "add"
+    },
+    "aurorus": {
+      "suggested": "อามารุรุกะ",
+      "jp": "アマルルガ",
+      "current": null,
+      "action": "add"
+    },
+    "pangoro": {
+      "suggested": "โกรอนดะ",
+      "jp": "ゴロンダ",
+      "current": null,
+      "action": "add"
+    },
+    "rampardos": {
+      "suggested": "รัมพาร์ด",
+      "jp": "ラムパルド",
+      "current": null,
+      "action": "add"
+    },
+    "torterra": {
+      "suggested": "โดไดโตส",
+      "jp": "ドダイトス",
+      "current": null,
+      "action": "add"
+    },
+    "trevenant": {
+      "suggested": "โอโรต",
+      "jp": "オーロット",
+      "current": null,
+      "action": "add"
+    },
+    "ampharos": {
+      "suggested": "เด็นริว",
+      "jp": "デンリュウ",
+      "current": null,
+      "action": "add"
+    },
+    "golurk": {
+      "suggested": "โกรูก",
+      "jp": "ゴルーグ",
+      "current": null,
+      "action": "add"
+    },
+    "machamp": {
+      "suggested": "ไคริกี้",
+      "jp": "カイリキー",
+      "current": null,
+      "action": "add"
+    },
+    "floette": {
+      "suggested": "ฟลาเอ็ตเตอ",
+      "jp": "フラエッテ",
+      "current": null,
+      "action": "add"
+    },
+    "aggron": {
+      "suggested": "บอสโกโดรา",
+      "jp": "ボスゴドラ",
+      "current": null,
+      "action": "add"
+    },
+    "audino": {
+      "suggested": "ทาบุนเนะ",
+      "jp": "タブンネ",
+      "current": null,
+      "action": "add"
+    },
+    "azumarill": {
+      "suggested": "มาริลรี",
+      "jp": "マリルリ",
+      "current": null,
+      "action": "add"
+    },
+    "beartic": {
+      "suggested": "ทุนเบอาร์",
+      "jp": "ツンベアー",
+      "current": null,
+      "action": "add"
+    },
+    "aggron-mega": {
+      "suggested": "บอสโกโดราเมก้า",
+      "jp": "ボスゴドラ",
+      "current": null,
+      "action": "add"
+    },
+    "audino-mega": {
+      "suggested": "ทาบุนเนะเมก้า",
+      "jp": "タブンネ",
+      "current": null,
+      "action": "add"
+    },
+    "sableye": {
+      "suggested": "ยามิราเม",
+      "jp": "ヤミラミ",
+      "current": null,
+      "action": "add"
+    },
+    "ditto": {
+      "suggested": "เมตามอน",
+      "jp": "メタモン",
+      "current": null,
+      "action": "add"
+    },
+    "bellibolt": {
+      "suggested": "ฮาราบารี่",
+      "jp": "ハラバリー",
+      "current": null,
+      "action": "add"
+    },
+    "conkeldurr": {
+      "suggested": "โรบุชิน",
+      "jp": "ローブシン",
+      "current": null,
+      "action": "add"
+    },
+    "ampharos-mega": {
+      "suggested": "เด็นริวเมก้า",
+      "jp": "デンリュウ",
+      "current": null,
+      "action": "add"
+    },
+    "hydrapple": {
+      "suggested": "คามิทสึโอโรจิ",
+      "jp": "カミツオロチ",
+      "current": null,
+      "action": "add"
+    },
+    "crabominable": {
+      "suggested": "เคเคนคานิ",
+      "jp": "ケケンカニ",
+      "current": null,
+      "action": "add"
+    },
+    "araquanid": {
+      "suggested": "โอนิชิซุกุโม",
+      "jp": "オニシズクモ",
+      "current": null,
+      "action": "add"
+    },
+    "ariados": {
+      "suggested": "อาริอาดอส",
+      "jp": "アリアドス",
+      "current": null,
+      "action": "add"
+    },
+    "camerupt": {
+      "suggested": "บาคูดะ",
+      "jp": "バクーダ",
+      "current": null,
+      "action": "add"
+    },
+    "forretress": {
+      "suggested": "โฟเรโทส",
+      "jp": "フォレトス",
+      "current": null,
+      "action": "add"
+    },
+    "rhyperior": {
+      "suggested": "โดไซดอน",
+      "jp": "ドサイドン",
+      "current": null,
+      "action": "add"
+    },
+    "avalugg-hisui": {
+      "suggested": "เครเบส (ฮิซุย)",
+      "jp": "クレベース",
+      "current": null,
+      "action": "add"
+    },
+    "drampa": {
+      "suggested": "จิจีรอน",
+      "jp": "ジジーロン",
+      "current": null,
+      "action": "add"
+    },
+    "mudsdale": {
+      "suggested": "บันบาโดโร",
+      "jp": "バンバドロ",
+      "current": null,
+      "action": "add"
+    },
+    "spiritomb": {
+      "suggested": "มิคาลุเกะ",
+      "jp": "ミカルゲ",
+      "current": null,
+      "action": "add"
+    },
+    "stunfisk-galar": {
+      "suggested": "มักเกียว (กาลาร์)",
+      "jp": "マッギョ",
+      "current": null,
+      "action": "add"
+    },
+    "stunfisk": {
+      "suggested": "มักเกียว",
+      "jp": "マッギョ",
+      "current": null,
+      "action": "add"
+    },
+    "appletun": {
+      "suggested": "ทารุปปุระ",
+      "jp": "タルップル",
+      "current": null,
+      "action": "add"
+    },
+    "bastiodon": {
+      "suggested": "โทริเด็ปส์",
+      "jp": "トリデプス",
+      "current": null,
+      "action": "add"
+    },
+    "cofagrigus": {
+      "suggested": "เดสคาร์น",
+      "jp": "デスカーン",
+      "current": null,
+      "action": "add"
+    },
+    "slowbro-galar": {
+      "suggested": "ยาดอร่าน (กาลาร์)",
+      "jp": "ヤドラン",
+      "current": null,
+      "action": "add"
+    },
+    "abomasnow-mega": {
+      "suggested": "ยูคิโนะโอเมก้า",
+      "jp": "ユキノオー",
+      "current": null,
+      "action": "add"
+    },
+    "reuniclus": {
+      "suggested": "รันคุลุส",
+      "jp": "ランクルス",
+      "current": null,
+      "action": "add"
+    },
+    "runerigus": {
+      "suggested": "เดสบาร์น",
+      "jp": "デスバーン",
+      "current": null,
+      "action": "add"
+    },
+    "slowbro": {
+      "suggested": "ยาดอร่าน",
+      "jp": "ヤドラン",
+      "current": null,
+      "action": "add"
+    },
+    "slowking": {
+      "suggested": "ยาดอคิง",
+      "jp": "ヤドキング",
+      "current": null,
+      "action": "add"
+    },
+    "steelix": {
+      "suggested": "ฮากาเนียส",
+      "jp": "ハガネール",
+      "current": null,
+      "action": "add"
+    },
+    "aromatisse": {
+      "suggested": "ฟูเรฟุวัน",
+      "jp": "フレフワン",
+      "current": null,
+      "action": "add"
+    },
+    "avalugg": {
+      "suggested": "เครเบส",
+      "jp": "クレベース",
+      "current": null,
+      "action": "add"
+    },
+    "camerupt-mega": {
+      "suggested": "บาคูดะเมก้า",
+      "jp": "バクーダ",
+      "current": null,
+      "action": "add"
+    }
+  },
+  "needsReview": {
+    "garchomp": {
+      "suggested": "การ์บูเลียส",
+      "jp": "ガブリアス",
+      "current": "การ์ชอมป์",
+      "action": "replace",
+      "reason": "Existing nameTh \"การ์ชอมป์\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "kingambit": {
+      "suggested": "โดโดเกซัน",
+      "jp": "ドドゲザン",
+      "current": "คิงกัมบิท",
+      "action": "replace",
+      "reason": "Existing nameTh \"คิงกัมบิท\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "sneasler": {
+      "suggested": "โอนิวลา",
+      "jp": "オオニューラ",
+      "current": "สนีสเลอร์",
+      "action": "replace",
+      "reason": "Existing nameTh \"สนีสเลอร์\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "sinistcha": {
+      "suggested": "ยาบาโซชา",
+      "jp": "ヤバソチャ",
+      "current": "ซินิสชา",
+      "action": "replace",
+      "reason": "Existing nameTh \"ซินิสชา\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "archaludon": {
+      "suggested": "บริจูราส",
+      "jp": "ブリジュラス",
+      "current": "อาร์คาลูดอน",
+      "action": "replace",
+      "reason": "Existing nameTh \"อาร์คาลูดอน\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "farigiraf": {
+      "suggested": "ริคิคิริน",
+      "jp": "リキキリン",
+      "current": "ริคิจิรี",
+      "action": "replace",
+      "reason": "Existing nameTh \"ริคิจิรี\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "glimmora": {
+      "suggested": "คิราฟลอล",
+      "jp": "キラフロル",
+      "current": "ซาคุระบีส",
+      "action": "replace",
+      "reason": "Existing nameTh \"ซาคุระบีส\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "corviknight": {
+      "suggested": "อาร์มาร์กา",
+      "jp": "アーマーガア",
+      "current": "อาร์เมลโจ้",
+      "action": "replace",
+      "reason": "Existing nameTh \"อาร์เมลโจ้\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "froslass": {
+      "suggested": "ยูกิเมโนะโกะ",
+      "jp": "ユキメノコ",
+      "current": "ฟูราสุ",
+      "action": "replace",
+      "reason": "Existing nameTh \"ฟูราสุ\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "skeledirge": {
+      "suggested": "ลาวด์บอร์น",
+      "jp": "ラウドボーン",
+      "current": "สเกเลอเดิร์จ",
+      "action": "replace",
+      "reason": "Existing nameTh \"สเกเลอเดิร์จ\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "quaquaval": {
+      "suggested": "แวนิวาล",
+      "jp": "ウェーニバル",
+      "current": "แควแกล",
+      "action": "replace",
+      "reason": "Existing nameTh \"แควแกล\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "infernape": {
+      "suggested": "โกการ์ซารุ",
+      "jp": "ゴウカザル",
+      "current": "โกริงตี้",
+      "action": "replace",
+      "reason": "Existing nameTh \"โกริงตี้\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "hatterene": {
+      "suggested": "บริมออน",
+      "jp": "ブリムオン",
+      "current": "แฮทเตรน",
+      "action": "replace",
+      "reason": "Existing nameTh \"แฮทเตรน\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "tinkaton": {
+      "suggested": "เดคานุจัง",
+      "jp": "デカヌチャン",
+      "current": "ติงคาตัน",
+      "action": "replace",
+      "reason": "Existing nameTh \"ติงคาตัน\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "garganacl": {
+      "suggested": "เคียวจิโอน",
+      "jp": "キョジオーン",
+      "current": "การ์กาแนคล",
+      "action": "replace",
+      "reason": "Existing nameTh \"การ์กาแนคล\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "gliscor": {
+      "suggested": "กลายอน",
+      "jp": "グライオン",
+      "current": "ไกล์สกอร์",
+      "action": "replace",
+      "reason": "Existing nameTh \"ไกล์สกอร์\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "mamoswine": {
+      "suggested": "มัมมู",
+      "jp": "マンムー",
+      "current": "มามูดู",
+      "action": "replace",
+      "reason": "Existing nameTh \"มามูดู\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "toxapex": {
+      "suggested": "โดฮิโดอิเดะ",
+      "jp": "ドヒドイデ",
+      "current": "ดอกซาเพ็กซ์",
+      "action": "replace",
+      "reason": "Existing nameTh \"ดอกซาเพ็กซ์\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "maushold": {
+      "suggested": "อิกกะเนะซึมิ",
+      "jp": "イッカネズミ",
+      "current": "อิแจฮน",
+      "action": "replace",
+      "reason": "Existing nameTh \"อิแจฮน\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "armarouge": {
+      "suggested": "กุเรนอาร์มา",
+      "jp": "グレンアルマ",
+      "current": "กรากุชา",
+      "action": "replace",
+      "reason": "Existing nameTh \"กรากุชา\" appears English-derived; canonical JP form suggested as replacement"
+    },
+    "delphox": {
+      "suggested": "มาโฟคุชี",
+      "jp": "マフォクシー",
+      "current": null,
+      "reason": "No canonical entry for JP name; using mechanical kata→Thai",
+      "action": "add"
+    },
+    "arbok": {
+      "suggested": "อาโบคุ",
+      "jp": "アーボック",
+      "current": null,
+      "reason": "No canonical entry for JP name; using mechanical kata→Thai",
+      "action": "add"
+    },
+    "skarmory": {
+      "suggested": "เออามุโด",
+      "jp": "エアームド",
+      "current": null,
+      "reason": "No canonical entry for JP name; using mechanical kata→Thai",
+      "action": "add"
+    }
+  },
+  "edgeCases": {
+    "greninja-mega": {
+      "suggested": "เกคโคงะเมก้า",
+      "jp": "ゲッコウガ",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "delphox-mega": {
+      "suggested": "มาโฟคุชีเมก้า",
+      "jp": "マフォクシー",
+      "current": null,
+      "reason": "No canonical entry for JP name; using mechanical kata→Thai; PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix",
+      "action": "add"
+    },
+    "meowstic-mega": {
+      "suggested": "เนียวนิคุสุเมก้า",
+      "jp": "ニャオニクス",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "froslass-mega": {
+      "suggested": "ยูกิเมโนะโกะเมก้า",
+      "jp": "ユキメノコ",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "starmie-mega": {
+      "suggested": "สตาร์มี่เมก้า",
+      "jp": "スターミー",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "hawlucha-mega": {
+      "suggested": "ลูชะบุรุเมก้า",
+      "jp": "ルチャブル",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "skarmory-mega": {
+      "suggested": "เออามุโดเมก้า",
+      "jp": "エアームド",
+      "current": null,
+      "reason": "No canonical entry for JP name; using mechanical kata→Thai; PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix",
+      "action": "add"
+    },
+    "excadrill-mega": {
+      "suggested": "โดริว์สึเมก้า",
+      "jp": "ドリュウズ",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "floette-mega": {
+      "suggested": "ฟลาเอ็ตเตอเมก้า",
+      "jp": "フラエッテ",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "glimmora-mega": {
+      "suggested": "คิราฟลอลเมก้า",
+      "jp": "キラフロル",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "dragonite-mega": {
+      "suggested": "ไคริวเมก้า",
+      "jp": "カイリュー",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "chandelure-mega": {
+      "suggested": "ชานเดลร่าเมก้า",
+      "jp": "シャンデラ",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "meganium-mega": {
+      "suggested": "เมกะเนียมเมก้า",
+      "jp": "メガニウム",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "feraligatr-mega": {
+      "suggested": "โอไดล์เมก้า",
+      "jp": "オーダイル",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "emboar-mega": {
+      "suggested": "เอนบุโอ้เมก้า",
+      "jp": "エンブオー",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "scovillain-mega": {
+      "suggested": "สโคบิลเลนเมก้า",
+      "jp": "スコヴィラン",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "clefable-mega": {
+      "suggested": "พิคซี่เมก้า",
+      "jp": "ピクシー",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "victreebel-mega": {
+      "suggested": "อุสึโบ๊ตเมก้า",
+      "jp": "ウツボット",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "chimecho-mega": {
+      "suggested": "ชิรีนเมก้า",
+      "jp": "チリーン",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "golurk-mega": {
+      "suggested": "โกรูกเมก้า",
+      "jp": "ゴルーグ",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "chesnaught-mega": {
+      "suggested": "บริกะร่อนเมก้า",
+      "jp": "ブリガロン",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "drampa-mega": {
+      "suggested": "จิจีรอนเมก้า",
+      "jp": "ジジーロン",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    },
+    "crabominable-mega": {
+      "suggested": "เคเคนคานิเมก้า",
+      "jp": "ケケンカニ",
+      "current": null,
+      "action": "add",
+      "reason": "PC-original Mega (no official Mega in mainline games); suggestion is canonical-base + เมก้า suffix"
+    }
+  }
+}

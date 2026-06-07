@@ -1,0 +1,1094 @@
+{
+  "count": 272,
+  "failures": [],
+  "map": {
+    "aerodactyl-mega": {
+      "id": 10042,
+      "apiSlug": "aerodactyl-mega"
+    },
+    "alakazam-mega": {
+      "id": 10037,
+      "apiSlug": "alakazam-mega"
+    },
+    "beedrill-mega": {
+      "id": 10090,
+      "apiSlug": "beedrill-mega"
+    },
+    "dragapult": {
+      "id": 887,
+      "apiSlug": "dragapult"
+    },
+    "greninja-mega": {
+      "id": 10294,
+      "apiSlug": "greninja-mega"
+    },
+    "lopunny-mega": {
+      "id": 10088,
+      "apiSlug": "lopunny-mega"
+    },
+    "manectric-mega": {
+      "id": 10055,
+      "apiSlug": "manectric-mega"
+    },
+    "delphox-mega": {
+      "id": 10293,
+      "apiSlug": "delphox-mega"
+    },
+    "aerodactyl": {
+      "id": 142,
+      "apiSlug": "aerodactyl"
+    },
+    "jolteon": {
+      "id": 135,
+      "apiSlug": "jolteon"
+    },
+    "gengar-mega": {
+      "id": 10038,
+      "apiSlug": "gengar-mega"
+    },
+    "raichu": {
+      "id": 26,
+      "apiSlug": "raichu"
+    },
+    "talonflame": {
+      "id": 663,
+      "apiSlug": "talonflame"
+    },
+    "weavile": {
+      "id": 461,
+      "apiSlug": "weavile"
+    },
+    "meowstic-mega": {
+      "id": 10314,
+      "apiSlug": "meowstic-mega"
+    },
+    "meowscarada": {
+      "id": 908,
+      "apiSlug": "meowscarada"
+    },
+    "noivern": {
+      "id": 715,
+      "apiSlug": "noivern"
+    },
+    "greninja": {
+      "id": 658,
+      "apiSlug": "greninja"
+    },
+    "pidgeot-mega": {
+      "id": 10073,
+      "apiSlug": "pidgeot-mega"
+    },
+    "alakazam": {
+      "id": 65,
+      "apiSlug": "alakazam"
+    },
+    "froslass-mega": {
+      "id": 10285,
+      "apiSlug": "froslass-mega"
+    },
+    "starmie-mega": {
+      "id": 10280,
+      "apiSlug": "starmie-mega"
+    },
+    "sneasler": {
+      "id": 903,
+      "apiSlug": "sneasler"
+    },
+    "hawlucha": {
+      "id": 701,
+      "apiSlug": "hawlucha"
+    },
+    "hawlucha-mega": {
+      "id": 10300,
+      "apiSlug": "hawlucha-mega"
+    },
+    "salazzle": {
+      "id": 758,
+      "apiSlug": "salazzle"
+    },
+    "whimsicott": {
+      "id": 547,
+      "apiSlug": "whimsicott"
+    },
+    "absol-mega": {
+      "id": 10057,
+      "apiSlug": "absol-mega"
+    },
+    "houndoom-mega": {
+      "id": 10048,
+      "apiSlug": "houndoom-mega"
+    },
+    "starmie": {
+      "id": 121,
+      "apiSlug": "starmie"
+    },
+    "serperior": {
+      "id": 497,
+      "apiSlug": "serperior"
+    },
+    "lycanroc": {
+      "id": 745,
+      "apiSlug": "lycanroc-midday"
+    },
+    "lycanroc-midday": {
+      "id": 745,
+      "apiSlug": "lycanroc-midday"
+    },
+    "lucario-mega": {
+      "id": 10059,
+      "apiSlug": "lucario-mega"
+    },
+    "maushold": {
+      "id": 925,
+      "apiSlug": "maushold-family-of-four"
+    },
+    "raichu-alola": {
+      "id": 10100,
+      "apiSlug": "raichu-alola"
+    },
+    "espeon": {
+      "id": 196,
+      "apiSlug": "espeon"
+    },
+    "froslass": {
+      "id": 478,
+      "apiSlug": "froslass"
+    },
+    "gengar": {
+      "id": 94,
+      "apiSlug": "gengar"
+    },
+    "zoroark-hisui": {
+      "id": 10239,
+      "apiSlug": "zoroark-hisui"
+    },
+    "lycanroc-dusk": {
+      "id": 10152,
+      "apiSlug": "lycanroc-dusk"
+    },
+    "gallade-mega": {
+      "id": 10068,
+      "apiSlug": "gallade-mega"
+    },
+    "skarmory-mega": {
+      "id": 10284,
+      "apiSlug": "skarmory-mega"
+    },
+    "tauros": {
+      "id": 128,
+      "apiSlug": "tauros"
+    },
+    "ninetales-alola": {
+      "id": 10104,
+      "apiSlug": "ninetales-alola"
+    },
+    "heliolisk": {
+      "id": 695,
+      "apiSlug": "heliolisk"
+    },
+    "infernape": {
+      "id": 392,
+      "apiSlug": "infernape"
+    },
+    "liepard": {
+      "id": 510,
+      "apiSlug": "liepard"
+    },
+    "espathra": {
+      "id": 956,
+      "apiSlug": "espathra"
+    },
+    "lopunny": {
+      "id": 428,
+      "apiSlug": "lopunny"
+    },
+    "manectric": {
+      "id": 310,
+      "apiSlug": "manectric"
+    },
+    "pinsir-mega": {
+      "id": 10040,
+      "apiSlug": "pinsir-mega"
+    },
+    "sharpedo-mega": {
+      "id": 10070,
+      "apiSlug": "sharpedo-mega"
+    },
+    "zoroark": {
+      "id": 571,
+      "apiSlug": "zoroark"
+    },
+    "delphox": {
+      "id": 655,
+      "apiSlug": "delphox"
+    },
+    "meowstic": {
+      "id": 678,
+      "apiSlug": "meowstic-male"
+    },
+    "meowstic-female": {
+      "id": 10025,
+      "apiSlug": "meowstic-female"
+    },
+    "emolga": {
+      "id": 587,
+      "apiSlug": "emolga"
+    },
+    "excadrill-mega": {
+      "id": 10287,
+      "apiSlug": "excadrill-mega"
+    },
+    "furfrou": {
+      "id": 676,
+      "apiSlug": "furfrou"
+    },
+    "garchomp": {
+      "id": 445,
+      "apiSlug": "garchomp"
+    },
+    "floette-mega": {
+      "id": 10296,
+      "apiSlug": "floette-mega"
+    },
+    "dedenne": {
+      "id": 702,
+      "apiSlug": "dedenne"
+    },
+    "glimmora-mega": {
+      "id": 10321,
+      "apiSlug": "glimmora-mega"
+    },
+    "pidgeot": {
+      "id": 18,
+      "apiSlug": "pidgeot"
+    },
+    "simipour": {
+      "id": 516,
+      "apiSlug": "simipour"
+    },
+    "simisage": {
+      "id": 512,
+      "apiSlug": "simisage"
+    },
+    "simisear": {
+      "id": 514,
+      "apiSlug": "simisear"
+    },
+    "charizard": {
+      "id": 6,
+      "apiSlug": "charizard"
+    },
+    "charizard-mega-x": {
+      "id": 10034,
+      "apiSlug": "charizard-mega-x"
+    },
+    "charizard-mega-y": {
+      "id": 10035,
+      "apiSlug": "charizard-mega-y"
+    },
+    "dragonite-mega": {
+      "id": 10281,
+      "apiSlug": "dragonite-mega"
+    },
+    "gardevoir-mega": {
+      "id": 10051,
+      "apiSlug": "gardevoir-mega"
+    },
+    "glalie-mega": {
+      "id": 10074,
+      "apiSlug": "glalie-mega"
+    },
+    "kangaskhan-mega": {
+      "id": 10039,
+      "apiSlug": "kangaskhan-mega"
+    },
+    "medicham-mega": {
+      "id": 10054,
+      "apiSlug": "medicham-mega"
+    },
+    "ninetales": {
+      "id": 38,
+      "apiSlug": "ninetales"
+    },
+    "palafin": {
+      "id": 964,
+      "apiSlug": "palafin-zero"
+    },
+    "tauros-paldea": {
+      "id": 10250,
+      "apiSlug": "tauros-paldea-combat-breed"
+    },
+    "tauros-paldea-aqua-breed": {
+      "id": 10252,
+      "apiSlug": "tauros-paldea-aqua-breed"
+    },
+    "tauros-paldea-blaze-breed": {
+      "id": 10251,
+      "apiSlug": "tauros-paldea-blaze-breed"
+    },
+    "typhlosion": {
+      "id": 157,
+      "apiSlug": "typhlosion"
+    },
+    "volcarona": {
+      "id": 637,
+      "apiSlug": "volcarona"
+    },
+    "hydreigon": {
+      "id": 635,
+      "apiSlug": "hydreigon"
+    },
+    "morpeko": {
+      "id": 877,
+      "apiSlug": "morpeko-full-belly"
+    },
+    "mimikyu": {
+      "id": 778,
+      "apiSlug": "mimikyu-disguised"
+    },
+    "arcanine": {
+      "id": 59,
+      "apiSlug": "arcanine"
+    },
+    "gliscor": {
+      "id": 472,
+      "apiSlug": "gliscor"
+    },
+    "typhlosion-hisui": {
+      "id": 10233,
+      "apiSlug": "typhlosion-hisui"
+    },
+    "houndoom": {
+      "id": 229,
+      "apiSlug": "houndoom"
+    },
+    "leafeon": {
+      "id": 470,
+      "apiSlug": "leafeon"
+    },
+    "sharpedo": {
+      "id": 319,
+      "apiSlug": "sharpedo"
+    },
+    "tinkaton": {
+      "id": 959,
+      "apiSlug": "tinkaton"
+    },
+    "krookodile": {
+      "id": 553,
+      "apiSlug": "krookodile"
+    },
+    "garchomp-mega": {
+      "id": 10058,
+      "apiSlug": "garchomp-mega"
+    },
+    "rotom": {
+      "id": 479,
+      "apiSlug": "rotom"
+    },
+    "arcanine-hisui": {
+      "id": 10230,
+      "apiSlug": "arcanine-hisui"
+    },
+    "kangaskhan": {
+      "id": 115,
+      "apiSlug": "kangaskhan"
+    },
+    "lucario": {
+      "id": 448,
+      "apiSlug": "lucario"
+    },
+    "chandelure-mega": {
+      "id": 10291,
+      "apiSlug": "chandelure-mega"
+    },
+    "pikachu": {
+      "id": 25,
+      "apiSlug": "pikachu"
+    },
+    "roserade": {
+      "id": 407,
+      "apiSlug": "roserade"
+    },
+    "vivillon": {
+      "id": 666,
+      "apiSlug": "vivillon"
+    },
+    "excadrill": {
+      "id": 530,
+      "apiSlug": "excadrill"
+    },
+    "rotom-fan": {
+      "id": 10011,
+      "apiSlug": "rotom-fan"
+    },
+    "rotom-frost": {
+      "id": 10010,
+      "apiSlug": "rotom-frost"
+    },
+    "glimmora": {
+      "id": 970,
+      "apiSlug": "glimmora"
+    },
+    "rotom-heat": {
+      "id": 10008,
+      "apiSlug": "rotom-heat"
+    },
+    "rotom-mow": {
+      "id": 10012,
+      "apiSlug": "rotom-mow"
+    },
+    "rotom-wash": {
+      "id": 10009,
+      "apiSlug": "rotom-wash"
+    },
+    "archaludon": {
+      "id": 1018,
+      "apiSlug": "archaludon"
+    },
+    "ceruledge": {
+      "id": 937,
+      "apiSlug": "ceruledge"
+    },
+    "heracross": {
+      "id": 214,
+      "apiSlug": "heracross"
+    },
+    "samurott-hisui": {
+      "id": 10236,
+      "apiSlug": "samurott-hisui"
+    },
+    "kleavor": {
+      "id": 900,
+      "apiSlug": "kleavor"
+    },
+    "kommo-o": {
+      "id": 784,
+      "apiSlug": "kommo-o"
+    },
+    "pinsir": {
+      "id": 127,
+      "apiSlug": "pinsir"
+    },
+    "quaquaval": {
+      "id": 914,
+      "apiSlug": "quaquaval"
+    },
+    "toxicroak": {
+      "id": 454,
+      "apiSlug": "toxicroak"
+    },
+    "gourgeist": {
+      "id": 711,
+      "apiSlug": "gourgeist-average"
+    },
+    "lycanroc-midnight": {
+      "id": 10126,
+      "apiSlug": "lycanroc-midnight"
+    },
+    "gyarados": {
+      "id": 130,
+      "apiSlug": "gyarados"
+    },
+    "gyarados-mega": {
+      "id": 10041,
+      "apiSlug": "gyarados-mega"
+    },
+    "milotic": {
+      "id": 350,
+      "apiSlug": "milotic"
+    },
+    "altaria": {
+      "id": 334,
+      "apiSlug": "altaria"
+    },
+    "arbok": {
+      "id": 24,
+      "apiSlug": "arbok"
+    },
+    "chandelure": {
+      "id": 609,
+      "apiSlug": "chandelure"
+    },
+    "dragonite": {
+      "id": 149,
+      "apiSlug": "dragonite"
+    },
+    "gallade": {
+      "id": 475,
+      "apiSlug": "gallade"
+    },
+    "gardevoir": {
+      "id": 282,
+      "apiSlug": "gardevoir"
+    },
+    "glalie": {
+      "id": 362,
+      "apiSlug": "glalie"
+    },
+    "goodra": {
+      "id": 706,
+      "apiSlug": "goodra"
+    },
+    "mamoswine": {
+      "id": 473,
+      "apiSlug": "mamoswine"
+    },
+    "medicham": {
+      "id": 308,
+      "apiSlug": "medicham"
+    },
+    "altaria-mega": {
+      "id": 10067,
+      "apiSlug": "altaria-mega"
+    },
+    "meganium-mega": {
+      "id": 10282,
+      "apiSlug": "meganium-mega"
+    },
+    "venusaur-mega": {
+      "id": 10033,
+      "apiSlug": "venusaur-mega"
+    },
+    "meganium": {
+      "id": 154,
+      "apiSlug": "meganium"
+    },
+    "passimian": {
+      "id": 766,
+      "apiSlug": "passimian"
+    },
+    "venusaur": {
+      "id": 3,
+      "apiSlug": "venusaur"
+    },
+    "vanilluxe": {
+      "id": 584,
+      "apiSlug": "vanilluxe"
+    },
+    "basculegion": {
+      "id": 902,
+      "apiSlug": "basculegion-male"
+    },
+    "basculegion-female": {
+      "id": 10248,
+      "apiSlug": "basculegion-female"
+    },
+    "blastoise": {
+      "id": 9,
+      "apiSlug": "blastoise"
+    },
+    "diggersby": {
+      "id": 660,
+      "apiSlug": "diggersby"
+    },
+    "feraligatr": {
+      "id": 160,
+      "apiSlug": "feraligatr"
+    },
+    "blastoise-mega": {
+      "id": 10036,
+      "apiSlug": "blastoise-mega"
+    },
+    "feraligatr-mega": {
+      "id": 10283,
+      "apiSlug": "feraligatr-mega"
+    },
+    "watchog": {
+      "id": 505,
+      "apiSlug": "watchog"
+    },
+    "absol": {
+      "id": 359,
+      "apiSlug": "absol"
+    },
+    "armarouge": {
+      "id": 936,
+      "apiSlug": "armarouge"
+    },
+    "beedrill": {
+      "id": 15,
+      "apiSlug": "beedrill"
+    },
+    "florges": {
+      "id": 671,
+      "apiSlug": "florges"
+    },
+    "garbodor": {
+      "id": 569,
+      "apiSlug": "garbodor"
+    },
+    "klefki": {
+      "id": 707,
+      "apiSlug": "klefki"
+    },
+    "banette-mega": {
+      "id": 10056,
+      "apiSlug": "banette-mega"
+    },
+    "emboar-mega": {
+      "id": 10286,
+      "apiSlug": "emboar-mega"
+    },
+    "heracross-mega": {
+      "id": 10047,
+      "apiSlug": "heracross-mega"
+    },
+    "scizor-mega": {
+      "id": 10046,
+      "apiSlug": "scizor-mega"
+    },
+    "scovillain-mega": {
+      "id": 10320,
+      "apiSlug": "scovillain-mega"
+    },
+    "scovillain": {
+      "id": 952,
+      "apiSlug": "scovillain"
+    },
+    "slurpuff": {
+      "id": 685,
+      "apiSlug": "slurpuff"
+    },
+    "tsareena": {
+      "id": 763,
+      "apiSlug": "tsareena"
+    },
+    "tyranitar-mega": {
+      "id": 10049,
+      "apiSlug": "tyranitar-mega"
+    },
+    "sandaconda": {
+      "id": 844,
+      "apiSlug": "sandaconda"
+    },
+    "tyrantrum": {
+      "id": 697,
+      "apiSlug": "tyrantrum"
+    },
+    "castform": {
+      "id": 351,
+      "apiSlug": "castform"
+    },
+    "decidueye": {
+      "id": 724,
+      "apiSlug": "decidueye"
+    },
+    "flapple": {
+      "id": 841,
+      "apiSlug": "flapple"
+    },
+    "luxray": {
+      "id": 405,
+      "apiSlug": "luxray"
+    },
+    "clefable-mega": {
+      "id": 10278,
+      "apiSlug": "clefable-mega"
+    },
+    "victreebel-mega": {
+      "id": 10279,
+      "apiSlug": "victreebel-mega"
+    },
+    "mr-rime": {
+      "id": 866,
+      "apiSlug": "mr-rime"
+    },
+    "politoed": {
+      "id": 186,
+      "apiSlug": "politoed"
+    },
+    "polteageist": {
+      "id": 855,
+      "apiSlug": "polteageist"
+    },
+    "samurott": {
+      "id": 503,
+      "apiSlug": "samurott"
+    },
+    "sinistcha": {
+      "id": 1013,
+      "apiSlug": "sinistcha"
+    },
+    "skarmory": {
+      "id": 227,
+      "apiSlug": "skarmory"
+    },
+    "victreebel": {
+      "id": 71,
+      "apiSlug": "victreebel"
+    },
+    "corviknight": {
+      "id": 823,
+      "apiSlug": "corviknight"
+    },
+    "skeledirge": {
+      "id": 911,
+      "apiSlug": "skeledirge"
+    },
+    "banette": {
+      "id": 354,
+      "apiSlug": "banette"
+    },
+    "chimecho": {
+      "id": 358,
+      "apiSlug": "chimecho"
+    },
+    "emboar": {
+      "id": 500,
+      "apiSlug": "emboar"
+    },
+    "flareon": {
+      "id": 136,
+      "apiSlug": "flareon"
+    },
+    "glaceon": {
+      "id": 471,
+      "apiSlug": "glaceon"
+    },
+    "chimecho-mega": {
+      "id": 10306,
+      "apiSlug": "chimecho-mega"
+    },
+    "orthworm": {
+      "id": 968,
+      "apiSlug": "orthworm"
+    },
+    "pelipper": {
+      "id": 279,
+      "apiSlug": "pelipper"
+    },
+    "scizor": {
+      "id": 212,
+      "apiSlug": "scizor"
+    },
+    "umbreon": {
+      "id": 197,
+      "apiSlug": "umbreon"
+    },
+    "vaporeon": {
+      "id": 134,
+      "apiSlug": "vaporeon"
+    },
+    "wyrdeer": {
+      "id": 899,
+      "apiSlug": "wyrdeer"
+    },
+    "alcremie": {
+      "id": 869,
+      "apiSlug": "alcremie"
+    },
+    "chesnaught": {
+      "id": 652,
+      "apiSlug": "chesnaught"
+    },
+    "tyranitar": {
+      "id": 248,
+      "apiSlug": "tyranitar"
+    },
+    "abomasnow": {
+      "id": 460,
+      "apiSlug": "abomasnow"
+    },
+    "aegislash": {
+      "id": 681,
+      "apiSlug": "aegislash-shield"
+    },
+    "aegislash-blade": {
+      "id": 10026,
+      "apiSlug": "aegislash-blade"
+    },
+    "aegislash-shield": {
+      "id": 681,
+      "apiSlug": "aegislash-shield"
+    },
+    "clefable": {
+      "id": 36,
+      "apiSlug": "clefable"
+    },
+    "empoleon": {
+      "id": 395,
+      "apiSlug": "empoleon"
+    },
+    "farigiraf": {
+      "id": 981,
+      "apiSlug": "farigiraf"
+    },
+    "decidueye-hisui": {
+      "id": 10244,
+      "apiSlug": "decidueye-hisui"
+    },
+    "goodra-hisui": {
+      "id": 10242,
+      "apiSlug": "goodra-hisui"
+    },
+    "incineroar": {
+      "id": 727,
+      "apiSlug": "incineroar"
+    },
+    "oranguru": {
+      "id": 765,
+      "apiSlug": "oranguru"
+    },
+    "primarina": {
+      "id": 730,
+      "apiSlug": "primarina"
+    },
+    "sylveon": {
+      "id": 700,
+      "apiSlug": "sylveon"
+    },
+    "toucannon": {
+      "id": 733,
+      "apiSlug": "toucannon"
+    },
+    "clawitzer": {
+      "id": 693,
+      "apiSlug": "clawitzer"
+    },
+    "aurorus": {
+      "id": 699,
+      "apiSlug": "aurorus"
+    },
+    "pangoro": {
+      "id": 675,
+      "apiSlug": "pangoro"
+    },
+    "rampardos": {
+      "id": 409,
+      "apiSlug": "rampardos"
+    },
+    "torterra": {
+      "id": 389,
+      "apiSlug": "torterra"
+    },
+    "trevenant": {
+      "id": 709,
+      "apiSlug": "trevenant"
+    },
+    "ampharos": {
+      "id": 181,
+      "apiSlug": "ampharos"
+    },
+    "golurk": {
+      "id": 623,
+      "apiSlug": "golurk"
+    },
+    "machamp": {
+      "id": 68,
+      "apiSlug": "machamp"
+    },
+    "golurk-mega": {
+      "id": 10313,
+      "apiSlug": "golurk-mega"
+    },
+    "floette": {
+      "id": 670,
+      "apiSlug": "floette"
+    },
+    "aggron": {
+      "id": 306,
+      "apiSlug": "aggron"
+    },
+    "audino": {
+      "id": 531,
+      "apiSlug": "audino"
+    },
+    "azumarill": {
+      "id": 184,
+      "apiSlug": "azumarill"
+    },
+    "beartic": {
+      "id": 614,
+      "apiSlug": "beartic"
+    },
+    "kingambit": {
+      "id": 983,
+      "apiSlug": "kingambit"
+    },
+    "aggron-mega": {
+      "id": 10053,
+      "apiSlug": "aggron-mega"
+    },
+    "audino-mega": {
+      "id": 10069,
+      "apiSlug": "audino-mega"
+    },
+    "sableye": {
+      "id": 302,
+      "apiSlug": "sableye"
+    },
+    "ditto": {
+      "id": 132,
+      "apiSlug": "ditto"
+    },
+    "hippowdon": {
+      "id": 450,
+      "apiSlug": "hippowdon"
+    },
+    "bellibolt": {
+      "id": 939,
+      "apiSlug": "bellibolt"
+    },
+    "conkeldurr": {
+      "id": 534,
+      "apiSlug": "conkeldurr"
+    },
+    "ampharos-mega": {
+      "id": 10045,
+      "apiSlug": "ampharos-mega"
+    },
+    "hydrapple": {
+      "id": 1019,
+      "apiSlug": "hydrapple"
+    },
+    "chesnaught-mega": {
+      "id": 10292,
+      "apiSlug": "chesnaught-mega"
+    },
+    "crabominable": {
+      "id": 740,
+      "apiSlug": "crabominable"
+    },
+    "araquanid": {
+      "id": 752,
+      "apiSlug": "araquanid"
+    },
+    "ariados": {
+      "id": 168,
+      "apiSlug": "ariados"
+    },
+    "camerupt": {
+      "id": 323,
+      "apiSlug": "camerupt"
+    },
+    "forretress": {
+      "id": 205,
+      "apiSlug": "forretress"
+    },
+    "rhyperior": {
+      "id": 464,
+      "apiSlug": "rhyperior"
+    },
+    "avalugg-hisui": {
+      "id": 10243,
+      "apiSlug": "avalugg-hisui"
+    },
+    "drampa": {
+      "id": 780,
+      "apiSlug": "drampa"
+    },
+    "drampa-mega": {
+      "id": 10302,
+      "apiSlug": "drampa-mega"
+    },
+    "garganacl": {
+      "id": 934,
+      "apiSlug": "garganacl"
+    },
+    "mudsdale": {
+      "id": 750,
+      "apiSlug": "mudsdale"
+    },
+    "spiritomb": {
+      "id": 442,
+      "apiSlug": "spiritomb"
+    },
+    "toxapex": {
+      "id": 748,
+      "apiSlug": "toxapex"
+    },
+    "crabominable-mega": {
+      "id": 10315,
+      "apiSlug": "crabominable-mega"
+    },
+    "stunfisk-galar": {
+      "id": 10180,
+      "apiSlug": "stunfisk-galar"
+    },
+    "stunfisk": {
+      "id": 618,
+      "apiSlug": "stunfisk"
+    },
+    "appletun": {
+      "id": 842,
+      "apiSlug": "appletun"
+    },
+    "bastiodon": {
+      "id": 411,
+      "apiSlug": "bastiodon"
+    },
+    "cofagrigus": {
+      "id": 563,
+      "apiSlug": "cofagrigus"
+    },
+    "slowbro-galar": {
+      "id": 10165,
+      "apiSlug": "slowbro-galar"
+    },
+    "slowking-galar": {
+      "id": 10172,
+      "apiSlug": "slowking-galar"
+    },
+    "abomasnow-mega": {
+      "id": 10060,
+      "apiSlug": "abomasnow-mega"
+    },
+    "slowbro-mega": {
+      "id": 10071,
+      "apiSlug": "slowbro-mega"
+    },
+    "steelix-mega": {
+      "id": 10072,
+      "apiSlug": "steelix-mega"
+    },
+    "reuniclus": {
+      "id": 579,
+      "apiSlug": "reuniclus"
+    },
+    "runerigus": {
+      "id": 867,
+      "apiSlug": "runerigus"
+    },
+    "slowbro": {
+      "id": 80,
+      "apiSlug": "slowbro"
+    },
+    "slowking": {
+      "id": 199,
+      "apiSlug": "slowking"
+    },
+    "snorlax": {
+      "id": 143,
+      "apiSlug": "snorlax"
+    },
+    "steelix": {
+      "id": 208,
+      "apiSlug": "steelix"
+    },
+    "aromatisse": {
+      "id": 683,
+      "apiSlug": "aromatisse"
+    },
+    "hatterene": {
+      "id": 858,
+      "apiSlug": "hatterene"
+    },
+    "avalugg": {
+      "id": 713,
+      "apiSlug": "avalugg"
+    },
+    "camerupt-mega": {
+      "id": 10087,
+      "apiSlug": "camerupt-mega"
+    },
+    "sableye-mega": {
+      "id": 10066,
+      "apiSlug": "sableye-mega"
+    },
+    "torkoal": {
+      "id": 324,
+      "apiSlug": "torkoal"
+    }
+  }
+}

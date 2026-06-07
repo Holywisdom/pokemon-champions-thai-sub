@@ -1,0 +1,1913 @@
+{
+  "basculegion": {
+    "en": "Basculegion",
+    "jp_kata": "イダイトウ",
+    "jp": "イダイトウ",
+    "jp_roma": "Idaitou",
+    "speciesName": "basculegion"
+  },
+  "garchomp": {
+    "en": "Garchomp",
+    "jp_kata": "ガブリアス",
+    "jp": "ガブリアス",
+    "jp_roma": "Gablias",
+    "speciesName": "garchomp"
+  },
+  "kingambit": {
+    "en": "Kingambit",
+    "jp_kata": "ドドゲザン",
+    "jp": "ドドゲザン",
+    "jp_roma": "Dodogezan",
+    "speciesName": "kingambit"
+  },
+  "sneasler": {
+    "en": "Sneasler",
+    "jp_kata": "オオニューラ",
+    "jp": "オオニューラ",
+    "jp_roma": "Oonyura",
+    "speciesName": "sneasler"
+  },
+  "sinistcha": {
+    "en": "Sinistcha",
+    "jp_kata": "ヤバソチャ",
+    "jp": "ヤバソチャ",
+    "jp_roma": null,
+    "speciesName": "sinistcha"
+  },
+  "incineroar": {
+    "en": "Incineroar",
+    "jp_kata": "ガオガエン",
+    "jp": "ガオガエン",
+    "jp_roma": "Gaogaen",
+    "speciesName": "incineroar"
+  },
+  "charizard": {
+    "en": "Charizard",
+    "jp_kata": "リザードン",
+    "jp": "リザードン",
+    "jp_roma": "Lizardon",
+    "speciesName": "charizard"
+  },
+  "aerodactyl": {
+    "en": "Aerodactyl",
+    "jp_kata": "プテラ",
+    "jp": "プテラ",
+    "jp_roma": "Ptera",
+    "speciesName": "aerodactyl"
+  },
+  "archaludon": {
+    "en": "Archaludon",
+    "jp_kata": "ブリジュラス",
+    "jp": "ブリジュラス",
+    "jp_roma": null,
+    "speciesName": "archaludon"
+  },
+  "farigiraf": {
+    "en": "Farigiraf",
+    "jp_kata": "リキキリン",
+    "jp": "リキキリン",
+    "jp_roma": "Rikikirin",
+    "speciesName": "farigiraf"
+  },
+  "pelipper": {
+    "en": "Pelipper",
+    "jp_kata": "ペリッパー",
+    "jp": "ペリッパー",
+    "jp_roma": "Pelipper",
+    "speciesName": "pelipper"
+  },
+  "sylveon": {
+    "en": "Sylveon",
+    "jp_kata": "ニンフィア",
+    "jp": "ニンフィア",
+    "jp_roma": "Nymphia",
+    "speciesName": "sylveon"
+  },
+  "whimsicott": {
+    "en": "Whimsicott",
+    "jp_kata": "エルフーン",
+    "jp": "エルフーン",
+    "jp_roma": "Elfuun",
+    "speciesName": "whimsicott"
+  },
+  "rotom-wash": {
+    "en": "Rotom",
+    "jp_kata": "ロトム",
+    "jp": "ロトム",
+    "jp_roma": "Rotom",
+    "speciesName": "rotom"
+  },
+  "floette-eternal": {
+    "en": "Floette",
+    "jp_kata": "フラエッテ",
+    "jp": "フラエッテ",
+    "jp_roma": "Floette",
+    "speciesName": "floette"
+  },
+  "tyranitar": {
+    "en": "Tyranitar",
+    "jp_kata": "バンギラス",
+    "jp": "バンギラス",
+    "jp_roma": "Bangiras",
+    "speciesName": "tyranitar"
+  },
+  "dragonite": {
+    "en": "Dragonite",
+    "jp_kata": "カイリュー",
+    "jp": "カイリュー",
+    "jp_roma": "Kairyu",
+    "speciesName": "dragonite"
+  },
+  "kangaskhan-mega": {
+    "en": "Kangaskhan",
+    "jp_kata": "ガルーラ",
+    "jp": "ガルーラ",
+    "jp_roma": "Garura",
+    "speciesName": "kangaskhan"
+  },
+  "scizor-mega": {
+    "en": "Scizor",
+    "jp_kata": "ハッサム",
+    "jp": "ハッサム",
+    "jp_roma": "Hassam",
+    "speciesName": "scizor"
+  },
+  "glimmora": {
+    "en": "Glimmora",
+    "jp_kata": "キラフロル",
+    "jp": "キラフロル",
+    "jp_roma": "Kiraflor",
+    "speciesName": "glimmora"
+  },
+  "blastoise": {
+    "en": "Blastoise",
+    "jp_kata": "カメックス",
+    "jp": "カメックス",
+    "jp_roma": "Kamex",
+    "speciesName": "blastoise"
+  },
+  "scovillain": {
+    "en": "Scovillain",
+    "jp_kata": "スコヴィラン",
+    "jp": "スコヴィラン",
+    "jp_roma": "Scovillain",
+    "speciesName": "scovillain"
+  },
+  "corviknight": {
+    "en": "Corviknight",
+    "jp_kata": "アーマーガア",
+    "jp": "アーマーガア",
+    "jp_roma": "Armorga",
+    "speciesName": "corviknight"
+  },
+  "excadrill": {
+    "en": "Excadrill",
+    "jp_kata": "ドリュウズ",
+    "jp": "ドリュウズ",
+    "jp_roma": "Doryuzu",
+    "speciesName": "excadrill"
+  },
+  "froslass": {
+    "en": "Froslass",
+    "jp_kata": "ユキメノコ",
+    "jp": "ユキメノコ",
+    "jp_roma": "Yukimenoko",
+    "speciesName": "froslass"
+  },
+  "hippowdon": {
+    "en": "Hippowdon",
+    "jp_kata": "カバルドン",
+    "jp": "カバルドン",
+    "jp_roma": "Kabarudon",
+    "speciesName": "hippowdon"
+  },
+  "primarina": {
+    "en": "Primarina",
+    "jp_kata": "アシレーヌ",
+    "jp": "アシレーヌ",
+    "jp_roma": "Ashirene",
+    "speciesName": "primarina"
+  },
+  "mimikyu": {
+    "en": "Mimikyu",
+    "jp_kata": "ミミッキュ",
+    "jp": "ミミッキュ",
+    "jp_roma": "Mimikkyu",
+    "speciesName": "mimikyu"
+  },
+  "dragapult": {
+    "en": "Dragapult",
+    "jp_kata": "ドラパルト",
+    "jp": "ドラパルト",
+    "jp_roma": "Dorapult",
+    "speciesName": "dragapult"
+  },
+  "aegislash": {
+    "en": "Aegislash",
+    "jp_kata": "ギルガルド",
+    "jp": "ギルガルド",
+    "jp_roma": "Gillgard",
+    "speciesName": "aegislash"
+  },
+  "venusaur-mega": {
+    "en": "Venusaur",
+    "jp_kata": "フシギバナ",
+    "jp": "フシギバナ",
+    "jp_roma": "Fushigibana",
+    "speciesName": "venusaur"
+  },
+  "gengar-mega": {
+    "en": "Gengar",
+    "jp_kata": "ゲンガー",
+    "jp": "ゲンガー",
+    "jp_roma": "Gangar",
+    "speciesName": "gengar"
+  },
+  "gardevoir-mega": {
+    "en": "Gardevoir",
+    "jp_kata": "サーナイト",
+    "jp": "サーナイト",
+    "jp_roma": "Sirnight",
+    "speciesName": "gardevoir"
+  },
+  "lucario-mega": {
+    "en": "Lucario",
+    "jp_kata": "ルカリオ",
+    "jp": "ルカリオ",
+    "jp_roma": "Lucario",
+    "speciesName": "lucario"
+  },
+  "manectric-mega": {
+    "en": "Manectric",
+    "jp_kata": "ライボルト",
+    "jp": "ライボルト",
+    "jp_roma": "Livolt",
+    "speciesName": "manectric"
+  },
+  "alakazam-mega": {
+    "en": "Alakazam",
+    "jp_kata": "フーディン",
+    "jp": "フーディン",
+    "jp_roma": "Foodin",
+    "speciesName": "alakazam"
+  },
+  "gyarados-mega": {
+    "en": "Gyarados",
+    "jp_kata": "ギャラドス",
+    "jp": "ギャラドス",
+    "jp_roma": "Gyarados",
+    "speciesName": "gyarados"
+  },
+  "lopunny-mega": {
+    "en": "Lopunny",
+    "jp_kata": "ミミロップ",
+    "jp": "ミミロップ",
+    "jp_roma": "Mimilop",
+    "speciesName": "lopunny"
+  },
+  "houndoom-mega": {
+    "en": "Houndoom",
+    "jp_kata": "ヘルガー",
+    "jp": "ヘルガー",
+    "jp_roma": "Hellgar",
+    "speciesName": "houndoom"
+  },
+  "sableye-mega": {
+    "en": "Sableye",
+    "jp_kata": "ヤミラミ",
+    "jp": "ヤミラミ",
+    "jp_roma": "Yamirami",
+    "speciesName": "sableye"
+  },
+  "altaria-mega": {
+    "en": "Altaria",
+    "jp_kata": "チルタリス",
+    "jp": "チルタリス",
+    "jp_roma": "Tyltalis",
+    "speciesName": "altaria"
+  },
+  "steelix-mega": {
+    "en": "Steelix",
+    "jp_kata": "ハガネール",
+    "jp": "ハガネール",
+    "jp_roma": "Haganeil",
+    "speciesName": "steelix"
+  },
+  "slowbro-mega": {
+    "en": "Slowbro",
+    "jp_kata": "ヤドラン",
+    "jp": "ヤドラン",
+    "jp_roma": "Yadoran",
+    "speciesName": "slowbro"
+  },
+  "gallade-mega": {
+    "en": "Gallade",
+    "jp_kata": "エルレイド",
+    "jp": "エルレイド",
+    "jp_roma": "Erlade",
+    "speciesName": "gallade"
+  },
+  "pidgeot-mega": {
+    "en": "Pidgeot",
+    "jp_kata": "ピジョット",
+    "jp": "ピジョット",
+    "jp_roma": "Pigeot",
+    "speciesName": "pidgeot"
+  },
+  "espeon": {
+    "en": "Espeon",
+    "jp_kata": "エーフィ",
+    "jp": "エーフィ",
+    "jp_roma": "Eifie",
+    "speciesName": "espeon"
+  },
+  "umbreon": {
+    "en": "Umbreon",
+    "jp_kata": "ブラッキー",
+    "jp": "ブラッキー",
+    "jp_roma": "Blacky",
+    "speciesName": "umbreon"
+  },
+  "vaporeon": {
+    "en": "Vaporeon",
+    "jp_kata": "シャワーズ",
+    "jp": "シャワーズ",
+    "jp_roma": "Showers",
+    "speciesName": "vaporeon"
+  },
+  "jolteon": {
+    "en": "Jolteon",
+    "jp_kata": "サンダース",
+    "jp": "サンダース",
+    "jp_roma": "Thunders",
+    "speciesName": "jolteon"
+  },
+  "flareon": {
+    "en": "Flareon",
+    "jp_kata": "ブースター",
+    "jp": "ブースター",
+    "jp_roma": "Booster",
+    "speciesName": "flareon"
+  },
+  "leafeon": {
+    "en": "Leafeon",
+    "jp_kata": "リーフィア",
+    "jp": "リーフィア",
+    "jp_roma": "Leafia",
+    "speciesName": "leafeon"
+  },
+  "glaceon": {
+    "en": "Glaceon",
+    "jp_kata": "グレイシア",
+    "jp": "グレイシア",
+    "jp_roma": "Glacia",
+    "speciesName": "glaceon"
+  },
+  "skeledirge": {
+    "en": "Skeledirge",
+    "jp_kata": "ラウドボーン",
+    "jp": "ラウドボーン",
+    "jp_roma": "Laudbon",
+    "speciesName": "skeledirge"
+  },
+  "meowscarada": {
+    "en": "Meowscarada",
+    "jp_kata": "マスカーニャ",
+    "jp": "マスカーニャ",
+    "jp_roma": "Masquernya",
+    "speciesName": "meowscarada"
+  },
+  "quaquaval": {
+    "en": "Quaquaval",
+    "jp_kata": "ウェーニバル",
+    "jp": "ウェーニバル",
+    "jp_roma": "Wanival",
+    "speciesName": "quaquaval"
+  },
+  "decidueye": {
+    "en": "Decidueye",
+    "jp_kata": "ジュナイパー",
+    "jp": "ジュナイパー",
+    "jp_roma": "Junaiper",
+    "speciesName": "decidueye"
+  },
+  "infernape": {
+    "en": "Infernape",
+    "jp_kata": "ゴウカザル",
+    "jp": "ゴウカザル",
+    "jp_roma": "Gōkazaru",
+    "speciesName": "infernape"
+  },
+  "typhlosion": {
+    "en": "Typhlosion",
+    "jp_kata": "バクフーン",
+    "jp": "バクフーン",
+    "jp_roma": "Bakphoon",
+    "speciesName": "typhlosion"
+  },
+  "serperior": {
+    "en": "Serperior",
+    "jp_kata": "ジャローダ",
+    "jp": "ジャローダ",
+    "jp_roma": "Jalorda",
+    "speciesName": "serperior"
+  },
+  "volcarona": {
+    "en": "Volcarona",
+    "jp_kata": "ウルガモス",
+    "jp": "ウルガモス",
+    "jp_roma": "Ulgamoth",
+    "speciesName": "volcarona"
+  },
+  "hatterene": {
+    "en": "Hatterene",
+    "jp_kata": "ブリムオン",
+    "jp": "ブリムオン",
+    "jp_roma": "Brimuon",
+    "speciesName": "hatterene"
+  },
+  "tinkaton": {
+    "en": "Tinkaton",
+    "jp_kata": "デカヌチャン",
+    "jp": "デカヌチャン",
+    "jp_roma": "Dekanuchan",
+    "speciesName": "tinkaton"
+  },
+  "garganacl": {
+    "en": "Garganacl",
+    "jp_kata": "キョジオーン",
+    "jp": "キョジオーン",
+    "jp_roma": "Kyojiohn",
+    "speciesName": "garganacl"
+  },
+  "weavile": {
+    "en": "Weavile",
+    "jp_kata": "マニューラ",
+    "jp": "マニューラ",
+    "jp_roma": "Manyula",
+    "speciesName": "weavile"
+  },
+  "gliscor": {
+    "en": "Gliscor",
+    "jp_kata": "グライオン",
+    "jp": "グライオン",
+    "jp_roma": "Glion",
+    "speciesName": "gliscor"
+  },
+  "mamoswine": {
+    "en": "Mamoswine",
+    "jp_kata": "マンムー",
+    "jp": "マンムー",
+    "jp_roma": "Mammoo",
+    "speciesName": "mamoswine"
+  },
+  "hydreigon": {
+    "en": "Hydreigon",
+    "jp_kata": "サザンドラ",
+    "jp": "サザンドラ",
+    "jp_roma": "Sazandora",
+    "speciesName": "hydreigon"
+  },
+  "toxapex": {
+    "en": "Toxapex",
+    "jp_kata": "ドヒドイデ",
+    "jp": "ドヒドイデ",
+    "jp_roma": "Dohidoide",
+    "speciesName": "toxapex"
+  },
+  "ninetales-alola": {
+    "en": "Ninetales",
+    "jp_kata": "キュウコン",
+    "jp": "キュウコン",
+    "jp_roma": "Kyukon",
+    "speciesName": "ninetales"
+  },
+  "torkoal": {
+    "en": "Torkoal",
+    "jp_kata": "コータス",
+    "jp": "コータス",
+    "jp_roma": "Cotoise",
+    "speciesName": "torkoal"
+  },
+  "politoed": {
+    "en": "Politoed",
+    "jp_kata": "ニョロトノ",
+    "jp": "ニョロトノ",
+    "jp_roma": "Nyorotono",
+    "speciesName": "politoed"
+  },
+  "snorlax": {
+    "en": "Snorlax",
+    "jp_kata": "カビゴン",
+    "jp": "カビゴン",
+    "jp_roma": "Kabigon",
+    "speciesName": "snorlax"
+  },
+  "maushold": {
+    "en": "Maushold",
+    "jp_kata": "イッカネズミ",
+    "jp": "イッカネズミ",
+    "jp_roma": "Ikkanezumi",
+    "speciesName": "maushold"
+  },
+  "talonflame": {
+    "en": "Talonflame",
+    "jp_kata": "ファイアロー",
+    "jp": "ファイアロー",
+    "jp_roma": "Fiarrow",
+    "speciesName": "talonflame"
+  },
+  "klefki": {
+    "en": "Klefki",
+    "jp_kata": "クレッフィ",
+    "jp": "クレッフィ",
+    "jp_roma": "Cleffy",
+    "speciesName": "klefki"
+  },
+  "armarouge": {
+    "en": "Armarouge",
+    "jp_kata": "グレンアルマ",
+    "jp": "グレンアルマ",
+    "jp_roma": "Gurenarma",
+    "speciesName": "armarouge"
+  },
+  "ceruledge": {
+    "en": "Ceruledge",
+    "jp_kata": "ソウブレイズ",
+    "jp": "ソウブレイズ",
+    "jp_roma": "Soublades",
+    "speciesName": "ceruledge"
+  },
+  "slowking-galar": {
+    "en": "Slowking",
+    "jp_kata": "ヤドキング",
+    "jp": "ヤドキング",
+    "jp_roma": "Yadoking",
+    "speciesName": "slowking"
+  },
+  "milotic": {
+    "en": "Milotic",
+    "jp_kata": "ミロカロス",
+    "jp": "ミロカロス",
+    "jp_roma": "Milokaross",
+    "speciesName": "milotic"
+  },
+  "salazzle": {
+    "en": "Salazzle",
+    "jp_kata": "エンニュート",
+    "jp": "エンニュート",
+    "jp_roma": "Ennewt",
+    "speciesName": "salazzle"
+  },
+  "aerodactyl-mega": {
+    "en": "Aerodactyl",
+    "jp_kata": "プテラ",
+    "jp": "プテラ",
+    "jp_roma": "Ptera",
+    "speciesName": "aerodactyl"
+  },
+  "beedrill-mega": {
+    "en": "Beedrill",
+    "jp_kata": "スピアー",
+    "jp": "スピアー",
+    "jp_roma": "Spear",
+    "speciesName": "beedrill"
+  },
+  "greninja-mega": {
+    "en": "Greninja",
+    "jp_kata": "ゲッコウガ",
+    "jp": "ゲッコウガ",
+    "jp_roma": "Gekkouga",
+    "speciesName": "greninja"
+  },
+  "delphox-mega": {
+    "en": "Delphox",
+    "jp_kata": "マフォクシー",
+    "jp": "マフォクシー",
+    "jp_roma": "Mahoxy",
+    "speciesName": "delphox"
+  },
+  "raichu": {
+    "en": "Raichu",
+    "jp_kata": "ライチュウ",
+    "jp": "ライチュウ",
+    "jp_roma": "Raichu",
+    "speciesName": "raichu"
+  },
+  "meowstic-mega": {
+    "en": "Meowstic",
+    "jp_kata": "ニャオニクス",
+    "jp": "ニャオニクス",
+    "jp_roma": "Nyaonix",
+    "speciesName": "meowstic"
+  },
+  "noivern": {
+    "en": "Noivern",
+    "jp_kata": "オンバーン",
+    "jp": "オンバーン",
+    "jp_roma": "Onvern",
+    "speciesName": "noivern"
+  },
+  "greninja": {
+    "en": "Greninja",
+    "jp_kata": "ゲッコウガ",
+    "jp": "ゲッコウガ",
+    "jp_roma": "Gekkouga",
+    "speciesName": "greninja"
+  },
+  "alakazam": {
+    "en": "Alakazam",
+    "jp_kata": "フーディン",
+    "jp": "フーディン",
+    "jp_roma": "Foodin",
+    "speciesName": "alakazam"
+  },
+  "froslass-mega": {
+    "en": "Froslass",
+    "jp_kata": "ユキメノコ",
+    "jp": "ユキメノコ",
+    "jp_roma": "Yukimenoko",
+    "speciesName": "froslass"
+  },
+  "starmie-mega": {
+    "en": "Starmie",
+    "jp_kata": "スターミー",
+    "jp": "スターミー",
+    "jp_roma": "Starmie",
+    "speciesName": "starmie"
+  },
+  "hawlucha": {
+    "en": "Hawlucha",
+    "jp_kata": "ルチャブル",
+    "jp": "ルチャブル",
+    "jp_roma": "Luchabull",
+    "speciesName": "hawlucha"
+  },
+  "hawlucha-mega": {
+    "en": "Hawlucha",
+    "jp_kata": "ルチャブル",
+    "jp": "ルチャブル",
+    "jp_roma": "Luchabull",
+    "speciesName": "hawlucha"
+  },
+  "absol-mega": {
+    "en": "Absol",
+    "jp_kata": "アブソル",
+    "jp": "アブソル",
+    "jp_roma": "Absol",
+    "speciesName": "absol"
+  },
+  "starmie": {
+    "en": "Starmie",
+    "jp_kata": "スターミー",
+    "jp": "スターミー",
+    "jp_roma": "Starmie",
+    "speciesName": "starmie"
+  },
+  "lycanroc": {
+    "en": "Lycanroc",
+    "jp_kata": "ルガルガン",
+    "jp": "ルガルガン",
+    "jp_roma": "Lugarugan",
+    "speciesName": "lycanroc"
+  },
+  "lycanroc-midday": {
+    "en": "Lycanroc",
+    "jp_kata": "ルガルガン",
+    "jp": "ルガルガン",
+    "jp_roma": "Lugarugan",
+    "speciesName": "lycanroc"
+  },
+  "raichu-alola": {
+    "en": "Raichu",
+    "jp_kata": "ライチュウ",
+    "jp": "ライチュウ",
+    "jp_roma": "Raichu",
+    "speciesName": "raichu"
+  },
+  "gengar": {
+    "en": "Gengar",
+    "jp_kata": "ゲンガー",
+    "jp": "ゲンガー",
+    "jp_roma": "Gangar",
+    "speciesName": "gengar"
+  },
+  "zoroark-hisui": {
+    "en": "Zoroark",
+    "jp_kata": "ゾロアーク",
+    "jp": "ゾロアーク",
+    "jp_roma": "Zoroark",
+    "speciesName": "zoroark"
+  },
+  "lycanroc-dusk": {
+    "en": "Lycanroc",
+    "jp_kata": "ルガルガン",
+    "jp": "ルガルガン",
+    "jp_roma": "Lugarugan",
+    "speciesName": "lycanroc"
+  },
+  "skarmory-mega": {
+    "en": "Skarmory",
+    "jp_kata": "エアームド",
+    "jp": "エアームド",
+    "jp_roma": "Airmd",
+    "speciesName": "skarmory"
+  },
+  "tauros": {
+    "en": "Tauros",
+    "jp_kata": "ケンタロス",
+    "jp": "ケンタロス",
+    "jp_roma": "Kentauros",
+    "speciesName": "tauros"
+  },
+  "heliolisk": {
+    "en": "Heliolisk",
+    "jp_kata": "エレザード",
+    "jp": "エレザード",
+    "jp_roma": "Elezard",
+    "speciesName": "heliolisk"
+  },
+  "liepard": {
+    "en": "Liepard",
+    "jp_kata": "レパルダス",
+    "jp": "レパルダス",
+    "jp_roma": "Lepardas",
+    "speciesName": "liepard"
+  },
+  "espathra": {
+    "en": "Espathra",
+    "jp_kata": "クエスパトラ",
+    "jp": "クエスパトラ",
+    "jp_roma": "Cuespatra",
+    "speciesName": "espathra"
+  },
+  "lopunny": {
+    "en": "Lopunny",
+    "jp_kata": "ミミロップ",
+    "jp": "ミミロップ",
+    "jp_roma": "Mimilop",
+    "speciesName": "lopunny"
+  },
+  "manectric": {
+    "en": "Manectric",
+    "jp_kata": "ライボルト",
+    "jp": "ライボルト",
+    "jp_roma": "Livolt",
+    "speciesName": "manectric"
+  },
+  "pinsir-mega": {
+    "en": "Pinsir",
+    "jp_kata": "カイロス",
+    "jp": "カイロス",
+    "jp_roma": "Kailios",
+    "speciesName": "pinsir"
+  },
+  "sharpedo-mega": {
+    "en": "Sharpedo",
+    "jp_kata": "サメハダー",
+    "jp": "サメハダー",
+    "jp_roma": "Samehader",
+    "speciesName": "sharpedo"
+  },
+  "zoroark": {
+    "en": "Zoroark",
+    "jp_kata": "ゾロアーク",
+    "jp": "ゾロアーク",
+    "jp_roma": "Zoroark",
+    "speciesName": "zoroark"
+  },
+  "delphox": {
+    "en": "Delphox",
+    "jp_kata": "マフォクシー",
+    "jp": "マフォクシー",
+    "jp_roma": "Mahoxy",
+    "speciesName": "delphox"
+  },
+  "meowstic": {
+    "en": "Meowstic",
+    "jp_kata": "ニャオニクス",
+    "jp": "ニャオニクス",
+    "jp_roma": "Nyaonix",
+    "speciesName": "meowstic"
+  },
+  "meowstic-female": {
+    "en": "Meowstic",
+    "jp_kata": "ニャオニクス",
+    "jp": "ニャオニクス",
+    "jp_roma": "Nyaonix",
+    "speciesName": "meowstic"
+  },
+  "emolga": {
+    "en": "Emolga",
+    "jp_kata": "エモンガ",
+    "jp": "エモンガ",
+    "jp_roma": "Emonga",
+    "speciesName": "emolga"
+  },
+  "excadrill-mega": {
+    "en": "Excadrill",
+    "jp_kata": "ドリュウズ",
+    "jp": "ドリュウズ",
+    "jp_roma": "Doryuzu",
+    "speciesName": "excadrill"
+  },
+  "furfrou": {
+    "en": "Furfrou",
+    "jp_kata": "トリミアン",
+    "jp": "トリミアン",
+    "jp_roma": "Trimmien",
+    "speciesName": "furfrou"
+  },
+  "floette-mega": {
+    "en": "Floette",
+    "jp_kata": "フラエッテ",
+    "jp": "フラエッテ",
+    "jp_roma": "Floette",
+    "speciesName": "floette"
+  },
+  "dedenne": {
+    "en": "Dedenne",
+    "jp_kata": "デデンネ",
+    "jp": "デデンネ",
+    "jp_roma": "Dedenne",
+    "speciesName": "dedenne"
+  },
+  "glimmora-mega": {
+    "en": "Glimmora",
+    "jp_kata": "キラフロル",
+    "jp": "キラフロル",
+    "jp_roma": "Kiraflor",
+    "speciesName": "glimmora"
+  },
+  "pidgeot": {
+    "en": "Pidgeot",
+    "jp_kata": "ピジョット",
+    "jp": "ピジョット",
+    "jp_roma": "Pigeot",
+    "speciesName": "pidgeot"
+  },
+  "simipour": {
+    "en": "Simipour",
+    "jp_kata": "ヒヤッキー",
+    "jp": "ヒヤッキー",
+    "jp_roma": "Hiyakkie",
+    "speciesName": "simipour"
+  },
+  "simisage": {
+    "en": "Simisage",
+    "jp_kata": "ヤナッキー",
+    "jp": "ヤナッキー",
+    "jp_roma": "Yanakkie",
+    "speciesName": "simisage"
+  },
+  "simisear": {
+    "en": "Simisear",
+    "jp_kata": "バオッキー",
+    "jp": "バオッキー",
+    "jp_roma": "Baokkie",
+    "speciesName": "simisear"
+  },
+  "charizard-mega-x": {
+    "en": "Charizard",
+    "jp_kata": "リザードン",
+    "jp": "リザードン",
+    "jp_roma": "Lizardon",
+    "speciesName": "charizard"
+  },
+  "charizard-mega-y": {
+    "en": "Charizard",
+    "jp_kata": "リザードン",
+    "jp": "リザードン",
+    "jp_roma": "Lizardon",
+    "speciesName": "charizard"
+  },
+  "dragonite-mega": {
+    "en": "Dragonite",
+    "jp_kata": "カイリュー",
+    "jp": "カイリュー",
+    "jp_roma": "Kairyu",
+    "speciesName": "dragonite"
+  },
+  "glalie-mega": {
+    "en": "Glalie",
+    "jp_kata": "オニゴーリ",
+    "jp": "オニゴーリ",
+    "jp_roma": "Onigohri",
+    "speciesName": "glalie"
+  },
+  "medicham-mega": {
+    "en": "Medicham",
+    "jp_kata": "チャーレム",
+    "jp": "チャーレム",
+    "jp_roma": "Charem",
+    "speciesName": "medicham"
+  },
+  "ninetales": {
+    "en": "Ninetales",
+    "jp_kata": "キュウコン",
+    "jp": "キュウコン",
+    "jp_roma": "Kyukon",
+    "speciesName": "ninetales"
+  },
+  "palafin": {
+    "en": "Palafin",
+    "jp_kata": "イルカマン",
+    "jp": "イルカマン",
+    "jp_roma": "Irukaman",
+    "speciesName": "palafin"
+  },
+  "tauros-paldea": {
+    "en": "Tauros",
+    "jp_kata": "ケンタロス",
+    "jp": "ケンタロス",
+    "jp_roma": "Kentauros",
+    "speciesName": "tauros"
+  },
+  "tauros-paldea-aqua-breed": {
+    "en": "Tauros",
+    "jp_kata": "ケンタロス",
+    "jp": "ケンタロス",
+    "jp_roma": "Kentauros",
+    "speciesName": "tauros"
+  },
+  "tauros-paldea-blaze-breed": {
+    "en": "Tauros",
+    "jp_kata": "ケンタロス",
+    "jp": "ケンタロス",
+    "jp_roma": "Kentauros",
+    "speciesName": "tauros"
+  },
+  "morpeko": {
+    "en": "Morpeko",
+    "jp_kata": "モルペコ",
+    "jp": "モルペコ",
+    "jp_roma": "Morpeko",
+    "speciesName": "morpeko"
+  },
+  "arcanine": {
+    "en": "Arcanine",
+    "jp_kata": "ウインディ",
+    "jp": "ウインディ",
+    "jp_roma": "Windie",
+    "speciesName": "arcanine"
+  },
+  "typhlosion-hisui": {
+    "en": "Typhlosion",
+    "jp_kata": "バクフーン",
+    "jp": "バクフーン",
+    "jp_roma": "Bakphoon",
+    "speciesName": "typhlosion"
+  },
+  "houndoom": {
+    "en": "Houndoom",
+    "jp_kata": "ヘルガー",
+    "jp": "ヘルガー",
+    "jp_roma": "Hellgar",
+    "speciesName": "houndoom"
+  },
+  "sharpedo": {
+    "en": "Sharpedo",
+    "jp_kata": "サメハダー",
+    "jp": "サメハダー",
+    "jp_roma": "Samehader",
+    "speciesName": "sharpedo"
+  },
+  "krookodile": {
+    "en": "Krookodile",
+    "jp_kata": "ワルビアル",
+    "jp": "ワルビアル",
+    "jp_roma": "Waruvial",
+    "speciesName": "krookodile"
+  },
+  "garchomp-mega": {
+    "en": "Garchomp",
+    "jp_kata": "ガブリアス",
+    "jp": "ガブリアス",
+    "jp_roma": "Gablias",
+    "speciesName": "garchomp"
+  },
+  "rotom": {
+    "en": "Rotom",
+    "jp_kata": "ロトム",
+    "jp": "ロトム",
+    "jp_roma": "Rotom",
+    "speciesName": "rotom"
+  },
+  "arcanine-hisui": {
+    "en": "Arcanine",
+    "jp_kata": "ウインディ",
+    "jp": "ウインディ",
+    "jp_roma": "Windie",
+    "speciesName": "arcanine"
+  },
+  "kangaskhan": {
+    "en": "Kangaskhan",
+    "jp_kata": "ガルーラ",
+    "jp": "ガルーラ",
+    "jp_roma": "Garura",
+    "speciesName": "kangaskhan"
+  },
+  "lucario": {
+    "en": "Lucario",
+    "jp_kata": "ルカリオ",
+    "jp": "ルカリオ",
+    "jp_roma": "Lucario",
+    "speciesName": "lucario"
+  },
+  "chandelure-mega": {
+    "en": "Chandelure",
+    "jp_kata": "シャンデラ",
+    "jp": "シャンデラ",
+    "jp_roma": "Chandela",
+    "speciesName": "chandelure"
+  },
+  "pikachu": {
+    "en": "Pikachu",
+    "jp_kata": "ピカチュウ",
+    "jp": "ピカチュウ",
+    "jp_roma": "Pikachu",
+    "speciesName": "pikachu"
+  },
+  "roserade": {
+    "en": "Roserade",
+    "jp_kata": "ロズレイド",
+    "jp": "ロズレイド",
+    "jp_roma": "Roserade",
+    "speciesName": "roserade"
+  },
+  "vivillon": {
+    "en": "Vivillon",
+    "jp_kata": "ビビヨン",
+    "jp": "ビビヨン",
+    "jp_roma": "Viviyon",
+    "speciesName": "vivillon"
+  },
+  "rotom-fan": {
+    "en": "Rotom",
+    "jp_kata": "ロトム",
+    "jp": "ロトム",
+    "jp_roma": "Rotom",
+    "speciesName": "rotom"
+  },
+  "rotom-frost": {
+    "en": "Rotom",
+    "jp_kata": "ロトム",
+    "jp": "ロトム",
+    "jp_roma": "Rotom",
+    "speciesName": "rotom"
+  },
+  "rotom-heat": {
+    "en": "Rotom",
+    "jp_kata": "ロトム",
+    "jp": "ロトム",
+    "jp_roma": "Rotom",
+    "speciesName": "rotom"
+  },
+  "rotom-mow": {
+    "en": "Rotom",
+    "jp_kata": "ロトム",
+    "jp": "ロトム",
+    "jp_roma": "Rotom",
+    "speciesName": "rotom"
+  },
+  "heracross": {
+    "en": "Heracross",
+    "jp_kata": "ヘラクロス",
+    "jp": "ヘラクロス",
+    "jp_roma": "Heracros",
+    "speciesName": "heracross"
+  },
+  "samurott-hisui": {
+    "en": "Samurott",
+    "jp_kata": "ダイケンキ",
+    "jp": "ダイケンキ",
+    "jp_roma": "Daikenki",
+    "speciesName": "samurott"
+  },
+  "kleavor": {
+    "en": "Kleavor",
+    "jp_kata": "バサギリ",
+    "jp": "バサギリ",
+    "jp_roma": "Basagiri",
+    "speciesName": "kleavor"
+  },
+  "kommo-o": {
+    "en": "Kommo-o",
+    "jp_kata": "ジャラランガ",
+    "jp": "ジャラランガ",
+    "jp_roma": "Jyararanga",
+    "speciesName": "kommo-o"
+  },
+  "pinsir": {
+    "en": "Pinsir",
+    "jp_kata": "カイロス",
+    "jp": "カイロス",
+    "jp_roma": "Kailios",
+    "speciesName": "pinsir"
+  },
+  "toxicroak": {
+    "en": "Toxicroak",
+    "jp_kata": "ドクロッグ",
+    "jp": "ドクロッグ",
+    "jp_roma": "Dokurog",
+    "speciesName": "toxicroak"
+  },
+  "gourgeist": {
+    "en": "Gourgeist",
+    "jp_kata": "パンプジン",
+    "jp": "パンプジン",
+    "jp_roma": "Pumpjin",
+    "speciesName": "gourgeist"
+  },
+  "lycanroc-midnight": {
+    "en": "Lycanroc",
+    "jp_kata": "ルガルガン",
+    "jp": "ルガルガン",
+    "jp_roma": "Lugarugan",
+    "speciesName": "lycanroc"
+  },
+  "gyarados": {
+    "en": "Gyarados",
+    "jp_kata": "ギャラドス",
+    "jp": "ギャラドス",
+    "jp_roma": "Gyarados",
+    "speciesName": "gyarados"
+  },
+  "altaria": {
+    "en": "Altaria",
+    "jp_kata": "チルタリス",
+    "jp": "チルタリス",
+    "jp_roma": "Tyltalis",
+    "speciesName": "altaria"
+  },
+  "arbok": {
+    "en": "Arbok",
+    "jp_kata": "アーボック",
+    "jp": "アーボック",
+    "jp_roma": "Arbok",
+    "speciesName": "arbok"
+  },
+  "chandelure": {
+    "en": "Chandelure",
+    "jp_kata": "シャンデラ",
+    "jp": "シャンデラ",
+    "jp_roma": "Chandela",
+    "speciesName": "chandelure"
+  },
+  "gallade": {
+    "en": "Gallade",
+    "jp_kata": "エルレイド",
+    "jp": "エルレイド",
+    "jp_roma": "Erlade",
+    "speciesName": "gallade"
+  },
+  "gardevoir": {
+    "en": "Gardevoir",
+    "jp_kata": "サーナイト",
+    "jp": "サーナイト",
+    "jp_roma": "Sirnight",
+    "speciesName": "gardevoir"
+  },
+  "glalie": {
+    "en": "Glalie",
+    "jp_kata": "オニゴーリ",
+    "jp": "オニゴーリ",
+    "jp_roma": "Onigohri",
+    "speciesName": "glalie"
+  },
+  "goodra": {
+    "en": "Goodra",
+    "jp_kata": "ヌメルゴン",
+    "jp": "ヌメルゴン",
+    "jp_roma": "Numelgon",
+    "speciesName": "goodra"
+  },
+  "medicham": {
+    "en": "Medicham",
+    "jp_kata": "チャーレム",
+    "jp": "チャーレム",
+    "jp_roma": "Charem",
+    "speciesName": "medicham"
+  },
+  "meganium-mega": {
+    "en": "Meganium",
+    "jp_kata": "メガニウム",
+    "jp": "メガニウム",
+    "jp_roma": "Meganium",
+    "speciesName": "meganium"
+  },
+  "meganium": {
+    "en": "Meganium",
+    "jp_kata": "メガニウム",
+    "jp": "メガニウム",
+    "jp_roma": "Meganium",
+    "speciesName": "meganium"
+  },
+  "passimian": {
+    "en": "Passimian",
+    "jp_kata": "ナゲツケサル",
+    "jp": "ナゲツケサル",
+    "jp_roma": "Nagetukesaru",
+    "speciesName": "passimian"
+  },
+  "venusaur": {
+    "en": "Venusaur",
+    "jp_kata": "フシギバナ",
+    "jp": "フシギバナ",
+    "jp_roma": "Fushigibana",
+    "speciesName": "venusaur"
+  },
+  "vanilluxe": {
+    "en": "Vanilluxe",
+    "jp_kata": "バイバニラ",
+    "jp": "バイバニラ",
+    "jp_roma": "Baivanilla",
+    "speciesName": "vanilluxe"
+  },
+  "basculegion-female": {
+    "en": "Basculegion",
+    "jp_kata": "イダイトウ",
+    "jp": "イダイトウ",
+    "jp_roma": "Idaitou",
+    "speciesName": "basculegion"
+  },
+  "diggersby": {
+    "en": "Diggersby",
+    "jp_kata": "ホルード",
+    "jp": "ホルード",
+    "jp_roma": "Horudo",
+    "speciesName": "diggersby"
+  },
+  "feraligatr": {
+    "en": "Feraligatr",
+    "jp_kata": "オーダイル",
+    "jp": "オーダイル",
+    "jp_roma": "Ordile",
+    "speciesName": "feraligatr"
+  },
+  "blastoise-mega": {
+    "en": "Blastoise",
+    "jp_kata": "カメックス",
+    "jp": "カメックス",
+    "jp_roma": "Kamex",
+    "speciesName": "blastoise"
+  },
+  "feraligatr-mega": {
+    "en": "Feraligatr",
+    "jp_kata": "オーダイル",
+    "jp": "オーダイル",
+    "jp_roma": "Ordile",
+    "speciesName": "feraligatr"
+  },
+  "watchog": {
+    "en": "Watchog",
+    "jp_kata": "ミルホッグ",
+    "jp": "ミルホッグ",
+    "jp_roma": "Miruhog",
+    "speciesName": "watchog"
+  },
+  "absol": {
+    "en": "Absol",
+    "jp_kata": "アブソル",
+    "jp": "アブソル",
+    "jp_roma": "Absol",
+    "speciesName": "absol"
+  },
+  "beedrill": {
+    "en": "Beedrill",
+    "jp_kata": "スピアー",
+    "jp": "スピアー",
+    "jp_roma": "Spear",
+    "speciesName": "beedrill"
+  },
+  "florges": {
+    "en": "Florges",
+    "jp_kata": "フラージェス",
+    "jp": "フラージェス",
+    "jp_roma": "Florges",
+    "speciesName": "florges"
+  },
+  "garbodor": {
+    "en": "Garbodor",
+    "jp_kata": "ダストダス",
+    "jp": "ダストダス",
+    "jp_roma": "Dustdas",
+    "speciesName": "garbodor"
+  },
+  "banette-mega": {
+    "en": "Banette",
+    "jp_kata": "ジュペッタ",
+    "jp": "ジュペッタ",
+    "jp_roma": "Juppeta",
+    "speciesName": "banette"
+  },
+  "emboar-mega": {
+    "en": "Emboar",
+    "jp_kata": "エンブオー",
+    "jp": "エンブオー",
+    "jp_roma": "Enbuoh",
+    "speciesName": "emboar"
+  },
+  "heracross-mega": {
+    "en": "Heracross",
+    "jp_kata": "ヘラクロス",
+    "jp": "ヘラクロス",
+    "jp_roma": "Heracros",
+    "speciesName": "heracross"
+  },
+  "scovillain-mega": {
+    "en": "Scovillain",
+    "jp_kata": "スコヴィラン",
+    "jp": "スコヴィラン",
+    "jp_roma": "Scovillain",
+    "speciesName": "scovillain"
+  },
+  "slurpuff": {
+    "en": "Slurpuff",
+    "jp_kata": "ペロリーム",
+    "jp": "ペロリーム",
+    "jp_roma": "Peroream",
+    "speciesName": "slurpuff"
+  },
+  "tsareena": {
+    "en": "Tsareena",
+    "jp_kata": "アマージョ",
+    "jp": "アマージョ",
+    "jp_roma": "Amajo",
+    "speciesName": "tsareena"
+  },
+  "tyranitar-mega": {
+    "en": "Tyranitar",
+    "jp_kata": "バンギラス",
+    "jp": "バンギラス",
+    "jp_roma": "Bangiras",
+    "speciesName": "tyranitar"
+  },
+  "sandaconda": {
+    "en": "Sandaconda",
+    "jp_kata": "サダイジャ",
+    "jp": "サダイジャ",
+    "jp_roma": "Sadaija",
+    "speciesName": "sandaconda"
+  },
+  "tyrantrum": {
+    "en": "Tyrantrum",
+    "jp_kata": "ガチゴラス",
+    "jp": "ガチゴラス",
+    "jp_roma": "Gachigoras",
+    "speciesName": "tyrantrum"
+  },
+  "castform": {
+    "en": "Castform",
+    "jp_kata": "ポワルン",
+    "jp": "ポワルン",
+    "jp_roma": "Powalen",
+    "speciesName": "castform"
+  },
+  "flapple": {
+    "en": "Flapple",
+    "jp_kata": "アップリュー",
+    "jp": "アップリュー",
+    "jp_roma": "Appryu",
+    "speciesName": "flapple"
+  },
+  "luxray": {
+    "en": "Luxray",
+    "jp_kata": "レントラー",
+    "jp": "レントラー",
+    "jp_roma": "Rentorar",
+    "speciesName": "luxray"
+  },
+  "clefable-mega": {
+    "en": "Clefable",
+    "jp_kata": "ピクシー",
+    "jp": "ピクシー",
+    "jp_roma": "Pixy",
+    "speciesName": "clefable"
+  },
+  "victreebel-mega": {
+    "en": "Victreebel",
+    "jp_kata": "ウツボット",
+    "jp": "ウツボット",
+    "jp_roma": "Utsubot",
+    "speciesName": "victreebel"
+  },
+  "mr-rime": {
+    "en": "Mr. Rime",
+    "jp_kata": "バリコオル",
+    "jp": "バリコオル",
+    "jp_roma": "Barrikohru",
+    "speciesName": "mr-rime"
+  },
+  "polteageist": {
+    "en": "Polteageist",
+    "jp_kata": "ポットデス",
+    "jp": "ポットデス",
+    "jp_roma": "Potdeath",
+    "speciesName": "polteageist"
+  },
+  "samurott": {
+    "en": "Samurott",
+    "jp_kata": "ダイケンキ",
+    "jp": "ダイケンキ",
+    "jp_roma": "Daikenki",
+    "speciesName": "samurott"
+  },
+  "skarmory": {
+    "en": "Skarmory",
+    "jp_kata": "エアームド",
+    "jp": "エアームド",
+    "jp_roma": "Airmd",
+    "speciesName": "skarmory"
+  },
+  "victreebel": {
+    "en": "Victreebel",
+    "jp_kata": "ウツボット",
+    "jp": "ウツボット",
+    "jp_roma": "Utsubot",
+    "speciesName": "victreebel"
+  },
+  "banette": {
+    "en": "Banette",
+    "jp_kata": "ジュペッタ",
+    "jp": "ジュペッタ",
+    "jp_roma": "Juppeta",
+    "speciesName": "banette"
+  },
+  "chimecho": {
+    "en": "Chimecho",
+    "jp_kata": "チリーン",
+    "jp": "チリーン",
+    "jp_roma": "Chirean",
+    "speciesName": "chimecho"
+  },
+  "emboar": {
+    "en": "Emboar",
+    "jp_kata": "エンブオー",
+    "jp": "エンブオー",
+    "jp_roma": "Enbuoh",
+    "speciesName": "emboar"
+  },
+  "chimecho-mega": {
+    "en": "Chimecho",
+    "jp_kata": "チリーン",
+    "jp": "チリーン",
+    "jp_roma": "Chirean",
+    "speciesName": "chimecho"
+  },
+  "orthworm": {
+    "en": "Orthworm",
+    "jp_kata": "ミミズズ",
+    "jp": "ミミズズ",
+    "jp_roma": "Mimizuzu",
+    "speciesName": "orthworm"
+  },
+  "scizor": {
+    "en": "Scizor",
+    "jp_kata": "ハッサム",
+    "jp": "ハッサム",
+    "jp_roma": "Hassam",
+    "speciesName": "scizor"
+  },
+  "wyrdeer": {
+    "en": "Wyrdeer",
+    "jp_kata": "アヤシシ",
+    "jp": "アヤシシ",
+    "jp_roma": "Ayashishi",
+    "speciesName": "wyrdeer"
+  },
+  "alcremie": {
+    "en": "Alcremie",
+    "jp_kata": "マホイップ",
+    "jp": "マホイップ",
+    "jp_roma": "Mawhip",
+    "speciesName": "alcremie"
+  },
+  "chesnaught": {
+    "en": "Chesnaught",
+    "jp_kata": "ブリガロン",
+    "jp": "ブリガロン",
+    "jp_roma": "Brigarron",
+    "speciesName": "chesnaught"
+  },
+  "abomasnow": {
+    "en": "Abomasnow",
+    "jp_kata": "ユキノオー",
+    "jp": "ユキノオー",
+    "jp_roma": "Yukinooh",
+    "speciesName": "abomasnow"
+  },
+  "aegislash-blade": {
+    "en": "Aegislash",
+    "jp_kata": "ギルガルド",
+    "jp": "ギルガルド",
+    "jp_roma": "Gillgard",
+    "speciesName": "aegislash"
+  },
+  "aegislash-shield": {
+    "en": "Aegislash",
+    "jp_kata": "ギルガルド",
+    "jp": "ギルガルド",
+    "jp_roma": "Gillgard",
+    "speciesName": "aegislash"
+  },
+  "clefable": {
+    "en": "Clefable",
+    "jp_kata": "ピクシー",
+    "jp": "ピクシー",
+    "jp_roma": "Pixy",
+    "speciesName": "clefable"
+  },
+  "empoleon": {
+    "en": "Empoleon",
+    "jp_kata": "エンペルト",
+    "jp": "エンペルト",
+    "jp_roma": "Emperte",
+    "speciesName": "empoleon"
+  },
+  "decidueye-hisui": {
+    "en": "Decidueye",
+    "jp_kata": "ジュナイパー",
+    "jp": "ジュナイパー",
+    "jp_roma": "Junaiper",
+    "speciesName": "decidueye"
+  },
+  "goodra-hisui": {
+    "en": "Goodra",
+    "jp_kata": "ヌメルゴン",
+    "jp": "ヌメルゴン",
+    "jp_roma": "Numelgon",
+    "speciesName": "goodra"
+  },
+  "oranguru": {
+    "en": "Oranguru",
+    "jp_kata": "ヤレユータン",
+    "jp": "ヤレユータン",
+    "jp_roma": "Yareyuutan",
+    "speciesName": "oranguru"
+  },
+  "toucannon": {
+    "en": "Toucannon",
+    "jp_kata": "ドデカバシ",
+    "jp": "ドデカバシ",
+    "jp_roma": "Dodekabashi",
+    "speciesName": "toucannon"
+  },
+  "clawitzer": {
+    "en": "Clawitzer",
+    "jp_kata": "ブロスター",
+    "jp": "ブロスター",
+    "jp_roma": "Bloster",
+    "speciesName": "clawitzer"
+  },
+  "aurorus": {
+    "en": "Aurorus",
+    "jp_kata": "アマルルガ",
+    "jp": "アマルルガ",
+    "jp_roma": "Amaruruga",
+    "speciesName": "aurorus"
+  },
+  "pangoro": {
+    "en": "Pangoro",
+    "jp_kata": "ゴロンダ",
+    "jp": "ゴロンダ",
+    "jp_roma": "Goronda",
+    "speciesName": "pangoro"
+  },
+  "rampardos": {
+    "en": "Rampardos",
+    "jp_kata": "ラムパルド",
+    "jp": "ラムパルド",
+    "jp_roma": "Rampard",
+    "speciesName": "rampardos"
+  },
+  "torterra": {
+    "en": "Torterra",
+    "jp_kata": "ドダイトス",
+    "jp": "ドダイトス",
+    "jp_roma": "Dodaitose",
+    "speciesName": "torterra"
+  },
+  "trevenant": {
+    "en": "Trevenant",
+    "jp_kata": "オーロット",
+    "jp": "オーロット",
+    "jp_roma": "Ohrot",
+    "speciesName": "trevenant"
+  },
+  "ampharos": {
+    "en": "Ampharos",
+    "jp_kata": "デンリュウ",
+    "jp": "デンリュウ",
+    "jp_roma": "Denryu",
+    "speciesName": "ampharos"
+  },
+  "golurk": {
+    "en": "Golurk",
+    "jp_kata": "ゴルーグ",
+    "jp": "ゴルーグ",
+    "jp_roma": "Goloog",
+    "speciesName": "golurk"
+  },
+  "machamp": {
+    "en": "Machamp",
+    "jp_kata": "カイリキー",
+    "jp": "カイリキー",
+    "jp_roma": "Kairiky",
+    "speciesName": "machamp"
+  },
+  "golurk-mega": {
+    "en": "Golurk",
+    "jp_kata": "ゴルーグ",
+    "jp": "ゴルーグ",
+    "jp_roma": "Goloog",
+    "speciesName": "golurk"
+  },
+  "floette": {
+    "en": "Floette",
+    "jp_kata": "フラエッテ",
+    "jp": "フラエッテ",
+    "jp_roma": "Floette",
+    "speciesName": "floette"
+  },
+  "aggron": {
+    "en": "Aggron",
+    "jp_kata": "ボスゴドラ",
+    "jp": "ボスゴドラ",
+    "jp_roma": "Bossgodora",
+    "speciesName": "aggron"
+  },
+  "audino": {
+    "en": "Audino",
+    "jp_kata": "タブンネ",
+    "jp": "タブンネ",
+    "jp_roma": "Tabunne",
+    "speciesName": "audino"
+  },
+  "azumarill": {
+    "en": "Azumarill",
+    "jp_kata": "マリルリ",
+    "jp": "マリルリ",
+    "jp_roma": "Marilli",
+    "speciesName": "azumarill"
+  },
+  "beartic": {
+    "en": "Beartic",
+    "jp_kata": "ツンベアー",
+    "jp": "ツンベアー",
+    "jp_roma": "Tunbear",
+    "speciesName": "beartic"
+  },
+  "aggron-mega": {
+    "en": "Aggron",
+    "jp_kata": "ボスゴドラ",
+    "jp": "ボスゴドラ",
+    "jp_roma": "Bossgodora",
+    "speciesName": "aggron"
+  },
+  "audino-mega": {
+    "en": "Audino",
+    "jp_kata": "タブンネ",
+    "jp": "タブンネ",
+    "jp_roma": "Tabunne",
+    "speciesName": "audino"
+  },
+  "sableye": {
+    "en": "Sableye",
+    "jp_kata": "ヤミラミ",
+    "jp": "ヤミラミ",
+    "jp_roma": "Yamirami",
+    "speciesName": "sableye"
+  },
+  "ditto": {
+    "en": "Ditto",
+    "jp_kata": "メタモン",
+    "jp": "メタモン",
+    "jp_roma": "Metamon",
+    "speciesName": "ditto"
+  },
+  "bellibolt": {
+    "en": "Bellibolt",
+    "jp_kata": "ハラバリー",
+    "jp": "ハラバリー",
+    "jp_roma": "Harabarie",
+    "speciesName": "bellibolt"
+  },
+  "conkeldurr": {
+    "en": "Conkeldurr",
+    "jp_kata": "ローブシン",
+    "jp": "ローブシン",
+    "jp_roma": "Roubushin",
+    "speciesName": "conkeldurr"
+  },
+  "ampharos-mega": {
+    "en": "Ampharos",
+    "jp_kata": "デンリュウ",
+    "jp": "デンリュウ",
+    "jp_roma": "Denryu",
+    "speciesName": "ampharos"
+  },
+  "hydrapple": {
+    "en": "Hydrapple",
+    "jp_kata": "カミツオロチ",
+    "jp": "カミツオロチ",
+    "jp_roma": null,
+    "speciesName": "hydrapple"
+  },
+  "chesnaught-mega": {
+    "en": "Chesnaught",
+    "jp_kata": "ブリガロン",
+    "jp": "ブリガロン",
+    "jp_roma": "Brigarron",
+    "speciesName": "chesnaught"
+  },
+  "crabominable": {
+    "en": "Crabominable",
+    "jp_kata": "ケケンカニ",
+    "jp": "ケケンカニ",
+    "jp_roma": "Kekenkani",
+    "speciesName": "crabominable"
+  },
+  "araquanid": {
+    "en": "Araquanid",
+    "jp_kata": "オニシズクモ",
+    "jp": "オニシズクモ",
+    "jp_roma": "Onishizukumo",
+    "speciesName": "araquanid"
+  },
+  "ariados": {
+    "en": "Ariados",
+    "jp_kata": "アリアドス",
+    "jp": "アリアドス",
+    "jp_roma": "Ariados",
+    "speciesName": "ariados"
+  },
+  "camerupt": {
+    "en": "Camerupt",
+    "jp_kata": "バクーダ",
+    "jp": "バクーダ",
+    "jp_roma": "Bakuuda",
+    "speciesName": "camerupt"
+  },
+  "forretress": {
+    "en": "Forretress",
+    "jp_kata": "フォレトス",
+    "jp": "フォレトス",
+    "jp_roma": "Foretos",
+    "speciesName": "forretress"
+  },
+  "rhyperior": {
+    "en": "Rhyperior",
+    "jp_kata": "ドサイドン",
+    "jp": "ドサイドン",
+    "jp_roma": "Dosydon",
+    "speciesName": "rhyperior"
+  },
+  "avalugg-hisui": {
+    "en": "Avalugg",
+    "jp_kata": "クレベース",
+    "jp": "クレベース",
+    "jp_roma": "Crebase",
+    "speciesName": "avalugg"
+  },
+  "drampa": {
+    "en": "Drampa",
+    "jp_kata": "ジジーロン",
+    "jp": "ジジーロン",
+    "jp_roma": "Jijilong",
+    "speciesName": "drampa"
+  },
+  "drampa-mega": {
+    "en": "Drampa",
+    "jp_kata": "ジジーロン",
+    "jp": "ジジーロン",
+    "jp_roma": "Jijilong",
+    "speciesName": "drampa"
+  },
+  "mudsdale": {
+    "en": "Mudsdale",
+    "jp_kata": "バンバドロ",
+    "jp": "バンバドロ",
+    "jp_roma": "Banbadoro",
+    "speciesName": "mudsdale"
+  },
+  "spiritomb": {
+    "en": "Spiritomb",
+    "jp_kata": "ミカルゲ",
+    "jp": "ミカルゲ",
+    "jp_roma": "Mikaruge",
+    "speciesName": "spiritomb"
+  },
+  "crabominable-mega": {
+    "en": "Crabominable",
+    "jp_kata": "ケケンカニ",
+    "jp": "ケケンカニ",
+    "jp_roma": "Kekenkani",
+    "speciesName": "crabominable"
+  },
+  "stunfisk-galar": {
+    "en": "Stunfisk",
+    "jp_kata": "マッギョ",
+    "jp": "マッギョ",
+    "jp_roma": "Maggyo",
+    "speciesName": "stunfisk"
+  },
+  "stunfisk": {
+    "en": "Stunfisk",
+    "jp_kata": "マッギョ",
+    "jp": "マッギョ",
+    "jp_roma": "Maggyo",
+    "speciesName": "stunfisk"
+  },
+  "appletun": {
+    "en": "Appletun",
+    "jp_kata": "タルップル",
+    "jp": "タルップル",
+    "jp_roma": "Tarupple",
+    "speciesName": "appletun"
+  },
+  "bastiodon": {
+    "en": "Bastiodon",
+    "jp_kata": "トリデプス",
+    "jp": "トリデプス",
+    "jp_roma": "Trideps",
+    "speciesName": "bastiodon"
+  },
+  "cofagrigus": {
+    "en": "Cofagrigus",
+    "jp_kata": "デスカーン",
+    "jp": "デスカーン",
+    "jp_roma": "Desukarn",
+    "speciesName": "cofagrigus"
+  },
+  "slowbro-galar": {
+    "en": "Slowbro",
+    "jp_kata": "ヤドラン",
+    "jp": "ヤドラン",
+    "jp_roma": "Yadoran",
+    "speciesName": "slowbro"
+  },
+  "abomasnow-mega": {
+    "en": "Abomasnow",
+    "jp_kata": "ユキノオー",
+    "jp": "ユキノオー",
+    "jp_roma": "Yukinooh",
+    "speciesName": "abomasnow"
+  },
+  "reuniclus": {
+    "en": "Reuniclus",
+    "jp_kata": "ランクルス",
+    "jp": "ランクルス",
+    "jp_roma": "Lanculus",
+    "speciesName": "reuniclus"
+  },
+  "runerigus": {
+    "en": "Runerigus",
+    "jp_kata": "デスバーン",
+    "jp": "デスバーン",
+    "jp_roma": "Deathbarn",
+    "speciesName": "runerigus"
+  },
+  "slowbro": {
+    "en": "Slowbro",
+    "jp_kata": "ヤドラン",
+    "jp": "ヤドラン",
+    "jp_roma": "Yadoran",
+    "speciesName": "slowbro"
+  },
+  "slowking": {
+    "en": "Slowking",
+    "jp_kata": "ヤドキング",
+    "jp": "ヤドキング",
+    "jp_roma": "Yadoking",
+    "speciesName": "slowking"
+  },
+  "steelix": {
+    "en": "Steelix",
+    "jp_kata": "ハガネール",
+    "jp": "ハガネール",
+    "jp_roma": "Haganeil",
+    "speciesName": "steelix"
+  },
+  "aromatisse": {
+    "en": "Aromatisse",
+    "jp_kata": "フレフワン",
+    "jp": "フレフワン",
+    "jp_roma": "Frefuwan",
+    "speciesName": "aromatisse"
+  },
+  "avalugg": {
+    "en": "Avalugg",
+    "jp_kata": "クレベース",
+    "jp": "クレベース",
+    "jp_roma": "Crebase",
+    "speciesName": "avalugg"
+  },
+  "camerupt-mega": {
+    "en": "Camerupt",
+    "jp_kata": "バクーダ",
+    "jp": "バクーダ",
+    "jp_roma": "Bakuuda",
+    "speciesName": "camerupt"
+  }
+}

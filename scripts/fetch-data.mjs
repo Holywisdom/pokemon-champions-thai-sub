@@ -40,11 +40,29 @@ async function ensureDir(p) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** Parse meta.ts to extract slugs (works without TypeScript runtime). */
-async function getMetaSlugs() {
-  const src = await readFile(resolve(ROOT, 'src/data/meta.ts'), 'utf-8');
-  const slugs = [...src.matchAll(/^\s+slug:\s*'([a-z0-9-]+)',?$/gm)].map((m) => m[1]);
-  return [...new Set(slugs)];
+/**
+ * Build the meta list from roster.json + variant-id-map.json.
+ * Returns [{ slug, id, apiSlug }, …] where:
+ *   - `slug` is the pokebase canonical slug (also used as the output key)
+ *   - `id` is the PokéAPI numeric ID
+ *   - `apiSlug` is the PokéAPI slug used in URLs (may differ from `slug`,
+ *      e.g. `aegislash` → `aegislash-shield`)
+ */
+async function getMetaList() {
+  const roster = JSON.parse(await readFile(resolve(ROOT, 'src/data/roster.json'), 'utf-8'));
+  const variantMap = JSON.parse(
+    await readFile(resolve(ROOT, 'src/data/variant-id-map.json'), 'utf-8')
+  );
+  const list = roster.slugs.map((slug) => ({
+    slug,
+    id: variantMap.map[slug]?.id,
+    apiSlug: variantMap.map[slug]?.apiSlug ?? slug,
+  }));
+  const missing = list.filter((m) => !m.id);
+  if (missing.length) {
+    throw new Error(`Missing PokéAPI ID for: ${missing.map((m) => m.slug).join(', ')}`);
+  }
+  return list;
 }
 
 /** Extract learnset filtered to most recent generation, deduplicated. */
@@ -109,27 +127,51 @@ async function main() {
   console.log('→ Fetching learnsets from PokéAPI...');
   await ensureDir(OUT_DIR);
 
-  const slugs = await getMetaSlugs();
-  console.log(`→ ${slugs.length} Pokemon in meta list`);
+  const metaList = await getMetaList();
+  console.log(`→ ${metaList.length} Pokemon in meta list`);
 
   const learnsets = {};
   const allMoveNames = new Set();
 
-  // 1. Pull each Pokemon's learnset
-  for (let i = 0; i < slugs.length; i++) {
-    const slug = slugs[i];
+  // 1. Pull each Pokemon's learnset.
+  //    Output is keyed by pokebase `slug`, but the PokéAPI call uses `apiSlug`
+  //    (e.g. `aegislash` → `aegislash-shield`).
+  for (let i = 0; i < metaList.length; i++) {
+    const { slug, apiSlug } = metaList[i];
     try {
-      const data = await fetchJSON(`${API}/pokemon/${slug}`);
+      const data = await fetchJSON(`${API}/pokemon/${apiSlug}`);
       const learnset = extractLearnset(data);
       learnsets[slug] = learnset;
       learnset.forEach((m) => allMoveNames.add(m.name));
-      console.log(`  [${i + 1}/${slugs.length}] ${slug} → ${learnset.length} moves`);
+      const tag = apiSlug === slug ? slug : `${slug} (api: ${apiSlug})`;
+      console.log(`  [${i + 1}/${metaList.length}] ${tag} → ${learnset.length} moves`);
       await sleep(80); // polite
     } catch (e) {
-      console.error(`  ✗ ${slug}: ${e.message}`);
+      console.error(`  ✗ ${slug} (api: ${apiSlug}): ${e.message}`);
       learnsets[slug] = [];
     }
   }
+
+  // 1b. Fallback: Pokémon Champions adds non-canonical Mega forms (e.g. greninja-mega,
+  //     delphox-mega) that PokéAPI returns with an empty `moves[]` because in-game,
+  //     Megas inherit their base species' learnset. Copy from the base species when
+  //     a `-mega` / `-mega-x` / `-mega-y` slug has 0 moves.
+  let megaFallbackCount = 0;
+  for (const { slug } of metaList) {
+    if (learnsets[slug]?.length) continue;
+    if (!/-mega(-[xy])?$/.test(slug)) continue;
+    const baseSlug = slug.replace(/-mega(-[xy])?$/, '');
+    const baseLearnset = learnsets[baseSlug];
+    if (!baseLearnset || baseLearnset.length === 0) {
+      console.warn(`  ⚠ ${slug}: no fallback (base "${baseSlug}" missing or empty)`);
+      continue;
+    }
+    learnsets[slug] = baseLearnset;
+    baseLearnset.forEach((m) => allMoveNames.add(m.name));
+    megaFallbackCount++;
+    console.log(`  ↳ ${slug} ← ${baseSlug} (${baseLearnset.length} moves)`);
+  }
+  console.log(`→ Applied base-species fallback to ${megaFallbackCount} Mega form(s)`);
 
   // 2. Pull each unique move's data
   console.log(`\n→ Fetching ${allMoveNames.size} unique moves...`);
@@ -153,7 +195,7 @@ async function main() {
   const output = {
     generated: new Date().toISOString(),
     versionGroups: PREFERRED_VERSION_GROUPS,
-    pokemonCount: slugs.length,
+    pokemonCount: metaList.length,
     moveCount: Object.keys(moves).length,
     learnsets,
     moves,
@@ -163,7 +205,9 @@ async function main() {
     JSON.stringify(output, null, 2),
     'utf-8'
   );
-  console.log(`\n✓ Wrote learnsets.json — ${slugs.length} Pokemon, ${Object.keys(moves).length} moves`);
+  console.log(
+    `\n✓ Wrote learnsets.json — ${metaList.length} Pokemon, ${Object.keys(moves).length} moves`
+  );
 }
 
 main().catch((e) => {
