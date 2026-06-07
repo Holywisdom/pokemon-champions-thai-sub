@@ -768,6 +768,104 @@ export const abilities: CompetitiveAbility[] = [
   { slug: 'swarm', nameEn: 'Swarm', nameTh: 'สวอร์ม', description: 'เมื่อ HP ≤ 1/3 ท่าธาตุแมลงเพิ่มพลัง x1.5', category: 'offense', notableUsers: ['Volcarona', 'Scyther'] },
   { slug: 'quick-feet', nameEn: 'Quick Feet', nameTh: 'ควิกฟีต', description: 'เมื่อติดสถานะ Speed x1.5 + เพิกเฉย Paralysis Speed drop', category: 'speed', notableUsers: ['Jolteon', 'Linoone'] },
   { slug: 'white-smoke', nameEn: 'White Smoke', nameTh: 'ไวท์สโมก', description: 'ป้องกัน stat drops จากฝ่ายตรงข้าม (เหมือน Clear Body)', category: 'defense', notableUsers: ['Torkoal'] },
+
+  // ============== ROSTER EXPANSION BATCH (2026-06-07) ==============
+  // 80 abilities referenced by new META_POKEMON entries.
+  // Translations drafted from PokeAPI English effects;
+  // 4 PC-specific abilities (dragonize, mega-sol, piercing-drill,
+  // spicy-spray) verified via pokebase.app.
+
+  // --- OFFENSE ---
+  { slug: 'aerilate', nameEn: 'Aerilate', nameTh: 'แอริเลต', description: 'ท่า Normal เปลี่ยนเป็น Flying + พลัง x1.2', category: 'offense', notableUsers: ['Mega Pinsir'] },
+  { slug: 'analytic', nameEn: 'Analytic', nameTh: 'อะนาลิติก', description: 'เมื่อขยับเป็นตัวสุดท้ายในเทิร์น ท่าโจมตีพลัง x1.3', category: 'offense', notableUsers: ['Starmie (HA)', 'Watchog (HA)'] },
+  { slug: 'anger-point', nameEn: 'Anger Point', nameTh: 'แองเกอร์พอยต์', description: 'เมื่อโดน critical hit Atk พุ่งทันทีเป็น +6 stages', category: 'offense', notableUsers: ['Tauros', 'Tauros Paldea Combat Breed', 'Tauros Paldea Aqua Breed', 'Tauros Paldea Blaze Breed'] },
+  { slug: 'berserk', nameEn: 'Berserk', nameTh: 'เบอร์เซิร์ก', description: 'เมื่อ HP ตกลงต่ำกว่า 1/2 จากท่าโจมตี SpA +1 stage อัตโนมัติ', category: 'offense', notableUsers: ['Drampa', 'Mega Drampa'] },
+  { slug: 'compound-eyes', nameEn: 'Compound Eyes', nameTh: 'คอมพาวด์อายส์', description: 'Accuracy ของท่าทั้งหมด x1.3 (เช่น Hypnosis 60% → 78%, Hurricane 70% → 91%)', category: 'offense', notableUsers: ['Vivillon'] },
+  { slug: 'dragonize', nameEn: 'Dragonize', nameTh: 'ดรากอไนซ์', description: 'ท่าธาตุ Normal ของโปเกมอนกลายเป็นธาตุ Dragon และพลังเพิ่มขึ้น 20%', category: 'offense', notableUsers: ['Mega Feraligatr'] },
+  { slug: 'dry-skin', nameEn: 'Dry Skin', nameTh: 'ดรายสกิน', description: 'ไม่โดนท่าน้ำ + ฟื้น HP 25% เมื่อถูก absorb; ในฝนฟื้น HP 1/8 ต่อเทิร์น; ในแดดเสีย HP 1/8 ต่อเทิร์น; ท่าไฟพลังเพิ่ม x1.25', category: 'offense', notableUsers: ['Heliolisk', 'Toxicroak'] },
+  { slug: 'electromorphosis', nameEn: 'Electromorphosis', nameTh: 'อิเล็คโทรมอร์โฟซิส', description: 'เมื่อโดนท่าโจมตี ติด Charge — ท่าธาตุไฟฟ้าครั้งถัดไปพลัง x2', category: 'offense', notableUsers: ['Bellibolt'] },
+  { slug: 'fairy-aura', nameEn: 'Fairy Aura', nameTh: 'แฟรี่ออร่า', description: 'ท่าธาตุ Fairy ของทุกตัวในสนาม พลัง x1.33', category: 'offense', notableUsers: ['Mega Floette'] },
+  { slug: 'huge-power', nameEn: 'Huge Power', nameTh: 'ฮิวจ์พาวเวอร์', description: 'Atk ของผู้ใช้ x2', category: 'offense', notableUsers: ['Mega Starmie', 'Diggersby (HA)', 'Azumarill'] },
+  { slug: 'hustle', nameEn: 'Hustle', nameTh: 'ฮัสเซิล', description: 'Atk x1.5 แต่ accuracy ของท่ากายภาพลด 20%', category: 'offense', notableUsers: ['Flapple (HA)'] },
+  { slug: 'innards-out', nameEn: 'Innards Out', nameTh: 'อินนาร์ดส์เอาท์', description: 'เมื่อโดน KO ผู้โจมตีเสีย HP เท่ากับ HP ที่เหลือก่อนหมดสติ', category: 'offense', notableUsers: ['Mega Victreebel'] },
+  { slug: 'justified', nameEn: 'Justified', nameTh: 'จัสติฟายด์', description: 'เมื่อโดนท่าธาตุ Dark Atk +1 stage', category: 'offense', notableUsers: ['Arcanine (HA)', 'Lucario (HA)', 'Gallade (HA)', 'Absol (HA)'] },
+  { slug: 'piercing-drill', nameEn: 'Piercing Drill', nameTh: 'เพียร์ซิ่งดริลล์', description: 'เมื่อใช้ท่าสัมผัส (contact moves) สามารถโจมตีทะลุ Protect ของเป้าหมายได้ โดยสร้างดาเมจ 1/4 ของปกติ ส่วนเอฟเฟกต์อื่นนอกเหนือจากการป้องกันยังคงทำงานตามปกติ', category: 'offense', notableUsers: ['Mega Excadrill'] },
+  { slug: 'pure-power', nameEn: 'Pure Power', nameTh: 'เพียวพาวเวอร์', description: 'Atk ของผู้ใช้ x2 (เหมือน Huge Power)', category: 'offense', notableUsers: ['Mega Medicham', 'Medicham'] },
+  { slug: 'reckless', nameEn: 'Reckless', nameTh: 'เร็คเคลส', description: 'ท่าที่มี recoil (Brave Bird, Double-Edge, Wood Hammer) พลัง x1.2', category: 'offense', notableUsers: ['Emboar (HA)', 'Rhyperior (HA)'] },
+  { slug: 'refrigerate', nameEn: 'Refrigerate', nameTh: 'รีฟริจเจอเรต', description: 'ท่า Normal เปลี่ยนเป็น Ice + พลัง x1.2', category: 'offense', notableUsers: ['Mega Glalie', 'Aurorus'] },
+  { slug: 'rivalry', nameEn: 'Rivalry', nameTh: 'ไรเวิลรี่', description: 'ดาเมจต่อเป้าหมายเพศเดียวกัน x1.25 / เพศตรงข้าม x0.75', category: 'offense', notableUsers: ['Luxray'] },
+  { slug: 'sharpness', nameEn: 'Sharpness', nameTh: 'ชาร์ปเนส', description: 'ท่าใบมีด (slicing — Sacred Sword, Psycho Cut, Cross Poison ฯลฯ) พลัง x1.5', category: 'offense', notableUsers: ['Hisuian Samurott (HA)', 'Kleavor (HA)', 'Gallade'] },
+  { slug: 'skill-link', nameEn: 'Skill Link', nameTh: 'สกิลลิงค์', description: 'ท่า multi-hit (Bullet Seed, Rock Blast, Tail Slap) ตี 5 ครั้งเสมอ', category: 'offense', notableUsers: ['Mega Heracross', 'Toucannon'] },
+  { slug: 'strong-jaw', nameEn: 'Strong Jaw', nameTh: 'สตรองจอว์', description: 'ท่ากัด (Crunch, Ice Fang, Fire Fang, Psychic Fangs ฯลฯ) พลัง x1.5', category: 'offense', notableUsers: ['Mega Sharpedo', 'Tyrantrum', 'Hisuian Avalugg'] },
+  { slug: 'super-luck', nameEn: 'Super Luck', nameTh: 'ซูเปอร์ลัค', description: 'อัตราการ critical hit +1 stage', category: 'offense', notableUsers: ['Absol'] },
+  { slug: 'supersweet-syrup', nameEn: 'Supersweet Syrup', nameTh: 'ซูเปอร์สวีทไซรัป', description: 'เมื่อลงสนามครั้งแรก ลด Evasion ของศัตรู 1 stage', category: 'offense', notableUsers: ['Hydrapple'] },
+  { slug: 'water-bubble', nameEn: 'Water Bubble', nameTh: 'วอเตอร์บับเบิ้ล', description: 'ท่าธาตุน้ำของผู้ใช้พลัง x2 + ลดดาเมจท่าไฟ 50% + ไม่ติด burn', category: 'offense', notableUsers: ['Araquanid'] },
+  { slug: 'zero-to-hero', nameEn: 'Zero To Hero', nameTh: 'ซีโร่ทูฮีโร่', description: 'Palafin Zero Form สลับเป็น Hero Form เมื่อสลับออกแล้วกลับเข้า — สเตตัสจู่โจมสูงขึ้นมาก', category: 'offense', notableUsers: ['Palafin Zero'] },
+
+  // --- DEFENSE ---
+  { slug: 'aftermath', nameEn: 'Aftermath', nameTh: 'อาฟเตอร์แมท', description: 'เมื่อโดน KO ด้วย contact move ผู้โจมตีเสีย HP 1/4', category: 'defense', notableUsers: ['Garbodor (HA)'] },
+  { slug: 'aroma-veil', nameEn: 'Aroma Veil', nameTh: 'อโรมาเวล', description: 'ป้องกันตัวเองและพันธมิตรในเกมคู่จากท่ารบกวนจิตใจ (Taunt, Encore, Disable, Torment, Heal Block, Attract)', category: 'defense', notableUsers: ['Alcremie (HA)', 'Aromatisse (HA)'] },
+  { slug: 'big-pecks', nameEn: 'Big Pecks', nameTh: 'บิ๊กเป็คส์', description: 'ป้องกัน Def drops จากฝ่ายตรงข้าม', category: 'defense', notableUsers: ['Pidgeot (HA)'] },
+  { slug: 'bulletproof', nameEn: 'Bulletproof', nameTh: 'บูลเล็ตพรูฟ', description: 'ป้องกันท่ากระสุน/ลูกบอล (Shadow Ball, Sludge Bomb, Focus Blast, Aura Sphere, Pyro Ball ฯลฯ)', category: 'defense', notableUsers: ['Kommo O', 'Chesnaught (HA)', 'Mega Chesnaught'] },
+  { slug: 'cloud-nine', nameEn: 'Cloud Nine', nameTh: 'คลาวด์ไนน์', description: 'เพิกเฉยผลของสภาพอากาศทั้งหมดในสนาม', category: 'defense', notableUsers: ['Altaria (HA)', 'Drampa (HA)'] },
+  { slug: 'earth-eater', nameEn: 'Earth Eater', nameTh: 'เอิร์ธอีตเตอร์', description: 'ไม่โดนท่าธาตุดิน + ฟื้น HP 25% เมื่อถูก absorb', category: 'defense', notableUsers: ['Orthworm'] },
+  { slug: 'filter', nameEn: 'Filter', nameTh: 'ฟิลเตอร์', description: 'ลดดาเมจจากท่า super effective 25%', category: 'defense', notableUsers: ['Mega Aggron'] },
+  { slug: 'fur-coat', nameEn: 'Fur Coat', nameTh: 'เฟอร์โค้ท', description: 'Def ของผู้ใช้ x2', category: 'defense', notableUsers: ['Furfrou'] },
+  { slug: 'heavy-metal', nameEn: 'Heavy Metal', nameTh: 'เฮฟวี่เมทัล', description: 'น้ำหนักของผู้ใช้ x2 — โดน Heavy Slam/Heat Crash หนักขึ้น และเลี่ยง Low Kick/Grass Knot ง่ายขึ้น', category: 'defense', notableUsers: ['Aggron (HA)'] },
+  { slug: 'light-metal', nameEn: 'Light Metal', nameTh: 'ไลท์เมทัล', description: 'น้ำหนักของผู้ใช้ x0.5 — ลดดาเมจ Heavy Slam/Heat Crash ที่รับ', category: 'defense', notableUsers: ['Scizor (HA)'] },
+  { slug: 'magma-armor', nameEn: 'Magma Armor', nameTh: 'แมกม่าอาร์เมอร์', description: 'ไม่ติดสถานะ frozen', category: 'defense', notableUsers: ['Camerupt'] },
+  { slug: 'overcoat', nameEn: 'Overcoat', nameTh: 'โอเวอร์โค้ท', description: 'ไม่รับดาเมจจากพายุทราย/หิมะ + ป้องกันท่าฝุ่น/สปอร์ (Spore, Sleep Powder, Rage Powder)', category: 'defense', notableUsers: ['Kommo O (HA)', 'Forretress (HA)', 'Reuniclus'] },
+  { slug: 'poison-point', nameEn: 'Poison Point', nameTh: 'พอยซันพอยต์', description: 'ผู้โจมตีระยะประชิด (contact) โอกาส 30% ติดพิษ', category: 'defense', notableUsers: ['Roserade'] },
+  { slug: 'shed-skin', nameEn: 'Shed Skin', nameTh: 'เชดสกิน', description: 'ทุกเทิร์น 33% โอกาสรักษาสถานะตัวเอง', category: 'defense', notableUsers: ['Arbok', 'Sandaconda'] },
+  { slug: 'shield-dust', nameEn: 'Shield Dust', nameTh: 'ชีลด์ดัสต์', description: 'ป้องกัน secondary effect จากท่าโจมตีของฝ่ายตรงข้าม (เช่น Scald burn, Iron Head flinch)', category: 'defense', notableUsers: ['Vivillon'] },
+  { slug: 'solid-rock', nameEn: 'Solid Rock', nameTh: 'โซลิดร็อค', description: 'ลดดาเมจจากท่า super effective 25% (เหมือน Filter)', category: 'defense', notableUsers: ['Camerupt', 'Rhyperior'] },
+  { slug: 'soundproof', nameEn: 'Soundproof', nameTh: 'ซาวด์พรูฟ', description: 'ป้องกันท่าเสียงทั้งหมด (Hyper Voice, Boomburst, Snarl, Sing, Perish Song)', category: 'defense', notableUsers: ['Kommo O', 'Abomasnow (HA)', 'Bastiodon (HA)'] },
+  { slug: 'spicy-spray', nameEn: 'Spicy Spray', nameTh: 'สไปซี่สเปรย์', description: 'เมื่อโปเกมอนถูกโจมตีจนได้รับดาเมจ จะทำให้ผู้โจมตีติดสถานะ Burn', category: 'defense', notableUsers: ['Mega Scovillain'] },
+  { slug: 'stall', nameEn: 'Stall', nameTh: 'สตอลล์', description: 'ผู้ใช้ขยับเป็นตัวสุดท้ายเสมอใน priority bracket เดียวกัน', category: 'defense', notableUsers: ['Sableye'] },
+  { slug: 'static', nameEn: 'Static', nameTh: 'สแตติก', description: 'ผู้โจมตีระยะประชิด (contact) โอกาส 30% ติดอัมพาต', category: 'defense', notableUsers: ['Raichu', 'Manectric', 'Emolga', 'Pikachu'] },
+  { slug: 'steadfast', nameEn: 'Steadfast', nameTh: 'สเตดฟาสต์', description: 'เมื่อ flinch Speed +1 stage', category: 'defense', notableUsers: ['Lycanroc Midday (HA)', 'Lucario', 'Gallade', 'Machamp (HA)'] },
+  { slug: 'sticky-hold', nameEn: 'Sticky Hold', nameTh: 'สติ๊กกี้โฮลด์', description: 'ป้องกันการขโมยและสลับไอเทม (Trick, Switcheroo, Knock Off, Thief)', category: 'defense', notableUsers: ['Hydrapple (HA)'] },
+  { slug: 'sweet-veil', nameEn: 'Sweet Veil', nameTh: 'สวีทเวล', description: 'ผู้ใช้และพันธมิตรในเกมคู่ไม่ติดสถานะหลับ', category: 'defense', notableUsers: ['Slurpuff', 'Tsareena (HA)', 'Alcremie'] },
+  { slug: 'tangled-feet', nameEn: 'Tangled Feet', nameTh: 'แทงเกิ้ลฟีต', description: 'Evasion x2 เมื่อ confused', category: 'defense', notableUsers: ['Pidgeot', 'Mr Rime'] },
+  { slug: 'telepathy', nameEn: 'Telepathy', nameTh: 'เทเลพาธี', description: 'ไม่รับดาเมจจากท่าโจมตีของพันธมิตรในเกมคู่', category: 'defense', notableUsers: ['Noivern (HA)', 'Gardevoir (HA)', 'Medicham (HA)', 'Oranguru'] },
+  { slug: 'vital-spirit', nameEn: 'Vital Spirit', nameTh: 'ไวทอลสปิริต', description: 'ไม่ติดสถานะหลับ', category: 'defense', notableUsers: ['Lycanroc Midnight'] },
+
+  // --- WEATHER ---
+  { slug: 'forecast', nameEn: 'Forecast', nameTh: 'ฟอร์คาสต์', description: 'Castform เปลี่ยนธาตุตามสภาพอากาศ (Fire ในแดด, Water ในฝน, Ice ในหิมะ)', category: 'weather', notableUsers: ['Castform'] },
+  { slug: 'harvest', nameEn: 'Harvest', nameTh: 'ฮาร์เวสต์', description: 'ทุกเทิร์น 50% โอกาสฟื้น Berry ที่ใช้ไปแล้ว (100% ในแดดจ้า)', category: 'weather', notableUsers: ['Trevenant (HA)'] },
+  { slug: 'mega-sol', nameEn: 'Mega Sol', nameTh: 'เมก้าซอล', description: 'แม้สภาพอากาศจะไม่ใช่แดดจัด โปเกมอนก็สามารถใช้ท่าได้เสมือนอยู่ภายใต้ Harsh Sunlight (เช่น Solar Beam ใช้ได้ในเทิร์นเดียว, ดาเมจท่าไฟ x1.5, ท่าน้ำ x0.5 จากมุมมองของผู้ใช้)', category: 'weather', notableUsers: ['Mega Meganium'] },
+  { slug: 'sand-spit', nameEn: 'Sand Spit', nameTh: 'แซนด์สปิต', description: 'เมื่อโดนท่าโจมตี สร้างพายุทรายอัตโนมัติ', category: 'weather', notableUsers: ['Sandaconda'] },
+
+  // --- TERRAIN ---
+  { slug: 'mimicry', nameEn: 'Mimicry', nameTh: 'มิมิครี่', description: 'เปลี่ยนธาตุของผู้ใช้ตาม terrain ปัจจุบัน (Electric=Electric, Grassy=Grass, Misty=Fairy, Psychic=Psychic)', category: 'terrain', notableUsers: ['Galarian Stunfisk'] },
+
+  // --- SPEED ---
+  { slug: 'motor-drive', nameEn: 'Motor Drive', nameTh: 'มอเตอร์ไดร์ฟ', description: 'ไม่โดนท่าไฟฟ้า + Speed +1 stage เมื่อถูก absorb', category: 'speed', notableUsers: ['Emolga (HA)'] },
+  { slug: 'quick-draw', nameEn: 'Quick Draw', nameTh: 'ควิกดรอว์', description: 'ทุกเทิร์น 30% โอกาสขยับก่อนปกติ (priority +1 บางเทิร์น)', category: 'speed', notableUsers: ['Galarian Slowbro'] },
+  { slug: 'surge-surfer', nameEn: 'Surge Surfer', nameTh: 'เซิร์จเซิร์ฟเฟอร์', description: 'Speed x2 ขณะ Electric Terrain', category: 'speed', notableUsers: ['Alolan Raichu'] },
+
+  // --- UTILITY ---
+  { slug: 'early-bird', nameEn: 'Early Bird', nameTh: 'เออร์ลี่เบิร์ด', description: 'หลับลึกครึ่งเดียว — ตื่นเร็วเป็น 2 เท่า', category: 'utility', notableUsers: ['Houndoom', 'Kangaskhan'] },
+  { slug: 'frisk', nameEn: 'Frisk', nameTh: 'ฟริสก์', description: 'เมื่อลงสนาม เปิดเผยไอเทมของฝ่ายตรงข้าม', category: 'utility', notableUsers: ['Noivern', 'Espathra', 'Hisuian Typhlosion (HA)', 'Gourgeist Average'] },
+  { slug: 'gooey', nameEn: 'Gooey', nameTh: 'กูอี้', description: 'ผู้โจมตีระยะประชิด (contact) โดน Speed -1 stage', category: 'utility', notableUsers: ['Goodra (HA)', 'Hisuian Goodra (HA)'] },
+  { slug: 'hunger-switch', nameEn: 'Hunger Switch', nameTh: 'ฮังเกอร์สวิตช์', description: 'Morpeko สลับร่าง Full Belly Mode / Hangry Mode ทุกเทิร์น (เปลี่ยนธาตุของ Aura Wheel)', category: 'utility', notableUsers: ['Morpeko Full Belly'] },
+  { slug: 'illuminate', nameEn: 'Illuminate', nameTh: 'อิลลูมิเนต', description: 'ป้องกันการลด accuracy + ทำให้พบโปเกมอนป่าง่ายขึ้น', category: 'utility', notableUsers: ['Starmie', 'Watchog'] },
+  { slug: 'illusion', nameEn: 'Illusion', nameTh: 'อิลลูชั่น', description: 'ลงสนามในร่างของโปเกมอนตัวสุดท้ายในทีม — ร่างพังเมื่อโดนท่าโจมตี', category: 'utility', notableUsers: ['Hisuian Zoroark', 'Zoroark'] },
+  { slug: 'imposter', nameEn: 'Imposter', nameTh: 'อิมโพสเตอร์', description: 'เมื่อลงสนาม Transform เป็นฝ่ายตรงข้ามทันที (ก็อปทุกอย่างยกเว้น HP)', category: 'utility', notableUsers: ['Ditto (HA)'] },
+  { slug: 'klutz', nameEn: 'Klutz', nameTh: 'คลัตซ์', description: 'ผู้ใช้ไม่สามารถใช้ผลของไอเทมที่ถือได้ (ใช้คู่ Switcheroo + Choice item เพื่อปล่อย debuff)', category: 'utility', notableUsers: ['Lopunny', 'Golurk', 'Audino (HA)'] },
+  { slug: 'lightning-rod', nameEn: 'Lightning Rod', nameTh: 'ไลท์นิ่งร็อด', description: 'ดูดท่าไฟฟ้าทั้งหมดในสนาม (รวมพันธมิตร) + SpA +1 stage เมื่อโดน', category: 'utility', notableUsers: ['Raichu (HA)', 'Manectric', 'Pikachu (HA)', 'Rhyperior'] },
+  { slug: 'minus', nameEn: 'Minus', nameTh: 'ไมนัส', description: 'SpA x1.5 เมื่อมีพันธมิตรในเกมคู่ที่มี Plus/Minus', category: 'utility', notableUsers: ['Manectric (HA)'] },
+  { slug: 'mummy', nameEn: 'Mummy', nameTh: 'มัมมี่', description: 'ผู้โจมตีระยะประชิด (contact) เปลี่ยนความสามารถเป็น Mummy', category: 'utility', notableUsers: ['Cofagrigus'] },
+  { slug: 'opportunist', nameEn: 'Opportunist', nameTh: 'ออปพอร์ทูนิสต์', description: 'เมื่อฝ่ายตรงข้ามได้ stat boost ผู้ใช้ได้ stat boost เดียวกัน', category: 'utility', notableUsers: ['Espathra'] },
+  { slug: 'pickup', nameEn: 'Pickup', nameTh: 'พิคอัพ', description: 'หลังจบเทิร์น ถ้าฝ่ายตรงข้ามใช้ไอเทม ผู้ใช้เก็บมาถือได้', category: 'utility', notableUsers: ['Dedenne', 'Gourgeist Average', 'Diggersby'] },
+  { slug: 'plus', nameEn: 'Plus', nameTh: 'พลัส', description: 'SpA x1.5 เมื่อมีพันธมิตรในเกมคู่ที่มี Plus/Minus', category: 'utility', notableUsers: ['Dedenne (HA)', 'Ampharos (HA)'] },
+  { slug: 'queenly-majesty', nameEn: 'Queenly Majesty', nameTh: 'ควีนลี่มาเจสตี้', description: 'ป้องกันท่า priority ของฝ่ายตรงข้าม (Fake Out, Sucker Punch, Quick Attack)', category: 'utility', notableUsers: ['Tsareena'] },
+  { slug: 'receiver', nameEn: 'Receiver', nameTh: 'รีซีฟเวอร์', description: 'เมื่อพันธมิตรในเกมคู่หมดสติ รับความสามารถของตัวนั้นต่อ', category: 'utility', notableUsers: ['Passimian'] },
+  { slug: 'ripen', nameEn: 'Ripen', nameTh: 'ไรเพ่น', description: 'ผลของ Berry มีพลัง x2 (เช่น Sitrus Berry ฟื้น HP 50% แทน 25%)', category: 'utility', notableUsers: ['Flapple', 'Appletun'] },
+  { slug: 'screen-cleaner', nameEn: 'Screen Cleaner', nameTh: 'สกรีนคลีนเนอร์', description: 'เมื่อลงสนาม ลบ Light Screen, Reflect, Aurora Veil ของทั้งสองฝั่ง', category: 'utility', notableUsers: ['Mr Rime'] },
+  { slug: 'stench', nameEn: 'Stench', nameTh: 'สเตนช์', description: 'ท่าโจมตีโอกาส 10% ทำให้ flinch (ไม่สแต็กกับ secondary flinch อื่น)', category: 'utility', notableUsers: ['Garbodor'] },
+  { slug: 'symbiosis', nameEn: 'Symbiosis', nameTh: 'ซิมไบโอซิส', description: 'เมื่อพันธมิตรในเกมคู่ใช้ไอเทมหมด ผู้ใช้ยื่นไอเทมของตัวเองให้', category: 'utility', notableUsers: ['Florges (HA)', 'Oranguru (HA)', 'Floette (HA)'] },
+  { slug: 'wandering-spirit', nameEn: 'Wandering Spirit', nameTh: 'วอนเดอริ่งสปิริต', description: 'เมื่อโดน contact move สลับความสามารถกับผู้โจมตี', category: 'utility', notableUsers: ['Runerigus'] },
 ];
 
 export const abilityCategories = [
