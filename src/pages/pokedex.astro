@@ -6,14 +6,14 @@ import { TYPES, typeColors, typeIconUrl } from '@/data/types';
 import { ui, translateType } from '@/data/translations';
 
 const sorted = [...META_POKEMON].sort((a, b) => {
-  const tierOrder = { S: 0, A: 1, B: 2, C: 3, Restricted: 4 };
+  const tierOrder = { S: 0, A: 1, B: 2, C: 3, Restricted: 4, Untiered: 5 };
   return tierOrder[a.tier] - tierOrder[b.tier] || a.nameEn.localeCompare(b.nameEn);
 });
 ---
 
 <BaseLayout
-  title="Pokédex โปเกเด็กซ์ Champions Reg M-A — 80 ตัว meta พร้อม sets, counters"
-  description={`รวบรวมโปเกมอน meta ${META_POKEMON.length} ตัวใน Pokémon Champions Reg M-A — ทุกตัวมี base stats, sets ยอดนิยม, counters, teammates, type matchup และคำแปลไทย ค้นหา/กรองด้วย tier และธาตุได้`}
+  title="Pokédex โปเกเด็กซ์ Champions Reg M-A — 273 ตัวพร้อม Thai translation"
+  description={`รวบรวมโปเกมอนทั้งหมด ${META_POKEMON.length} ตัวใน Pokémon Champions Reg M-A — ครอบคลุม Mega Evolution, regional forms, sets ยอดนิยม, counters, teammates, type matchup และคำแปลไทย ค้นหา/กรองด้วย tier และธาตุได้`}
   keywords={[
     'Pokédex Pokemon Champions',
     'โปเกเด็กซ์',
@@ -34,10 +34,10 @@ const sorted = [...META_POKEMON].sort((a, b) => {
         <span class="text-champ-muted text-base ml-3 font-sans normal-case">โปเกเด็กซ์</span>
       </h1>
       <p class="text-champ-muted">
-        รวบรวม {META_POKEMON.length} โปเกมอน meta จาก Pokémon Champions Reg M-A —
+        รวบรวม {META_POKEMON.length} โปเกมอนจาก Pokémon Champions Reg M-A —
         รวม Mega Evolution, Eeveelutions, Starters และตัวที่ใช้แข่งจริง
         <span class="block mt-1 text-xs">
-          Roster เต็มของเกม ~269 ตัว (210 base + 59 Megas) — เรานำเสนอเฉพาะที่ใช้แข่งหรือเป็นที่นิยม
+          Roster เต็มของ Pokémon Champions — ครอบคลุมทั้ง Mega Evolution, regional forms, และตัวเสริมทุกตัว
         </span>
       </p>
     </div>
